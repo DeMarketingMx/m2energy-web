@@ -73,6 +73,65 @@
     box-shadow:0 0 0 1px rgba(246,190,31,.4), 0 8px 24px -6px rgba(246,190,31,.5);
   }
   .nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(246,190,31,.6), 0 12px 32px -6px rgba(246,190,31,.7)}
+  /* ---------- Nav dropdowns ---------- */
+  .nav-item{position:relative;display:inline-flex;align-items:center}
+  .nav-item > a.has-dd::after{content:" ▾";font-size:9px;opacity:.55;margin-left:1px}
+  .nav-dropdown{
+    position:absolute;top:calc(100% + 14px);left:50%;
+    transform:translateX(-50%) translateY(-6px);
+    background:rgba(7,17,26,.96);backdrop-filter:blur(16px);
+    border:1px solid var(--line);border-radius:12px;
+    padding:6px;min-width:190px;
+    opacity:0;visibility:hidden;
+    transition:opacity .2s, visibility .2s, transform .2s;
+    z-index:100;pointer-events:none;
+  }
+  .nav-item:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+  .nav-dropdown a{display:block;padding:10px 14px;border-radius:8px;color:var(--ink-dim);text-decoration:none;font-size:13px;transition:background .15s,color .15s;white-space:nowrap}
+  .nav-dropdown a::after{display:none}
+  .nav-dropdown a:hover{background:rgba(246,190,31,.07);color:var(--ink)}
+  .nav-dropdown a.dd-amber{color:var(--amber);font-weight:600}
+  .nav-dropdown a.dd-amber:hover{background:rgba(246,190,31,.1)}
+  /* ---------- Discover more btn ---------- */
+  .btn-discover{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1.5px solid rgba(246,190,31,.45);
+    color:var(--amber);padding:12px 26px;border-radius:8px;
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+    text-decoration:none;letter-spacing:.02em;margin-top:36px;
+    transition:background .2s,border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .btn-discover:hover{background:rgba(246,190,31,.08);border-color:var(--amber);transform:translateX(5px);box-shadow:0 0 18px rgba(246,190,31,.2)}
+  /* ---------- EPC visual ---------- */
+  .epc-visual{margin-top:48px;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;height:360px}
+  .epc-visual img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+  .epc-visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,11,18,.7) 0%,transparent 55%),linear-gradient(0deg,rgba(5,11,18,.5) 0%,transparent 40%)}
+  .epc-visual-label{position:absolute;bottom:28px;left:32px;z-index:2}
+  .epc-visual-label span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.15em;margin-bottom:6px}
+  .epc-visual-label p{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.3;max-width:360px}
+  /* ---------- Language toggle ---------- */
+  .lang-toggle{
+    position:fixed;bottom:28px;left:28px;z-index:9999;
+    display:flex;align-items:center;gap:8px;
+    background:var(--amber);color:#0a1620;
+    border:none;border-radius:999px;
+    padding:11px 20px;cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:.06em;text-transform:uppercase;
+    animation:langPulse 2.8s ease-in-out infinite;
+    transition:transform .2s;
+  }
+  .lang-toggle:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 0 2px rgba(246,190,31,.5),0 0 32px 8px rgba(246,190,31,.55),0 12px 32px -6px rgba(246,190,31,.8)}
+  .lang-toggle svg{width:15px;height:15px;flex-shrink:0}
+  @keyframes langPulse{
+    0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.25),0 0 14px 2px rgba(246,190,31,.3),0 6px 18px -4px rgba(246,190,31,.5)}
+    50%{box-shadow:0 0 0 3px rgba(246,190,31,.45),0 0 26px 6px rgba(246,190,31,.5),0 6px 18px -4px rgba(246,190,31,.7)}
+  }
+  /* Hide Google Translate toolbar */
+  .goog-te-banner-frame,.goog-te-menu-frame{display:none!important}
+  body{top:0!important}
+  .skiptranslate{display:none!important}
+  #google_translate_element{display:none!important;height:0!important;overflow:hidden!important}
 
   /* ---------- Hero ---------- */
   .hero{
@@ -211,29 +270,30 @@
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
   .svc-card{
     position:relative;padding:32px 28px;border-radius:16px;
-    background:linear-gradient(180deg, rgba(18,38,54,.55), rgba(10,22,32,.7));
+    background:none;
     border:1px solid var(--line);
     overflow:hidden;cursor:pointer;
     transition:transform .3s, border-color .3s, box-shadow .3s;
   }
-  .svc-card .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.08;transition:opacity .4s, transform .6s}
-  .svc-card:hover .svc-bg{opacity:.18;transform:scale(1.06)}
+  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transition:transform .6s}
+  .svc-card:hover .svc-bg{transform:scale(1.06)}
   .svc-card-1 .svc-bg{background-image:url('assets/images/hero-generacion.png')}
   .svc-card-2 .svc-bg{background-image:url('assets/images/infraestructura.png')}
   .svc-card-3 .svc-bg{background-image:url('assets/images/sistemas-solares.png')}
+  .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,26,.76) 0%,rgba(5,11,18,.91) 100%)}
   .svc-card::before{
-    content:"";position:absolute;inset:0;
+    content:"";position:absolute;inset:0;z-index:3;
     background:radial-gradient(400px 220px at var(--mx,50%) var(--my,0%), rgba(246,190,31,.14), transparent 55%);
     opacity:0;transition:opacity .35s;pointer-events:none;
   }
   .svc-card:hover{transform:translateY(-4px);border-color:rgba(246,190,31,.35);box-shadow:0 20px 50px -20px rgba(246,190,31,.25)}
   .svc-card:hover::before{opacity:1}
-  .svc-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.18em;margin-bottom:18px;display:block}
-  .svc-ico{width:52px;height:52px;border-radius:12px;background:rgba(246,190,31,.08);border:1px solid rgba(246,190,31,.2);display:grid;place-items:center;margin-bottom:22px;color:var(--amber);transition:transform .3s}
+  .svc-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.18em;margin-bottom:18px;display:block;position:relative;z-index:2}
+  .svc-ico{width:52px;height:52px;border-radius:12px;background:rgba(246,190,31,.08);border:1px solid rgba(246,190,31,.2);display:grid;place-items:center;margin-bottom:22px;color:var(--amber);transition:transform .3s;position:relative;z-index:2}
   .svc-card:hover .svc-ico{transform:rotate(-6deg) scale(1.06)}
-  .svc-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;line-height:1.2}
-  .svc-desc{font-size:14.5px;line-height:1.6;color:var(--ink-dim);margin-bottom:22px}
-  .svc-arrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.12em;display:inline-flex;align-items:center;gap:8px}
+  .svc-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;line-height:1.2;position:relative;z-index:2}
+  .svc-desc{font-size:14.5px;line-height:1.6;color:var(--ink-dim);margin-bottom:22px;position:relative;z-index:2}
+  .svc-arrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.12em;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2}
   .svc-arrow span{transition:transform .25s}
   .svc-card:hover .svc-arrow span{transform:translateX(5px)}
 
@@ -546,8 +606,20 @@
     <div class="brand-text">M2 <span>Energy</span></div>
   </a>
   <div class="nav-links">
-    <a href="#hacemos">Qué Hacemos</a>
-    <a href="#importa">Por Qué Importa</a>
+    <div class="nav-item">
+      <a href="#hacemos" class="has-dd">Qué Hacemos</a>
+      <div class="nav-dropdown">
+        <a href="#hacemos">Ver sección</a>
+        <a href="https://m2energy.org/que-hacemos/" target="_blank" class="dd-amber">Descubre más →</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#importa" class="has-dd">Por Qué Importa</a>
+      <div class="nav-dropdown">
+        <a href="#importa">Ver sección</a>
+        <a href="https://m2energy.org/por-que-importa/" target="_blank" class="dd-amber">Descubre más →</a>
+      </div>
+    </div>
     <a href="#trabajamos">Cómo Trabajamos</a>
     <a href="#resultados">Resultados</a>
     <a href="#industrias">Industrias</a>
@@ -698,6 +770,7 @@
     <div class="services-grid">
       <article class="svc-card svc-card-1 rv rv-1" data-svc>
         <div class="svc-bg"></div>
+        <div class="svc-overlay"></div>
         <span class="svc-num">01 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
@@ -708,6 +781,7 @@
       </article>
       <article class="svc-card svc-card-2 rv rv-2" data-svc>
         <div class="svc-bg"></div>
+        <div class="svc-overlay"></div>
         <span class="svc-num">02 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg>
@@ -718,6 +792,7 @@
       </article>
       <article class="svc-card svc-card-3 rv rv-3" data-svc>
         <div class="svc-bg"></div>
+        <div class="svc-overlay"></div>
         <span class="svc-num">03 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -727,6 +802,7 @@
         <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
     </div>
+    <a href="https://m2energy.org/que-hacemos/" target="_blank" class="btn-discover">Descubre más →</a>
   </div>
 </section>
 
@@ -775,6 +851,7 @@
         <span class="marquee-item">CFE</span>
       </div>
     </div>
+    <a href="https://m2energy.org/por-que-importa/" target="_blank" class="btn-discover">Descubre más →</a>
   </div>
 </section>
 
@@ -794,6 +871,14 @@
       <div class="epc-step rv rv-2"><div class="epc-num">03</div><h3>Gestión y Permisos</h3><p>Tramitología completa ante CENACE, CFE y CRE para destrabar proyectos detenidos.</p></div>
       <div class="epc-step rv rv-3"><div class="epc-num">04</div><h3>Procura y Construcción</h3><p>Administración de activos y ejecución impecable hasta la puesta en marcha. Control total de plazos y costos.</p></div>
       <div class="epc-step rv rv-4"><div class="epc-num">05</div><h3>Operación y Optimización</h3><p>Gestión continua de activos y reportes de desempeño para garantizar resultados 24/7.</p></div>
+    </div>
+    <div class="epc-visual rv">
+      <img src="assets/images/epc-construccion.png" alt="Construcción industrial EPC M2 Energy — grúas y estructura de acero">
+      <div class="epc-visual-overlay"></div>
+      <div class="epc-visual-label">
+        <span>EPC · Llave en mano</span>
+        <p>Ingeniería, procura y construcción bajo un solo punto de contacto.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1692,6 +1777,41 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
   modal.querySelector('.vm-close').addEventListener('click', close);
   modal.querySelector('.vm-backdrop').addEventListener('click', close);
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')) close(); });
+})();
+</script>
+
+<!-- =============== GOOGLE TRANSLATE (hidden) =============== -->
+<div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'es',
+    includedLanguages:'en',
+    autoDisplay:false
+  },'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- =============== LANGUAGE TOGGLE BUTTON =============== -->
+<button class="lang-toggle" id="langToggle" onclick="switchLang()" aria-label="Cambiar idioma / Switch language">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg>
+  <span id="langLabel">EN</span>
+</button>
+<script>
+(function(){
+  let isEN=false;
+  window.switchLang=function(){
+    const lbl=document.getElementById('langLabel');
+    const sel=document.querySelector('.goog-te-combo');
+    if(!isEN){
+      if(sel){sel.value='en';sel.dispatchEvent(new Event('change'));}
+      lbl.textContent='ES';isEN=true;
+    } else {
+      if(sel){sel.value='';sel.dispatchEvent(new Event('change'));}
+      lbl.textContent='EN';isEN=false;
+    }
+  };
 })();
 </script>
 </body>
