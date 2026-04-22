@@ -216,6 +216,11 @@
     overflow:hidden;cursor:pointer;
     transition:transform .3s, border-color .3s, box-shadow .3s;
   }
+  .svc-card .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.08;transition:opacity .4s, transform .6s}
+  .svc-card:hover .svc-bg{opacity:.18;transform:scale(1.06)}
+  .svc-card-1 .svc-bg{background-image:url('assets/images/hero-generacion.png')}
+  .svc-card-2 .svc-bg{background-image:url('assets/images/infraestructura.png')}
+  .svc-card-3 .svc-bg{background-image:url('assets/images/sistemas-solares.png')}
   .svc-card::before{
     content:"";position:absolute;inset:0;
     background:radial-gradient(400px 220px at var(--mx,50%) var(--my,0%), rgba(246,190,31,.14), transparent 55%);
@@ -346,22 +351,9 @@
   .ind-card p{font-size:14px;color:var(--ink-dim);line-height:1.55}
 
   /* Placeholder industrial patterns */
-  .ind-pattern-1{background:
-    radial-gradient(circle at 30% 30%, rgba(246,190,31,.25), transparent 45%),
-    repeating-linear-gradient(45deg, rgba(90,156,184,.15) 0 2px, transparent 2px 18px),
-    #1a3544;
-  }
-  .ind-pattern-2{background:
-    radial-gradient(circle at 70% 70%, rgba(90,156,184,.35), transparent 50%),
-    repeating-linear-gradient(0deg, rgba(246,190,31,.08) 0 1px, transparent 1px 14px),
-    repeating-linear-gradient(90deg, rgba(246,190,31,.08) 0 1px, transparent 1px 14px),
-    #112433;
-  }
-  .ind-pattern-3{background:
-    radial-gradient(circle at 50% 50%, rgba(246,190,31,.2), transparent 55%),
-    repeating-linear-gradient(-30deg, rgba(53,94,114,.28) 0 3px, transparent 3px 16px),
-    #0f1e2a;
-  }
+  .ind-pattern-1{background-image:url('assets/images/sector-manufactura.png');background-size:cover;background-position:center}
+  .ind-pattern-2{background-image:url('assets/images/sector-datacenter.png');background-size:cover;background-position:center}
+  .ind-pattern-3{background-image:url('assets/images/sector-parque-industrial.png');background-size:cover;background-position:center}
 
   /* ---------- FAQ ---------- */
   .faq{margin-top:48px;max-width:900px}
@@ -704,7 +696,8 @@
     <p class="section-lede rv rv-2">Desde la gestión de KVAs hasta infraestructura de alta tensión, entregamos sistemas que mantienen en movimiento a la industria.</p>
 
     <div class="services-grid">
-      <article class="svc-card rv rv-1" data-svc>
+      <article class="svc-card svc-card-1 rv rv-1" data-svc>
+        <div class="svc-bg"></div>
         <span class="svc-num">01 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
@@ -713,7 +706,8 @@
         <p class="svc-desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
         <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
-      <article class="svc-card rv rv-2" data-svc>
+      <article class="svc-card svc-card-2 rv rv-2" data-svc>
+        <div class="svc-bg"></div>
         <span class="svc-num">02 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg>
@@ -722,7 +716,8 @@
         <p class="svc-desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
         <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
-      <article class="svc-card rv rv-3" data-svc>
+      <article class="svc-card svc-card-3 rv rv-3" data-svc>
+        <div class="svc-bg"></div>
         <span class="svc-num">03 / 03</span>
         <div class="svc-ico">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
