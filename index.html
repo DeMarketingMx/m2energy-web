@@ -276,8 +276,8 @@
     aspect-ratio:3/4;
     transition:transform .35s, border-color .3s, box-shadow .3s;
   }
-  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;opacity:.42;background-size:cover;background-position:center;transition:opacity .4s, transform .6s}
-  .svc-card:hover .svc-bg{opacity:.62;transform:scale(1.05)}
+  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;opacity:.42;background-size:cover;background-position:center;transform:scale(1.45);transition:opacity .4s, transform .6s}
+  .svc-card:hover .svc-bg{opacity:.62;transform:scale(1.55)}
   .svc-card-1 .svc-bg{background-image:url('assets/images/hero-generacion.png')}
   .svc-card-2 .svc-bg{background-image:url('assets/images/infraestructura.png')}
   .svc-card-3 .svc-bg{background-image:url('assets/images/sistemas-solares.png')}
@@ -612,14 +612,14 @@
       <a href="#hacemos" class="has-dd">Qué Hacemos</a>
       <div class="nav-dropdown">
         <a href="#hacemos">Ver sección</a>
-        <a href="https://m2energy.org/que-hacemos/" target="_blank" class="dd-amber">Descubre más →</a>
+        <a href="que-hacemos.html" class="dd-amber">Descubre más →</a>
       </div>
     </div>
     <div class="nav-item">
       <a href="#importa" class="has-dd">Por Qué Importa</a>
       <div class="nav-dropdown">
         <a href="#importa">Ver sección</a>
-        <a href="https://m2energy.org/por-que-importa/" target="_blank" class="dd-amber">Descubre más →</a>
+        <a href="por-que-importa.html" class="dd-amber">Descubre más →</a>
       </div>
     </div>
     <a href="#trabajamos">Cómo Trabajamos</a>
@@ -1799,28 +1799,34 @@ function googleTranslateElementInit(){
 
 <!-- =============== LANGUAGE TOGGLE BUTTON =============== -->
 <button class="lang-toggle" id="langToggle" onclick="switchLang()" aria-label="Cambiar idioma / Switch language">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg>
-  <span id="langLabel">EN</span>
+  <span id="langFlag">🇲🇽</span>
+  <span id="langLabel">ESP</span>
 </button>
 <script>
 (function(){
   function getCookie(n){var v='; '+document.cookie,p=v.split('; '+n+'=');if(p.length===2)return p.pop().split(';').shift();return null;}
   function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
   function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
-  // Detect current state from cookie
   var c=getCookie('googtrans');
   var isEN=c&&c.indexOf('/en')>-1;
-  // Update button label on load
   document.addEventListener('DOMContentLoaded',function(){
-    if(isEN)document.getElementById('langLabel').textContent='ES';
+    if(isEN){
+      document.getElementById('langFlag').textContent='🇺🇸';
+      document.getElementById('langLabel').textContent='ENG';
+    }
   });
   window.switchLang=function(){
     if(!isEN){
+      // Switch to English
       setCookie('googtrans','/es/en');
       window.location.reload();
     } else {
+      // Switch back to Spanish — clear ALL Google Translate state
       delCookie('googtrans');
-      window.location.reload();
+      try{localStorage.removeItem('googtrans');}catch(e){}
+      try{sessionStorage.removeItem('googtrans');}catch(e){}
+      // Navigate clean (no reload with stale GT state)
+      window.location.href=window.location.pathname+window.location.search;
     }
   };
 })();

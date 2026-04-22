@@ -414,8 +414,8 @@ body{top:0!important}.skiptranslate{display:none!important}
 <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en',autoDisplay:false},'google_translate_element');}</script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <button class="lang-toggle" id="langToggle" onclick="switchLang()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg>
-  <span id="langLabel">EN</span>
+  <span id="langFlag">🇲🇽</span>
+  <span id="langLabel">ESP</span>
 </button>
 <script>
 (function(){
@@ -423,8 +423,13 @@ body{top:0!important}.skiptranslate{display:none!important}
   function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
   function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
   var c=getCookie('googtrans');var isEN=c&&c.indexOf('/en')>-1;
-  document.addEventListener('DOMContentLoaded',function(){if(isEN)document.getElementById('langLabel').textContent='ES';});
-  window.switchLang=function(){if(!isEN){setCookie('googtrans','/es/en');window.location.reload();}else{delCookie('googtrans');window.location.reload();}};
+  document.addEventListener('DOMContentLoaded',function(){
+    if(isEN){document.getElementById('langFlag').textContent='🇺🇸';document.getElementById('langLabel').textContent='ENG';}
+  });
+  window.switchLang=function(){
+    if(!isEN){setCookie('googtrans','/es/en');window.location.reload();}
+    else{delCookie('googtrans');try{localStorage.removeItem('googtrans');}catch(e){}try{sessionStorage.removeItem('googtrans');}catch(e){}window.location.href=window.location.pathname+window.location.search;}
+  };
 })();
 </script>
 <script>
