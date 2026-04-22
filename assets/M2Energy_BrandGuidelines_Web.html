@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: letter; margin: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #fff;
+    color: #374151;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    width: 8.5in;
+    height: 11in;
+    page-break-after: always;
+    background: #0d1a23;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: #f6be1f;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(53,94,114,0.3) 0%, transparent 70%);
+  }
+  .cover-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #f6be1f;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: 'Barlow Condensed', Arial Narrow, sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #fafafa;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .cover h1 span { color: #f6be1f; }
+  .cover-sub {
+    font-size: 18px;
+    color: #6b7280;
+    margin-bottom: 60px;
+    font-weight: 400;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    margin-top: auto;
+  }
+  .cover-meta-item label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #355e72;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item span {
+    font-size: 13px;
+    color: #fafafa;
+    font-weight: 500;
+  }
+  .cover-line {
+    width: 60px;
+    height: 3px;
+    background: #f6be1f;
+    margin-bottom: 32px;
+  }
+
+  /* ── PAGE ── */
+  .page { width: 8.5in; margin: 0 auto; }
+
+  .header-bar {
+    background: #355e72;
+    padding: 14px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  .header-bar .logo-text {
+    font-family: 'Barlow Condensed', Arial Narrow, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fafafa;
+    letter-spacing: 1px;
+  }
+  .header-bar .logo-text span { color: #f6be1f; }
+  .header-bar .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(250,250,250,0.6);
+  }
+
+  .body { padding: 32px 50px 28px; }
+
+  .section-title {
+    font-family: 'Barlow Condensed', Arial Narrow, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #355e72;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .section-intro {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 16px;
+  }
+
+  /* ── BLOCKS ── */
+  .block { page-break-inside: avoid; margin-bottom: 20px; }
+
+  /* Color swatches */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .color-card { page-break-inside: avoid; }
+  .swatch {
+    height: 64px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #e5e5e5;
+  }
+  .swatch-info {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 8px 10px;
+  }
+  .swatch-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #0a0a0a;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-size: 10px;
+    color: #6b7280;
+    font-family: monospace;
+  }
+  .swatch-role {
+    font-size: 9px;
+    color: #6b7280;
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* Typography specimens */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e5e5;
+    page-break-inside: avoid;
+  }
+  .type-meta {
+    width: 140px;
+    flex-shrink: 0;
+  }
+  .type-meta .type-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #355e72;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .type-meta .type-spec {
+    font-size: 9px;
+    color: #6b7280;
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+  .type-specimen { flex: 1; }
+
+  /* Component docs */
+  .component-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .component-box {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .component-preview {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+  }
+  .component-caption {
+    background: #fafafa;
+    border-top: 1px solid #e5e5e5;
+    padding: 8px 12px;
+    font-size: 10px;
+    color: #6b7280;
+  }
+  .component-caption strong {
+    display: block;
+    font-size: 11px;
+    color: #374151;
+    margin-bottom: 2px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: #f6be1f;
+    color: #0a0a0a;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: #fafafa;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid rgba(250,250,250,0.4);
+    display: inline-block;
+  }
+  .btn-dark-bg {
+    background: #0d1a23;
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* Nav preview */
+  .nav-preview {
+    background: #0a0a0a;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #f6be1f;
+    border-radius: 4px;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fafafa;
+  }
+  .nav-logo span { color: #f6be1f; }
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    font-size: 10px;
+    color: rgba(250,250,250,0.7);
+    font-weight: 500;
+  }
+  .nav-cta {
+    background: #f6be1f;
+    color: #0a0a0a;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  /* Card preview */
+  .card-preview {
+    background: rgba(13,26,35,0.95);
+    border: 1px solid rgba(53,94,114,0.4);
+    border-top: 3px solid #f6be1f;
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .card-preview h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fafafa;
+    margin-bottom: 6px;
+  }
+  .card-preview p {
+    font-size: 10px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+  .card-preview .card-link {
+    font-size: 10px;
+    color: #f6be1f;
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+  }
+
+  /* KPI */
+  .kpi-row {
+    display: flex;
+    gap: 16px;
+  }
+  .kpi-box {
+    background: #0d1a23;
+    border-radius: 6px;
+    padding: 14px 20px;
+    text-align: center;
+    flex: 1;
+  }
+  .kpi-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f6be1f;
+    display: block;
+  }
+  .kpi-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* Spacing guide */
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+    page-break-inside: avoid;
+  }
+  .spacing-visual {
+    background: rgba(53,94,114,0.2);
+    border: 1px solid #355e72;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .spacing-info {
+    font-size: 11px;
+    color: #374151;
+  }
+  .spacing-info span {
+    font-size: 10px;
+    color: #6b7280;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Do/Don't */
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .do-box, .dont-box {
+    border-radius: 8px;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .do-label {
+    background: #6cb444;
+    color: #fafafa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+  .dont-label {
+    background: #ef4444;
+    color: #fafafa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+  }
+  .do-content, .dont-content {
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    padding: 12px;
+    font-size: 10px;
+    color: #374151;
+    line-height: 1.6;
+    border-radius: 0 0 8px 8px;
+  }
+  .do-content li, .dont-content li {
+    margin-left: 14px;
+    margin-bottom: 4px;
+  }
+
+  /* Section divider */
+  .divider {
+    height: 2px;
+    background: linear-gradient(to right, #f6be1f, #355e72, transparent);
+    margin: 24px 0;
+  }
+
+  /* Amber accent line */
+  .amber-line {
+    width: 40px;
+    height: 3px;
+    background: #f6be1f;
+    margin-bottom: 16px;
+  }
+
+  /* Callout box */
+  .callout {
+    background: #edf2f5;
+    border-left: 5px solid #355e72;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    font-size: 11px;
+    color: #374151;
+    line-height: 1.6;
+    page-break-inside: avoid;
+    margin-bottom: 16px;
+  }
+  .callout strong { color: #355e72; }
+
+  /* Animation description */
+  .anim-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .anim-card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 14px;
+    page-break-inside: avoid;
+  }
+  .anim-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .anim-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #355e72;
+    margin-bottom: 4px;
+  }
+  .anim-desc {
+    font-size: 10px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  /* Footer strip */
+  .footer-strip {
+    background: #0a0a0a;
+    padding: 12px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-strip span {
+    font-size: 9px;
+    color: #6b7280;
+    letter-spacing: 1px;
+  }
+  .footer-strip .amber { color: #f6be1f; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    page-break-inside: avoid;
+  }
+  table th {
+    background: #355e72;
+    color: #fafafa;
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #374151;
+  }
+  table tr:nth-child(even) td { background: #f9fafb; }
+  table code {
+    background: #edf2f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #355e72;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     PORTADA
+══════════════════════════════ -->
+<div class="cover">
+  <div class="cover-tag">Brand Guidelines · Sitio Web</div>
+  <div class="cover-line"></div>
+  <h1>M2<span>Energy</span><br>Brand<br>Guidelines</h1>
+  <p class="cover-sub">Versión 1.0 · Sitio web m2energy-web.pages.dev</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Cliente</label>
+      <span>M2 Energy</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Plataforma</label>
+      <span>Cloudflare Pages</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Repositorio</label>
+      <span>DeMarketingMx/m2energy-web</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Versión</label>
+      <span>Abril 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PÁGINA 1 — COLORES
+══════════════════════════════ -->
+<div class="page">
+  <div class="header-bar">
+    <div class="logo-text">M2<span>⚡</span>Energy</div>
+    <div class="section-label">01 · Sistema de Color</div>
+  </div>
+  <div class="body">
+    <div class="amber-line"></div>
+    <h2 class="section-title">Sistema de Color</h2>
+    <p class="section-intro">Paleta oficial del sitio web. Todos los colores deben usarse exactamente como se especifica — sin variaciones ni aproximaciones.</p>
+
+    <div class="block">
+      <div class="color-grid">
+        <div class="color-card">
+          <div class="swatch" style="background:#f6be1f;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Ámbar / Dorado</span>
+            <span class="swatch-hex">#f6be1f</span>
+            <span class="swatch-role">Acento principal · CTAs · KPIs · Highlights</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#355e72;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Azul Steel</span>
+            <span class="swatch-hex">#355e72</span>
+            <span class="swatch-role">Color primario de marca · Headers · Nav · Estructura</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#0d1a23;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Deep Dark Blue</span>
+            <span class="swatch-hex">#0d1a23</span>
+            <span class="swatch-role">Fondo hero · Cards oscuras · Secciones premium</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#0a0a0a;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Near Black</span>
+            <span class="swatch-hex">#0a0a0a</span>
+            <span class="swatch-role">Navbar · Footer · Fondos máxima profundidad</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#6cb444;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Verde</span>
+            <span class="swatch-hex">#6cb444</span>
+            <span class="swatch-role">Acento ESG · Indicadores positivos · Checks</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#fafafa; border:1px solid #e5e5e5;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">White</span>
+            <span class="swatch-hex">#fafafa</span>
+            <span class="swatch-role">Texto sobre fondos oscuros · Superficies claras</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#6b7280;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Mid Gray</span>
+            <span class="swatch-hex">#6b7280</span>
+            <span class="swatch-role">Texto secundario · Captions · Metadata</span>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="swatch" style="background:#374151;"></div>
+          <div class="swatch-info">
+            <span class="swatch-name">Dark Gray</span>
+            <span class="swatch-hex">#374151</span>
+            <span class="swatch-role">Texto cuerpo sobre fondos claros</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="block">
+      <p style="font-size:12px;font-weight:600;color:#355e72;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Reglas de uso de color</p>
+      <table>
+        <tr>
+          <th>Contexto</th>
+          <th>Color de fondo</th>
+          <th>Color de texto</th>
+          <th>Acento</th>
+        </tr>
+        <tr>
+          <td>Hero / Secciones premium</td>
+          <td><code>#0d1a23</code></td>
+          <td><code>#fafafa</code></td>
+          <td><code>#f6be1f</code></td>
+        </tr>
+        <tr>
+          <td>Navegación / Footer</td>
+          <td><code>#0a0a0a</code></td>
+          <td><code>#fafafa</code></td>
+          <td><code>#f6be1f</code> (border 2px bottom)</td>
+        </tr>
+        <tr>
+          <td>Cards de servicios</td>
+          <td><code>#0d1a23</code> semitransparente</td>
+          <td><code>#fafafa</code></td>
+          <td><code>#f6be1f</code> (border-top 3px)</td>
+        </tr>
+        <tr>
+          <td>Header de sección</td>
+          <td><code>#355e72</code></td>
+          <td><code>#fafafa</code></td>
+          <td><code>#f6be1f</code></td>
+        </tr>
+        <tr>
+          <td>KPIs / métricas</td>
+          <td><code>#0d1a23</code></td>
+          <td><code>#f6be1f</code> (número)</td>
+          <td><code>#6b7280</code> (label)</td>
+        </tr>
+        <tr>
+          <td>Botón CTA principal</td>
+          <td><code>#f6be1f</code></td>
+          <td><code>#0a0a0a</code></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Botón secundario</td>
+          <td>Transparente</td>
+          <td><code>#fafafa</code></td>
+          <td>Border <code>rgba(250,250,250,0.4)</code></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <span>M2 Energy · Brand Guidelines Web · v1.0</span>
+    <span class="amber">01 · Sistema de Color</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PÁGINA 2 — TIPOGRAFÍA
+══════════════════════════════ -->
+<div class="page">
+  <div class="header-bar">
+    <div class="logo-text">M2<span>⚡</span>Energy</div>
+    <div class="section-label">02 · Tipografía</div>
+  </div>
+  <div class="body">
+    <div class="amber-line"></div>
+    <h2 class="section-title">Sistema Tipográfico</h2>
+    <p class="section-intro">Dos familias tipográficas. Barlow Condensed para impacto e identidad industrial. Inter para legibilidad en cuerpo de texto.</p>
+
+    <div class="block">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">H1 / Hero Title</div>
+          <div class="type-spec">Barlow Condensed Bold 700<br>3–3.5rem web · #fafafa o #f6be1f<br>Uso: Títulos hero, taglines</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Barlow Condensed',Arial Narrow,sans-serif;font-size:36px;font-weight:700;color:#0a0a0a;line-height:1;">Energía Sin Límites</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">H2 / Section Title</div>
+          <div class="type-spec">Barlow Condensed Bold 700<br>2–2.5rem web · #355e72 o #fafafa<br>Uso: Títulos de sección</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Barlow Condensed',Arial Narrow,sans-serif;font-size:28px;font-weight:700;color:#355e72;">Soluciones Energéticas Industriales</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">H3 / Card Title</div>
+          <div class="type-spec">Barlow Condensed Bold 700<br>1.25–1.5rem web · #fafafa o #f6be1f<br>Uso: Títulos de cards y subsecciones</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Barlow Condensed',Arial Narrow,sans-serif;font-size:20px;font-weight:700;color:#f6be1f;">Generación en Sitio — PPA / Cero CAPEX</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">Body / Párrafo</div>
+          <div class="type-spec">Inter Regular 400<br>1rem (16px) web · #374151 o #fafafa<br>Uso: Descripciones, párrafos</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:#374151;line-height:1.6;">Transformamos las limitaciones de la red eléctrica en libertad operativa. Diseñamos, construimos y operamos infraestructura de hasta 20 MW en sitio.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">KPI / Métrica</div>
+          <div class="type-spec">Barlow Condensed Bold 700<br>2–3rem web · #f6be1f sobre oscuro<br>Uso: Números impactantes</div>
+        </div>
+        <div class="type-specimen" style="background:#0d1a23;padding:12px;border-radius:6px;display:flex;gap:24px;align-items:center;">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:#f6be1f;">20MW</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:#f6be1f;">99.98%</span>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:#f6be1f;">0 CAPEX</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">Tag / Label</div>
+          <div class="type-spec">Inter Semibold 600<br>10–11px · Letter-spacing 3–4px<br>Uso: Tags, etiquetas de sección</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#f6be1f;">Soluciones energéticas industriales · 60 años</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-label">Caption / Meta</div>
+          <div class="type-spec">Inter Regular 400<br>0.875rem (14px) · #6b7280<br>Uso: Notas, pie de imagen, metadata</div>
+        </div>
+        <div class="type-specimen">
+          <span style="font-family:'Inter',sans-serif;font-size:12px;font-weight:400;color:#6b7280;">Subestación SE-04 · Live · 60 Hz · Chihuahua, México</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="callout">
+      <strong>Google Fonts utilizadas en el sitio:</strong><br>
+      <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:10px;color:#355e72;">Barlow Condensed</code> — Para todos los títulos, KPIs y elementos de impacto.<br>
+      <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:10px;color:#355e72;">Inter</code> — Para cuerpo de texto, etiquetas y elementos de UI.<br>
+      Import: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:10px;color:#355e72;">https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700</code>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <span>M2 Energy · Brand Guidelines Web · v1.0</span>
+    <span class="amber">02 · Tipografía</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PÁGINA 3 — COMPONENTES
+══════════════════════════════ -->
+<div class="page">
+  <div class="header-bar">
+    <div class="logo-text">M2<span>⚡</span>Energy</div>
+    <div class="section-label">03 · Componentes UI</div>
+  </div>
+  <div class="body">
+    <div class="amber-line"></div>
+    <h2 class="section-title">Componentes UI</h2>
+    <p class="section-intro">Biblioteca de componentes visuales del sitio web. Cada componente tiene reglas específicas de color, tipografía y comportamiento.</p>
+
+    <!-- Navegación -->
+    <div class="block">
+      <p style="font-size:11px;font-weight:700;color:#355e72;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Navegación Principal</p>
+      <div class="nav-preview">
+        <div class="nav-logo">M2 <span>⚡</span> Energy</div>
+        <div class="nav-links">
+          <span>Qué Hacemos</span>
+          <span>Por Qué Importa</span>
+          <span>Cómo Trabajamos</span>
+          <span>Resultados</span>
+          <span>Industrias</span>
+        </div>
+        <div class="nav-cta">Contáctanos →</div>
+      </div>
+      <p style="font-size:9px;color:#6b7280;margin-top:6px;">Fondo: #0a0a0a · Línea inferior ámbar 2px · Logo con ⚡ en #f6be1f · CTA ámbar sólido · Links en rgba(250,250,250,0.7)</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Botones -->
+    <div class="block">
+      <p style="font-size:11px;font-weight:700;color:#355e72;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Botones</p>
+      <div class="component-row">
+        <div class="component-box">
+          <div class="component-preview" style="background:#0d1a23;gap:12px;">
+            <div class="btn-primary">Solicitar Consulta →</div>
+            <div class="btn-secondary">Conoce más</div>
+          </div>
+          <div class="component-caption">
+            <strong>Botones en hero (fondo oscuro)</strong>
+            CTA: #f6be1f bg · #0a0a0a text · Barlow Condensed 700<br>
+            Secundario: Transparent · #fafafa text · rgba border
+          </div>
+        </div>
+        <div class="component-box">
+          <div class="component-preview" style="background:#fafafa;gap:12px;">
+            <div style="background:#355e72;color:#fafafa;padding:10px 20px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;">Ver Servicios</div>
+            <div style="background:transparent;color:#355e72;padding:10px 20px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;border:2px solid #355e72;">Leer más →</div>
+          </div>
+          <div class="component-caption">
+            <strong>Botones en fondo claro</strong>
+            Primario: #355e72 bg · #fafafa text<br>
+            Outline: #355e72 border + text · bg transparente
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="block">
+      <p style="font-size:11px;font-weight:700;color:#355e72;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Cards de Servicios</p>
+      <div class="component-row">
+        <div class="component-box">
+          <div class="component-preview" style="background:#0d1a23;padding:16px;">
+            <div class="card-preview" style="width:100%;">
+              <h4>Generación en Sitio — PPA</h4>
+              <p>Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos.</p>
+              <span class="card-link">Leer más →</span>
+            </div>
+          </div>
+          <div class="component-caption">
+            <strong>Service Card</strong>
+            Fondo: rgba(13,26,35,0.95) · Border: rgba(53,94,114,0.4)<br>
+            Border-top: 3px #f6be1f · Hover: glow ámbar
+          </div>
+        </div>
+        <div class="component-box">
+          <div class="component-preview" style="background:#0d1a23;">
+            <div class="kpi-row" style="width:100%;">
+              <div class="kpi-box">
+                <span class="kpi-value">20MW</span>
+                <span class="kpi-label">Generación</span>
+              </div>
+              <div class="kpi-box">
+                <span class="kpi-value">99.98%</span>
+                <span class="kpi-label">Uptime</span>
+              </div>
+              <div class="kpi-box">
+                <span class="kpi-value">0</span>
+                <span class="kpi-label">CAPEX</span>
+              </div>
+            </div>
+          </div>
+          <div class="component-caption">
+            <strong>KPI Cards</strong>
+            Fondo: #0d1a23 · Número: #f6be1f Barlow Condensed 700<br>
+            Label: #6b7280 · 9px · letter-spacing 2px uppercase
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <span>M2 Energy · Brand Guidelines Web · v1.0</span>
+    <span class="amber">03 · Componentes UI</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PÁGINA 4 — ANIMACIONES & ESTRUCTURA
+══════════════════════════════ -->
+<div class="page">
+  <div class="header-bar">
+    <div class="logo-text">M2<span>⚡</span>Energy</div>
+    <div class="section-label">04 · Animaciones y Estructura</div>
+  </div>
+  <div class="body">
+    <div class="amber-line"></div>
+    <h2 class="section-title">Animaciones Eléctricas</h2>
+    <p class="section-intro">El sitio incluye un sistema de animaciones CSS/JS que simulan fenómenos eléctricos reales. Son controlables por el usuario vía el panel "Tweaks".</p>
+
+    <div class="block">
+      <div class="anim-grid">
+        <div class="anim-card">
+          <span class="anim-icon">⚡</span>
+          <div class="anim-name">Arcos Eléctricos</div>
+          <div class="anim-desc">Líneas SVG animadas que simulan arcos de alta tensión. Color ámbar #f6be1f con glow. Intensidad controlable (0–100).</div>
+        </div>
+        <div class="anim-card">
+          <span class="anim-icon">✦</span>
+          <div class="anim-name">Chispas / Partículas</div>
+          <div class="anim-desc">Partículas pequeñas que se mueven como chispas eléctricas. Canvas JS. Cantidad controlable (0–100).</div>
+        </div>
+        <div class="anim-card">
+          <span class="anim-icon">〰</span>
+          <div class="anim-name">Flujo de Energía</div>
+          <div class="anim-desc">Ondas sinusoidales animadas que representan corriente eléctrica fluyendo. Velocidad controlable.</div>
+        </div>
+        <div class="anim-card">
+          <span class="anim-icon">🌩</span>
+          <div class="anim-name">Rayos</div>
+          <div class="anim-desc">Destellos de rayos ocasionales en el hero. Frecuencia controlable. Color ámbar/azul intercalado.</div>
+        </div>
+        <div class="anim-card">
+          <span class="anim-icon">◉</span>
+          <div class="anim-name">Glow / Resplandor</div>
+          <div class="anim-desc">Efecto de resplandor en arcos y elementos clave. Intensidad controlable (0–20). CSS box-shadow animado.</div>
+        </div>
+        <div class="anim-card">
+          <span class="anim-icon">🎨</span>
+          <div class="anim-name">Paletas Tweaks</div>
+          <div class="anim-desc">3 paletas: Ámbar + Azul (default), Solo ámbar, Solo azul. Cambian los colores de las animaciones en tiempo real.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="amber-line"></div>
+    <h2 class="section-title">Estructura de Secciones</h2>
+    <p class="section-intro">El sitio tiene 17 secciones en una sola página (one-page). Orden y función de cada una.</p>
+
+    <div class="block">
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Sección</th>
+          <th>Función</th>
+          <th>Fondo</th>
+        </tr>
+        <tr><td>01</td><td>Hero</td><td>Tagline + CTAs + KPIs + animación eléctrica</td><td><code>#0d1a23</code></td></tr>
+        <tr><td>02</td><td>Qué Hacemos</td><td>3 servicios en cards con navegación 01/03</td><td><code>#0d1a23</code></td></tr>
+        <tr><td>03</td><td>Por Qué Importa</td><td>Video + bullet points + logos clientes</td><td><code>#0a0a0a</code></td></tr>
+        <tr><td>04</td><td>Cómo Trabajamos</td><td>5 pasos EPC numerados</td><td><code>#0d1a23</code></td></tr>
+        <tr><td>05</td><td>Resultados</td><td>4 KPIs con contador animado</td><td><code>#0a0a0a</code></td></tr>
+        <tr><td>06</td><td>Industrias</td><td>3 sectores con imagen + hover zoom</td><td><code>#0d1a23</code></td></tr>
+        <tr><td>07</td><td>Por Qué Elegirnos</td><td>FAQ acordeón con 5 preguntas</td><td><code>#0a0a0a</code></td></tr>
+        <tr><td>08</td><td>Contacto / ECRA</td><td>Formulario 4 pasos + diagnóstico</td><td><code>#0d1a23</code></td></tr>
+        <tr><td>09</td><td>Footer</td><td>3 columnas + copyright</td><td><code>#0a0a0a</code></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <span>M2 Energy · Brand Guidelines Web · v1.0</span>
+    <span class="amber">04 · Animaciones y Estructura</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PÁGINA 5 — DO/DON'T Y STACK
+══════════════════════════════ -->
+<div class="page">
+  <div class="header-bar">
+    <div class="logo-text">M2<span>⚡</span>Energy</div>
+    <div class="section-label">05 · Reglas y Stack Técnico</div>
+  </div>
+  <div class="body">
+    <div class="amber-line"></div>
+    <h2 class="section-title">Reglas de Diseño</h2>
+    <p class="section-intro">Guía de qué hacer y qué no hacer al modificar o expandir el sitio web de M2 Energy.</p>
+
+    <div class="block">
+      <div class="do-dont">
+        <div class="do-box">
+          <div class="do-label">✓ Hacer</div>
+          <div class="do-content">
+            <ul>
+              <li>Usar fondos oscuros #0d1a23 o #0a0a0a para secciones premium</li>
+              <li>Botones CTA siempre en ámbar #f6be1f con texto oscuro</li>
+              <li>Títulos en Barlow Condensed Bold 700</li>
+              <li>KPIs con números grandes en ámbar sobre fondo oscuro</li>
+              <li>Líneas decorativas en ámbar como separadores</li>
+              <li>Cards con border-top de 3px en #f6be1f</li>
+              <li>Mantener las animaciones eléctricas en el hero</li>
+              <li>Usar el panel Tweaks para ajustar animaciones</li>
+              <li>Tags con letter-spacing 3–4px en ámbar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label">✗ No hacer</div>
+          <div class="dont-content">
+            <ul>
+              <li>Usar fondos blancos en secciones hero o premium</li>
+              <li>Cambiar el ámbar por otro tono de amarillo</li>
+              <li>Mezclar Barlow Condensed con fuentes sans genéricas</li>
+              <li>Usar verde #6cb444 como color primario</li>
+              <li>Poner texto oscuro sobre fondos oscuros</li>
+              <li>Usar gradientes de colores ajenos a la paleta</li>
+              <li>Quitar las animaciones — son parte de la identidad</li>
+              <li>Modificar el logo (⚡ entre M2 y Energy)</li>
+              <li>Usar bordes redondeados mayores a 8px en cards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="amber-line"></div>
+    <h2 class="section-title">Stack Técnico</h2>
+    <p class="section-intro">Tecnologías y plataformas utilizadas en el proyecto.</p>
+
+    <div class="block">
+      <table>
+        <tr>
+          <th>Capa</th>
+          <th>Tecnología</th>
+          <th>Detalles</th>
+        </tr>
+        <tr>
+          <td>Frontend</td>
+          <td>HTML5 + CSS3 + JavaScript Vanilla</td>
+          <td>Sin frameworks. Sin dependencias externas.</td>
+        </tr>
+        <tr>
+          <td>Tipografía</td>
+          <td>Google Fonts CDN</td>
+          <td>Barlow Condensed 700, 800 + Inter 400, 500, 600, 700</td>
+        </tr>
+        <tr>
+          <td>Animaciones</td>
+          <td>CSS Animations + Canvas API</td>
+          <td>Arcos, chispas, rayos, glow — todo nativo</td>
+        </tr>
+        <tr>
+          <td>Diseño generado con</td>
+          <td>Claude Design (claude.ai/design)</td>
+          <td>Proyecto: M2E · Archivo: hero.html</td>
+        </tr>
+        <tr>
+          <td>Control de versiones</td>
+          <td>Git + GitHub</td>
+          <td>github.com/DeMarketingMx/m2energy-web · branch: master</td>
+        </tr>
+        <tr>
+          <td>Hosting / Deploy</td>
+          <td>Cloudflare Pages</td>
+          <td>m2energy-web.pages.dev · Auto-deploy en push a master</td>
+        </tr>
+        <tr>
+          <td>Dominio futuro</td>
+          <td>m2energy.org</td>
+          <td>Pendiente migración desde GoDaddy + apuntar DNS a Cloudflare</td>
+        </tr>
+        <tr>
+          <td>Headers de seguridad</td>
+          <td>_headers (Cloudflare Pages)</td>
+          <td>CSP, X-Frame-Options, X-Content-Type configurados</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:16px;">
+      <strong>Para actualizar el sitio:</strong><br>
+      1. Editar en Claude Design <code style="background:#fff;padding:2px 5px;border-radius:3px;font-size:10px;">claude.ai/design</code> → Exportar HTML → Copiar a <code style="background:#fff;padding:2px 5px;border-radius:3px;font-size:10px;">~/m2energy-web/index.html</code><br>
+      2. Desde terminal: <code style="background:#fff;padding:2px 5px;border-radius:3px;font-size:10px;">cd ~/m2energy-web && git add . && git commit -m "descripción" && git push</code><br>
+      3. Cloudflare despliega automáticamente en 1–2 minutos.
+    </div>
+  </div>
+  <div class="footer-strip">
+    <span>M2 Energy · Brand Guidelines Web · v1.0 · Abril 2026</span>
+    <span class="amber">De Marketing · juanpablo@demarketing.mx</span>
+  </div>
+</div>
+
+</body>
+</html>
