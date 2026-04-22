@@ -269,31 +269,33 @@
   /* ---------- Services ---------- */
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
   .svc-card{
-    position:relative;padding:32px 28px;border-radius:16px;
-    background:none;
+    position:relative;padding:0;border-radius:16px;
+    background:linear-gradient(180deg,var(--blue-deep),var(--bg-1));
     border:1px solid var(--line);
     overflow:hidden;cursor:pointer;
-    transition:transform .3s, border-color .3s, box-shadow .3s;
+    aspect-ratio:3/4;
+    transition:transform .35s, border-color .3s, box-shadow .3s;
   }
-  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transition:transform .6s}
-  .svc-card:hover .svc-bg{transform:scale(1.06)}
+  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;opacity:.42;background-size:cover;background-position:center;transition:opacity .4s, transform .6s}
+  .svc-card:hover .svc-bg{opacity:.62;transform:scale(1.05)}
   .svc-card-1 .svc-bg{background-image:url('assets/images/hero-generacion.png')}
   .svc-card-2 .svc-bg{background-image:url('assets/images/infraestructura.png')}
   .svc-card-3 .svc-bg{background-image:url('assets/images/sistemas-solares.png')}
-  .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,26,.76) 0%,rgba(5,11,18,.91) 100%)}
+  .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 18%,rgba(6,14,22,.97) 66%)}
+  .svc-card .svc-body{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
   .svc-card::before{
     content:"";position:absolute;inset:0;z-index:3;
-    background:radial-gradient(400px 220px at var(--mx,50%) var(--my,0%), rgba(246,190,31,.14), transparent 55%);
+    background:radial-gradient(ellipse 80% 35% at 50% 100%, rgba(246,190,31,.11), transparent 60%);
     opacity:0;transition:opacity .35s;pointer-events:none;
   }
   .svc-card:hover{transform:translateY(-4px);border-color:rgba(246,190,31,.35);box-shadow:0 20px 50px -20px rgba(246,190,31,.25)}
   .svc-card:hover::before{opacity:1}
-  .svc-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.18em;margin-bottom:18px;display:block;position:relative;z-index:2}
-  .svc-ico{width:52px;height:52px;border-radius:12px;background:rgba(246,190,31,.08);border:1px solid rgba(246,190,31,.2);display:grid;place-items:center;margin-bottom:22px;color:var(--amber);transition:transform .3s;position:relative;z-index:2}
+  .svc-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.2em;margin-bottom:14px;display:block}
+  .svc-ico{width:48px;height:48px;border-radius:12px;background:rgba(246,190,31,.1);border:1px solid rgba(246,190,31,.25);display:grid;place-items:center;margin-bottom:18px;color:var(--amber);transition:transform .3s}
   .svc-card:hover .svc-ico{transform:rotate(-6deg) scale(1.06)}
-  .svc-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;line-height:1.2;position:relative;z-index:2}
-  .svc-desc{font-size:14.5px;line-height:1.6;color:var(--ink-dim);margin-bottom:22px;position:relative;z-index:2}
-  .svc-arrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.12em;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2}
+  .svc-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px;line-height:1.25}
+  .svc-desc{font-size:13.5px;line-height:1.6;color:var(--ink-dim);margin-bottom:18px}
+  .svc-arrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.12em;display:inline-flex;align-items:center;gap:8px}
   .svc-arrow span{transition:transform .25s}
   .svc-card:hover .svc-arrow span{transform:translateX(5px)}
 
@@ -771,38 +773,44 @@
       <article class="svc-card svc-card-1 rv rv-1" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
-        <span class="svc-num">01 / 03</span>
-        <div class="svc-ico">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
+        <div class="svc-body">
+          <span class="svc-num">01 / 03</span>
+          <div class="svc-ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
+          </div>
+          <h3 class="svc-title">Generación en Sitio — PPA / Cero CAPEX</h3>
+          <p class="svc-desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
+          <span class="svc-arrow">Leer más <span>→</span></span>
         </div>
-        <h3 class="svc-title">Generación en Sitio — PPA / Cero CAPEX</h3>
-        <p class="svc-desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
-        <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
       <article class="svc-card svc-card-2 rv rv-2" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
-        <span class="svc-num">02 / 03</span>
-        <div class="svc-ico">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg>
+        <div class="svc-body">
+          <span class="svc-num">02 / 03</span>
+          <div class="svc-ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg>
+          </div>
+          <h3 class="svc-title">Infraestructura de Media y Alta Tensión</h3>
+          <p class="svc-desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
+          <span class="svc-arrow">Leer más <span>→</span></span>
         </div>
-        <h3 class="svc-title">Infraestructura de Media y Alta Tensión</h3>
-        <p class="svc-desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
-        <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
       <article class="svc-card svc-card-3 rv rv-3" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
-        <span class="svc-num">03 / 03</span>
-        <div class="svc-ico">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <div class="svc-body">
+          <span class="svc-num">03 / 03</span>
+          <div class="svc-ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </div>
+          <h3 class="svc-title">Sistemas Solares y Baterías de Respaldo</h3>
+          <p class="svc-desc">Suministro continuo y diversificado para operaciones críticas. Redundancia, estabilidad de voltaje y cumplimiento ESG sin fricciones.</p>
+          <span class="svc-arrow">Leer más <span>→</span></span>
         </div>
-        <h3 class="svc-title">Sistemas Solares y Baterías de Respaldo</h3>
-        <p class="svc-desc">Suministro continuo y diversificado para operaciones críticas. Redundancia, estabilidad de voltaje y cumplimiento ESG sin fricciones.</p>
-        <span class="svc-arrow">Leer más <span>→</span></span>
       </article>
     </div>
-    <a href="https://m2energy.org/que-hacemos/" target="_blank" class="btn-discover">Descubre más →</a>
+    <a href="que-hacemos.html" class="btn-discover">Descubre más →</a>
   </div>
 </section>
 
@@ -851,7 +859,7 @@
         <span class="marquee-item">CFE</span>
       </div>
     </div>
-    <a href="https://m2energy.org/por-que-importa/" target="_blank" class="btn-discover">Descubre más →</a>
+    <a href="por-que-importa.html" class="btn-discover">Descubre más →</a>
   </div>
 </section>
 
@@ -1780,15 +1788,11 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
 })();
 </script>
 
-<!-- =============== GOOGLE TRANSLATE (hidden) =============== -->
-<div id="google_translate_element"></div>
+<!-- =============== GOOGLE TRANSLATE (hidden widget) =============== -->
+<div id="google_translate_element" style="display:none;height:0;overflow:hidden;position:absolute"></div>
 <script>
 function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:'es',
-    includedLanguages:'en',
-    autoDisplay:false
-  },'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en',autoDisplay:false},'google_translate_element');
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -1800,16 +1804,23 @@ function googleTranslateElementInit(){
 </button>
 <script>
 (function(){
-  let isEN=false;
+  function getCookie(n){var v='; '+document.cookie,p=v.split('; '+n+'=');if(p.length===2)return p.pop().split(';').shift();return null;}
+  function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
+  function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
+  // Detect current state from cookie
+  var c=getCookie('googtrans');
+  var isEN=c&&c.indexOf('/en')>-1;
+  // Update button label on load
+  document.addEventListener('DOMContentLoaded',function(){
+    if(isEN)document.getElementById('langLabel').textContent='ES';
+  });
   window.switchLang=function(){
-    const lbl=document.getElementById('langLabel');
-    const sel=document.querySelector('.goog-te-combo');
     if(!isEN){
-      if(sel){sel.value='en';sel.dispatchEvent(new Event('change'));}
-      lbl.textContent='ES';isEN=true;
+      setCookie('googtrans','/es/en');
+      window.location.reload();
     } else {
-      if(sel){sel.value='';sel.dispatchEvent(new Event('change'));}
-      lbl.textContent='EN';isEN=false;
+      delCookie('googtrans');
+      window.location.reload();
     }
   };
 })();
