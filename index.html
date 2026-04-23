@@ -597,6 +597,7 @@
     .field-row{grid-template-columns:1fr}
   }
 </style>
+<script src="assets/js/translations.js"></script>
 </head>
 <body>
 
@@ -609,25 +610,25 @@
   </a>
   <div class="nav-links">
     <div class="nav-item">
-      <a href="#hacemos" class="has-dd">Qué Hacemos</a>
+      <a href="#hacemos" class="has-dd" data-i18n="nav.whatWeDo">Qué Hacemos</a>
       <div class="nav-dropdown">
-        <a href="#hacemos">Ver sección</a>
-        <a href="que-hacemos.html" class="dd-amber">Descubre más →</a>
+        <a href="#hacemos" data-i18n="nav.viewSection">Ver sección</a>
+        <a href="que-hacemos.html" class="dd-amber" data-i18n="nav.discoverMore">Descubre más →</a>
       </div>
     </div>
     <div class="nav-item">
-      <a href="#importa" class="has-dd">Por Qué Importa</a>
+      <a href="#importa" class="has-dd" data-i18n="nav.whyItMatters">Por Qué Importa</a>
       <div class="nav-dropdown">
-        <a href="#importa">Ver sección</a>
-        <a href="por-que-importa.html" class="dd-amber">Descubre más →</a>
+        <a href="#importa" data-i18n="nav.viewSection">Ver sección</a>
+        <a href="por-que-importa.html" class="dd-amber" data-i18n="nav.discoverMore">Descubre más →</a>
       </div>
     </div>
-    <a href="#trabajamos">Cómo Trabajamos</a>
-    <a href="#resultados">Resultados</a>
-    <a href="#industrias">Industrias</a>
-    <a href="#elegirnos">Elegirnos</a>
+    <a href="#trabajamos" data-i18n="nav.howWeWork">Cómo Trabajamos</a>
+    <a href="#resultados" data-i18n="nav.results">Resultados</a>
+    <a href="#industrias" data-i18n="nav.industries">Industrias</a>
+    <a href="#elegirnos" data-i18n="nav.whyUs">Elegirnos</a>
   </div>
-  <a class="nav-cta" href="#contacto">Contáctanos →</a>
+  <a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contáctanos →</a>
 </nav>
 
 <!-- =============== HERO =============== -->
@@ -682,21 +683,21 @@
 
   <div class="hero-content">
     <div>
-      <span class="eyebrow"><span class="dot"></span> Soluciones energéticas industriales · 60 años</span>
-      <h1 class="hero-title">
+      <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Soluciones energéticas industriales · 60 años</span></span>
+      <h1 class="hero-title" data-i18n-html="hero.h1">
         <span class="hl">Energía sin límites</span> para la industria en México.
       </h1>
-      <p class="hero-lede">
+      <p class="hero-lede" data-i18n-html="hero.lede">
         Transformamos las limitaciones de la red eléctrica en libertad operativa. Diseñamos, construimos y operamos infraestructura de hasta <strong style="color:var(--ink)">20 MW en sitio</strong>, con <strong style="color:var(--amber)">Cero CAPEX</strong> si lo necesitas.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#contacto">Solicitar Consulta Técnica <span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="#hacemos">Conoce nuestros Servicios</a>
+        <a class="btn btn-primary" href="#contacto"><span data-i18n="hero.cta1">Solicitar Consulta Técnica</span> <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#hacemos" data-i18n="hero.cta2">Conoce nuestros Servicios</a>
       </div>
       <div class="stats">
-        <div class="stat"><div class="num"><span id="stat-mw">20</span>MW</div><div class="lbl">Generación en sitio</div></div>
-        <div class="stat"><div class="num"><span id="stat-cero">0</span> CAPEX</div><div class="lbl">Modelo disponible</div></div>
-        <div class="stat"><div class="num"><span id="stat-up">99.98</span>%</div><div class="lbl">Uptime operativo</div></div>
+        <div class="stat"><div class="num"><span id="stat-mw">20</span>MW</div><div class="lbl" data-i18n="hero.stat1">Generación en sitio</div></div>
+        <div class="stat"><div class="num"><span id="stat-cero">0</span> CAPEX</div><div class="lbl" data-i18n="hero.stat2">Modelo disponible</div></div>
+        <div class="stat"><div class="num"><span id="stat-up">99.98</span>%</div><div class="lbl" data-i18n="hero.stat3">Uptime operativo</div></div>
       </div>
     </div>
 
@@ -754,9 +755,9 @@
         </g>
       </svg>
       <div class="hv-readout">
-        <div class="cell"><div class="k">Carga</div><div class="v" id="r-load">72<em>%</em></div></div>
-        <div class="cell"><div class="k">Tensión</div><div class="v" id="r-volt">13.8<em>kV</em></div></div>
-        <div class="cell"><div class="k">Frec</div><div class="v" id="r-freq">60.0<em>Hz</em></div></div>
+        <div class="cell"><div class="k" data-i18n="hero.readLoad">Carga</div><div class="v" id="r-load">72<em>%</em></div></div>
+        <div class="cell"><div class="k" data-i18n="hero.readVolt">Tensión</div><div class="v" id="r-volt">13.8<em>kV</em></div></div>
+        <div class="cell"><div class="k" data-i18n="hero.readFreq">Frec</div><div class="v" id="r-freq">60.0<em>Hz</em></div></div>
       </div>
     </div>
   </div>
@@ -765,9 +766,9 @@
 <!-- =============== SERVICIOS =============== -->
 <section class="panel" id="hacemos">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Qué Hacemos</span></div>
-    <h2 class="section-title rv rv-1">Soluciones energéticas industriales <span class="amber">simples, escalables y confiables.</span></h2>
-    <p class="section-lede rv rv-2">Desde la gestión de KVAs hasta infraestructura de alta tensión, entregamos sistemas que mantienen en movimiento a la industria.</p>
+    <div class="rv"><span class="kicker" data-i18n="servicios.kicker">Qué Hacemos</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="servicios.title">Soluciones energéticas industriales <span class="amber">simples, escalables y confiables.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="servicios.lede">Desde la gestión de KVAs hasta infraestructura de alta tensión, entregamos sistemas que mantienen en movimiento a la industria.</p>
 
     <div class="services-grid">
       <article class="svc-card svc-card-1 rv rv-1" data-svc>
@@ -778,9 +779,9 @@
           <div class="svc-ico">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
           </div>
-          <h3 class="svc-title">Generación en Sitio — PPA / Cero CAPEX</h3>
-          <p class="svc-desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
-          <span class="svc-arrow">Leer más <span>→</span></span>
+          <h3 class="svc-title" data-i18n="servicios.card1Title">Generación en Sitio — PPA / Cero CAPEX</h3>
+          <p class="svc-desc" data-i18n="servicios.card1Desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
+          <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
       </article>
       <article class="svc-card svc-card-2 rv rv-2" data-svc>
@@ -791,9 +792,9 @@
           <div class="svc-ico">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg>
           </div>
-          <h3 class="svc-title">Infraestructura de Media y Alta Tensión</h3>
-          <p class="svc-desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
-          <span class="svc-arrow">Leer más <span>→</span></span>
+          <h3 class="svc-title" data-i18n="servicios.card2Title">Infraestructura de Media y Alta Tensión</h3>
+          <p class="svc-desc" data-i18n="servicios.card2Desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
+          <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
       </article>
       <article class="svc-card svc-card-3 rv rv-3" data-svc>
@@ -804,13 +805,13 @@
           <div class="svc-ico">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           </div>
-          <h3 class="svc-title">Sistemas Solares y Baterías de Respaldo</h3>
-          <p class="svc-desc">Suministro continuo y diversificado para operaciones críticas. Redundancia, estabilidad de voltaje y cumplimiento ESG sin fricciones.</p>
-          <span class="svc-arrow">Leer más <span>→</span></span>
+          <h3 class="svc-title" data-i18n="servicios.card3Title">Sistemas Solares y Baterías de Respaldo</h3>
+          <p class="svc-desc" data-i18n="servicios.card3Desc">Suministro continuo y diversificado para operaciones críticas. Redundancia, estabilidad de voltaje y cumplimiento ESG sin fricciones.</p>
+          <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
       </article>
     </div>
-    <a href="que-hacemos.html" class="btn-discover">Descubre más →</a>
+    <a href="que-hacemos.html" class="btn-discover" data-i18n="servicios.discoverMore">Descubre más →</a>
   </div>
 </section>
 
@@ -819,24 +820,24 @@
 <!-- =============== POR QUÉ IMPORTA =============== -->
 <section class="panel" id="importa">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Por Qué Importa</span></div>
-    <h2 class="section-title rv rv-1">Cuando la red eléctrica dice no, <span class="amber">M2 Energy dice sí.</span></h2>
-    <p class="section-lede rv rv-2">Eliminamos las barreras del nearshoring (saturación de KVAs) con expansión escalable de subestaciones y generación en sitio.</p>
+    <div class="rv"><span class="kicker" data-i18n="importa.kicker">Por Qué Importa</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="importa.title">Cuando la red eléctrica dice no, <span class="amber">M2 Energy dice sí.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="importa.lede">Eliminamos las barreras del nearshoring (saturación de KVAs) con expansión escalable de subestaciones y generación en sitio.</p>
 
     <div class="two-col">
-      <div class="video-card rv rv-1" id="vidCard" role="button" tabindex="0" aria-label="Reproducir video M2 Energy">
+      <div class="video-card rv rv-1" id="vidCard" role="button" tabindex="0" data-i18n-aria="importa.videoAria" aria-label="Reproducir video M2 Energy">
         <img class="vc-poster" src="https://m2energy.org/wp-content/uploads/2026/02/thumbnail-m2energy.png" alt="" onerror="this.style.display='none'"/>
         <span class="vc-label">Demo · M2 Energy</span>
         <div class="vc-play"><div class="circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="vc-caption">Mira cómo destrabamos el futuro industrial de México.</div>
+        <div class="vc-caption" data-i18n="importa.videoCaption">Mira cómo destrabamos el futuro industrial de México.</div>
       </div>
       <div class="rv rv-2">
-        <h3 style="font-family:'Space Grotesk';font-size:28px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px">¿Tu expansión está frenada por la red eléctrica?</h3>
-        <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.65">No dejes que la falta de capacidad detenga tus proyectos de <strong style="color:var(--ink)">nearshoring</strong>. Diseñamos y operamos soluciones de hasta 20 MW en sitio con <strong style="color:var(--amber)">Cero CAPEX</strong>.</p>
+        <h3 style="font-family:'Space Grotesk';font-size:28px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px" data-i18n="importa.h3">¿Tu expansión está frenada por la red eléctrica?</h3>
+        <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.65" data-i18n-html="importa.p">No dejes que la falta de capacidad detenga tus proyectos de <strong style="color:var(--ink)">nearshoring</strong>. Diseñamos y operamos soluciones de hasta 20 MW en sitio con <strong style="color:var(--amber)">Cero CAPEX</strong>.</p>
         <ul class="why-list">
-          <li><div class="tick">✓</div><span><strong>Destrabamos proyectos detenidos</strong> por falta de capacidad con generación en sitio y expansión de subestaciones.</span></li>
-          <li><div class="tick">✓</div><span><strong>Gestión completa ante CENACE, CFE y CNE</strong> — ingeniería, permisos, construcción y puesta en marcha bajo un único punto de contacto.</span></li>
-          <li><div class="tick">✓</div><span><strong>Libertad de fabricantes</strong> — elegimos la tecnología más eficiente para tus necesidades, no la de un catálogo cerrado.</span></li>
+          <li><div class="tick">✓</div><span data-i18n-html="importa.bullet1"><strong>Destrabamos proyectos detenidos</strong> por falta de capacidad con generación en sitio y expansión de subestaciones.</span></li>
+          <li><div class="tick">✓</div><span data-i18n-html="importa.bullet2"><strong>Gestión completa ante CENACE, CFE y CNE</strong> — ingeniería, permisos, construcción y puesta en marcha bajo un único punto de contacto.</span></li>
+          <li><div class="tick">✓</div><span data-i18n-html="importa.bullet3"><strong>Libertad de fabricantes</strong> — elegimos la tecnología más eficiente para tus necesidades, no la de un catálogo cerrado.</span></li>
         </ul>
       </div>
     </div>
@@ -859,7 +860,7 @@
         <span class="marquee-item">CFE</span>
       </div>
     </div>
-    <a href="por-que-importa.html" class="btn-discover">Descubre más →</a>
+    <a href="por-que-importa.html" class="btn-discover" data-i18n="importa.discoverMore">Descubre más →</a>
   </div>
 </section>
 
@@ -868,24 +869,24 @@
 <!-- =============== CÓMO TRABAJAMOS · EPC =============== -->
 <section class="panel" id="trabajamos">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Cómo Trabajamos</span></div>
-    <h2 class="section-title rv rv-1">De la planeación a la operación, <span class="amber">todo bajo un mismo techo.</span></h2>
-    <p class="section-lede rv rv-2">Cada proyecto avanza bajo la figura EPC (Engineering, Procurement & Construction). Nos encargamos de todo el ciclo de vida.</p>
+    <div class="rv"><span class="kicker" data-i18n="trabajamos.kicker">Cómo Trabajamos</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="trabajamos.title">De la planeación a la operación, <span class="amber">todo bajo un mismo techo.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="trabajamos.lede">Cada proyecto avanza bajo la figura EPC (Engineering, Procurement & Construction). Nos encargamos de todo el ciclo de vida.</p>
 
     <div class="epc-wrap">
       <div class="epc-line"></div>
-      <div class="epc-step rv"><div class="epc-num">01</div><h3>Evaluación y Diagnóstico</h3><p>Diseño conceptual y análisis de demanda, picos y capacidad. Identificamos cuellos de botella antes de que se vuelvan problema.</p></div>
-      <div class="epc-step rv rv-1"><div class="epc-num">02</div><h3>Ingeniería de Detalle</h3><p>Desarrollo de ingeniería básica y especializada para la correcta elaboración del CAPEX y los planos ejecutivos.</p></div>
-      <div class="epc-step rv rv-2"><div class="epc-num">03</div><h3>Gestión y Permisos</h3><p>Tramitología completa ante CENACE, CFE y CRE para destrabar proyectos detenidos.</p></div>
-      <div class="epc-step rv rv-3"><div class="epc-num">04</div><h3>Procura y Construcción</h3><p>Administración de activos y ejecución impecable hasta la puesta en marcha. Control total de plazos y costos.</p></div>
-      <div class="epc-step rv rv-4"><div class="epc-num">05</div><h3>Operación y Optimización</h3><p>Gestión continua de activos y reportes de desempeño para garantizar resultados 24/7.</p></div>
+      <div class="epc-step rv"><div class="epc-num">01</div><h3 data-i18n="trabajamos.step1h3">Evaluación y Diagnóstico</h3><p data-i18n="trabajamos.step1p">Diseño conceptual y análisis de demanda, picos y capacidad. Identificamos cuellos de botella antes de que se vuelvan problema.</p></div>
+      <div class="epc-step rv rv-1"><div class="epc-num">02</div><h3 data-i18n="trabajamos.step2h3">Ingeniería de Detalle</h3><p data-i18n="trabajamos.step2p">Desarrollo de ingeniería básica y especializada para la correcta elaboración del CAPEX y los planos ejecutivos.</p></div>
+      <div class="epc-step rv rv-2"><div class="epc-num">03</div><h3 data-i18n="trabajamos.step3h3">Gestión y Permisos</h3><p data-i18n="trabajamos.step3p">Tramitología completa ante CENACE, CFE y CRE para destrabar proyectos detenidos.</p></div>
+      <div class="epc-step rv rv-3"><div class="epc-num">04</div><h3 data-i18n="trabajamos.step4h3">Procura y Construcción</h3><p data-i18n="trabajamos.step4p">Administración de activos y ejecución impecable hasta la puesta en marcha. Control total de plazos y costos.</p></div>
+      <div class="epc-step rv rv-4"><div class="epc-num">05</div><h3 data-i18n="trabajamos.step5h3">Operación y Optimización</h3><p data-i18n="trabajamos.step5p">Gestión continua de activos y reportes de desempeño para garantizar resultados 24/7.</p></div>
     </div>
     <div class="epc-visual rv">
       <img src="assets/images/epc-construccion.png" alt="Construcción industrial EPC M2 Energy — grúas y estructura de acero">
       <div class="epc-visual-overlay"></div>
       <div class="epc-visual-label">
-        <span>EPC · Llave en mano</span>
-        <p>Ingeniería, procura y construcción bajo un solo punto de contacto.</p>
+        <span data-i18n="trabajamos.visualLabel">EPC · Llave en mano</span>
+        <p data-i18n="trabajamos.visualP">Ingeniería, procura y construcción bajo un solo punto de contacto.</p>
       </div>
     </div>
   </div>
@@ -896,34 +897,34 @@
 <!-- =============== RESULTADOS =============== -->
 <section class="panel" id="resultados">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Resultados</span></div>
-    <h2 class="section-title rv rv-1">Impacto medible y <span class="amber">desempeño garantizado.</span></h2>
-    <p class="section-lede rv rv-2">Costos energéticos más bajos, mayor confiabilidad y proyectos que avanzan — sin detenerse. Esa es la diferencia M2 Energy.</p>
+    <div class="rv"><span class="kicker" data-i18n="resultados.kicker">Resultados</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="resultados.title">Impacto medible y <span class="amber">desempeño garantizado.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="resultados.lede">Costos energéticos más bajos, mayor confiabilidad y proyectos que avanzan — sin detenerse. Esa es la diferencia M2 Energy.</p>
 
     <div class="results-grid">
       <div class="res-card rv rv-1">
         <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
-        <div class="res-num" data-count="30" data-suffix="%"><sub>hasta</sub> 0%</div>
-        <div class="res-title">Ahorro inmediato</div>
-        <div class="res-desc">Reducción del costo energético respaldada por datos transparentes y verificables.</div>
+        <div class="res-num" data-count="30" data-suffix="%"><sub data-i18n="resultados.hasta">hasta</sub> 0%</div>
+        <div class="res-title" data-i18n="resultados.card1Title">Ahorro inmediato</div>
+        <div class="res-desc" data-i18n="resultados.card1Desc">Reducción del costo energético respaldada por datos transparentes y verificables.</div>
       </div>
       <div class="res-card rv rv-2">
         <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
         <div class="res-num" data-count="99.98" data-suffix="%">0%</div>
-        <div class="res-title">Cero interrupciones</div>
-        <div class="res-desc">Diseño resiliente con redundancia operativa para cargas críticas 24/7.</div>
+        <div class="res-title" data-i18n="resultados.card2Title">Cero interrupciones</div>
+        <div class="res-desc" data-i18n="resultados.card2Desc">Diseño resiliente con redundancia operativa para cargas críticas 24/7.</div>
       </div>
       <div class="res-card rv rv-3">
         <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h20v12H2z"/><path d="M6 9V5h12v4"/><path d="M10 14h4"/></svg></div>
         <div class="res-num" data-count="0" data-prefix="$" data-suffix="">$0</div>
-        <div class="res-title">Cero CAPEX</div>
-        <div class="res-desc">Financiamiento flexible alineado a tu plan de crecimiento: CAPEX, OPEX o híbrido.</div>
+        <div class="res-title" data-i18n="resultados.card3Title">Cero CAPEX</div>
+        <div class="res-desc" data-i18n="resultados.card3Desc">Financiamiento flexible alineado a tu plan de crecimiento: CAPEX, OPEX o híbrido.</div>
       </div>
       <div class="res-card rv rv-4">
         <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></div>
         <div class="res-num" data-count="100" data-suffix="%">0%</div>
-        <div class="res-title">Integración ESG</div>
-        <div class="res-desc">Cumple compromisos ambientales, sociales y de gobernanza sin fricciones.</div>
+        <div class="res-title" data-i18n="resultados.card4Title">Integración ESG</div>
+        <div class="res-desc" data-i18n="resultados.card4Desc">Cumple compromisos ambientales, sociales y de gobernanza sin fricciones.</div>
       </div>
     </div>
   </div>
@@ -934,36 +935,36 @@
 <!-- =============== INDUSTRIAS =============== -->
 <section class="panel" id="industrias">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Sectores e Industrias</span></div>
-    <h2 class="section-title rv rv-1">Impulsando la nueva era industrial de <span class="amber">México.</span></h2>
-    <p class="section-lede rv rv-2">Generamos valor en los entornos más exigentes, optimizando la energía para los motores de la economía productiva.</p>
+    <div class="rv"><span class="kicker" data-i18n="industrias.kicker">Sectores e Industrias</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="industrias.title">Impulsando la nueva era industrial de <span class="amber">México.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="industrias.lede">Generamos valor en los entornos más exigentes, optimizando la energía para los motores de la economía productiva.</p>
 
     <div class="ind-grid">
       <article class="ind-card rv rv-1">
         <div class="ind-bg ind-pattern-1"></div>
         <div class="ind-overlay"></div>
         <div class="ind-body">
-          <span class="ind-num">Sector 01</span>
-          <h3>Manufactura y Automotriz</h3>
-          <p>Nearshoring y alta tecnología. Energía estable para innovación y cadenas de suministro globales.</p>
+          <span class="ind-num" data-i18n="industrias.card1Num">Sector 01</span>
+          <h3 data-i18n="industrias.card1Title">Manufactura y Automotriz</h3>
+          <p data-i18n="industrias.card1Desc">Nearshoring y alta tecnología. Energía estable para innovación y cadenas de suministro globales.</p>
         </div>
       </article>
       <article class="ind-card rv rv-2">
         <div class="ind-bg ind-pattern-2"></div>
         <div class="ind-overlay"></div>
         <div class="ind-body">
-          <span class="ind-num">Sector 02</span>
-          <h3>Data Centers y Logística</h3>
-          <p>Carga crítica y cero fallas. Garantizamos carga constante y cero margen de error 24/7.</p>
+          <span class="ind-num" data-i18n="industrias.card2Num">Sector 02</span>
+          <h3 data-i18n="industrias.card2Title">Data Centers y Logística</h3>
+          <p data-i18n="industrias.card2Desc">Carga crítica y cero fallas. Garantizamos carga constante y cero margen de error 24/7.</p>
         </div>
       </article>
       <article class="ind-card rv rv-3">
         <div class="ind-bg ind-pattern-3"></div>
         <div class="ind-overlay"></div>
         <div class="ind-body">
-          <span class="ind-num">Sector 03</span>
-          <h3>Parques Industriales</h3>
-          <p>Infraestructura llave en mano para parques industriales y centros de distribución de alta escala.</p>
+          <span class="ind-num" data-i18n="industrias.card3Num">Sector 03</span>
+          <h3 data-i18n="industrias.card3Title">Parques Industriales</h3>
+          <p data-i18n="industrias.card3Desc">Infraestructura llave en mano para parques industriales y centros de distribución de alta escala.</p>
         </div>
       </article>
     </div>
@@ -975,16 +976,16 @@
 <!-- =============== POR QUÉ ELEGIRNOS · FAQ =============== -->
 <section class="panel" id="elegirnos">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Por Qué Elegirnos</span></div>
-    <h2 class="section-title rv rv-1">Tu socio estratégico en <span class="amber">potencia industrial.</span></h2>
-    <p class="section-lede rv rv-2">Somos consultores y desarrolladores que ofrecen una verdadera solución integral bajo un enfoque independiente de fabricantes.</p>
+    <div class="rv"><span class="kicker" data-i18n="elegirnos.kicker">Por Qué Elegirnos</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="elegirnos.title">Tu socio estratégico en <span class="amber">potencia industrial.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="elegirnos.lede">Somos consultores y desarrolladores que ofrecen una verdadera solución integral bajo un enfoque independiente de fabricantes.</p>
 
     <div class="faq">
-      <div class="faq-item rv"><button class="faq-q"><span>¿Qué significa que ofrecen una "integración completa" en sus proyectos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">M2 Energy gestiona la cadena energética de extremo a extremo. No solo instalamos equipos; conectamos su operación desde el punto de acometida de la red nacional hasta los sistemas de generación en sitio y almacenamiento. Al ser un único punto de contacto para ingeniería, permisología ante CENACE/CFE y construcción, garantizamos que todos los sistemas operen con máxima eficiencia.</div></div></div>
-      <div class="faq-item rv"><button class="faq-q"><span>¿Están preparados para gestionar demandas de alta tecnología o automotriz?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutamente. Contamos con amplia experiencia en entornos industriales donde la carga es crítica y el costo de un minuto de inactividad es millonario. Diseñamos infraestructura resiliente específicamente para centros de datos, fabricantes de vehículos eléctricos y manufactura pesada, asegurando redundancia y estabilidad de voltaje incluso en las zonas con redes más inestables.</div></div></div>
-      <div class="faq-item rv"><button class="faq-q"><span>No tenemos presupuesto de capital — ¿cómo implementamos una solución?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Si buscan <strong>Cero CAPEX</strong>, podemos implementar un modelo OPEX mediante un contrato de venta de energía (PPA) o renta, donde ustedes solo pagan por el servicio o la energía consumida. También ofrecemos modelos híbridos que combinan inversión propia con financiamiento externo, alineando el proyecto a sus flujos de caja.</div></div></div>
-      <div class="faq-item rv"><button class="faq-q"><span>Tenemos un proyecto detenido por falta de capacidad en la red. ¿Pueden ayudarnos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">Esa es una de nuestras mayores especialidades. Destrabamos proyectos mediante la ingeniería de expansión de subestaciones o la implementación de generación en sitio inmediata. Analizamos las restricciones técnicas y legales para encontrar rutas alternativas que permitan iniciar operaciones sin esperar años a que la infraestructura de la red nacional se actualice.</div></div></div>
-      <div class="faq-item rv"><button class="faq-q"><span>¿Qué diferencia a M2 Energy de un proveedor de equipos tradicional?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner">A diferencia de un proveedor de equipos o empresa de construcción, nosotros somos <strong>consultores y desarrolladores independientes</strong>. No estamos atados a una marca específica, lo que nos permite elegir la tecnología más eficiente y el modelo financiero que mejor se adapte a tus necesidades, garantizando siempre tu libertad energética.</div></div></div>
+      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq1q">¿Qué significa que ofrecen una "integración completa" en sus proyectos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq1a">M2 Energy gestiona la cadena energética de extremo a extremo. No solo instalamos equipos; conectamos su operación desde el punto de acometida de la red nacional hasta los sistemas de generación en sitio y almacenamiento. Al ser un único punto de contacto para ingeniería, permisología ante CENACE/CFE y construcción, garantizamos que todos los sistemas operen con máxima eficiencia.</div></div></div>
+      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq2q">¿Están preparados para gestionar demandas de alta tecnología o automotriz?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq2a">Absolutamente. Contamos con amplia experiencia en entornos industriales donde la carga es crítica y el costo de un minuto de inactividad es millonario. Diseñamos infraestructura resiliente específicamente para centros de datos, fabricantes de vehículos eléctricos y manufactura pesada, asegurando redundancia y estabilidad de voltaje incluso en las zonas con redes más inestables.</div></div></div>
+      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq3q">No tenemos presupuesto de capital — ¿cómo implementamos una solución?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n-html="elegirnos.faq3a">Si buscan <strong>Cero CAPEX</strong>, podemos implementar un modelo OPEX mediante un contrato de venta de energía (PPA) o renta, donde ustedes solo pagan por el servicio o la energía consumida. También ofrecemos modelos híbridos que combinan inversión propia con financiamiento externo, alineando el proyecto a sus flujos de caja.</div></div></div>
+      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq4q">Tenemos un proyecto detenido por falta de capacidad en la red. ¿Pueden ayudarnos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq4a">Esa es una de nuestras mayores especialidades. Destrabamos proyectos mediante la ingeniería de expansión de subestaciones o la implementación de generación en sitio inmediata. Analizamos las restricciones técnicas y legales para encontrar rutas alternativas que permitan iniciar operaciones sin esperar años a que la infraestructura de la red nacional se actualice.</div></div></div>
+      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq5q">¿Qué diferencia a M2 Energy de un proveedor de equipos tradicional?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n-html="elegirnos.faq5a">A diferencia de un proveedor de equipos o empresa de construcción, nosotros somos <strong>consultores y desarrolladores independientes</strong>. No estamos atados a una marca específica, lo que nos permite elegir la tecnología más eficiente y el modelo financiero que mejor se adapte a tus necesidades, garantizando siempre tu libertad energética.</div></div></div>
     </div>
   </div>
 </section>
@@ -994,27 +995,27 @@
 <!-- =============== FORM =============== -->
 <section class="panel form-section" id="contacto">
   <div class="wrap">
-    <div class="rv"><span class="kicker">Siguiente Paso</span></div>
-    <h2 class="section-title rv rv-1">Impulsemos tu expansión energética, <span class="amber">juntos.</span></h2>
-    <p class="section-lede rv rv-2">Diagnóstico gratuito de 5 minutos · Sin compromiso · Resultados en 24 horas.</p>
+    <div class="rv"><span class="kicker" data-i18n="contacto.kicker">Siguiente Paso</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="contacto.title">Impulsemos tu expansión energética, <span class="amber">juntos.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="contacto.lede">Diagnóstico gratuito de 5 minutos · Sin compromiso · Resultados en 24 horas.</p>
 
     <div class="form-shell">
       <div class="form-side rv rv-1">
-        <h3>Cuéntanos de tu proyecto.</h3>
-        <p>Completa el formulario y nuestro equipo se comunicará dentro de las próximas <strong style="color:var(--amber)">24 horas</strong> para discutir tu proyecto y cómo podemos destrabarlo.</p>
+        <h3 data-i18n="contacto.sideH3">Cuéntanos de tu proyecto.</h3>
+        <p data-i18n-html="contacto.sideP">Completa el formulario y nuestro equipo se comunicará dentro de las próximas <strong style="color:var(--amber)">24 horas</strong> para discutir tu proyecto y cómo podemos destrabarlo.</p>
 
         <div class="meta">
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.11 1 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 013.19 4.11 1 1 0 014.18 3h4.09a1 1 0 011 .75 12.84 12.84 0 00.7 2.81 1 1 0 01-.22 1.05L8.09 9.29a16 16 0 006 6l1.68-1.68a1 1 0 011-.22 12.84 12.84 0 002.82.7 1 1 0 01.75 1z"/></svg></div>
-            <div><div class="k">Llámanos</div><div class="v">+1 (512) 504-6581</div></div>
+            <div><div class="k" data-i18n="contacto.contactPhone">Llámanos</div><div class="v">+1 (512) 504-6581</div></div>
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
-            <div><div class="k">Email</div><div class="v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="701d11021b1504191e17301d42151e150217095e1f0217">[email&#160;protected]</a></div></div>
+            <div><div class="k" data-i18n="contacto.contactEmail">Email</div><div class="v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="701d11021b1504191e17301d42151e150217095e1f0217">[email&#160;protected]</a></div></div>
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><div class="k">Oficinas</div><div class="v">Austin, TX · Chihuahua, MX</div></div>
+            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v" data-i18n="contacto.contactOfficesVal">Austin, TX · Chihuahua, MX</div></div>
           </div>
         </div>
       </div>
@@ -1031,26 +1032,26 @@
         <div class="step active" data-step="1">
           <div class="step-head">
             <div>
-              <div class="n">Sección A · Contacto</div>
-              <h4>Información de contacto</h4>
+              <div class="n" data-i18n="contacto.stepALabel">Sección A · Contacto</div>
+              <h4 data-i18n="contacto.stepAH4">Información de contacto</h4>
             </div>
             <div class="counter">01 / 04</div>
           </div>
           <div class="field-row">
-            <div class="field"><label>Empresa <span class="req">*</span></label><input type="text" data-f="company" placeholder="Nombre de la empresa"/></div>
-            <div class="field"><label>Nombre <span class="req">*</span></label><input type="text" data-f="name" placeholder="Tu nombre completo"/></div>
+            <div class="field"><label><span data-i18n="contacto.labelCompany">Empresa</span> <span class="req">*</span></label><input type="text" data-f="company" data-i18n-placeholder="contacto.placeholderCompany" placeholder="Nombre de la empresa"/></div>
+            <div class="field"><label><span data-i18n="contacto.labelName">Nombre</span> <span class="req">*</span></label><input type="text" data-f="name" data-i18n-placeholder="contacto.placeholderName" placeholder="Tu nombre completo"/></div>
           </div>
           <div class="field-row">
-            <div class="field"><label>Cargo / Rol <span class="req">*</span></label><input type="text" data-f="role" placeholder="p.ej. Director de Operaciones"/></div>
-            <div class="field"><label>Email <span class="req">*</span></label><input type="email" data-f="email" placeholder="correo@empresa.com"/></div>
+            <div class="field"><label><span data-i18n="contacto.labelRole">Cargo / Rol</span> <span class="req">*</span></label><input type="text" data-f="role" data-i18n-placeholder="contacto.placeholderRole" placeholder="p.ej. Director de Operaciones"/></div>
+            <div class="field"><label><span data-i18n="contacto.labelEmail">Email</span> <span class="req">*</span></label><input type="email" data-f="email" data-i18n-placeholder="contacto.placeholderEmail" placeholder="correo@empresa.com"/></div>
           </div>
           <div class="field-row">
-            <div class="field"><label>Teléfono</label><input type="tel" data-f="phone" placeholder="+52 ..."/></div>
-            <div class="field"><label>Idioma preferido</label><select data-f="lang"><option>Español</option><option>English</option></select></div>
+            <div class="field"><label data-i18n="contacto.labelPhone">Teléfono</label><input type="tel" data-f="phone" data-i18n-placeholder="contacto.placeholderPhone" placeholder="+52 ..."/></div>
+            <div class="field"><label data-i18n="contacto.labelLang">Idioma preferido</label><select data-f="lang"><option data-i18n="contacto.optionSpanish">Español</option><option data-i18n="contacto.optionEnglish">English</option></select></div>
           </div>
           <div class="form-nav">
             <span></span>
-            <button class="btn btn-primary" data-next>Siguiente <span class="arrow">→</span></button>
+            <button class="btn btn-primary" data-next><span data-i18n="contacto.btnNext">Siguiente</span> <span class="arrow">→</span></button>
           </div>
         </div>
 
@@ -1058,40 +1059,40 @@
         <div class="step" data-step="2">
           <div class="step-head">
             <div>
-              <div class="n">Sección B · Proyecto</div>
-              <h4>Descripción general</h4>
+              <div class="n" data-i18n="contacto.stepBLabel">Sección B · Proyecto</div>
+              <h4 data-i18n="contacto.stepBH4">Descripción general</h4>
             </div>
             <div class="counter">02 / 04</div>
           </div>
 
           <div class="field full" style="margin-bottom:18px">
-            <label>Tipo de proyecto</label>
+            <label data-i18n="contacto.labelProjectType">Tipo de proyecto</label>
             <div class="chip-row" data-multi="ptype">
-              <div class="chip">Nueva planta</div>
-              <div class="chip">Expansión</div>
-              <div class="chip">Parque industrial</div>
-              <div class="chip">Relocalización</div>
+              <div class="chip" data-i18n="contacto.chipNewPlant">Nueva planta</div>
+              <div class="chip" data-i18n="contacto.chipExpansion">Expansión</div>
+              <div class="chip" data-i18n="contacto.chipIndustrialPark">Parque industrial</div>
+              <div class="chip" data-i18n="contacto.chipRelocation">Relocalización</div>
             </div>
           </div>
 
           <div class="field-row">
-            <div class="field"><label>Etapa actual</label><select data-f="stage"><option value="">Selecciona...</option><option>Planeación</option><option>Selección de sitio</option><option>Diseño</option><option>Construcción</option><option>Operación</option></select></div>
-            <div class="field"><label>Ubicación (ciudad, estado)</label><input type="text" data-f="loc" placeholder="Chihuahua, Chih."/></div>
+            <div class="field"><label data-i18n="contacto.labelStage">Etapa actual</label><select data-f="stage"><option value="" data-i18n="contacto.optionSelect">Selecciona...</option><option data-i18n="contacto.optionPlanning">Planeación</option><option data-i18n="contacto.optionSiteSelection">Selección de sitio</option><option data-i18n="contacto.optionDesign">Diseño</option><option data-i18n="contacto.optionConstruction">Construcción</option><option data-i18n="contacto.optionOperation">Operación</option></select></div>
+            <div class="field"><label data-i18n="contacto.labelLocation">Ubicación (ciudad, estado)</label><input type="text" data-f="loc" data-i18n-placeholder="contacto.placeholderLocation" placeholder="Chihuahua, Chih."/></div>
           </div>
 
           <div class="field-row">
-            <div class="field"><label>Fecha objetivo de arranque</label><input type="date" data-f="golive"/></div>
-            <div class="field"><label>Carga estimada (kVA)</label><input type="number" data-f="kva" placeholder="2500"/></div>
+            <div class="field"><label data-i18n="contacto.labelGoLive">Fecha objetivo de arranque</label><input type="date" data-f="golive"/></div>
+            <div class="field"><label data-i18n="contacto.labelKva">Carga estimada (kVA)</label><input type="number" data-f="kva" data-i18n-placeholder="contacto.placeholderKva" placeholder="2500"/></div>
           </div>
 
           <div class="field full" style="margin-top:4px">
-            <label>Describe tu necesidad o desafío actual</label>
-            <textarea data-f="msg" placeholder="Cuéntanos brevemente el reto energético que enfrentas..."></textarea>
+            <label data-i18n="contacto.labelMessage">Describe tu necesidad o desafío actual</label>
+            <textarea data-f="msg" data-i18n-placeholder="contacto.placeholderMessage" placeholder="Cuéntanos brevemente el reto energético que enfrentas..."></textarea>
           </div>
 
           <div class="form-nav">
-            <button class="btn btn-ghost" data-prev>← Atrás</button>
-            <button class="btn btn-primary" data-next>Siguiente <span class="arrow">→</span></button>
+            <button class="btn btn-ghost" data-prev data-i18n="contacto.btnBack">← Atrás</button>
+            <button class="btn btn-primary" data-next><span data-i18n="contacto.btnNext">Siguiente</span> <span class="arrow">→</span></button>
           </div>
         </div>
 
@@ -1099,52 +1100,52 @@
         <div class="step" data-step="3">
           <div class="step-head">
             <div>
-              <div class="n">Sección C · ECRA</div>
-              <h4>Diagnóstico de preparación energética</h4>
+              <div class="n" data-i18n="contacto.stepCLabel">Sección C · ECRA</div>
+              <h4 data-i18n="contacto.stepCH4">Diagnóstico de preparación energética</h4>
             </div>
             <div class="counter">03 / 04</div>
           </div>
 
           <div class="slider-field">
-            <div class="label-row"><label style="font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase">kVA necesarios</label><span class="val" id="kvaVal">2,500 kVA</span></div>
+            <div class="label-row"><label style="font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase" data-i18n="contacto.labelKvaSlider">kVA necesarios</label><span class="val" id="kvaVal">2,500 kVA</span></div>
             <input type="range" min="100" max="20000" step="100" value="2500" id="kvaRange"/>
           </div>
 
           <div class="slider-field">
-            <div class="label-row"><label style="font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase">Crecimiento proyectado (5 años)</label><span class="val" id="growVal">30%</span></div>
+            <div class="label-row"><label style="font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase" data-i18n="contacto.labelGrowthSlider">Crecimiento proyectado (5 años)</label><span class="val" id="growVal">30%</span></div>
             <input type="range" min="0" max="200" step="5" value="30" id="growRange"/>
           </div>
 
           <div class="field full" style="margin-bottom:14px">
-            <label>Perfil de carga</label>
+            <label data-i18n="contacto.labelLoadProfile">Perfil de carga</label>
             <div class="chip-row" data-single="lprofile">
-              <div class="chip">Continua</div>
-              <div class="chip">Mixta</div>
-              <div class="chip">Intermitente</div>
+              <div class="chip" data-i18n="contacto.chipContinuous">Continua</div>
+              <div class="chip" data-i18n="contacto.chipMixed">Mixta</div>
+              <div class="chip" data-i18n="contacto.chipIntermittent">Intermitente</div>
             </div>
           </div>
 
           <div class="field full" style="margin-bottom:14px">
-            <label>Etapa ante CFE</label>
+            <label data-i18n="contacto.labelCfe">Etapa ante CFE</label>
             <div class="chip-row" data-single="cfe">
-              <div class="chip">Sin contacto</div>
-              <div class="chip">Consulta enviada</div>
-              <div class="chip">Factibilidad</div>
-              <div class="chip">Aprobación pendiente</div>
+              <div class="chip" data-i18n="contacto.chipNoContact">Sin contacto</div>
+              <div class="chip" data-i18n="contacto.chipQuerySent">Consulta enviada</div>
+              <div class="chip" data-i18n="contacto.chipFeasibility">Factibilidad</div>
+              <div class="chip" data-i18n="contacto.chipPendingApproval">Aprobación pendiente</div>
             </div>
           </div>
 
           <div style="padding:14px 16px;background:rgba(7,17,26,.5);border:1px solid var(--line);border-radius:12px;margin-top:16px">
-            <label style="display:block;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase;margin-bottom:10px">Autoevaluación de riesgo</label>
-            <div class="risk-row"><span class="lbl">Riesgo de cronograma</span><div class="risk-chips" data-risk="timeline"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
-            <div class="risk-row"><span class="lbl">Disponibilidad de capacidad</span><div class="risk-chips" data-risk="capacity"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
-            <div class="risk-row"><span class="lbl">Infraestructura</span><div class="risk-chips" data-risk="infra"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
-            <div class="risk-row"><span class="lbl">Escalación de costos</span><div class="risk-chips" data-risk="cost"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
+            <label style="display:block;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase;margin-bottom:10px" data-i18n="contacto.labelRiskAssessment">Autoevaluación de riesgo</label>
+            <div class="risk-row"><span class="lbl" data-i18n="contacto.riskSchedule">Riesgo de cronograma</span><div class="risk-chips" data-risk="timeline"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
+            <div class="risk-row"><span class="lbl" data-i18n="contacto.riskCapacity">Disponibilidad de capacidad</span><div class="risk-chips" data-risk="capacity"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
+            <div class="risk-row"><span class="lbl" data-i18n="contacto.riskInfra">Infraestructura</span><div class="risk-chips" data-risk="infra"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
+            <div class="risk-row"><span class="lbl" data-i18n="contacto.riskCost">Escalación de costos</span><div class="risk-chips" data-risk="cost"><div class="risk-chip" data-v="LOW">LOW</div><div class="risk-chip" data-v="MED">MED</div><div class="risk-chip" data-v="HIGH">HIGH</div><div class="risk-chip" data-v="CRIT">CRIT</div></div></div>
           </div>
 
           <div class="form-nav">
-            <button class="btn btn-ghost" data-prev>← Atrás</button>
-            <button class="btn btn-primary" data-next>Generar Resultados →</button>
+            <button class="btn btn-ghost" data-prev data-i18n="contacto.btnBack">← Atrás</button>
+            <button class="btn btn-primary" data-next data-i18n="contacto.btnGenerate">Generar Resultados →</button>
           </div>
         </div>
 
@@ -1152,22 +1153,22 @@
         <div class="step" data-step="4">
           <div class="step-head">
             <div>
-              <div class="n">Sección D · Resultados</div>
-              <h4>Tu diagnóstico ECRA</h4>
+              <div class="n" data-i18n="contacto.stepDLabel">Sección D · Resultados</div>
+              <h4 data-i18n="contacto.stepDH4">Tu diagnóstico ECRA</h4>
             </div>
             <div class="counter">04 / 04</div>
           </div>
 
           <div class="result-panel" id="resultPanel">
             <div class="result-badge" id="rBadge">RIESGO MEDIO</div>
-            <div class="result-score" style="--pct: 60%"><div class="v" id="rScore">60<small>Score ECRA</small></div></div>
+            <div class="result-score" style="--pct: 60%"><div class="v" id="rScore">60<small data-i18n="contacto.scoreLabel">Score ECRA</small></div></div>
             <div class="result-grid">
-              <div class="tile"><div class="k">Demanda</div><div class="v" id="rKva">2,500 kVA</div></div>
-              <div class="tile"><div class="k">Crecimiento</div><div class="v" id="rGrow">30%</div></div>
-              <div class="tile"><div class="k">CFE</div><div class="v" id="rCfe">—</div></div>
+              <div class="tile"><div class="k" data-i18n="contacto.tileKva">Demanda</div><div class="v" id="rKva">2,500 kVA</div></div>
+              <div class="tile"><div class="k" data-i18n="contacto.tileGrowth">Crecimiento</div><div class="v" id="rGrow">30%</div></div>
+              <div class="tile"><div class="k" data-i18n="contacto.tileCfe">CFE</div><div class="v" id="rCfe">—</div></div>
             </div>
             <div class="result-actions">
-              <h5>→ Acciones recomendadas</h5>
+              <h5 data-i18n="contacto.actionsTitle">→ Acciones recomendadas</h5>
               <ul id="rActions">
                 <li>Solicitar factibilidad ante CENACE/CFE para reservar capacidad.</li>
                 <li>Evaluar generación en sitio (PPA) para no depender de la red.</li>
@@ -1178,13 +1179,13 @@
 
           <div id="successPanel" class="success" style="display:none">
             <div class="check">✓</div>
-            <h4 style="font-family:'Space Grotesk';font-size:24px;margin-bottom:10px">¡Contacto registrado!</h4>
-            <p style="color:var(--ink-dim);font-size:15px;line-height:1.6;max-width:420px;margin:0 auto">Tu información y diagnóstico ECRA han sido guardados. Nuestro equipo te contactará dentro de las próximas <strong style="color:var(--amber)">24 horas</strong>.</p>
+            <h4 style="font-family:'Space Grotesk';font-size:24px;margin-bottom:10px" data-i18n="contacto.successH4">¡Contacto registrado!</h4>
+            <p style="color:var(--ink-dim);font-size:15px;line-height:1.6;max-width:420px;margin:0 auto" data-i18n-html="contacto.successP">Tu información y diagnóstico ECRA han sido guardados. Nuestro equipo te contactará dentro de las próximas <strong style="color:var(--amber)">24 horas</strong>.</p>
           </div>
 
           <div class="form-nav" id="nav4">
-            <button class="btn btn-ghost" data-prev>← Editar</button>
-            <button class="btn btn-primary" id="submitBtn">Enviar y contactar a M2 <span class="arrow">→</span></button>
+            <button class="btn btn-ghost" data-prev data-i18n="contacto.btnEdit">← Editar</button>
+            <button class="btn btn-primary" id="submitBtn"><span data-i18n="contacto.btnSubmit">Enviar y contactar a M2</span> <span class="arrow">→</span></button>
           </div>
         </div>
 
@@ -1203,29 +1204,29 @@
         </div>
         <div class="brand-text">M2 <span>Energy</span></div>
       </div>
-      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+      <p data-i18n="footer.brandP">M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
     </div>
     <div class="foot-col">
-      <h5>Sitio</h5>
+      <h5 data-i18n="footer.siteHeader">Sitio</h5>
       <ul>
-        <li><a href="#hacemos">Qué Hacemos</a></li>
-        <li><a href="#importa">Por Qué Importa</a></li>
-        <li><a href="#trabajamos">Cómo Trabajamos</a></li>
-        <li><a href="#resultados">Resultados</a></li>
-        <li><a href="#industrias">Industrias</a></li>
+        <li><a href="#hacemos" data-i18n="footer.navWhatWeDo">Qué Hacemos</a></li>
+        <li><a href="#importa" data-i18n="footer.navWhyItMatters">Por Qué Importa</a></li>
+        <li><a href="#trabajamos" data-i18n="footer.navHowWeWork">Cómo Trabajamos</a></li>
+        <li><a href="#resultados" data-i18n="footer.navResults">Resultados</a></li>
+        <li><a href="#industrias" data-i18n="footer.navIndustries">Industrias</a></li>
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Compañía</h5>
+      <h5 data-i18n="footer.companyHeader">Compañía</h5>
       <ul>
-        <li><a href="#elegirnos">Por Qué Elegirnos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#">Aviso de privacidad</a></li>
-        <li><a href="#">Términos de uso</a></li>
+        <li><a href="#elegirnos" data-i18n="footer.companyWhyUs">Por Qué Elegirnos</a></li>
+        <li><a href="#contacto" data-i18n="footer.companyContact">Contacto</a></li>
+        <li><a href="#" data-i18n="footer.companyPrivacy">Aviso de privacidad</a></li>
+        <li><a href="#" data-i18n="footer.companyTerms">Términos de uso</a></li>
       </ul>
     </div>
     <div class="foot-col">
-      <h5>Contacto</h5>
+      <h5 data-i18n="footer.contactHeader">Contacto</h5>
       <ul>
         <li><a href="#">Austin, Texas 78731</a></li>
         <li><a href="#">Chihuahua, Chih. 31110</a></li>
@@ -1235,8 +1236,8 @@
     </div>
   </div>
   <div class="foot-bar">
-    <span>© 2026 M2E · All rights reserved</span>
-    <span>Energía sin límites · ⚡</span>
+    <span data-i18n="footer.copyright">© 2026 M2E · All rights reserved</span>
+    <span data-i18n="footer.tagline">Energía sin límites · ⚡</span>
   </div>
 </footer>
 
@@ -1693,10 +1694,11 @@ function renderResults(){
 
   const badge = document.getElementById('rBadge');
   const circle = document.querySelector('.result-score');
-  if(score<35){ badge.textContent='RIESGO BAJO'; badge.style.background='rgba(74,222,128,.15)'; badge.style.color='#4ade80'; badge.style.borderColor='rgba(74,222,128,.4)';}
-  else if(score<60){ badge.textContent='RIESGO MEDIO'; badge.style.background='rgba(250,204,21,.15)'; badge.style.color='#facc15'; badge.style.borderColor='rgba(250,204,21,.4)';}
-  else if(score<85){ badge.textContent='RIESGO ALTO'; badge.style.background='rgba(251,146,60,.15)'; badge.style.color='#fb923c'; badge.style.borderColor='rgba(251,146,60,.4)';}
-  else{ badge.textContent='RIESGO CRÍTICO'; badge.style.background='rgba(239,68,68,.15)'; badge.style.color='#ef4444'; badge.style.borderColor='rgba(239,68,68,.5)';}
+  const ecra = (window.M2_TRANSLATIONS && window.M2i18n) ? M2_TRANSLATIONS[M2i18n.getLang()].ecra : null;
+  if(score<35){ badge.textContent=ecra?ecra.riskLow:'RIESGO BAJO'; badge.style.background='rgba(74,222,128,.15)'; badge.style.color='#4ade80'; badge.style.borderColor='rgba(74,222,128,.4)';}
+  else if(score<60){ badge.textContent=ecra?ecra.riskMed:'RIESGO MEDIO'; badge.style.background='rgba(250,204,21,.15)'; badge.style.color='#facc15'; badge.style.borderColor='rgba(250,204,21,.4)';}
+  else if(score<85){ badge.textContent=ecra?ecra.riskHigh:'RIESGO ALTO'; badge.style.background='rgba(251,146,60,.15)'; badge.style.color='#fb923c'; badge.style.borderColor='rgba(251,146,60,.4)';}
+  else{ badge.textContent=ecra?ecra.riskCrit:'RIESGO CRÍTICO'; badge.style.background='rgba(239,68,68,.15)'; badge.style.color='#ef4444'; badge.style.borderColor='rgba(239,68,68,.5)';}
 
   circle.style.setProperty('--pct', score+'%');
   document.getElementById('rScore').innerHTML = score + '<small>Score ECRA</small>';
@@ -1704,13 +1706,14 @@ function renderResults(){
   document.getElementById('rGrow').textContent = grow+'%';
   document.getElementById('rCfe').textContent = cfe;
 
-  // tailor actions
+  // tailor actions (i18n-aware)
   const actions = [];
-  if(score>=60) actions.push('Evaluar generación en sitio (PPA / Cero CAPEX) para eliminar dependencia de la red.');
-  if(cfe==='Sin contacto' || cfe==='Consulta enviada') actions.push('Iniciar gestión de factibilidad ante CENACE y CFE de inmediato.');
-  if(kva>=5000) actions.push('Diseñar subestación dedicada con redundancia N+1 para carga crítica.');
-  if(grow>=50) actions.push('Reservar capacidad adicional proyectada a 5 años para evitar re-ingeniería.');
-  actions.push('Agendar diagnóstico técnico sin costo con el equipo M2 Energy.');
+  const _e = ecra || {action1:'Evaluar generación en sitio (PPA / Cero CAPEX) para eliminar dependencia de la red.',action2:'Iniciar gestión de factibilidad ante CENACE y CFE de inmediato.',action3:'Diseñar subestación dedicada con redundancia N+1 para carga crítica.',action4:'Reservar capacidad adicional proyectada a 5 años para evitar re-ingeniería.',action5:'Agendar diagnóstico técnico sin costo con el equipo M2 Energy.',cfeNoContact:'Sin contacto',cfeQuerySent:'Consulta enviada'};
+  if(score>=60) actions.push(_e.action1);
+  if(cfe===_e.cfeNoContact || cfe===_e.cfeQuerySent || cfe==='Sin contacto' || cfe==='Consulta enviada' || cfe==='No contact' || cfe==='Query submitted') actions.push(_e.action2);
+  if(kva>=5000) actions.push(_e.action3);
+  if(grow>=50) actions.push(_e.action4);
+  actions.push(_e.action5);
   const ul = document.getElementById('rActions');
   ul.innerHTML = actions.map(a=>`<li>${a}</li>`).join('');
 }
@@ -1788,47 +1791,12 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
 })();
 </script>
 
-<!-- =============== GOOGLE TRANSLATE (hidden widget) =============== -->
-<div id="google_translate_element" style="display:none;height:0;overflow:hidden;position:absolute"></div>
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en',autoDisplay:false},'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<!-- =============== LANGUAGE TOGGLE BUTTON =============== -->
-<button class="lang-toggle" id="langToggle" onclick="switchLang()" aria-label="Cambiar idioma / Switch language">
-  <span id="langFlag">🇲🇽</span>
-  <span id="langLabel">ESP</span>
+<!-- =============== LANGUAGE TOGGLE =============== -->
+<button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+  <span id="langFlag">🇺🇸</span>
+  <span id="langLabel">ENG</span>
 </button>
-<script>
-(function(){
-  function getCookie(n){var v='; '+document.cookie,p=v.split('; '+n+'=');if(p.length===2)return p.pop().split(';').shift();return null;}
-  function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
-  function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
-  var c=getCookie('googtrans');
-  var isEN=c&&c.indexOf('/en')>-1;
-  // Script runs after button element — update label immediately (no DOMContentLoaded needed)
-  if(isEN){
-    document.getElementById('langFlag').textContent='🇺🇸';
-    document.getElementById('langLabel').textContent='ENG';
-  }
-  window.switchLang=function(){
-    if(!isEN){
-      // Switch to English
-      setCookie('googtrans','/es/en');
-      window.location.reload();
-    } else {
-      // Switch back to Spanish — clear ALL Google Translate state
-      delCookie('googtrans');
-      try{localStorage.removeItem('googtrans');}catch(e){}
-      try{sessionStorage.removeItem('googtrans');}catch(e){}
-      // Navigate clean (no reload with stale GT state)
-      window.location.href=window.location.pathname+window.location.search;
-    }
-  };
-})();
-</script>
+<script src="assets/js/i18n.js"></script>
+<script>M2i18n.init();</script>
 </body>
 </html>

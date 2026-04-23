@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="assets/js/translations.js"></script>
 <style>
 :root{
   --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
@@ -133,11 +134,7 @@ footer ul a:hover{color:var(--amber)}
 /* LANG TOGGLE */
 .lang-toggle{position:fixed;bottom:28px;left:28px;z-index:9999;display:flex;align-items:center;gap:8px;background:var(--amber);color:#0a1620;border:none;border-radius:999px;padding:11px 20px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;animation:langPulse 2.8s ease-in-out infinite;transition:transform .2s;}
 .lang-toggle:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 32px 8px rgba(246,190,31,.55)}
-.lang-toggle svg{width:15px;height:15px;flex-shrink:0}
 @keyframes langPulse{0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.25),0 0 14px 2px rgba(246,190,31,.3),0 6px 18px -4px rgba(246,190,31,.5)}50%{box-shadow:0 0 0 3px rgba(246,190,31,.45),0 0 26px 6px rgba(246,190,31,.5),0 6px 18px -4px rgba(246,190,31,.7)}}
-.goog-te-banner-frame,.goog-te-menu-frame{display:none!important}
-body{top:0!important}.skiptranslate{display:none!important}
-#google_translate_element{display:none!important;height:0!important;overflow:hidden!important}
 
 @media(max-width:768px){
   .nav{padding:16px 20px}.page-hero-content,.wrap{padding:0 20px}
@@ -158,9 +155,9 @@ body{top:0!important}.skiptranslate{display:none!important}
   </a>
   <a class="nav-back" href="index.html">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Volver al inicio
+    <span data-i18n="pqi.navBack">Volver al inicio</span>
   </a>
-  <a class="nav-cta" href="index.html#contacto">Contáctanos →</a>
+  <a class="nav-cta" href="index.html#contacto" data-i18n="pqi.navCta">Contáctanos →</a>
 </nav>
 
 <!-- HERO -->
@@ -169,13 +166,13 @@ body{top:0!important}.skiptranslate{display:none!important}
   <div class="page-hero-grad"></div>
   <div class="page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Inicio</a>
+      <a href="index.html" data-i18n="pqi.breadcrumbHome">Inicio</a>
       <span>/</span>
-      <span style="color:var(--ink-dim)">Por Qué Importa</span>
+      <span style="color:var(--ink-dim)" data-i18n="pqi.breadcrumbCurrent">Por Qué Importa</span>
     </div>
-    <div class="kicker">El desafío energético</div>
-    <h1>Cuando la red eléctrica dice no,<br><span>México pierde inversiones.</span></h1>
-    <p>El Sistema Nacional de Transmisión enfrenta saturación crítica. Cada día de espera cuesta millones — M2 Energy elimina esa barrera con ingeniería avanzada y generación en sitio.</p>
+    <div class="kicker" data-i18n="pqi.heroKicker">El desafío energético</div>
+    <h1 data-i18n-html="pqi.heroH1">Cuando la red eléctrica dice no,<br><span>México pierde inversiones.</span></h1>
+    <p data-i18n="pqi.heroP">El Sistema Nacional de Transmisión enfrenta saturación crítica. Cada día de espera cuesta millones — M2 Energy elimina esa barrera con ingeniería avanzada y generación en sitio.</p>
   </div>
 </section>
 
@@ -184,20 +181,20 @@ body{top:0!important}.skiptranslate{display:none!important}
   <div class="wrap">
     <div class="kpi-row">
       <div class="kpi-item">
-        <div class="kpi-num">+24<span>meses</span></div>
-        <div class="kpi-lbl">Retraso promedio por falta de capacidad eléctrica</div>
+        <div class="kpi-num"><span data-i18n="pqi.kpi1Num">+24</span><sub data-i18n="pqi.kpi1Sub">meses</sub></div>
+        <div class="kpi-lbl" data-i18n="pqi.kpi1Lbl">Retraso promedio por falta de capacidad eléctrica</div>
       </div>
       <div class="kpi-item">
-        <div class="kpi-num">$0</div>
-        <div class="kpi-lbl">Inversión inicial con modelo PPA de M2 Energy</div>
+        <div class="kpi-num" data-i18n="pqi.kpi2Num">$0</div>
+        <div class="kpi-lbl" data-i18n="pqi.kpi2Lbl">Inversión inicial con modelo PPA de M2 Energy</div>
       </div>
       <div class="kpi-item">
-        <div class="kpi-num">20<span>MW</span></div>
-        <div class="kpi-lbl">Capacidad máxima instalada por proyecto</div>
+        <div class="kpi-num"><span data-i18n="pqi.kpi3Num">20</span><sub data-i18n="pqi.kpi3Sub">MW</sub></div>
+        <div class="kpi-lbl" data-i18n="pqi.kpi3Lbl">Capacidad máxima instalada por proyecto</div>
       </div>
       <div class="kpi-item">
-        <div class="kpi-num">99.98<span>%</span></div>
-        <div class="kpi-lbl">Uptime garantizado en operaciones críticas</div>
+        <div class="kpi-num"><span data-i18n="pqi.kpi4Num">99.98</span><sub data-i18n="pqi.kpi4Sub">%</sub></div>
+        <div class="kpi-lbl" data-i18n="pqi.kpi4Lbl">Uptime garantizado en operaciones críticas</div>
       </div>
     </div>
   </div>
@@ -209,24 +206,24 @@ body{top:0!important}.skiptranslate{display:none!important}
     <div class="challenge-inner">
       <div class="challenge-img">
         <img src="assets/images/red-electrica.png" alt="Red eléctrica saturada — infraestructura nacional de transmisión"/>
-        <span class="img-badge">Desafío 01 / 04</span>
+        <span class="img-badge" data-i18n="pqi.ch1Badge">Desafío 01 / 04</span>
       </div>
       <div class="challenge-text">
-        <span class="tag">Saturación de la Red</span>
-        <h2>El Sistema Nacional de Transmisión está <span class="amber">al límite.</span></h2>
-        <p>México enfrenta niveles críticos de saturación en su red eléctrica nacional. Los parques industriales experimentan retrasos de hasta 24 meses en sus cronogramas por falta de disponibilidad de KVAs en la red tradicional.</p>
+        <span class="tag" data-i18n="pqi.ch1Tag">Saturación de la Red</span>
+        <h2 data-i18n-html="pqi.ch1H2">El Sistema Nacional de Transmisión está <span class="amber">al límite.</span></h2>
+        <p data-i18n="pqi.ch1P">México enfrenta niveles críticos de saturación en su red eléctrica nacional. Los parques industriales experimentan retrasos de hasta 24 meses en sus cronogramas por falta de disponibilidad de KVAs en la red tradicional.</p>
         <ul class="impact-list">
           <li>
             <span class="icon">⚡</span>
-            <div><strong>Capacidad insuficiente</strong>La red CFE no puede absorber la demanda del nearshoring y la industrialización acelerada de México.</div>
+            <div><strong data-i18n="pqi.ch1li1Strong">Capacidad insuficiente</strong><span data-i18n="pqi.ch1li1Text">La red CFE no puede absorber la demanda del nearshoring y la industrialización acelerada de México.</span></div>
           </li>
           <li>
             <span class="icon">📋</span>
-            <div><strong>Trámites interminables</strong>Los procesos de interconexión ante CENACE y CFE pueden tardar entre 18 y 36 meses en completarse.</div>
+            <div><strong data-i18n="pqi.ch1li2Strong">Trámites interminables</strong><span data-i18n="pqi.ch1li2Text">Los procesos de interconexión ante CENACE y CFE pueden tardar entre 18 y 36 meses en completarse.</span></div>
           </li>
           <li>
             <span class="icon">📉</span>
-            <div><strong>Pérdida de inversiones</strong>Empresas globales cancelan o reubican proyectos cuando no encuentran energía disponible.</div>
+            <div><strong data-i18n="pqi.ch1li3Strong">Pérdida de inversiones</strong><span data-i18n="pqi.ch1li3Text">Empresas globales cancelan o reubican proyectos cuando no encuentran energía disponible.</span></div>
           </li>
         </ul>
       </div>
@@ -242,24 +239,24 @@ body{top:0!important}.skiptranslate{display:none!important}
     <div class="challenge-inner reverse">
       <div class="challenge-img">
         <img src="assets/images/sector-manufactura.png" alt="Manufactura y tecnología esperando conexión eléctrica"/>
-        <span class="img-badge">Desafío 02 / 04</span>
+        <span class="img-badge" data-i18n="pqi.ch2Badge">Desafío 02 / 04</span>
       </div>
       <div class="challenge-text">
-        <span class="tag">Sectores en Espera</span>
-        <h2>Industrias de alta tecnología <span class="amber">en pausa forzada.</span></h2>
-        <p>Los sectores más dinámicos de la economía — centros de datos, fabricantes de vehículos eléctricos, manufactura avanzada — sufren largos retrasos técnicos y burocráticos para obtener conexiones eléctricas confiables.</p>
+        <span class="tag" data-i18n="pqi.ch2Tag">Sectores en Espera</span>
+        <h2 data-i18n-html="pqi.ch2H2">Industrias de alta tecnología <span class="amber">en pausa forzada.</span></h2>
+        <p data-i18n="pqi.ch2P">Los sectores más dinámicos de la economía — centros de datos, fabricantes de vehículos eléctricos, manufactura avanzada — sufren largos retrasos técnicos y burocráticos para obtener conexiones eléctricas confiables.</p>
         <ul class="impact-list">
           <li>
             <span class="icon">🏭</span>
-            <div><strong>Manufactura avanzada y nearshoring</strong>Las inversiones están listas, pero la energía no. Fábricas terminadas sin poder arrancar operaciones.</div>
+            <div><strong data-i18n="pqi.ch2li1Strong">Manufactura avanzada y nearshoring</strong><span data-i18n="pqi.ch2li1Text">Las inversiones están listas, pero la energía no. Fábricas terminadas sin poder arrancar operaciones.</span></div>
           </li>
           <li>
             <span class="icon">🖥️</span>
-            <div><strong>Centros de datos</strong>Requieren suministro confiable al 100% y no toleran interrupciones — la red tradicional no lo garantiza.</div>
+            <div><strong data-i18n="pqi.ch2li2Strong">Centros de datos</strong><span data-i18n="pqi.ch2li2Text">Requieren suministro confiable al 100% y no toleran interrupciones — la red tradicional no lo garantiza.</span></div>
           </li>
           <li>
             <span class="icon">⚡</span>
-            <div><strong>Vehículos eléctricos y tecnología</strong>La transición energética global demanda infraestructura que México aún no tiene suficiente capacidad para entregar.</div>
+            <div><strong data-i18n="pqi.ch2li3Strong">Vehículos eléctricos y tecnología</strong><span data-i18n="pqi.ch2li3Text">La transición energética global demanda infraestructura que México aún no tiene suficiente capacidad para entregar.</span></div>
           </li>
         </ul>
       </div>
@@ -275,19 +272,19 @@ body{top:0!important}.skiptranslate{display:none!important}
     <div class="challenge-inner">
       <div class="challenge-img">
         <img src="assets/images/sector-parque-industrial.png" alt="Parques industriales y nearshoring en México"/>
-        <span class="img-badge">Desafío 03 / 04</span>
+        <span class="img-badge" data-i18n="pqi.ch3Badge">Desafío 03 / 04</span>
       </div>
       <div class="challenge-text">
-        <span class="tag">Nearshoring</span>
-        <h2>Inversiones globales detenidas por <span class="amber">falta de energía.</span></h2>
-        <p>El fenómeno del nearshoring representa la mayor oportunidad de inversión en la historia moderna de México. Sin embargo, la brecha entre la demanda de empresas globales y la capacidad de respuesta de la red eléctrica representa el mayor reto del mercado.</p>
+        <span class="tag" data-i18n="pqi.ch3Tag">Nearshoring</span>
+        <h2 data-i18n-html="pqi.ch3H2">Inversiones globales detenidas por <span class="amber">falta de energía.</span></h2>
+        <p data-i18n="pqi.ch3P">El fenómeno del nearshoring representa la mayor oportunidad de inversión en la historia moderna de México. Sin embargo, la brecha entre la demanda de empresas globales y la capacidad de respuesta de la red eléctrica representa el mayor reto del mercado.</p>
         <div class="highlight-box">
-          <p>México podría capturar <strong>más de $50 mil millones USD</strong> en inversión de nearshoring en los próximos 5 años — pero solo si resuelve su déficit de infraestructura eléctrica. <strong>M2 Energy es la solución.</strong></p>
+          <p data-i18n-html="pqi.ch3Highlight">México podría capturar <strong>más de $50 mil millones USD</strong> en inversión de nearshoring en los próximos 5 años — pero solo si resuelve su déficit de infraestructura eléctrica. <strong>M2 Energy es la solución.</strong></p>
         </div>
         <div style="display:flex;gap:24px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)">
-          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)">$50B+</div><div style="font-size:12px;color:var(--ink-mute)">Inversión potencial</div></div>
-          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)">3,200+</div><div style="font-size:12px;color:var(--ink-mute)">Empresas interesadas</div></div>
-          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)">48h</div><div style="font-size:12px;color:var(--ink-mute)">Diagnóstico inicial</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)" data-i18n="pqi.ch3stat1Num">$50B+</div><div style="font-size:12px;color:var(--ink-mute)" data-i18n="pqi.ch3stat1Lbl">Inversión potencial</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)" data-i18n="pqi.ch3stat2Num">3,200+</div><div style="font-size:12px;color:var(--ink-mute)" data-i18n="pqi.ch3stat2Lbl">Empresas interesadas</div></div>
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--amber)" data-i18n="pqi.ch3stat3Num">48h</div><div style="font-size:12px;color:var(--ink-mute)" data-i18n="pqi.ch3stat3Lbl">Diagnóstico inicial</div></div>
         </div>
       </div>
     </div>
@@ -300,64 +297,64 @@ body{top:0!important}.skiptranslate{display:none!important}
 <section class="solution-section" id="solucion">
   <div class="wrap">
     <div style="text-align:center">
-      <div class="kicker" style="justify-content:center;margin-bottom:14px">La solución M2 Energy</div>
-      <h2 class="section-title" style="text-align:center;max-width:680px;margin:0 auto 16px">Eliminando las barreras del crecimiento <span class="amber">industrial de México.</span></h2>
-      <p style="font-size:16px;color:var(--ink-dim);max-width:580px;margin:0 auto;line-height:1.65">M2 Energy actúa directamente en la brecha energética mediante soluciones integradas que eliminan las barreras de acceso a energía. Sin esperar a la red. Sin burocracia. Sin riesgo.</p>
+      <div class="kicker" style="justify-content:center;margin-bottom:14px" data-i18n="pqi.solKicker">La solución M2 Energy</div>
+      <h2 class="section-title" style="text-align:center;max-width:680px;margin:0 auto 16px" data-i18n-html="pqi.solTitle">Eliminando las barreras del crecimiento <span class="amber">industrial de México.</span></h2>
+      <p style="font-size:16px;color:var(--ink-dim);max-width:580px;margin:0 auto;line-height:1.65" data-i18n="pqi.solP">M2 Energy actúa directamente en la brecha energética mediante soluciones integradas que eliminan las barreras de acceso a energía. Sin esperar a la red. Sin burocracia. Sin riesgo.</p>
     </div>
     <div class="solution-grid">
       <div class="solution-card">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg></div>
-        <h3>Generación en Sitio Inmediata</h3>
-        <p>Instalamos hasta 20 MW directamente en tu planta sin necesidad de esperar la red CFE. Operacional en semanas, no años.</p>
-        <span class="sc-tag">Cero CAPEX</span>
+        <h3 data-i18n="pqi.sol1H3">Generación en Sitio Inmediata</h3>
+        <p data-i18n="pqi.sol1P">Instalamos hasta 20 MW directamente en tu planta sin necesidad de esperar la red CFE. Operacional en semanas, no años.</p>
+        <span class="sc-tag" data-i18n="pqi.sol1Tag">Cero CAPEX</span>
       </div>
       <div class="solution-card">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg></div>
-        <h3>Expansión de Subestaciones</h3>
-        <p>Liberamos KVAs en parques industriales expandiendo o construyendo nuevas subestaciones sin paralizar tu operación.</p>
-        <span class="sc-tag">Llave en mano</span>
+        <h3 data-i18n="pqi.sol2H3">Expansión de Subestaciones</h3>
+        <p data-i18n="pqi.sol2P">Liberamos KVAs en parques industriales expandiendo o construyendo nuevas subestaciones sin paralizar tu operación.</p>
+        <span class="sc-tag" data-i18n="pqi.sol2Tag">Llave en mano</span>
       </div>
       <div class="solution-card">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-        <h3>Gestión Completa de Trámites</h3>
-        <p>CENACE, CFE y CRE — gestionamos absolutamente todos los permisos, interconexiones y certificaciones requeridas.</p>
-        <span class="sc-tag">Un solo contacto</span>
+        <h3 data-i18n="pqi.sol3H3">Gestión Completa de Trámites</h3>
+        <p data-i18n="pqi.sol3P">CENACE, CFE y CRE — gestionamos absolutamente todos los permisos, interconexiones y certificaciones requeridas.</p>
+        <span class="sc-tag" data-i18n="pqi.sol3Tag">Un solo contacto</span>
       </div>
       <div class="solution-card">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></div>
-        <h3>Solar + Baterías de Respaldo</h3>
-        <p>Sistemas híbridos con 99.98% de uptime garantizado. Diversifica tus fuentes y elimina el riesgo de interrupciones.</p>
-        <span class="sc-tag">ESG integrado</span>
+        <h3 data-i18n="pqi.sol4H3">Solar + Baterías de Respaldo</h3>
+        <p data-i18n="pqi.sol4P">Sistemas híbridos con 99.98% de uptime garantizado. Diversifica tus fuentes y elimina el riesgo de interrupciones.</p>
+        <span class="sc-tag" data-i18n="pqi.sol4Tag">ESG integrado</span>
       </div>
     </div>
 
     <!-- DATA STATS -->
     <div class="data-grid" style="margin-top:48px">
       <div class="data-card">
-        <div class="data-num">30<span>%</span></div>
-        <h4>Reducción de costos energéticos</h4>
-        <p>Ahorro real en tu factura eléctrica desde el primer mes de operación, respaldado por datos transparentes y verificables.</p>
+        <div class="data-num"><span data-i18n="pqi.data1Num">30</span><span>%</span></div>
+        <h4 data-i18n="pqi.data1H4">Reducción de costos energéticos</h4>
+        <p data-i18n="pqi.data1P">Ahorro real en tu factura eléctrica desde el primer mes de operación, respaldado por datos transparentes y verificables.</p>
       </div>
       <div class="data-card">
-        <div class="data-num">99.98<span>%</span></div>
-        <h4>Uptime garantizado</h4>
-        <p>Diseño redundante para cargas críticas 24/7. Sin interrupciones. Sin sorpresas. Sin excusas.</p>
+        <div class="data-num"><span data-i18n="pqi.data2Num">99.98</span><span>%</span></div>
+        <h4 data-i18n="pqi.data2H4">Uptime garantizado</h4>
+        <p data-i18n="pqi.data2P">Diseño redundante para cargas críticas 24/7. Sin interrupciones. Sin sorpresas. Sin excusas.</p>
       </div>
       <div class="data-card">
-        <div class="data-num">$0</div>
-        <h4>Inversión inicial requerida</h4>
-        <p>Modelos PPA, renta y venta que se adaptan a tu estrategia financiera sin afectar tu flujo de caja.</p>
+        <div class="data-num" data-i18n="pqi.data3Num">$0</div>
+        <h4 data-i18n="pqi.data3H4">Inversión inicial requerida</h4>
+        <p data-i18n="pqi.data3P">Modelos PPA, renta y venta que se adaptan a tu estrategia financiera sin afectar tu flujo de caja.</p>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-banner">
       <div>
-        <h3>¿Tu proyecto está detenido por <span class="amber">falta de KVAs?</span></h3>
-        <p>En 48 horas hacemos un diagnóstico completo de tu situación energética y te presentamos un plan de acción concreto.</p>
-        <a href="index.html" class="btn-secondary-outline" style="margin-top:16px">← Ver todos los servicios</a>
+        <h3 data-i18n-html="pqi.ctaH3">¿Tu proyecto está detenido por <span class="amber">falta de KVAs?</span></h3>
+        <p data-i18n="pqi.ctaP">En 48 horas hacemos un diagnóstico completo de tu situación energética y te presentamos un plan de acción concreto.</p>
+        <a href="index.html" class="btn-secondary-outline" style="margin-top:16px" data-i18n="pqi.ctaBack">← Ver todos los servicios</a>
       </div>
-      <a href="index.html#contacto" class="btn-cta">Diagnóstico gratuito →</a>
+      <a href="index.html#contacto" class="btn-cta" data-i18n="pqi.ctaBtn">Diagnóstico gratuito →</a>
     </div>
   </div>
 </section>
@@ -371,29 +368,29 @@ body{top:0!important}.skiptranslate{display:none!important}
           <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div>
           <div class="brand-text">M2 <span>Energy</span></div>
         </div>
-        <p>Liberamos el crecimiento industrial mediante soluciones de infraestructura que eliminan las limitaciones de la red eléctrica.</p>
+        <p data-i18n="footer.brandP">Liberamos el crecimiento industrial mediante soluciones de infraestructura que eliminan las limitaciones de la red eléctrica.</p>
       </div>
       <div>
-        <h5>Por Qué Importa</h5>
+        <h5 data-i18n="pqi.footerPqiHeader">Por Qué Importa</h5>
         <ul>
-          <li><a href="#saturacion">Saturación de la Red</a></li>
-          <li><a href="#sectores">Sectores Críticos</a></li>
-          <li><a href="#nearshoring">Nearshoring</a></li>
-          <li><a href="#solucion">La Solución</a></li>
+          <li><a href="#saturacion" data-i18n="pqi.footerPqi1">Saturación de la Red</a></li>
+          <li><a href="#sectores" data-i18n="pqi.footerPqi2">Sectores Críticos</a></li>
+          <li><a href="#nearshoring" data-i18n="pqi.footerPqi3">Nearshoring</a></li>
+          <li><a href="#solucion" data-i18n="pqi.footerPqi4">La Solución</a></li>
         </ul>
       </div>
       <div>
-        <h5>Sitio</h5>
+        <h5 data-i18n="pqi.footerSiteHeader">Sitio</h5>
         <ul>
-          <li><a href="que-hacemos.html">Qué Hacemos</a></li>
-          <li><a href="index.html#trabajamos">Cómo Trabajamos</a></li>
-          <li><a href="index.html#resultados">Resultados</a></li>
-          <li><a href="index.html#industrias">Industrias</a></li>
-          <li><a href="index.html#contacto">Contáctanos</a></li>
+          <li><a href="que-hacemos.html" data-i18n="pqi.footerSite1">Qué Hacemos</a></li>
+          <li><a href="index.html#trabajamos" data-i18n="pqi.footerSite2">Cómo Trabajamos</a></li>
+          <li><a href="index.html#resultados" data-i18n="pqi.footerSite3">Resultados</a></li>
+          <li><a href="index.html#industrias" data-i18n="pqi.footerSite4">Industrias</a></li>
+          <li><a href="index.html#contacto" data-i18n="pqi.footerSite5">Contáctanos</a></li>
         </ul>
       </div>
       <div>
-        <h5>Contacto</h5>
+        <h5 data-i18n="footer.contactHeader">Contacto</h5>
         <ul>
           <li><a href="#">Austin, Texas 78731</a></li>
           <li><a href="#">Chihuahua, Chih. 31110</a></li>
@@ -403,33 +400,19 @@ body{top:0!important}.skiptranslate{display:none!important}
       </div>
     </div>
     <div class="foot-bar">
-      <span>© 2026 M2E · All rights reserved</span>
-      <span>Energía sin límites · ⚡</span>
+      <span data-i18n="footer.copyright">© 2026 M2E · All rights reserved</span>
+      <span data-i18n="footer.tagline">Energía sin límites · ⚡</span>
     </div>
   </div>
 </footer>
 
 <!-- LANG TOGGLE -->
-<div id="google_translate_element" style="display:none;height:0;overflow:hidden;position:absolute"></div>
-<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en',autoDisplay:false},'google_translate_element');}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<button class="lang-toggle" id="langToggle" onclick="switchLang()">
-  <span id="langFlag">🇲🇽</span>
-  <span id="langLabel">ESP</span>
+<button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+  <span id="langFlag">🇺🇸</span>
+  <span id="langLabel">ENG</span>
 </button>
-<script>
-(function(){
-  function getCookie(n){var v='; '+document.cookie,p=v.split('; '+n+'=');if(p.length===2)return p.pop().split(';').shift();return null;}
-  function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
-  function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
-  var c=getCookie('googtrans');var isEN=c&&c.indexOf('/en')>-1;
-  if(isEN){document.getElementById('langFlag').textContent='🇺🇸';document.getElementById('langLabel').textContent='ENG';}
-  window.switchLang=function(){
-    if(!isEN){setCookie('googtrans','/es/en');window.location.reload();}
-    else{delCookie('googtrans');try{localStorage.removeItem('googtrans');}catch(e){}try{sessionStorage.removeItem('googtrans');}catch(e){}window.location.href=window.location.pathname+window.location.search;}
-  };
-})();
-</script>
+<script src="assets/js/i18n.js"></script>
+<script>M2i18n.init();</script>
 <script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});

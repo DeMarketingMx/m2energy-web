@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="assets/js/translations.js"></script>
 <style>
 :root{
   --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
@@ -115,12 +116,7 @@ footer ul a:hover{color:var(--amber)}
 /* LANG TOGGLE */
 .lang-toggle{position:fixed;bottom:28px;left:28px;z-index:9999;display:flex;align-items:center;gap:8px;background:var(--amber);color:#0a1620;border:none;border-radius:999px;padding:11px 20px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;animation:langPulse 2.8s ease-in-out infinite;transition:transform .2s;}
 .lang-toggle:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 0 2px rgba(246,190,31,.5),0 0 32px 8px rgba(246,190,31,.55),0 12px 32px -6px rgba(246,190,31,.8)}
-.lang-toggle svg{width:15px;height:15px;flex-shrink:0}
 @keyframes langPulse{0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.25),0 0 14px 2px rgba(246,190,31,.3),0 6px 18px -4px rgba(246,190,31,.5)}50%{box-shadow:0 0 0 3px rgba(246,190,31,.45),0 0 26px 6px rgba(246,190,31,.5),0 6px 18px -4px rgba(246,190,31,.7)}}
-.goog-te-banner-frame,.goog-te-menu-frame{display:none!important}
-body{top:0!important}
-.skiptranslate{display:none!important}
-#google_translate_element{display:none!important;height:0!important;overflow:hidden!important}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -145,9 +141,9 @@ body{top:0!important}
   </a>
   <a class="nav-back" href="index.html">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Volver al inicio
+    <span data-i18n="qh.navBack">Volver al inicio</span>
   </a>
-  <a class="nav-cta" href="index.html#contacto">Contáctanos →</a>
+  <a class="nav-cta" href="index.html#contacto" data-i18n="qh.navCta">Contáctanos →</a>
 </nav>
 
 <!-- HERO -->
@@ -156,13 +152,13 @@ body{top:0!important}
   <div class="page-hero-grad"></div>
   <div class="page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Inicio</a>
+      <a href="index.html" data-i18n="qh.breadcrumbHome">Inicio</a>
       <span>/</span>
-      <span style="color:var(--ink-dim)">Qué Hacemos</span>
+      <span style="color:var(--ink-dim)" data-i18n="qh.breadcrumbCurrent">Qué Hacemos</span>
     </div>
-    <div class="kicker">Soluciones energéticas</div>
-    <h1>Qué Hacemos: <span>Energía sin límites</span><br>para la industria.</h1>
-    <p>Desde generación en sitio hasta infraestructura de alta tensión — entregamos soluciones energéticas industriales llave en mano que mantienen a México en movimiento.</p>
+    <div class="kicker" data-i18n="qh.heroKicker">Soluciones energéticas</div>
+    <h1 data-i18n-html="qh.heroH1">Qué Hacemos: <span>Energía sin límites</span><br>para la industria.</h1>
+    <p data-i18n="qh.heroP">Desde generación en sitio hasta infraestructura de alta tensión — entregamos soluciones energéticas industriales llave en mano que mantienen a México en movimiento.</p>
   </div>
 </section>
 
@@ -175,20 +171,20 @@ body{top:0!important}
         <span class="svc-label">01 / 05</span>
       </div>
       <div class="svc-text">
-        <span class="tag">Generación en Sitio</span>
-        <h2>Generación de Energía en Sitio — <span class="amber">PPA / Cero CAPEX</span></h2>
-        <p>Instalamos y operamos generadores industriales de hasta <strong style="color:var(--ink)">20 MW</strong> directamente en tu planta. Tú no inviertes — nosotros financiamos, construimos y operamos el sistema. Solo pagas por la energía que consumes.</p>
+        <span class="tag" data-i18n="qh.svc1Tag">Generación en Sitio</span>
+        <h2 data-i18n-html="qh.svc1H2">Generación de Energía en Sitio — <span class="amber">PPA / Cero CAPEX</span></h2>
+        <p data-i18n-html="qh.svc1P">Instalamos y operamos generadores industriales de hasta <strong style="color:var(--ink)">20 MW</strong> directamente en tu planta. Tú no inviertes — nosotros financiamos, construimos y operamos el sistema. Solo pagas por la energía que consumes.</p>
         <ul class="svc-bullets">
-          <li><strong>Flujo de caja intacto</strong> durante toda la instalación y operación.</li>
-          <li><strong>Suministro eléctrico estable y predecible</strong> sin dependencia de la red CFE.</li>
-          <li><strong>Evita cargos por demanda máxima</strong> que encarecen tu factura.</li>
-          <li><strong>Continuidad operativa 24/7</strong> garantizada con redundancia.</li>
-          <li>Modelos flexibles: <strong>venta, renta o PPA</strong> según tu estrategia financiera.</li>
+          <li data-i18n-html="qh.svc1b1"><strong>Flujo de caja intacto</strong> durante toda la instalación y operación.</li>
+          <li data-i18n-html="qh.svc1b2"><strong>Suministro eléctrico estable y predecible</strong> sin dependencia de la red CFE.</li>
+          <li data-i18n-html="qh.svc1b3"><strong>Evita cargos por demanda máxima</strong> que encarecen tu factura.</li>
+          <li data-i18n-html="qh.svc1b4"><strong>Continuidad operativa 24/7</strong> garantizada con redundancia.</li>
+          <li data-i18n-html="qh.svc1b5">Modelos flexibles: <strong>venta, renta o PPA</strong> según tu estrategia financiera.</li>
         </ul>
         <div class="stat-row">
-          <div class="stat"><div class="num">20 MW</div><div class="lbl">Capacidad máxima</div></div>
-          <div class="stat"><div class="num">$0</div><div class="lbl">Inversión inicial</div></div>
-          <div class="stat"><div class="num">30%</div><div class="lbl">Ahorro típico</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc1stat1Num">20 MW</div><div class="lbl" data-i18n="qh.svc1stat1Lbl">Capacidad máxima</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc1stat2Num">$0</div><div class="lbl" data-i18n="qh.svc1stat2Lbl">Inversión inicial</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc1stat3Num">30%</div><div class="lbl" data-i18n="qh.svc1stat3Lbl">Ahorro típico</div></div>
         </div>
       </div>
     </div>
@@ -206,17 +202,17 @@ body{top:0!important}
         <span class="svc-label">02 / 05</span>
       </div>
       <div class="svc-text">
-        <span class="tag">Media y Alta Tensión</span>
-        <h2>Infraestructura de Media y <span class="amber">Alta Tensión</span></h2>
-        <p>Diseñamos, construimos y ponemos en marcha líneas de transmisión, redes de distribución y sistemas eléctricos industriales completos bajo la figura EPC — un solo contrato, un solo responsable.</p>
+        <span class="tag" data-i18n="qh.svc2Tag">Media y Alta Tensión</span>
+        <h2 data-i18n-html="qh.svc2H2">Infraestructura de Media y <span class="amber">Alta Tensión</span></h2>
+        <p data-i18n="qh.svc2P">Diseñamos, construimos y ponemos en marcha líneas de transmisión, redes de distribución y sistemas eléctricos industriales completos bajo la figura EPC — un solo contrato, un solo responsable.</p>
         <ul class="svc-bullets">
-          <li>Cumple <strong>estándares CFE y CENACE</strong> al 100%.</li>
-          <li><strong>Optimización para cargas pesadas</strong> industriales.</li>
-          <li><strong>Minimización de pérdidas</strong> energéticas en transmisión.</li>
-          <li><strong>Máxima confiabilidad operativa</strong> con diseño redundante.</li>
-          <li>Gestión completa de permisos ante <strong>CENACE, CFE y CRE</strong>.</li>
+          <li data-i18n-html="qh.svc2b1">Cumple <strong>estándares CFE y CENACE</strong> al 100%.</li>
+          <li data-i18n-html="qh.svc2b2"><strong>Optimización para cargas pesadas</strong> industriales.</li>
+          <li data-i18n-html="qh.svc2b3"><strong>Minimización de pérdidas</strong> energéticas en transmisión.</li>
+          <li data-i18n-html="qh.svc2b4"><strong>Máxima confiabilidad operativa</strong> con diseño redundante.</li>
+          <li data-i18n-html="qh.svc2b5">Gestión completa de permisos ante <strong>CENACE, CFE y CRE</strong>.</li>
         </ul>
-        <div class="svc-badge">⚡ EPC Llave en Mano</div>
+        <div class="svc-badge" data-i18n="qh.svc2Badge">⚡ EPC Llave en Mano</div>
       </div>
     </div>
   </div>
@@ -233,19 +229,19 @@ body{top:0!important}
         <span class="svc-label">03 / 05</span>
       </div>
       <div class="svc-text">
-        <span class="tag">Subestaciones</span>
-        <h2>Diseño y Expansión de <span class="amber">Subestaciones Eléctricas</span></h2>
-        <p>Liberamos capacidad en KVAs en parques industriales y desarrollos de gran escala. Si tu subestación está saturada, la expandimos o construimos una nueva — sin paralizar tu operación.</p>
+        <span class="tag" data-i18n="qh.svc3Tag">Subestaciones</span>
+        <h2 data-i18n-html="qh.svc3H2">Diseño y Expansión de <span class="amber">Subestaciones Eléctricas</span></h2>
+        <p data-i18n="qh.svc3P">Liberamos capacidad en KVAs en parques industriales y desarrollos de gran escala. Si tu subestación está saturada, la expandimos o construimos una nueva — sin paralizar tu operación.</p>
         <ul class="svc-bullets">
-          <li><strong>Enfoque llave en mano</strong> desde diseño hasta puesta en marcha.</li>
-          <li>Permite <strong>atracción de inquilinos globales</strong> de nearshoring.</li>
-          <li><strong>Acelera planes de expansión</strong> eliminando cuellos de botella eléctricos.</li>
-          <li><strong>Actualización tecnológica</strong> de equipos existentes.</li>
-          <li>Genera <strong>ventaja competitiva</strong> en contexto de nearshoring.</li>
+          <li data-i18n-html="qh.svc3b1"><strong>Enfoque llave en mano</strong> desde diseño hasta puesta en marcha.</li>
+          <li data-i18n-html="qh.svc3b2">Permite <strong>atracción de inquilinos globales</strong> de nearshoring.</li>
+          <li data-i18n-html="qh.svc3b3"><strong>Acelera planes de expansión</strong> eliminando cuellos de botella eléctricos.</li>
+          <li data-i18n-html="qh.svc3b4"><strong>Actualización tecnológica</strong> de equipos existentes.</li>
+          <li data-i18n-html="qh.svc3b5">Genera <strong>ventaja competitiva</strong> en contexto de nearshoring.</li>
         </ul>
         <div class="stat-row">
-          <div class="stat"><div class="num">+24</div><div class="lbl">Meses ahorrados</div></div>
-          <div class="stat"><div class="num">100%</div><div class="lbl">Gestión de permisos</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc3stat1Num">+24</div><div class="lbl" data-i18n="qh.svc3stat1Lbl">Meses ahorrados</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc3stat2Num">100%</div><div class="lbl" data-i18n="qh.svc3stat2Lbl">Gestión de permisos</div></div>
         </div>
       </div>
     </div>
@@ -263,17 +259,17 @@ body{top:0!important}
         <span class="svc-label">04 / 05</span>
       </div>
       <div class="svc-text">
-        <span class="tag">Solar + BESS</span>
-        <h2>Sistemas Solares y <span class="amber">Baterías de Respaldo</span></h2>
-        <p>Soluciones híbridas de energía solar fotovoltaica + sistemas de almacenamiento (BESS) que garantizan suministro continuo 24/7, protección contra variaciones de voltaje y cumplimiento de objetivos ESG.</p>
+        <span class="tag" data-i18n="qh.svc4Tag">Solar + BESS</span>
+        <h2 data-i18n-html="qh.svc4H2">Sistemas Solares y <span class="amber">Baterías de Respaldo</span></h2>
+        <p data-i18n="qh.svc4P">Soluciones híbridas de energía solar fotovoltaica + sistemas de almacenamiento (BESS) que garantizan suministro continuo 24/7, protección contra variaciones de voltaje y cumplimiento de objetivos ESG.</p>
         <ul class="svc-bullets">
-          <li>Para <strong>centros de datos</strong> con cero tolerancia a interrupciones.</li>
-          <li>Industria <strong>farmacéutica y manufactura avanzada</strong>.</li>
-          <li><strong>Operaciones de carga crítica</strong> con respaldo ante fallas de red.</li>
-          <li>Reduce <strong>emisiones de carbono</strong> y cumple estándares ESG internacionales.</li>
-          <li><strong>99.98% uptime</strong> con diseño redundante solar + batería + red.</li>
+          <li data-i18n-html="qh.svc4b1">Para <strong>centros de datos</strong> con cero tolerancia a interrupciones.</li>
+          <li data-i18n-html="qh.svc4b2">Industria <strong>farmacéutica y manufactura avanzada</strong>.</li>
+          <li data-i18n-html="qh.svc4b3"><strong>Operaciones de carga crítica</strong> con respaldo ante fallas de red.</li>
+          <li data-i18n-html="qh.svc4b4">Reduce <strong>emisiones de carbono</strong> y cumple estándares ESG internacionales.</li>
+          <li data-i18n-html="qh.svc4b5"><strong>99.98% uptime</strong> con diseño redundante solar + batería + red.</li>
         </ul>
-        <div class="svc-badge">🌱 Cumplimiento ESG garantizado</div>
+        <div class="svc-badge" data-i18n="qh.svc4Badge">🌱 Cumplimiento ESG garantizado</div>
       </div>
     </div>
   </div>
@@ -290,19 +286,19 @@ body{top:0!important}
         <span class="svc-label">05 / 05</span>
       </div>
       <div class="svc-text">
-        <span class="tag">Eficiencia Energética</span>
-        <h2>Eficiencia Energética y <span class="amber">Sustentabilidad</span></h2>
-        <p>Auditorías especializadas y monitoreo tecnológico continuo que identifican oportunidades de ahorro, reducen consumo innecesario y optimizan tus costos OPEX desde el día 1.</p>
+        <span class="tag" data-i18n="qh.svc5Tag">Eficiencia Energética</span>
+        <h2 data-i18n-html="qh.svc5H2">Eficiencia Energética y <span class="amber">Sustentabilidad</span></h2>
+        <p data-i18n="qh.svc5P">Auditorías especializadas y monitoreo tecnológico continuo que identifican oportunidades de ahorro, reducen consumo innecesario y optimizan tus costos OPEX desde el día 1.</p>
         <ul class="svc-bullets">
-          <li><strong>Reducción de consumo innecesario</strong> con monitoreo en tiempo real.</li>
-          <li><strong>Optimización de costos OPEX</strong> desde el primer mes de operación.</li>
-          <li><strong>Alineación con objetivos ESG</strong> empresariales y corporativos.</li>
-          <li><strong>Reducción de emisiones de carbono</strong> verificable.</li>
-          <li>Cumplimiento de <strong>estándares ambientales internacionales</strong>.</li>
+          <li data-i18n-html="qh.svc5b1"><strong>Reducción de consumo innecesario</strong> con monitoreo en tiempo real.</li>
+          <li data-i18n-html="qh.svc5b2"><strong>Optimización de costos OPEX</strong> desde el primer mes de operación.</li>
+          <li data-i18n-html="qh.svc5b3"><strong>Alineación con objetivos ESG</strong> empresariales y corporativos.</li>
+          <li data-i18n-html="qh.svc5b4"><strong>Reducción de emisiones de carbono</strong> verificable.</li>
+          <li data-i18n-html="qh.svc5b5">Cumplimiento de <strong>estándares ambientales internacionales</strong>.</li>
         </ul>
         <div class="stat-row">
-          <div class="stat"><div class="num">30%</div><div class="lbl">Reducción OPEX</div></div>
-          <div class="stat"><div class="num">Día 1</div><div class="lbl">Ahorro visible</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc5stat1Num">30%</div><div class="lbl" data-i18n="qh.svc5stat1Lbl">Reducción OPEX</div></div>
+          <div class="stat"><div class="num" data-i18n="qh.svc5stat2Num">Día 1</div><div class="lbl" data-i18n="qh.svc5stat2Lbl">Ahorro visible</div></div>
         </div>
       </div>
     </div>
@@ -314,49 +310,49 @@ body{top:0!important}
 <!-- FEATURES SUMMARY -->
 <section class="panel" style="padding-top:80px">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:16px"><span class="kicker">Por qué M2 Energy</span></div>
-    <h2 class="section-title" style="text-align:center;max-width:600px;margin:0 auto 0">Un solo socio para <span class="amber">toda la cadena energética.</span></h2>
+    <div style="text-align:center;margin-bottom:16px"><span class="kicker" data-i18n="qh.featKicker">Por qué M2 Energy</span></div>
+    <h2 class="section-title" style="text-align:center;max-width:600px;margin:0 auto 0" data-i18n-html="qh.featTitle">Un solo socio para <span class="amber">toda la cadena energética.</span></h2>
     <div class="feat-grid">
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg></div>
-        <h4>Cero CAPEX</h4>
-        <p>Financiamos la infraestructura completa. Tu flujo de caja no se ve afectado durante el proyecto.</p>
+        <h4 data-i18n="qh.feat1H4">Cero CAPEX</h4>
+        <p data-i18n="qh.feat1P">Financiamos la infraestructura completa. Tu flujo de caja no se ve afectado durante el proyecto.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <h4>99.98% Uptime</h4>
-        <p>Diseño redundante con respaldo integrado. Operaciones críticas sin interrupciones, 24 horas, 365 días.</p>
+        <h4 data-i18n="qh.feat2H4">99.98% Uptime</h4>
+        <p data-i18n="qh.feat2P">Diseño redundante con respaldo integrado. Operaciones críticas sin interrupciones, 24 horas, 365 días.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-        <h4>Gestión completa</h4>
-        <p>CENACE, CFE, CRE — gestionamos todos los trámites, permisos y certificaciones sin que tengas que preocuparte.</p>
+        <h4 data-i18n="qh.feat3H4">Gestión completa</h4>
+        <p data-i18n="qh.feat3P">CENACE, CFE, CRE — gestionamos todos los trámites, permisos y certificaciones sin que tengas que preocuparte.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
-        <h4>Hasta 30% de ahorro</h4>
-        <p>Reducción real del costo energético respaldada por datos transparentes y verificables desde el primer mes.</p>
+        <h4 data-i18n="qh.feat4H4">Hasta 30% de ahorro</h4>
+        <p data-i18n="qh.feat4P">Reducción real del costo energético respaldada por datos transparentes y verificables desde el primer mes.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></div>
-        <h4>ESG integrado</h4>
-        <p>Solar + BESS + eficiencia energética. Cumple compromisos ambientales corporativos sin fricciones operativas.</p>
+        <h4 data-i18n="qh.feat5H4">ESG integrado</h4>
+        <p data-i18n="qh.feat5P">Solar + BESS + eficiencia energética. Cumple compromisos ambientales corporativos sin fricciones operativas.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h4>Libertad de fabricantes</h4>
-        <p>Seleccionamos la tecnología más eficiente para tu necesidad — no estamos atados a un catálogo cerrado.</p>
+        <h4 data-i18n="qh.feat6H4">Libertad de fabricantes</h4>
+        <p data-i18n="qh.feat6P">Seleccionamos la tecnología más eficiente para tu necesidad — no estamos atados a un catálogo cerrado.</p>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-banner">
       <div>
-        <h3>¿Listo para destrabar tu <span class="amber">capacidad energética?</span></h3>
-        <p>Agenda un diagnóstico técnico gratuito. En 5 minutos identificamos tu riesgo de KVAs y diseñamos la solución ideal.</p>
-        <a href="index.html#contacto" class="btn-secondary-outline" style="margin-top:0">← Volver al inicio</a>
+        <h3 data-i18n-html="qh.ctaH3">¿Listo para destrabar tu <span class="amber">capacidad energética?</span></h3>
+        <p data-i18n="qh.ctaP">Agenda un diagnóstico técnico gratuito. En 5 minutos identificamos tu riesgo de KVAs y diseñamos la solución ideal.</p>
+        <a href="index.html#contacto" class="btn-secondary-outline" style="margin-top:0" data-i18n="qh.ctaBack">← Volver al inicio</a>
       </div>
-      <a href="index.html#contacto" class="btn-cta">Agendar diagnóstico →</a>
+      <a href="index.html#contacto" class="btn-cta" data-i18n="qh.ctaBtn">Agendar diagnóstico →</a>
     </div>
   </div>
 </section>
@@ -370,30 +366,30 @@ body{top:0!important}
           <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div>
           <div class="brand-text">M2 <span>Energy</span></div>
         </div>
-        <p>Liberamos el crecimiento industrial mediante soluciones de infraestructura que eliminan las limitaciones de la red eléctrica.</p>
+        <p data-i18n="footer.brandP">Liberamos el crecimiento industrial mediante soluciones de infraestructura que eliminan las limitaciones de la red eléctrica.</p>
       </div>
       <div>
-        <h5>Servicios</h5>
+        <h5 data-i18n="qh.footerServicesHeader">Servicios</h5>
         <ul>
-          <li><a href="#generacion">Generación en Sitio</a></li>
-          <li><a href="#infraestructura">Media y Alta Tensión</a></li>
-          <li><a href="#subestaciones">Subestaciones</a></li>
-          <li><a href="#solar">Solar + Baterías</a></li>
-          <li><a href="#eficiencia">Eficiencia Energética</a></li>
+          <li><a href="#generacion" data-i18n="qh.footerSvc1">Generación en Sitio</a></li>
+          <li><a href="#infraestructura" data-i18n="qh.footerSvc2">Media y Alta Tensión</a></li>
+          <li><a href="#subestaciones" data-i18n="qh.footerSvc3">Subestaciones</a></li>
+          <li><a href="#solar" data-i18n="qh.footerSvc4">Solar + Baterías</a></li>
+          <li><a href="#eficiencia" data-i18n="qh.footerSvc5">Eficiencia Energética</a></li>
         </ul>
       </div>
       <div>
-        <h5>Sitio</h5>
+        <h5 data-i18n="qh.footerSiteHeader">Sitio</h5>
         <ul>
-          <li><a href="index.html#importa">Por Qué Importa</a></li>
-          <li><a href="index.html#trabajamos">Cómo Trabajamos</a></li>
-          <li><a href="index.html#resultados">Resultados</a></li>
-          <li><a href="index.html#industrias">Industrias</a></li>
-          <li><a href="index.html#contacto">Contáctanos</a></li>
+          <li><a href="index.html#importa" data-i18n="qh.footerSite1">Por Qué Importa</a></li>
+          <li><a href="index.html#trabajamos" data-i18n="qh.footerSite2">Cómo Trabajamos</a></li>
+          <li><a href="index.html#resultados" data-i18n="qh.footerSite3">Resultados</a></li>
+          <li><a href="index.html#industrias" data-i18n="qh.footerSite4">Industrias</a></li>
+          <li><a href="index.html#contacto" data-i18n="qh.footerSite5">Contáctanos</a></li>
         </ul>
       </div>
       <div>
-        <h5>Contacto</h5>
+        <h5 data-i18n="footer.contactHeader">Contacto</h5>
         <ul>
           <li><a href="#">Austin, Texas 78731</a></li>
           <li><a href="#">Chihuahua, Chih. 31110</a></li>
@@ -403,33 +399,19 @@ body{top:0!important}
       </div>
     </div>
     <div class="foot-bar">
-      <span>© 2026 M2E · All rights reserved</span>
-      <span>Energía sin límites · ⚡</span>
+      <span data-i18n="footer.copyright">© 2026 M2E · All rights reserved</span>
+      <span data-i18n="footer.tagline">Energía sin límites · ⚡</span>
     </div>
   </div>
 </footer>
 
 <!-- LANG TOGGLE -->
-<div id="google_translate_element" style="display:none;height:0;overflow:hidden;position:absolute"></div>
-<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en',autoDisplay:false},'google_translate_element');}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<button class="lang-toggle" id="langToggle" onclick="switchLang()">
-  <span id="langFlag">🇲🇽</span>
-  <span id="langLabel">ESP</span>
+<button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+  <span id="langFlag">🇺🇸</span>
+  <span id="langLabel">ENG</span>
 </button>
-<script>
-(function(){
-  function getCookie(n){var v='; '+document.cookie,p=v.split('; '+n+'=');if(p.length===2)return p.pop().split(';').shift();return null;}
-  function setCookie(n,v){document.cookie=n+'='+v+'; path=/';document.cookie=n+'='+v+'; path=/; domain='+document.domain;}
-  function delCookie(n){var e='expires=Thu, 01 Jan 1970 00:00:00 UTC';document.cookie=n+'=; '+e+'; path=/';document.cookie=n+'=; '+e+'; path=/; domain='+document.domain;}
-  var c=getCookie('googtrans');var isEN=c&&c.indexOf('/en')>-1;
-  if(isEN){document.getElementById('langFlag').textContent='🇺🇸';document.getElementById('langLabel').textContent='ENG';}
-  window.switchLang=function(){
-    if(!isEN){setCookie('googtrans','/es/en');window.location.reload();}
-    else{delCookie('googtrans');try{localStorage.removeItem('googtrans');}catch(e){}try{sessionStorage.removeItem('googtrans');}catch(e){}window.location.href=window.location.pathname+window.location.search;}
-  };
-})();
-</script>
+<script src="assets/js/i18n.js"></script>
+<script>M2i18n.init();</script>
 <script>
 // Nav scroll
 const nav=document.getElementById('nav');
