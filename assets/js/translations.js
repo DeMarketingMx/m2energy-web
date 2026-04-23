@@ -2,7 +2,7 @@
    M2 Energy — i18n Translations
    Keys: es (default) | en
    ========================================================== */
-const M2_TRANSLATIONS = {
+window.M2_TRANSLATIONS = {
 
   /* ======================================================
      ESPAÑOL
