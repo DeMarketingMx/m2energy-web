@@ -113,17 +113,22 @@
   .epc-visual-label p{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.3;max-width:360px}
   /* ---------- Language toggle ---------- */
   .lang-toggle{
-    display:inline-flex;align-items:center;gap:7px;
-    background:rgba(246,190,31,.12);color:var(--amber);
-    border:1px solid rgba(246,190,31,.45);border-radius:999px;
-    padding:9px 14px;cursor:pointer;
-    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--amber);color:#0a1620;
+    border:none;border-radius:999px;
+    padding:10px 18px;cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12.5px;
     letter-spacing:.08em;text-transform:uppercase;
-    transition:transform .2s, background .2s, border-color .2s, box-shadow .2s;
+    animation:langPulse 2.8s ease-in-out infinite;
+    transition:transform .2s, box-shadow .2s;
   }
-  .lang-toggle:hover{transform:translateY(-1px);background:rgba(246,190,31,.22);border-color:var(--amber);box-shadow:0 0 0 2px rgba(246,190,31,.25),0 6px 20px -4px rgba(246,190,31,.6)}
+  .lang-toggle:hover{transform:translateY(-1px);animation:none;box-shadow:0 0 0 2px rgba(246,190,31,.55),0 0 32px 8px rgba(246,190,31,.55),0 10px 28px -4px rgba(246,190,31,.8)}
   .lang-toggle svg{width:14px;height:14px;flex-shrink:0}
   .lang-toggle #langFlag{font-size:14px;line-height:1}
+  @keyframes langPulse{
+    0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.30),0 0 16px 3px rgba(246,190,31,.32),0 6px 18px -4px rgba(246,190,31,.5)}
+    50%{box-shadow:0 0 0 3px rgba(246,190,31,.50),0 0 28px 7px rgba(246,190,31,.55),0 6px 22px -4px rgba(246,190,31,.75)}
+  }
   /* Hide Google Translate toolbar */
   .goog-te-banner-frame,.goog-te-menu-frame{display:none!important}
   body{top:0!important}
@@ -665,7 +670,7 @@
     <a href="#trabajamos" data-i18n="nav.howWeWork">Cómo Trabajamos</a>
     <a href="#resultados" data-i18n="nav.results">Resultados</a>
     <a href="#industrias" data-i18n="nav.industries">Industrias</a>
-    <a href="#casos" data-i18n="nav.cases">Casos de Éxito</a>
+    <a href="casos-de-exito.html" data-i18n="nav.cases">Casos de Éxito</a>
     <a href="#elegirnos" data-i18n="nav.whyUs">Elegirnos</a>
   </div>
   <div class="nav-right">
@@ -729,7 +734,7 @@
 
   <div class="hero-content">
     <div>
-      <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Soluciones energéticas industriales · 60 años acumulados de experiencia</span></span>
+      <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">60 años acumulados de experiencia</span></span>
       <h1 class="hero-title" data-i18n-html="hero.h1">
         <span class="hl">Energía sin límites</span> para la industria en México.
       </h1>
@@ -1019,201 +1024,6 @@
 
 <div class="e-divider"></div>
 
-<!-- =============== CASOS DE ÉXITO =============== -->
-<section class="panel" id="casos">
-  <div class="wrap">
-    <div class="rv"><span class="kicker" data-i18n="casos.kicker">Casos de Éxito</span></div>
-    <h2 class="section-title rv rv-1" data-i18n-html="casos.title">Proyectos que destrabaron <span class="amber">la industria.</span></h2>
-    <p class="casos-intro rv rv-2" data-i18n="casos.intro">A continuación se listan proyectos representativos de distintas soluciones y servicios que nuestro equipo ha llevado a cabo: cogeneración y trigeneración, expansión y construcción de subestaciones, sistemas de respaldo, paneles solares e infraestructura llave en mano. Cada caso resolvió un reto real de capacidad eléctrica, continuidad operativa o reducción de costos energéticos.</p>
-
-    <div class="casos-grid">
-
-      <!-- 01 — Construcción Subestación 230/13.8 kV (parque industrial) -->
-      <article class="caso-card rv rv-1">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c1Tag">EPC · KVA Solutions</span>
-          <span class="caso-mw">28 MW</span>
-          <img src="assets/images/subestaciones.png" alt="Construcción de subestación 230/13.8 kV para parque industrial"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c1Title">Construcción de subestación 230/13.8 kV para parque industrial</h3>
-          <p class="caso-desc" data-i18n="casos.c1Desc">Energización de un parque industrial nuevo en zona altamente congestionada. Se gestionó la negociación ante CENACE/CFE y se ejecutó el proyecto bajo la modalidad llave en mano, logrando adquirir 28 MW de demanda con una reducción de costos en obras de conexión superior a $20 MDP MXN, mediante el cambio estratégico de 230 kV a 115 kV en tiempo expeditado.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Gestoría CENACE/CFE · Ingeniería · Procura · Construcción</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 02 — Ampliación subestación 115/13.8 kV (planta industrial) -->
-      <article class="caso-card rv rv-2">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c2Tag">EPC · Subestaciones</span>
-          <span class="caso-mw">15 MW</span>
-          <img src="assets/images/infraestructura-tension.png" alt="Ampliación de subestación 115/13.8 kV"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c2Title">Ampliación de subestación 115/13.8 kV en planta industrial</h3>
-          <p class="caso-desc" data-i18n="casos.c2Desc">Incremento de demanda contratada en una subestación particular operando a 115 kV. Se realizaron los estudios de impacto ante CENACE bajo el Criterio CONE-16 del Código de Red, gestionando el incremento de carga sin sobrecargas ni desviaciones de tensión, llevando la demanda final a más de 26 MW.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Estudios de red · Ingeniería · Construcción</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Noreste de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 — Subestación 230/13.8 kV llave en mano (parque industrial) -->
-      <article class="caso-card rv rv-3">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c3Tag">EPC · Llave en Mano</span>
-          <span class="caso-mw">80 MW</span>
-          <img src="assets/images/red-electrica.png" alt="Subestación 230/13.8 kV para parque industrial fronterizo"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c3Title">Subestación 230/13.8 kV en parque industrial fronterizo</h3>
-          <p class="caso-desc" data-i18n="casos.c3Desc">Diseño y construcción de subestación llave en mano para dar servicio a parques industriales que demandaban hasta 80 MW. Mediante una optimización de obras de refuerzo en la red de transmisión, se logró una reducción de costos de conexión de más de $20 MDP MXN frente al esquema original.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>EPC integral · Estudios CENACE</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Frontera Norte</strong></span>
-            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 — Subestación 230/13.8 kV (zona industrial centro) -->
-      <article class="caso-card rv rv-4">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c4Tag">EPC · Llave en Mano</span>
-          <span class="caso-mw">108 MW</span>
-          <img src="assets/images/infraestructura.png" alt="Subestación 230/13.8 kV con ahorros millonarios en obras de conexión"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c4Title">Subestación 230/13.8 kV con ahorros millonarios en obras de conexión</h3>
-          <p class="caso-desc" data-i18n="casos.c4Desc">Proyecto de gran escala con conexión a 115 kV y 230 kV. La propuesta optimizada permitió capturar más de 100 MW de capacidad logrando una reducción de costos de obras de conexión por encima de $449 MDP MXN, validada bajo los criterios técnicos y regulatorios vigentes.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Estudios · Ingeniería · Procura · EPC</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Centro de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05 — Cogeneración con biogás de relleno sanitario (6.4 MW) -->
-      <article class="caso-card rv rv-1">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c5Tag">Cogeneración · EPC</span>
-          <span class="caso-mw">6.4 MW</span>
-          <img src="assets/images/generacion-sitio.png" alt="Sistema de cogeneración con biogás de relleno sanitario"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c5Title">Cogeneración continua con biogás de relleno sanitario</h3>
-          <p class="caso-desc" data-i18n="casos.c5Desc">Central de generación eléctrica de 6.4 MW (4 × 1.6 MW) operando en modo continuo con biogás de relleno sanitario como combustible. El reto fue desarrollar y construir el sistema de captación, recuperación y limpieza del biogás para uso en motogeneradores. Hoy suministra energía para alumbrado público a dos municipios.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06 — Trigeneración para empresa de alimentos (8 MW + 827 TR) -->
-      <article class="caso-card rv rv-2">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c6Tag">Trigeneración · KVA Solutions</span>
-          <span class="caso-mw">8 MW + 827 TR</span>
-          <img src="assets/images/sector-manufactura.png" alt="Sistema de trigeneración con producción de frío subzero"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c6Title">Trigeneración con frío subzero para empresa de alimentos</h3>
-          <p class="caso-desc" data-i18n="casos.c6Desc">Sistema de trigeneración en media tensión para operación continua sincronizada con la red. Capacidad de 8 MW eléctricos y 827 TR de refrigeración a –12 °C, con dos motores de combustión interna a gas natural de 4 MW cada uno. Primer permiso federal de cogeneración bajo la nueva ley energética e integración de tecnología europea para frío industrial.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Diseño · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 07 — Generación 24/7 a diesel para mina (4 MW) -->
-      <article class="caso-card rv rv-3">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c7Tag">KVA Solutions · Diesel</span>
-          <span class="caso-mw">4 MW</span>
-          <img src="assets/images/hero-generacion.png" alt="Generación eléctrica 24/7 con motores a diésel"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c7Title">Generación eléctrica 24/7 a diésel para sitio remoto</h3>
-          <p class="caso-desc" data-i18n="casos.c7Desc">Central de 4 MW (2 × 2 MW) con motores de combustión interna a diésel sincronizados, en contenedor acústico. Diseñada para operación 24/7 aislada de la red en una mina de sierra remota, con alta variación en bloques de carga. Incluyó el traslado de equipos a sitios complejos y puesta en marcha bajo condiciones extremas.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Sierra Norte de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 08 — Sistema de respaldo en media tensión (4 MW directos en 13.8 kV) -->
-      <article class="caso-card rv rv-4">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c8Tag">KVA Solutions · Respaldo</span>
-          <span class="caso-mw">4 MW</span>
-          <img src="assets/images/sector-datacenter.png" alt="Sistema de respaldo en media tensión 13.8 kV"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c8Title">Respaldo en media tensión para fábrica industrial</h3>
-          <p class="caso-desc" data-i18n="casos.c8Desc">Central de respaldo de 4 MW (2 × 2 MW) con motores de combustión interna a diésel. Equipos de generación directos en 13.8 kV, lo que redujo significativamente los tiempos de disponibilidad. Gestión nacional con las oficinas corporativas del grupo y entrega de un sistema robusto para emergencias ante fallas de la red.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 09 — Sistemas solares fotovoltaicos en cadena retail (40 sitios) -->
-      <article class="caso-card rv rv-1">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c9Tag">Solar · 40 sitios</span>
-          <span class="caso-mw">1,278 kW DC</span>
-          <img src="assets/images/sistemas-solares.png" alt="Sistemas fotovoltaicos en 40 tiendas de conveniencia"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c9Title">Solar fotovoltaico en 40 tiendas de conveniencia</h3>
-          <p class="caso-desc" data-i18n="casos.c9Desc">Proyecto fotovoltaico multisitio de 1,278.4 kW DC interconectado en baja tensión a tableros de distribución 220 V, con módulos de 400 W, inversores y medición bidireccional. Coordinamos la logística con el corporativo y diferentes contratistas regionales, además de toda la gestión municipal y federal ante CFE para los contratos de interconexión.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Suministro · Instalación · Gestoría CFE</strong></span>
-            <span class="caso-meta-item">Cobertura: <strong>Multi-región nacional</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 10 — Respaldo en estación de compresión de gas natural (2 MW) -->
-      <article class="caso-card rv rv-2">
-        <div class="caso-img">
-          <span class="caso-tag" data-i18n="casos.c10Tag">KVA Solutions · Gas</span>
-          <span class="caso-mw">2 MW</span>
-          <img src="assets/images/sector-parque-industrial.png" alt="Respaldo en estación de compresión de gas natural"/>
-        </div>
-        <div class="caso-body">
-          <h3 class="caso-title" data-i18n="casos.c10Title">Respaldo eléctrico para estación de compresión de gas natural</h3>
-          <p class="caso-desc" data-i18n="casos.c10Desc">Sistema de respaldo en baja tensión de 2 MW con motor de combustión interna a gas. Diseñado para garantizar la continuidad de cargas críticas ante fallas de la red eléctrica de CFE. El reto fue la alta integración de ingenierías y equipos con el contratista principal para entregar un sistema impecable en un sitio sensible.</p>
-          <div class="caso-meta">
-            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
-            <span class="caso-meta-item">Ubicación: <strong>Corredor energético del Norte</strong></span>
-            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<div class="e-divider"></div>
-
 <!-- =============== POR QUÉ ELEGIRNOS · FAQ =============== -->
 <section class="panel" id="elegirnos">
   <div class="wrap">
@@ -1458,7 +1268,7 @@
         <li><a href="#trabajamos" data-i18n="footer.navHowWeWork">Cómo Trabajamos</a></li>
         <li><a href="#resultados" data-i18n="footer.navResults">Resultados</a></li>
         <li><a href="#industrias" data-i18n="footer.navIndustries">Industrias</a></li>
-        <li><a href="#casos" data-i18n="footer.navCases">Casos de Éxito</a></li>
+        <li><a href="casos-de-exito.html" data-i18n="footer.navCases">Casos de Éxito</a></li>
       </ul>
     </div>
     <div class="foot-col">

@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Casos de Éxito — M2 Energy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="assets/js/translations.js"></script>
+<style>
+:root{
+  --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
+  --blue:#355e72;--blue-hot:#5a9cb8;--blue-deep:#1f3e52;
+  --bg-0:#0e1c28;--bg-1:#13283a;--bg-2:#1a3548;--bg-panel:#162e42;
+  --ink:#fafcff;--ink-dim:#cdd8e3;--ink-mute:#8ea0b0;
+  --line:rgba(255,255,255,.10);--line-str:rgba(255,255,255,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--bg-0);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+body{overflow-x:hidden}
+img{max-width:100%;display:block}
+::selection{background:var(--amber);color:#0a1620}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-bottom:1px solid transparent;transition:background .3s,padding .3s,border-color .3s;gap:18px;}
+.nav.scrolled{background:rgba(14,28,40,.85);backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:12px 36px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--amber) 0%,#e0a417 100%);box-shadow:0 0 0 1px rgba(246,190,31,.35),0 8px 24px -8px rgba(246,190,31,.6);display:grid;place-items:center;overflow:hidden;}
+.brand-mark svg{width:18px;height:18px;z-index:1}
+.brand-text{font-family:'Space Grotesk',sans-serif;font-size:17px}
+.brand-text span{color:var(--amber)}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-dim);padding:8px 16px;border:1px solid var(--line);border-radius:999px;transition:color .2s,border-color .2s;}
+.nav-back:hover{color:var(--ink);border-color:var(--line-str)}
+.nav-back svg{width:14px;height:14px}
+.nav-cta{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-radius:999px;background:var(--amber);color:#0a1620;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 1px rgba(246,190,31,.4),0 8px 24px -6px rgba(246,190,31,.5);}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(246,190,31,.6),0 12px 32px -6px rgba(246,190,31,.7)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#0a1620;border:none;border-radius:999px;padding:10px 18px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;animation:langPulse 2.8s ease-in-out infinite;transition:transform .2s,box-shadow .2s;}
+.lang-toggle:hover{transform:translateY(-1px);animation:none;box-shadow:0 0 0 2px rgba(246,190,31,.55),0 0 32px 8px rgba(246,190,31,.55),0 10px 28px -4px rgba(246,190,31,.8)}
+.lang-toggle #langFlag{font-size:14px;line-height:1}
+@keyframes langPulse{0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.30),0 0 16px 3px rgba(246,190,31,.32),0 6px 18px -4px rgba(246,190,31,.5)}50%{box-shadow:0 0 0 3px rgba(246,190,31,.50),0 0 28px 7px rgba(246,190,31,.55),0 6px 22px -4px rgba(246,190,31,.75)}}
+
+/* HERO */
+.page-hero{position:relative;min-height:60vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:80px;}
+.page-hero-bg{position:absolute;inset:0;background-image:url('assets/images/subestaciones.png');background-size:cover;background-position:center;opacity:.32;}
+.page-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,28,40,.55) 0%,rgba(14,28,40,.96) 100%),linear-gradient(90deg,rgba(14,28,40,.6) 0%,transparent 60%);}
+.page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;width:100%;}
+.page-hero .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.page-hero .kicker::before{content:'';width:32px;height:2px;background:var(--amber)}
+.page-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px;}
+.page-hero h1 span{color:var(--amber)}
+.page-hero p{font-size:clamp(15px,1.2vw,18px);color:var(--ink-dim);max-width:780px;line-height:1.7;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-mute);margin-bottom:32px;}
+.breadcrumb a{color:var(--ink-mute);transition:color .2s}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb span{opacity:.4}
+
+/* INTRO STRIP */
+.intro-strip{padding:60px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(19,40,58,.45);}
+.intro-strip .wrap{max-width:1100px;margin:0 auto;padding:0 48px;text-align:center;}
+.intro-strip p{font-size:17px;line-height:1.75;color:var(--ink-dim);text-wrap:pretty;}
+.intro-strip strong{color:var(--ink);font-weight:600}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+.panel{padding:90px 0;}
+.e-divider{position:relative;height:1px;background:linear-gradient(90deg,transparent,var(--line-str) 20%,var(--line-str) 80%,transparent);}
+
+/* CASE SECTION */
+.case-section{padding:80px 0;border-bottom:1px solid var(--line);}
+.case-section:last-child{border-bottom:none}
+.case-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center;}
+.case-inner.reverse{direction:rtl}
+.case-inner.reverse > *{direction:ltr}
+.case-img-wrap{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);}
+.case-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.case-img-wrap:hover img{transform:scale(1.04)}
+.case-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(11,22,32,.55) 100%);pointer-events:none}
+.case-img-wrap .case-label{position:absolute;top:18px;left:18px;background:rgba(7,17,26,.75);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--amber);text-transform:uppercase;}
+.case-img-wrap .case-mw{position:absolute;bottom:18px;right:18px;background:rgba(7,17,26,.78);backdrop-filter:blur(8px);border:1px solid var(--line-str);border-radius:10px;padding:10px 16px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--amber);letter-spacing:.01em;}
+.case-text .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--amber);text-transform:uppercase;margin-bottom:14px;display:block}
+.case-text .num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:6px;display:block}
+.case-text h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin-bottom:20px;color:var(--ink)}
+.case-text p{font-size:15.5px;line-height:1.75;color:var(--ink-dim);margin-bottom:24px;text-wrap:pretty}
+.case-meta{display:grid;gap:14px;padding:20px 22px;border:1px dashed rgba(255,255,255,.10);border-radius:14px;background:rgba(19,40,58,.35);}
+.case-meta-row{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start}
+.case-meta-row .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink-mute);text-transform:uppercase;padding-top:2px}
+.case-meta-row .v{font-size:14px;line-height:1.55;color:var(--ink)}
+.case-status{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7be39e;}
+.case-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#7be39e;box-shadow:0 0 8px #7be39e;animation:dotPulse 1.6s infinite}
+@keyframes dotPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.25)}}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--bg-1) 100%);border:1px solid var(--line);border-radius:20px;padding:60px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;margin-top:80px;position:relative;overflow:hidden;}
+.cta-banner::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(246,190,31,.12),transparent 65%);pointer-events:none}
+.cta-banner h3{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;line-height:1.2;margin-bottom:12px;}
+.cta-banner h3 span{color:var(--amber)}
+.cta-banner p{font-size:15px;color:var(--ink-dim);max-width:500px;}
+.btn-cta{background:var(--amber);color:#0a1620;padding:14px 32px;border-radius:10px;font-weight:700;font-size:14px;letter-spacing:.04em;white-space:nowrap;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 1px rgba(246,190,31,.4),0 8px 24px -6px rgba(246,190,31,.5);}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(246,190,31,.6),0 12px 32px -6px rgba(246,190,31,.7)}
+.btn-secondary-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(246,190,31,.4);color:var(--amber);padding:13px 28px;border-radius:10px;font-weight:600;font-size:14px;margin-top:16px;transition:background .2s,border-color .2s;}
+.btn-secondary-outline:hover{background:rgba(246,190,31,.07);border-color:var(--amber)}
+
+/* FOOTER */
+footer{background:var(--bg-1);border-top:1px solid var(--line);padding:60px 0 32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.foot-brand p{font-size:13.5px;color:var(--ink-mute);line-height:1.6;margin:14px 0 20px;max-width:280px;}
+footer h5{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+footer ul a{font-size:13.5px;color:var(--ink-dim);transition:color .2s;}
+footer ul a:hover{color:var(--amber)}
+.foot-bar{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:16px 20px}.page-hero-content,.wrap,.intro-strip .wrap{padding:0 20px}
+  .case-inner,.case-inner.reverse{grid-template-columns:1fr;direction:ltr;gap:32px}
+  .cta-banner{grid-template-columns:1fr;padding:36px 24px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .case-meta-row{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html">
+    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div>
+    <div class="brand-text">M2 <span>Energy</span></div>
+  </a>
+  <a class="nav-back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    <span data-i18n="ce.navBack">Volver al inicio</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#contacto" data-i18n="ce.navCta">Contáctanos →</a>
+    <button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+      <span id="langFlag">🇺🇸</span>
+      <span id="langLabel">ENG</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html" data-i18n="ce.breadcrumbHome">Inicio</a>
+      <span>/</span>
+      <span style="color:var(--ink-dim)" data-i18n="ce.breadcrumbCurrent">Casos de Éxito</span>
+    </div>
+    <div class="kicker" data-i18n="ce.heroKicker">Casos de Éxito</div>
+    <h1 data-i18n-html="ce.heroH1">Proyectos que <span>destrabaron la industria.</span></h1>
+    <p data-i18n="ce.heroP">Una década de experiencia ejecutando proyectos críticos de infraestructura eléctrica, generación en sitio, cogeneración y solar a lo largo de México — siempre llave en mano.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-strip">
+  <div class="wrap">
+    <p data-i18n="ce.intro">A continuación se listan proyectos representativos de distintas soluciones y servicios que nuestro equipo ha llevado a cabo: cogeneración y trigeneración, expansión y construcción de subestaciones, sistemas de respaldo, paneles solares e infraestructura llave en mano. Cada caso resolvió un reto real de capacidad eléctrica, continuidad operativa o reducción de costos energéticos.</p>
+  </div>
+</section>
+
+<!-- CASO 01 — Subestación 230/13.8 kV (parque industrial) -->
+<section class="panel case-section" id="caso-01">
+  <div class="wrap">
+    <div class="case-inner">
+      <div class="case-img-wrap">
+        <img src="assets/images/subestaciones.png" alt="Construcción de subestación 230/13.8 kV"/>
+        <span class="case-label">EPC · KVA Solutions</span>
+        <span class="case-mw">28 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c1Num">Caso 01 / 10</span>
+        <span class="tag" data-i18n="ce.c1Tag">Subestación · EPC llave en mano</span>
+        <h2 data-i18n="ce.c1Title">Construcción de subestación 230/13.8 kV para parque industrial</h2>
+        <p data-i18n="ce.c1Desc">Energización de un parque industrial nuevo en una zona altamente congestionada de la red. El reto era adquirir 28 MW de demanda en un tiempo expeditado y reducir el costo de las obras de conexión en 230 kV. Negociamos un cambio estratégico de 230 kV a 115 kV con CENACE/CFE, ejecutamos el proyecto bajo modalidad llave en mano y logramos una reducción de costos de obras de conexión superior a $20,100,000 MXN.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c1Service">Gestoría CENACE/CFE · Ingeniería · Procura · Construcción</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c1Location">Norte de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c1Result">28 MW asegurados · ahorro &gt;$20 MDP MXN en obras de conexión</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 02 — Ampliación 115/13.8 kV -->
+<section class="panel case-section" id="caso-02">
+  <div class="wrap">
+    <div class="case-inner reverse">
+      <div class="case-img-wrap">
+        <img src="assets/images/infraestructura-tension.png" alt="Ampliación de subestación 115/13.8 kV"/>
+        <span class="case-label">EPC · Subestaciones</span>
+        <span class="case-mw">15 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c2Num">Caso 02 / 10</span>
+        <span class="tag" data-i18n="ce.c2Tag">Ampliación · Estudios CENACE</span>
+        <h2 data-i18n="ce.c2Title">Ampliación de subestación 115/13.8 kV en planta industrial</h2>
+        <p data-i18n="ce.c2Desc">Incremento de demanda contratada en una subestación particular operando a 115 kV. Se realizaron los estudios de impacto ante CENACE bajo el Criterio CONE-16 del Código de Red, gestionando el incremento de carga sin sobrecargas ni desviaciones de tensión, llevando la demanda final del centro de carga a más de 26 MW de manera segura y conforme a la regulación.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c2Service">Estudios de red · Ingeniería · Construcción</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c2Location">Noreste de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c2Result">+15 MW de demanda incremental aprobada por CENACE</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 03 — Subestación 230/13.8 kV fronteriza -->
+<section class="panel case-section" id="caso-03">
+  <div class="wrap">
+    <div class="case-inner">
+      <div class="case-img-wrap">
+        <img src="assets/images/red-electrica.png" alt="Subestación 230/13.8 kV en parque industrial fronterizo"/>
+        <span class="case-label">EPC · Llave en Mano</span>
+        <span class="case-mw">80 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c3Num">Caso 03 / 10</span>
+        <span class="tag" data-i18n="ce.c3Tag">Subestación · EPC llave en mano</span>
+        <h2 data-i18n="ce.c3Title">Subestación 230/13.8 kV en parque industrial fronterizo</h2>
+        <p data-i18n="ce.c3Desc">Diseño y construcción de subestación llave en mano para dar servicio a parques industriales que demandaban hasta 80 MW. Mediante una optimización de obras de refuerzo en la red de transmisión y una propuesta técnica alineada al Manual Regulatorio, se logró una reducción de costos de conexión de más de $20,100,000 MXN frente al esquema original planteado.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c3Service">EPC integral · Estudios CENACE · Construcción</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c3Location">Frontera Norte</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c3Result">80 MW asegurados · ahorro &gt;$20 MDP MXN en conexión</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 04 — Subestación gran escala -->
+<section class="panel case-section" id="caso-04">
+  <div class="wrap">
+    <div class="case-inner reverse">
+      <div class="case-img-wrap">
+        <img src="assets/images/infraestructura.png" alt="Subestación con ahorros millonarios en obras de conexión"/>
+        <span class="case-label">EPC · Llave en Mano</span>
+        <span class="case-mw">108 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c4Num">Caso 04 / 10</span>
+        <span class="tag" data-i18n="ce.c4Tag">Subestación · Gran escala</span>
+        <h2 data-i18n="ce.c4Title">Subestación 230/13.8 kV con ahorros millonarios en obras de conexión</h2>
+        <p data-i18n="ce.c4Desc">Proyecto de gran escala con conexión simultánea a 115 kV y 230 kV. La propuesta optimizada permitió capturar más de 100 MW de capacidad logrando una reducción de costos de obras de conexión por encima de $449,944,708 MXN, validada bajo los criterios técnicos y regulatorios vigentes y bajo los Requerimientos Técnicos de Conexión del SEN.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c4Service">Estudios · Ingeniería · Procura · EPC integral</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c4Location">Centro de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c4Result">108 MW capturados · ahorro &gt;$449 MDP MXN</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 05 — Cogeneración biogás -->
+<section class="panel case-section" id="caso-05">
+  <div class="wrap">
+    <div class="case-inner">
+      <div class="case-img-wrap">
+        <img src="assets/images/generacion-sitio.png" alt="Sistema de cogeneración con biogás de relleno sanitario"/>
+        <span class="case-label">Cogeneración · EPC</span>
+        <span class="case-mw">6.4 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c5Num">Caso 05 / 10</span>
+        <span class="tag" data-i18n="ce.c5Tag">Cogeneración · Biogás</span>
+        <h2 data-i18n="ce.c5Title">Cogeneración continua con biogás de relleno sanitario</h2>
+        <p data-i18n="ce.c5Desc">Central de generación eléctrica de 6.4 MW (4 × 1.6 MW) operando en modo continuo con biogás de relleno sanitario como combustible. El reto técnico fue desarrollar y construir el sistema de captación, recuperación y limpieza del biogás para uso en motogeneradores, integrando ingeniería de proceso y eléctrica. Hoy suministra energía para alumbrado público a dos municipios.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c5Service">Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c5Location">Norte de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c5Result">Energía continua para alumbrado público a 2 municipios</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 06 — Trigeneración alimentos -->
+<section class="panel case-section" id="caso-06">
+  <div class="wrap">
+    <div class="case-inner reverse">
+      <div class="case-img-wrap">
+        <img src="assets/images/sector-manufactura.png" alt="Sistema de trigeneración con producción de frío subzero"/>
+        <span class="case-label">Trigeneración · KVA Solutions</span>
+        <span class="case-mw">8 MW + 827 TR</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c6Num">Caso 06 / 10</span>
+        <span class="tag" data-i18n="ce.c6Tag">Trigeneración · Frío industrial</span>
+        <h2 data-i18n="ce.c6Title">Trigeneración con frío subzero para empresa de alimentos</h2>
+        <p data-i18n="ce.c6Desc">Sistema de trigeneración en media tensión para operación continua sincronizada con la red de CFE. Capacidad de 8 MW eléctricos y 827 TR de refrigeración a –12 °C, con dos motores de combustión interna a gas natural de 4 MW cada uno. Primer permiso federal de cogeneración bajo la nueva ley energética e integración de tecnología europea para frío industrial. Beneficio adicional: alivio de presión en el sistema de refrigeración con amoniaco al sacar de operación dos compresores de 750 HP.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c6Service">Diseño · Ingeniería · Procura · Construcción · Puesta en marcha</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c6Location">Norte de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c6Result">Energía + frío industrial integrados · ahorro operativo en refrigeración</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 07 — Generación 24/7 mina -->
+<section class="panel case-section" id="caso-07">
+  <div class="wrap">
+    <div class="case-inner">
+      <div class="case-img-wrap">
+        <img src="assets/images/hero-generacion.png" alt="Generación eléctrica 24/7 con motores a diésel"/>
+        <span class="case-label">KVA Solutions · Diésel</span>
+        <span class="case-mw">4 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c7Num">Caso 07 / 10</span>
+        <span class="tag" data-i18n="ce.c7Tag">Generación 24/7 · Sitio remoto</span>
+        <h2 data-i18n="ce.c7Title">Generación eléctrica 24/7 a diésel para sitio remoto</h2>
+        <p data-i18n="ce.c7Desc">Central de 4 MW (2 × 2 MW) con motores de combustión interna a diésel sincronizados, en contenedor acústico. Diseñada para operación 24/7 aislada de la red en una mina de sierra remota, con alta variación en bloques de carga. El proyecto incluyó traslado de equipos a sitios complejos y puesta en marcha bajo condiciones extremas, asegurando suministro continuo y confiable.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c7Service">Ingeniería · Procura · Construcción · Puesta en marcha</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c7Location">Sierra Norte de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c7Result">Operación 24/7 aislada de la red, sin interrupciones</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 08 — Respaldo MV 13.8 kV -->
+<section class="panel case-section" id="caso-08">
+  <div class="wrap">
+    <div class="case-inner reverse">
+      <div class="case-img-wrap">
+        <img src="assets/images/sector-datacenter.png" alt="Sistema de respaldo en media tensión 13.8 kV"/>
+        <span class="case-label">KVA Solutions · Respaldo</span>
+        <span class="case-mw">4 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c8Num">Caso 08 / 10</span>
+        <span class="tag" data-i18n="ce.c8Tag">Respaldo · Media tensión</span>
+        <h2 data-i18n="ce.c8Title">Respaldo en media tensión para fábrica industrial</h2>
+        <p data-i18n="ce.c8Desc">Central de respaldo de 4 MW (2 × 2 MW) con motores de combustión interna a diésel. La diferenciación clave: equipos de generación directos en 13.8 kV, lo que redujo significativamente los tiempos de disponibilidad de equipos y la complejidad eléctrica del proyecto. Gestión nacional con las oficinas corporativas del grupo y entrega de un sistema robusto para emergencias ante fallas de la red.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c8Service">Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c8Location">Norte de México</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c8Result">Respaldo robusto en MV con tiempos de entrega reducidos</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 09 — Solar 40 sitios -->
+<section class="panel case-section" id="caso-09">
+  <div class="wrap">
+    <div class="case-inner">
+      <div class="case-img-wrap">
+        <img src="assets/images/sistemas-solares.png" alt="Sistemas fotovoltaicos en 40 tiendas de conveniencia"/>
+        <span class="case-label">Solar · Multisitio</span>
+        <span class="case-mw">1,278 kW DC</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c9Num">Caso 09 / 10</span>
+        <span class="tag" data-i18n="ce.c9Tag">Solar fotovoltaico · 40 sitios</span>
+        <h2 data-i18n="ce.c9Title">Solar fotovoltaico en 40 tiendas de conveniencia</h2>
+        <p data-i18n="ce.c9Desc">Proyecto fotovoltaico multisitio con capacidad conjunta de 1,278.4 kW DC interconectado en baja tensión a tableros de distribución 220 V, con módulos de 400 W, inversores y medición bidireccional. Coordinamos la operación con el corporativo y diferentes contratistas regionales, además de toda la gestión municipal y federal ante CFE para los contratos de interconexión y la instalación de medidores bidireccionales en cada sitio.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c9Service">Ingeniería · Suministro · Instalación · Gestoría CFE</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c9Location">Cobertura multi-región nacional</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c9Result">40 tiendas operando con generación solar interconectada</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO 10 — Respaldo gas natural -->
+<section class="panel case-section" id="caso-10">
+  <div class="wrap">
+    <div class="case-inner reverse">
+      <div class="case-img-wrap">
+        <img src="assets/images/sector-parque-industrial.png" alt="Respaldo en estación de compresión de gas natural"/>
+        <span class="case-label">KVA Solutions · Gas</span>
+        <span class="case-mw">2 MW</span>
+      </div>
+      <div class="case-text">
+        <span class="num" data-i18n="ce.c10Num">Caso 10 / 10</span>
+        <span class="tag" data-i18n="ce.c10Tag">Respaldo · Gas natural</span>
+        <h2 data-i18n="ce.c10Title">Respaldo eléctrico para estación de compresión de gas natural</h2>
+        <p data-i18n="ce.c10Desc">Sistema de respaldo en baja tensión de 2 MW con motor de combustión interna a gas, diseñado para garantizar la continuidad de cargas críticas ante fallas de la red eléctrica de CFE. El reto fue la alta integración de ingenierías y equipos con el contratista principal de la estación, entregando un sistema impecable para una operación sensible dentro del corredor de gas natural.</p>
+        <div class="case-meta">
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaService">Servicio</span><span class="v" data-i18n="ce.c10Service">Ingeniería · Procura · Construcción · Puesta en marcha</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaLocation">Ubicación</span><span class="v" data-i18n="ce.c10Location">Corredor energético del Norte</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c10Result">Respaldo de cargas críticas en estación de compresión</span></div>
+          <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="panel" style="padding-top:60px">
+  <div class="wrap">
+    <div class="cta-banner">
+      <div>
+        <h3 data-i18n-html="ce.ctaH3">¿Tienes un proyecto similar <span>en mente?</span></h3>
+        <p data-i18n="ce.ctaP">En 5 minutos diagnosticamos tu reto energético y te decimos cómo lo resolvemos — con la misma metodología EPC llave en mano.</p>
+        <a href="index.html" class="btn-secondary-outline" style="margin-top:0" data-i18n="ce.ctaBack">← Volver al inicio</a>
+      </div>
+      <a href="index.html#contacto" class="btn-cta" data-i18n="ce.ctaBtn">Agendar diagnóstico →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" style="margin-bottom:14px">
+          <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div>
+          <div class="brand-text">M2 <span>Energy</span></div>
+        </div>
+        <p data-i18n="footer.brandP">M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+      </div>
+      <div>
+        <h5 data-i18n="ce.footerCasesHeader">Casos de Éxito</h5>
+        <ul>
+          <li><a href="#caso-01" data-i18n="ce.footerCase1">Subestación 28 MW · Norte</a></li>
+          <li><a href="#caso-04" data-i18n="ce.footerCase4">Subestación 108 MW · Centro</a></li>
+          <li><a href="#caso-05" data-i18n="ce.footerCase5">Cogeneración 6.4 MW</a></li>
+          <li><a href="#caso-06" data-i18n="ce.footerCase6">Trigeneración 8 MW</a></li>
+          <li><a href="#caso-09" data-i18n="ce.footerCase9">Solar fotovoltaico</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="ce.footerSiteHeader">Sitio</h5>
+        <ul>
+          <li><a href="que-hacemos.html" data-i18n="ce.footerSite1">Qué Hacemos</a></li>
+          <li><a href="por-que-importa.html" data-i18n="ce.footerSite2">Por Qué Importa</a></li>
+          <li><a href="index.html#trabajamos" data-i18n="ce.footerSite3">Cómo Trabajamos</a></li>
+          <li><a href="index.html#industrias" data-i18n="ce.footerSite4">Industrias</a></li>
+          <li><a href="index.html#contacto" data-i18n="ce.footerSite5">Contáctanos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i18n="footer.contactHeader">Contacto</h5>
+        <ul>
+          <li><a href="#">Austin, TX · USA</a></li>
+          <li><a href="#">CDMX, MX</a></li>
+          <li><a href="#">MTY, MX</a></li>
+          <li><a href="#">Chihuahua, MX</a></li>
+          <li><a href="mailto:marketing@m2energy.org">marketing@m2energy.org</a></li>
+          <li><a href="tel:+15125046581">+1 (512) 504-6581 · US</a></li>
+          <li><a href="tel:+525500000000">+52 55 0000 0000 · MX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span data-i18n="footer.copyright">© 2026 M2E · All rights reserved</span>
+      <span data-i18n="footer.tagline">Energía sin límites · ⚡</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script>M2i18n.init();</script>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+</script>
+</body>
+</html>
