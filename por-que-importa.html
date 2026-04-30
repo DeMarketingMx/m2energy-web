@@ -11,10 +11,10 @@
 <style>
 :root{
   --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
-  --blue:#355e72;--blue-hot:#5a9cb8;--blue-deep:#1a3544;
-  --bg-0:#07111a;--bg-1:#0c1a26;--bg-2:#122636;--bg-panel:#0d1c28;
-  --ink:#f5f7fa;--ink-dim:#a9b6c2;--ink-mute:#6d7d8b;
-  --line:rgba(255,255,255,.08);--line-str:rgba(255,255,255,.14);
+  --blue:#355e72;--blue-hot:#5a9cb8;--blue-deep:#1f3e52;
+  --bg-0:#0e1c28;--bg-1:#13283a;--bg-2:#1a3548;--bg-panel:#162e42;
+  --ink:#fafcff;--ink-dim:#cdd8e3;--ink-mute:#8ea0b0;
+  --line:rgba(255,255,255,.10);--line-str:rgba(255,255,255,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -132,9 +132,10 @@ footer ul a:hover{color:var(--amber)}
 .foot-bar{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute);}
 
 /* LANG TOGGLE */
-.lang-toggle{position:fixed;bottom:28px;left:28px;z-index:9999;display:flex;align-items:center;gap:8px;background:var(--amber);color:#0a1620;border:none;border-radius:999px;padding:11px 20px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;animation:langPulse 2.8s ease-in-out infinite;transition:transform .2s;}
-.lang-toggle:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 32px 8px rgba(246,190,31,.55)}
-@keyframes langPulse{0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.25),0 0 14px 2px rgba(246,190,31,.3),0 6px 18px -4px rgba(246,190,31,.5)}50%{box-shadow:0 0 0 3px rgba(246,190,31,.45),0 0 26px 6px rgba(246,190,31,.5),0 6px 18px -4px rgba(246,190,31,.7)}}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:inline-flex;align-items:center;gap:7px;background:rgba(246,190,31,.12);color:var(--amber);border:1px solid rgba(246,190,31,.45);border-radius:999px;padding:9px 14px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s;}
+.lang-toggle:hover{transform:translateY(-1px);background:rgba(246,190,31,.22);border-color:var(--amber);box-shadow:0 0 0 2px rgba(246,190,31,.25),0 6px 20px -4px rgba(246,190,31,.6)}
+.lang-toggle #langFlag{font-size:14px;line-height:1}
 
 @media(max-width:768px){
   .nav{padding:16px 20px}.page-hero-content,.wrap{padding:0 20px}
@@ -157,7 +158,13 @@ footer ul a:hover{color:var(--amber)}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
     <span data-i18n="pqi.navBack">Volver al inicio</span>
   </a>
-  <a class="nav-cta" href="index.html#contacto" data-i18n="pqi.navCta">Contáctanos →</a>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#contacto" data-i18n="pqi.navCta">Contáctanos →</a>
+    <button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+      <span id="langFlag">🇺🇸</span>
+      <span id="langLabel">ENG</span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -185,8 +192,8 @@ footer ul a:hover{color:var(--amber)}
         <div class="kpi-lbl" data-i18n="pqi.kpi1Lbl">Retraso promedio por falta de capacidad eléctrica</div>
       </div>
       <div class="kpi-item">
-        <div class="kpi-num" data-i18n="pqi.kpi2Num">$0</div>
-        <div class="kpi-lbl" data-i18n="pqi.kpi2Lbl">Inversión inicial con modelo PPA de M2 Energy</div>
+        <div class="kpi-num"><span data-i18n="pqi.kpi2Num">100</span><sub data-i18n="pqi.kpi2Sub">%</sub></div>
+        <div class="kpi-lbl" data-i18n="pqi.kpi2Lbl">Modelo EPC llave en mano de M2 Energy</div>
       </div>
       <div class="kpi-item">
         <div class="kpi-num"><span data-i18n="pqi.kpi3Num">20</span><sub data-i18n="pqi.kpi3Sub">MW</sub></div>
@@ -306,7 +313,7 @@ footer ul a:hover{color:var(--amber)}
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg></div>
         <h3 data-i18n="pqi.sol1H3">Generación en Sitio Inmediata</h3>
         <p data-i18n="pqi.sol1P">Instalamos hasta 20 MW directamente en tu planta sin necesidad de esperar la red CFE. Operacional en semanas, no años.</p>
-        <span class="sc-tag" data-i18n="pqi.sol1Tag">Cero CAPEX</span>
+        <span class="sc-tag" data-i18n="pqi.sol1Tag">Llave en mano</span>
       </div>
       <div class="solution-card">
         <div class="sc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21V12h6v9"/></svg></div>
@@ -341,9 +348,9 @@ footer ul a:hover{color:var(--amber)}
         <p data-i18n="pqi.data2P">Diseño redundante para cargas críticas 24/7. Sin interrupciones. Sin sorpresas. Sin excusas.</p>
       </div>
       <div class="data-card">
-        <div class="data-num" data-i18n="pqi.data3Num">$0</div>
-        <h4 data-i18n="pqi.data3H4">Inversión inicial requerida</h4>
-        <p data-i18n="pqi.data3P">Modelos PPA, renta y venta que se adaptan a tu estrategia financiera sin afectar tu flujo de caja.</p>
+        <div class="data-num"><span data-i18n="pqi.data3Num">100</span><span>%</span></div>
+        <h4 data-i18n="pqi.data3H4">EPC llave en mano</h4>
+        <p data-i18n="pqi.data3P">Modelos flexibles —venta, renta o PPA— bajo ingeniería, procura y construcción integral en un solo contrato.</p>
       </div>
     </div>
 
@@ -392,10 +399,13 @@ footer ul a:hover{color:var(--amber)}
       <div>
         <h5 data-i18n="footer.contactHeader">Contacto</h5>
         <ul>
-          <li><a href="#">Austin, Texas 78731</a></li>
-          <li><a href="#">Chihuahua, Chih. 31110</a></li>
-          <li><a href="#">marketing@m2energy.org</a></li>
-          <li><a href="#">+1 (512) 504-6581</a></li>
+          <li><a href="#">Austin, TX · USA</a></li>
+          <li><a href="#">CDMX, MX</a></li>
+          <li><a href="#">MTY, MX</a></li>
+          <li><a href="#">Chihuahua, MX</a></li>
+          <li><a href="mailto:marketing@m2energy.org">marketing@m2energy.org</a></li>
+          <li><a href="tel:+15125046581">+1 (512) 504-6581 · US</a></li>
+          <li><a href="tel:+525500000000">+52 55 0000 0000 · MX</a></li>
         </ul>
       </div>
     </div>
@@ -406,11 +416,6 @@ footer ul a:hover{color:var(--amber)}
   </div>
 </footer>
 
-<!-- LANG TOGGLE -->
-<button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
-  <span id="langFlag">🇺🇸</span>
-  <span id="langLabel">ENG</span>
-</button>
 <script src="assets/js/i18n.js"></script>
 <script>M2i18n.init();</script>
 <script>

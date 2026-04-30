@@ -14,16 +14,16 @@
     --amber-soft:rgba(246,190,31,.08);
     --blue:#355e72;
     --blue-hot:#5a9cb8;
-    --blue-deep:#1a3544;
-    --bg-0:#07111a;
-    --bg-1:#0c1a26;
-    --bg-2:#122636;
-    --bg-panel:#0d1c28;
-    --ink:#f5f7fa;
-    --ink-dim:#a9b6c2;
-    --ink-mute:#6d7d8b;
-    --line:rgba(255,255,255,.08);
-    --line-str:rgba(255,255,255,.14);
+    --blue-deep:#1f3e52;
+    --bg-0:#0e1c28;
+    --bg-1:#13283a;
+    --bg-2:#1a3548;
+    --bg-panel:#162e42;
+    --ink:#fafcff;
+    --ink-dim:#cdd8e3;
+    --ink-mute:#8ea0b0;
+    --line:rgba(255,255,255,.10);
+    --line-str:rgba(255,255,255,.18);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -36,14 +36,16 @@
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
     display:flex;align-items:center;justify-content:space-between;
-    padding:18px 48px;
+    padding:18px 36px;
     transition:background .3s, backdrop-filter .3s, border-color .3s, padding .3s;
     border-bottom:1px solid transparent;
+    gap:18px;
   }
   .nav.scrolled{
-    background:rgba(7,17,26,.78);backdrop-filter:blur(14px);
-    border-bottom-color:var(--line);padding:12px 48px;
+    background:rgba(14,28,40,.85);backdrop-filter:blur(14px);
+    border-bottom-color:var(--line);padding:12px 36px;
   }
+  .nav-right{display:flex;align-items:center;gap:14px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
   .brand-mark{
     width:36px;height:36px;border-radius:9px;position:relative;
@@ -111,22 +113,17 @@
   .epc-visual-label p{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.3;max-width:360px}
   /* ---------- Language toggle ---------- */
   .lang-toggle{
-    position:fixed;bottom:28px;left:28px;z-index:9999;
-    display:flex;align-items:center;gap:8px;
-    background:var(--amber);color:#0a1620;
-    border:none;border-radius:999px;
-    padding:11px 20px;cursor:pointer;
-    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;
-    letter-spacing:.06em;text-transform:uppercase;
-    animation:langPulse 2.8s ease-in-out infinite;
-    transition:transform .2s;
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(246,190,31,.12);color:var(--amber);
+    border:1px solid rgba(246,190,31,.45);border-radius:999px;
+    padding:9px 14px;cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;
+    transition:transform .2s, background .2s, border-color .2s, box-shadow .2s;
   }
-  .lang-toggle:hover{transform:translateY(-2px);animation:none;box-shadow:0 0 0 2px rgba(246,190,31,.5),0 0 32px 8px rgba(246,190,31,.55),0 12px 32px -6px rgba(246,190,31,.8)}
-  .lang-toggle svg{width:15px;height:15px;flex-shrink:0}
-  @keyframes langPulse{
-    0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.25),0 0 14px 2px rgba(246,190,31,.3),0 6px 18px -4px rgba(246,190,31,.5)}
-    50%{box-shadow:0 0 0 3px rgba(246,190,31,.45),0 0 26px 6px rgba(246,190,31,.5),0 6px 18px -4px rgba(246,190,31,.7)}
-  }
+  .lang-toggle:hover{transform:translateY(-1px);background:rgba(246,190,31,.22);border-color:var(--amber);box-shadow:0 0 0 2px rgba(246,190,31,.25),0 6px 20px -4px rgba(246,190,31,.6)}
+  .lang-toggle svg{width:14px;height:14px;flex-shrink:0}
+  .lang-toggle #langFlag{font-size:14px;line-height:1}
   /* Hide Google Translate toolbar */
   .goog-te-banner-frame,.goog-te-menu-frame{display:none!important}
   body{top:0!important}
@@ -417,6 +414,48 @@
   .ind-pattern-2{background-image:url('assets/images/sector-datacenter.png');background-size:cover;background-position:center}
   .ind-pattern-3{background-image:url('assets/images/sector-parque-industrial.png');background-size:cover;background-position:center}
 
+  /* ---------- Casos de éxito ---------- */
+  .casos-intro{margin-top:18px;font-size:16px;line-height:1.7;color:var(--ink-dim);max-width:820px;text-wrap:pretty}
+  .casos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:52px}
+  @media(max-width:960px){.casos-grid{grid-template-columns:1fr}}
+  .caso-card{
+    position:relative;border-radius:18px;overflow:hidden;
+    background:linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 100%);
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:transform .35s, border-color .3s, box-shadow .3s;
+  }
+  .caso-card:hover{transform:translateY(-4px);border-color:rgba(246,190,31,.35);box-shadow:0 24px 60px -24px rgba(246,190,31,.25)}
+  .caso-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .caso-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .caso-card:hover .caso-img img{transform:scale(1.06)}
+  .caso-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,22,32,.7) 100%);pointer-events:none}
+  .caso-tag{
+    position:absolute;top:14px;left:14px;z-index:2;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 12px;border-radius:999px;
+    background:rgba(246,190,31,.18);border:1px solid rgba(246,190,31,.55);
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--amber);
+    backdrop-filter:blur(10px);
+  }
+  .caso-mw{
+    position:absolute;bottom:14px;right:14px;z-index:2;
+    padding:6px 12px;border-radius:8px;
+    background:rgba(7,17,26,.7);backdrop-filter:blur(8px);
+    border:1px solid var(--line-str);
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;
+    color:var(--amber);
+  }
+  .caso-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .caso-title{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .caso-desc{font-size:14.5px;line-height:1.65;color:var(--ink-dim)}
+  .caso-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:14px;border-top:1px dashed rgba(255,255,255,.08)}
+  .caso-meta-item{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);display:inline-flex;align-items:center;gap:6px}
+  .caso-meta-item strong{color:var(--ink);font-weight:600;font-family:inherit}
+  .caso-status{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7be39e;display:inline-flex;align-items:center;gap:7px}
+  .caso-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#7be39e;box-shadow:0 0 8px #7be39e;animation:pulseDot 1.6s infinite}
+
   /* ---------- FAQ ---------- */
   .faq{margin-top:48px;max-width:900px}
   .faq-item{border-bottom:1px solid var(--line);padding:4px 0}
@@ -626,9 +665,16 @@
     <a href="#trabajamos" data-i18n="nav.howWeWork">Cómo Trabajamos</a>
     <a href="#resultados" data-i18n="nav.results">Resultados</a>
     <a href="#industrias" data-i18n="nav.industries">Industrias</a>
+    <a href="#casos" data-i18n="nav.cases">Casos de Éxito</a>
     <a href="#elegirnos" data-i18n="nav.whyUs">Elegirnos</a>
   </div>
-  <a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contáctanos →</a>
+  <div class="nav-right">
+    <a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contáctanos →</a>
+    <button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
+      <span id="langFlag">🇺🇸</span>
+      <span id="langLabel">ENG</span>
+    </button>
+  </div>
 </nav>
 
 <!-- =============== HERO =============== -->
@@ -683,12 +729,12 @@
 
   <div class="hero-content">
     <div>
-      <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Soluciones energéticas industriales · 60 años</span></span>
+      <span class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Soluciones energéticas industriales · 60 años acumulados de experiencia</span></span>
       <h1 class="hero-title" data-i18n-html="hero.h1">
         <span class="hl">Energía sin límites</span> para la industria en México.
       </h1>
       <p class="hero-lede" data-i18n-html="hero.lede">
-        Transformamos las limitaciones de la red eléctrica en libertad operativa. Diseñamos, construimos y operamos infraestructura de hasta <strong style="color:var(--ink)">20 MW en sitio</strong>, con <strong style="color:var(--amber)">Cero CAPEX</strong> si lo necesitas.
+        Transformamos las limitaciones de la red eléctrica en libertad operativa. Diseñamos, construimos y operamos infraestructura de hasta <strong style="color:var(--ink)">20 MW en sitio</strong> bajo un modelo <strong style="color:var(--amber)">EPC llave en mano</strong>.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contacto"><span data-i18n="hero.cta1">Solicitar Consulta Técnica</span> <span class="arrow">→</span></a>
@@ -696,7 +742,7 @@
       </div>
       <div class="stats">
         <div class="stat"><div class="num"><span id="stat-mw">20</span>MW</div><div class="lbl" data-i18n="hero.stat1">Generación en sitio</div></div>
-        <div class="stat"><div class="num"><span id="stat-cero">0</span> CAPEX</div><div class="lbl" data-i18n="hero.stat2">Modelo disponible</div></div>
+        <div class="stat"><div class="num"><span id="stat-epc">100</span>%<span style="color:var(--amber)"> EPC</span></div><div class="lbl" data-i18n="hero.stat2">Llave en mano</div></div>
         <div class="stat"><div class="num"><span id="stat-up">99.98</span>%</div><div class="lbl" data-i18n="hero.stat3">Uptime operativo</div></div>
       </div>
     </div>
@@ -771,7 +817,7 @@
     <p class="section-lede rv rv-2" data-i18n="servicios.lede">Desde la gestión de KVAs hasta infraestructura de alta tensión, entregamos sistemas que mantienen en movimiento a la industria.</p>
 
     <div class="services-grid">
-      <article class="svc-card svc-card-1 rv rv-1" data-svc>
+      <a href="que-hacemos.html#generacion" class="svc-card svc-card-1 rv rv-1" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
         <div class="svc-body">
@@ -779,12 +825,12 @@
           <div class="svc-ico">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
           </div>
-          <h3 class="svc-title" data-i18n="servicios.card1Title">Generación en Sitio — PPA / Cero CAPEX</h3>
-          <p class="svc-desc" data-i18n="servicios.card1Desc">Venta, renta o PPA sin inversión inicial. Nosotros financiamos, instalamos y operamos el equipo — tú sólo pagas por la energía consumida.</p>
+          <h3 class="svc-title" data-i18n="servicios.card1Title">Generación de Energía en Sitio</h3>
+          <p class="svc-desc" data-i18n="servicios.card1Desc">Diseñamos, instalamos y operamos generadores industriales de hasta 20 MW directamente en tu planta — venta, renta o PPA según tu estrategia.</p>
           <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
-      </article>
-      <article class="svc-card svc-card-2 rv rv-2" data-svc>
+      </a>
+      <a href="que-hacemos.html#infraestructura" class="svc-card svc-card-2 rv rv-2" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
         <div class="svc-body">
@@ -796,8 +842,8 @@
           <p class="svc-desc" data-i18n="servicios.card2Desc">Diseño, ingeniería EPC y ejecución impecable de subestaciones, redes y sistemas eléctricos industriales llave en mano.</p>
           <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
-      </article>
-      <article class="svc-card svc-card-3 rv rv-3" data-svc>
+      </a>
+      <a href="que-hacemos.html#solar" class="svc-card svc-card-3 rv rv-3" data-svc>
         <div class="svc-bg"></div>
         <div class="svc-overlay"></div>
         <div class="svc-body">
@@ -809,7 +855,7 @@
           <p class="svc-desc" data-i18n="servicios.card3Desc">Suministro continuo y diversificado para operaciones críticas. Redundancia, estabilidad de voltaje y cumplimiento ESG sin fricciones.</p>
           <span class="svc-arrow"><span data-i18n="servicios.readMore">Leer más</span> <span>→</span></span>
         </div>
-      </article>
+      </a>
     </div>
     <a href="que-hacemos.html" class="btn-discover" data-i18n="servicios.discoverMore">Descubre más →</a>
   </div>
@@ -833,7 +879,7 @@
       </div>
       <div class="rv rv-2">
         <h3 style="font-family:'Space Grotesk';font-size:28px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px" data-i18n="importa.h3">¿Tu expansión está frenada por la red eléctrica?</h3>
-        <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.65" data-i18n-html="importa.p">No dejes que la falta de capacidad detenga tus proyectos de <strong style="color:var(--ink)">nearshoring</strong>. Diseñamos y operamos soluciones de hasta 20 MW en sitio con <strong style="color:var(--amber)">Cero CAPEX</strong>.</p>
+        <p style="color:var(--ink-dim);font-size:15.5px;line-height:1.65" data-i18n-html="importa.p">No dejes que la falta de capacidad detenga tus proyectos de <strong style="color:var(--ink)">nearshoring</strong>. Diseñamos y operamos soluciones de hasta <strong style="color:var(--amber)">20 MW en sitio</strong>, llave en mano.</p>
         <ul class="why-list">
           <li><div class="tick">✓</div><span data-i18n-html="importa.bullet1"><strong>Destrabamos proyectos detenidos</strong> por falta de capacidad con generación en sitio y expansión de subestaciones.</span></li>
           <li><div class="tick">✓</div><span data-i18n-html="importa.bullet2"><strong>Gestión completa ante CENACE, CFE y CNE</strong> — ingeniería, permisos, construcción y puesta en marcha bajo un único punto de contacto.</span></li>
@@ -915,10 +961,10 @@
         <div class="res-desc" data-i18n="resultados.card2Desc">Diseño resiliente con redundancia operativa para cargas críticas 24/7.</div>
       </div>
       <div class="res-card rv rv-3">
-        <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9h20v12H2z"/><path d="M6 9V5h12v4"/><path d="M10 14h4"/></svg></div>
-        <div class="res-num" data-count="0" data-prefix="$" data-suffix="">$0</div>
-        <div class="res-title" data-i18n="resultados.card3Title">Cero CAPEX</div>
-        <div class="res-desc" data-i18n="resultados.card3Desc">Financiamiento flexible alineado a tu plan de crecimiento: CAPEX, OPEX o híbrido.</div>
+        <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="res-num" data-count="100" data-suffix="%">0%</div>
+        <div class="res-title" data-i18n="resultados.card3Title">Llave en mano</div>
+        <div class="res-desc" data-i18n="resultados.card3Desc">EPC integral: ingeniería, procura, construcción y puesta en marcha bajo un solo punto de contacto.</div>
       </div>
       <div class="res-card rv rv-4">
         <div class="res-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></div>
@@ -945,7 +991,7 @@
         <div class="ind-overlay"></div>
         <div class="ind-body">
           <span class="ind-num" data-i18n="industrias.card1Num">Sector 01</span>
-          <h3 data-i18n="industrias.card1Title">Manufactura y Automotriz</h3>
+          <h3 data-i18n="industrias.card1Title">Industria Manufacturera</h3>
           <p data-i18n="industrias.card1Desc">Nearshoring y alta tecnología. Energía estable para innovación y cadenas de suministro globales.</p>
         </div>
       </article>
@@ -954,7 +1000,7 @@
         <div class="ind-overlay"></div>
         <div class="ind-body">
           <span class="ind-num" data-i18n="industrias.card2Num">Sector 02</span>
-          <h3 data-i18n="industrias.card2Title">Data Centers y Logística</h3>
+          <h3 data-i18n="industrias.card2Title">Data Centers</h3>
           <p data-i18n="industrias.card2Desc">Carga crítica y cero fallas. Garantizamos carga constante y cero margen de error 24/7.</p>
         </div>
       </article>
@@ -973,6 +1019,201 @@
 
 <div class="e-divider"></div>
 
+<!-- =============== CASOS DE ÉXITO =============== -->
+<section class="panel" id="casos">
+  <div class="wrap">
+    <div class="rv"><span class="kicker" data-i18n="casos.kicker">Casos de Éxito</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="casos.title">Proyectos que destrabaron <span class="amber">la industria.</span></h2>
+    <p class="casos-intro rv rv-2" data-i18n="casos.intro">A continuación se listan proyectos representativos de distintas soluciones y servicios que nuestro equipo ha llevado a cabo: cogeneración y trigeneración, expansión y construcción de subestaciones, sistemas de respaldo, paneles solares e infraestructura llave en mano. Cada caso resolvió un reto real de capacidad eléctrica, continuidad operativa o reducción de costos energéticos.</p>
+
+    <div class="casos-grid">
+
+      <!-- 01 — Construcción Subestación 230/13.8 kV (parque industrial) -->
+      <article class="caso-card rv rv-1">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c1Tag">EPC · KVA Solutions</span>
+          <span class="caso-mw">28 MW</span>
+          <img src="assets/images/subestaciones.png" alt="Construcción de subestación 230/13.8 kV para parque industrial"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c1Title">Construcción de subestación 230/13.8 kV para parque industrial</h3>
+          <p class="caso-desc" data-i18n="casos.c1Desc">Energización de un parque industrial nuevo en zona altamente congestionada. Se gestionó la negociación ante CENACE/CFE y se ejecutó el proyecto bajo la modalidad llave en mano, logrando adquirir 28 MW de demanda con una reducción de costos en obras de conexión superior a $20 MDP MXN, mediante el cambio estratégico de 230 kV a 115 kV en tiempo expeditado.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Gestoría CENACE/CFE · Ingeniería · Procura · Construcción</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 — Ampliación subestación 115/13.8 kV (planta industrial) -->
+      <article class="caso-card rv rv-2">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c2Tag">EPC · Subestaciones</span>
+          <span class="caso-mw">15 MW</span>
+          <img src="assets/images/infraestructura-tension.png" alt="Ampliación de subestación 115/13.8 kV"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c2Title">Ampliación de subestación 115/13.8 kV en planta industrial</h3>
+          <p class="caso-desc" data-i18n="casos.c2Desc">Incremento de demanda contratada en una subestación particular operando a 115 kV. Se realizaron los estudios de impacto ante CENACE bajo el Criterio CONE-16 del Código de Red, gestionando el incremento de carga sin sobrecargas ni desviaciones de tensión, llevando la demanda final a más de 26 MW.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Estudios de red · Ingeniería · Construcción</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Noreste de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 — Subestación 230/13.8 kV llave en mano (parque industrial) -->
+      <article class="caso-card rv rv-3">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c3Tag">EPC · Llave en Mano</span>
+          <span class="caso-mw">80 MW</span>
+          <img src="assets/images/red-electrica.png" alt="Subestación 230/13.8 kV para parque industrial fronterizo"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c3Title">Subestación 230/13.8 kV en parque industrial fronterizo</h3>
+          <p class="caso-desc" data-i18n="casos.c3Desc">Diseño y construcción de subestación llave en mano para dar servicio a parques industriales que demandaban hasta 80 MW. Mediante una optimización de obras de refuerzo en la red de transmisión, se logró una reducción de costos de conexión de más de $20 MDP MXN frente al esquema original.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>EPC integral · Estudios CENACE</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Frontera Norte</strong></span>
+            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 — Subestación 230/13.8 kV (zona industrial centro) -->
+      <article class="caso-card rv rv-4">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c4Tag">EPC · Llave en Mano</span>
+          <span class="caso-mw">108 MW</span>
+          <img src="assets/images/infraestructura.png" alt="Subestación 230/13.8 kV con ahorros millonarios en obras de conexión"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c4Title">Subestación 230/13.8 kV con ahorros millonarios en obras de conexión</h3>
+          <p class="caso-desc" data-i18n="casos.c4Desc">Proyecto de gran escala con conexión a 115 kV y 230 kV. La propuesta optimizada permitió capturar más de 100 MW de capacidad logrando una reducción de costos de obras de conexión por encima de $449 MDP MXN, validada bajo los criterios técnicos y regulatorios vigentes.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Estudios · Ingeniería · Procura · EPC</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Centro de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusDelivered">Proyecto terminado</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 — Cogeneración con biogás de relleno sanitario (6.4 MW) -->
+      <article class="caso-card rv rv-1">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c5Tag">Cogeneración · EPC</span>
+          <span class="caso-mw">6.4 MW</span>
+          <img src="assets/images/generacion-sitio.png" alt="Sistema de cogeneración con biogás de relleno sanitario"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c5Title">Cogeneración continua con biogás de relleno sanitario</h3>
+          <p class="caso-desc" data-i18n="casos.c5Desc">Central de generación eléctrica de 6.4 MW (4 × 1.6 MW) operando en modo continuo con biogás de relleno sanitario como combustible. El reto fue desarrollar y construir el sistema de captación, recuperación y limpieza del biogás para uso en motogeneradores. Hoy suministra energía para alumbrado público a dos municipios.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 — Trigeneración para empresa de alimentos (8 MW + 827 TR) -->
+      <article class="caso-card rv rv-2">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c6Tag">Trigeneración · KVA Solutions</span>
+          <span class="caso-mw">8 MW + 827 TR</span>
+          <img src="assets/images/sector-manufactura.png" alt="Sistema de trigeneración con producción de frío subzero"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c6Title">Trigeneración con frío subzero para empresa de alimentos</h3>
+          <p class="caso-desc" data-i18n="casos.c6Desc">Sistema de trigeneración en media tensión para operación continua sincronizada con la red. Capacidad de 8 MW eléctricos y 827 TR de refrigeración a –12 °C, con dos motores de combustión interna a gas natural de 4 MW cada uno. Primer permiso federal de cogeneración bajo la nueva ley energética e integración de tecnología europea para frío industrial.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Diseño · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07 — Generación 24/7 a diesel para mina (4 MW) -->
+      <article class="caso-card rv rv-3">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c7Tag">KVA Solutions · Diesel</span>
+          <span class="caso-mw">4 MW</span>
+          <img src="assets/images/hero-generacion.png" alt="Generación eléctrica 24/7 con motores a diésel"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c7Title">Generación eléctrica 24/7 a diésel para sitio remoto</h3>
+          <p class="caso-desc" data-i18n="casos.c7Desc">Central de 4 MW (2 × 2 MW) con motores de combustión interna a diésel sincronizados, en contenedor acústico. Diseñada para operación 24/7 aislada de la red en una mina de sierra remota, con alta variación en bloques de carga. Incluyó el traslado de equipos a sitios complejos y puesta en marcha bajo condiciones extremas.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Sierra Norte de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 08 — Sistema de respaldo en media tensión (4 MW directos en 13.8 kV) -->
+      <article class="caso-card rv rv-4">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c8Tag">KVA Solutions · Respaldo</span>
+          <span class="caso-mw">4 MW</span>
+          <img src="assets/images/sector-datacenter.png" alt="Sistema de respaldo en media tensión 13.8 kV"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c8Title">Respaldo en media tensión para fábrica industrial</h3>
+          <p class="caso-desc" data-i18n="casos.c8Desc">Central de respaldo de 4 MW (2 × 2 MW) con motores de combustión interna a diésel. Equipos de generación directos en 13.8 kV, lo que redujo significativamente los tiempos de disponibilidad. Gestión nacional con las oficinas corporativas del grupo y entrega de un sistema robusto para emergencias ante fallas de la red.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Permisos · Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Norte de México</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 09 — Sistemas solares fotovoltaicos en cadena retail (40 sitios) -->
+      <article class="caso-card rv rv-1">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c9Tag">Solar · 40 sitios</span>
+          <span class="caso-mw">1,278 kW DC</span>
+          <img src="assets/images/sistemas-solares.png" alt="Sistemas fotovoltaicos en 40 tiendas de conveniencia"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c9Title">Solar fotovoltaico en 40 tiendas de conveniencia</h3>
+          <p class="caso-desc" data-i18n="casos.c9Desc">Proyecto fotovoltaico multisitio de 1,278.4 kW DC interconectado en baja tensión a tableros de distribución 220 V, con módulos de 400 W, inversores y medición bidireccional. Coordinamos la logística con el corporativo y diferentes contratistas regionales, además de toda la gestión municipal y federal ante CFE para los contratos de interconexión.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Suministro · Instalación · Gestoría CFE</strong></span>
+            <span class="caso-meta-item">Cobertura: <strong>Multi-región nacional</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10 — Respaldo en estación de compresión de gas natural (2 MW) -->
+      <article class="caso-card rv rv-2">
+        <div class="caso-img">
+          <span class="caso-tag" data-i18n="casos.c10Tag">KVA Solutions · Gas</span>
+          <span class="caso-mw">2 MW</span>
+          <img src="assets/images/sector-parque-industrial.png" alt="Respaldo en estación de compresión de gas natural"/>
+        </div>
+        <div class="caso-body">
+          <h3 class="caso-title" data-i18n="casos.c10Title">Respaldo eléctrico para estación de compresión de gas natural</h3>
+          <p class="caso-desc" data-i18n="casos.c10Desc">Sistema de respaldo en baja tensión de 2 MW con motor de combustión interna a gas. Diseñado para garantizar la continuidad de cargas críticas ante fallas de la red eléctrica de CFE. El reto fue la alta integración de ingenierías y equipos con el contratista principal para entregar un sistema impecable en un sitio sensible.</p>
+          <div class="caso-meta">
+            <span class="caso-meta-item">Servicio: <strong>Ingeniería · Procura · Construcción · Puesta en marcha</strong></span>
+            <span class="caso-meta-item">Ubicación: <strong>Corredor energético del Norte</strong></span>
+            <span class="caso-status" data-i18n="casos.statusOperating">En operación</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="e-divider"></div>
+
 <!-- =============== POR QUÉ ELEGIRNOS · FAQ =============== -->
 <section class="panel" id="elegirnos">
   <div class="wrap">
@@ -983,7 +1224,6 @@
     <div class="faq">
       <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq1q">¿Qué significa que ofrecen una "integración completa" en sus proyectos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq1a">M2 Energy gestiona la cadena energética de extremo a extremo. No solo instalamos equipos; conectamos su operación desde el punto de acometida de la red nacional hasta los sistemas de generación en sitio y almacenamiento. Al ser un único punto de contacto para ingeniería, permisología ante CENACE/CFE y construcción, garantizamos que todos los sistemas operen con máxima eficiencia.</div></div></div>
       <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq2q">¿Están preparados para gestionar demandas de alta tecnología o automotriz?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq2a">Absolutamente. Contamos con amplia experiencia en entornos industriales donde la carga es crítica y el costo de un minuto de inactividad es millonario. Diseñamos infraestructura resiliente específicamente para centros de datos, fabricantes de vehículos eléctricos y manufactura pesada, asegurando redundancia y estabilidad de voltaje incluso en las zonas con redes más inestables.</div></div></div>
-      <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq3q">No tenemos presupuesto de capital — ¿cómo implementamos una solución?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n-html="elegirnos.faq3a">Si buscan <strong>Cero CAPEX</strong>, podemos implementar un modelo OPEX mediante un contrato de venta de energía (PPA) o renta, donde ustedes solo pagan por el servicio o la energía consumida. También ofrecemos modelos híbridos que combinan inversión propia con financiamiento externo, alineando el proyecto a sus flujos de caja.</div></div></div>
       <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq4q">Tenemos un proyecto detenido por falta de capacidad en la red. ¿Pueden ayudarnos?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n="elegirnos.faq4a">Esa es una de nuestras mayores especialidades. Destrabamos proyectos mediante la ingeniería de expansión de subestaciones o la implementación de generación en sitio inmediata. Analizamos las restricciones técnicas y legales para encontrar rutas alternativas que permitan iniciar operaciones sin esperar años a que la infraestructura de la red nacional se actualice.</div></div></div>
       <div class="faq-item rv"><button class="faq-q"><span data-i18n="elegirnos.faq5q">¿Qué diferencia a M2 Energy de un proveedor de equipos tradicional?</span><span class="plus">+</span></button><div class="faq-a"><div class="faq-a-inner" data-i18n-html="elegirnos.faq5a">A diferencia de un proveedor de equipos o empresa de construcción, nosotros somos <strong>consultores y desarrolladores independientes</strong>. No estamos atados a una marca específica, lo que nos permite elegir la tecnología más eficiente y el modelo financiero que mejor se adapte a tus necesidades, garantizando siempre tu libertad energética.</div></div></div>
     </div>
@@ -1007,15 +1247,19 @@
         <div class="meta">
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.11 1 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 013.19 4.11 1 1 0 014.18 3h4.09a1 1 0 011 .75 12.84 12.84 0 00.7 2.81 1 1 0 01-.22 1.05L8.09 9.29a16 16 0 006 6l1.68-1.68a1 1 0 011-.22 12.84 12.84 0 002.82.7 1 1 0 01.75 1z"/></svg></div>
-            <div><div class="k" data-i18n="contacto.contactPhone">Llámanos</div><div class="v">+1 (512) 504-6581</div></div>
+            <div>
+              <div class="k" data-i18n="contacto.contactPhone">Llámanos</div>
+              <div class="v"><a href="tel:+15125046581" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+1 (512) 504-6581 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· US</span></a></div>
+              <div class="v" style="margin-top:6px"><a href="tel:+525500000000" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+52 55 0000 0000 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· MX</span></a></div>
+            </div>
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
-            <div><div class="k" data-i18n="contacto.contactEmail">Email</div><div class="v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="701d11021b1504191e17301d42151e150217095e1f0217">[email&#160;protected]</a></div></div>
+            <div><div class="k" data-i18n="contacto.contactEmail">Email</div><div class="v"><a href="mailto:marketing@m2energy.org" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">marketing@m2energy.org</a></div></div>
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v" data-i18n="contacto.contactOfficesVal">Austin, TX · Chihuahua, MX</div></div>
+            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v" data-i18n="contacto.contactOfficesVal">Austin, TX · CDMX, MX · MTY, MX · Chihuahua, MX</div></div>
           </div>
         </div>
       </div>
@@ -1214,6 +1458,7 @@
         <li><a href="#trabajamos" data-i18n="footer.navHowWeWork">Cómo Trabajamos</a></li>
         <li><a href="#resultados" data-i18n="footer.navResults">Resultados</a></li>
         <li><a href="#industrias" data-i18n="footer.navIndustries">Industrias</a></li>
+        <li><a href="#casos" data-i18n="footer.navCases">Casos de Éxito</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1228,10 +1473,13 @@
     <div class="foot-col">
       <h5 data-i18n="footer.contactHeader">Contacto</h5>
       <ul>
-        <li><a href="#">Austin, Texas 78731</a></li>
-        <li><a href="#">Chihuahua, Chih. 31110</a></li>
-        <li><a href="#"><span class="__cf_email__" data-cfemail="3c515d4e57594855525b7c510e5952594e5b4512534e5b">[email&#160;protected]</span></a></li>
-        <li><a href="#">+1 (512) 504-6581</a></li>
+        <li><a href="#">Austin, TX · USA</a></li>
+        <li><a href="#">CDMX, MX</a></li>
+        <li><a href="#">MTY, MX</a></li>
+        <li><a href="#">Chihuahua, MX</a></li>
+        <li><a href="mailto:marketing@m2energy.org">marketing@m2energy.org</a></li>
+        <li><a href="tel:+15125046581">+1 (512) 504-6581 · US</a></li>
+        <li><a href="tel:+525500000000">+52 55 0000 0000 · MX</a></li>
       </ul>
     </div>
   </div>
@@ -1575,7 +1823,7 @@ function countUp(el, target, dur=1400, prefix='', suffix=''){
 }
 // hero stats
 countUp(document.getElementById('stat-mw'), 20);
-countUp(document.getElementById('stat-cero'), 0);
+countUp(document.getElementById('stat-epc'), 100);
 countUp(document.getElementById('stat-up'), 99.98);
 // result cards — when visible
 const resIO = new IntersectionObserver((entries)=>{
@@ -1708,7 +1956,7 @@ function renderResults(){
 
   // tailor actions (i18n-aware)
   const actions = [];
-  const _e = ecra || {action1:'Evaluar generación en sitio (PPA / Cero CAPEX) para eliminar dependencia de la red.',action2:'Iniciar gestión de factibilidad ante CENACE y CFE de inmediato.',action3:'Diseñar subestación dedicada con redundancia N+1 para carga crítica.',action4:'Reservar capacidad adicional proyectada a 5 años para evitar re-ingeniería.',action5:'Agendar diagnóstico técnico sin costo con el equipo M2 Energy.',cfeNoContact:'Sin contacto',cfeQuerySent:'Consulta enviada'};
+  const _e = ecra || {action1:'Evaluar generación en sitio bajo modelo EPC llave en mano para eliminar dependencia de la red.',action2:'Iniciar gestión de factibilidad ante CENACE y CFE de inmediato.',action3:'Diseñar subestación dedicada con redundancia N+1 para carga crítica.',action4:'Reservar capacidad adicional proyectada a 5 años para evitar re-ingeniería.',action5:'Agendar diagnóstico técnico sin costo con el equipo M2 Energy.',cfeNoContact:'Sin contacto',cfeQuerySent:'Consulta enviada'};
   if(score>=60) actions.push(_e.action1);
   if(cfe===_e.cfeNoContact || cfe===_e.cfeQuerySent || cfe==='Sin contacto' || cfe==='Consulta enviada' || cfe==='No contact' || cfe==='Query submitted') actions.push(_e.action2);
   if(kva>=5000) actions.push(_e.action3);
@@ -1791,11 +2039,6 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
 })();
 </script>
 
-<!-- =============== LANGUAGE TOGGLE =============== -->
-<button class="lang-toggle" id="langToggle" onclick="M2i18n.toggle()" aria-label="Toggle language / Cambiar idioma">
-  <span id="langFlag">🇺🇸</span>
-  <span id="langLabel">ENG</span>
-</button>
 <script src="assets/js/i18n.js"></script>
 <script>M2i18n.init();</script>
 </body>
