@@ -108,7 +108,7 @@
   /* ---------- EPC visual ---------- */
   .epc-visual{margin-top:48px;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;height:360px}
   .epc-visual img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
-  .epc-visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,11,18,.7) 0%,transparent 55%),linear-gradient(0deg,rgba(5,11,18,.5) 0%,transparent 40%)}
+  .epc-visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,11,18,.55) 0%,transparent 45%),linear-gradient(0deg,rgba(5,11,18,.4) 0%,transparent 30%)}
   .epc-visual-label{position:absolute;bottom:28px;left:32px;z-index:2}
   .epc-visual-label span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);letter-spacing:.15em;margin-bottom:6px}
   .epc-visual-label p{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.3;max-width:360px}
@@ -279,12 +279,12 @@
     aspect-ratio:3/4;
     transition:transform .35s, border-color .3s, box-shadow .3s;
   }
-  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;opacity:.42;background-size:cover;background-position:center;transform:scale(1.45);transition:opacity .4s, transform .6s}
-  .svc-card:hover .svc-bg{opacity:.62;transform:scale(1.55)}
+  .svc-card .svc-bg{position:absolute;inset:0;z-index:0;opacity:1;background-size:cover;background-position:center;transform:scale(1.1);transition:transform .6s}
+  .svc-card:hover .svc-bg{transform:scale(1.15)}
   .svc-card-1 .svc-bg{background-image:url('assets/images/photos/foto-intercambiadores-calor.jpg');background-position:center center}
   .svc-card-2 .svc-bg{background-image:url('assets/images/photos/foto-generacion-minero-dia.jpg');background-position:center center}
   .svc-card-3 .svc-bg{background-image:url('assets/images/photos/foto-solar-tiendas.jpg');background-position:center}
-  .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 18%,rgba(6,14,22,.97) 66%)}
+  .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 35%,rgba(6,14,22,.88) 78%)}
   .svc-card .svc-body{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
   .svc-card::before{
     content:"";position:absolute;inset:0;z-index:3;
@@ -314,9 +314,8 @@
   .video-card::before{
     content:"";position:absolute;inset:0;z-index:2;
     background:
-      linear-gradient(180deg, rgba(7,17,26,.25) 0%, rgba(7,17,26,.55) 100%),
-      repeating-linear-gradient(45deg, transparent 0 10px, rgba(246,190,31,.04) 10px 11px),
-      radial-gradient(600px 400px at 30% 40%, rgba(90,156,184,.25), transparent 60%);
+      radial-gradient(circle at 50% 50%, rgba(7,17,26,.2) 0%, rgba(7,17,26,.05) 35%, transparent 60%),
+      repeating-linear-gradient(45deg, transparent 0 10px, rgba(246,190,31,.04) 10px 11px);
   }
   .vc-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .6s ease, filter .3s}
   .video-card:hover .vc-poster{transform:scale(1.04);filter:brightness(1.05)}
@@ -407,9 +406,9 @@
     transition:transform .35s;
   }
   .ind-card:hover{transform:translateY(-4px)}
-  .ind-card .ind-bg{position:absolute;inset:0;opacity:.35;transition:opacity .4s, transform .6s;background-size:cover;background-position:center}
-  .ind-card:hover .ind-bg{opacity:.55;transform:scale(1.05)}
-  .ind-card .ind-overlay{position:absolute;inset:0;background:linear-gradient(180deg, transparent 30%, rgba(6,14,22,.92) 92%)}
+  .ind-card .ind-bg{position:absolute;inset:0;opacity:1;transition:transform .6s;background-size:cover;background-position:center}
+  .ind-card:hover .ind-bg{transform:scale(1.05)}
+  .ind-card .ind-overlay{position:absolute;inset:0;background:linear-gradient(180deg, transparent 50%, rgba(6,14,22,.85) 95%)}
   .ind-card .ind-body{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
   .ind-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;margin-bottom:10px;display:block}
   .ind-card h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
@@ -435,7 +434,7 @@
   .caso-img{position:relative;aspect-ratio:16/9;overflow:hidden}
   .caso-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
   .caso-card:hover .caso-img img{transform:scale(1.06)}
-  .caso-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,22,32,.7) 100%);pointer-events:none}
+  .caso-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,rgba(11,22,32,.45) 100%);pointer-events:none}
   .caso-tag{
     position:absolute;top:14px;left:14px;z-index:2;
     display:inline-flex;align-items:center;gap:6px;
