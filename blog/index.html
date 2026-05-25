@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Blog — M2 Energy · Insights sobre capacidad eléctrica industrial en México</title>
+<meta name="description" content="Análisis, guías y casos de uso sobre capacidad eléctrica industrial, permisos CFE, financiamiento de infraestructura y operación de plantas en México."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
+  --blue:#355e72;--blue-hot:#5a9cb8;--blue-deep:#1f3e52;
+  --bg-0:#0e1c28;--bg-1:#13283a;--bg-2:#1a3548;--bg-panel:#162e42;
+  --ink:#fafcff;--ink-dim:#cdd8e3;--ink-mute:#8ea0b0;
+  --line:rgba(255,255,255,.10);--line-str:rgba(255,255,255,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--bg-0);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+body{overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:#0a1620}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid transparent;transition:background .3s,padding .3s,border-color .3s;}
+.nav.scrolled{background:rgba(7,17,26,.88);backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:12px 48px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--amber) 0%,#e0a417 100%);box-shadow:0 0 0 1px rgba(246,190,31,.35),0 8px 24px -8px rgba(246,190,31,.6);display:grid;place-items:center;overflow:hidden;}
+.brand-mark svg{width:18px;height:18px;z-index:1}
+.brand-text{font-family:'Space Grotesk',sans-serif;font-size:17px}
+.brand-text span{color:var(--amber)}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-dim);padding:8px 16px;border:1px solid var(--line);border-radius:999px;transition:color .2s,border-color .2s;}
+.nav-back:hover{color:var(--ink);border-color:var(--line-str)}
+.nav-back svg{width:14px;height:14px}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-cta{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-radius:999px;background:var(--amber);color:#0a1620;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 1px rgba(246,190,31,.4),0 8px 24px -6px rgba(246,190,31,.5);}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(246,190,31,.6),0 12px 32px -6px rgba(246,190,31,.7)}
+.lang-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#0a1620;border:none;border-radius:999px;padding:10px 18px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s,box-shadow .2s;}
+.lang-toggle:hover{transform:translateY(-1px);box-shadow:0 0 0 2px rgba(246,190,31,.55),0 0 32px 8px rgba(246,190,31,.55),0 10px 28px -4px rgba(246,190,31,.8)}
+.lang-toggle svg{width:14px;height:14px;flex-shrink:0}
+
+/* PAGE HERO */
+.page-hero{position:relative;min-height:60vh;display:flex;align-items:flex-end;overflow:hidden;padding:140px 0 80px;background:linear-gradient(180deg,rgba(7,17,26,.4) 0%,rgba(7,17,26,1) 100%),radial-gradient(1200px 600px at 20% 30%,rgba(53,94,114,.35),transparent 60%),radial-gradient(900px 500px at 85% 70%,rgba(246,190,31,.08),transparent 60%),linear-gradient(180deg,#06101a 0%,#08141e 60%,#0a1824 100%);}
+.page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 48px;width:100%;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-mute);margin-bottom:32px;}
+.breadcrumb a{color:var(--ink-mute);transition:color .2s}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb span{opacity:.4}
+.page-hero .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.page-hero .kicker::before{content:'';width:32px;height:2px;background:var(--amber)}
+.page-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:20px;}
+.page-hero h1 span{color:var(--amber)}
+.page-hero p{font-size:clamp(15px,1.2vw,18px);color:var(--ink-dim);max-width:600px;line-height:1.65;margin-bottom:28px;}
+.posts-counter{display:inline-flex;align-items:center;gap:10px;background:rgba(246,190,31,.08);border:1px solid rgba(246,190,31,.25);border-radius:999px;padding:9px 18px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--amber);}
+.posts-counter strong{font-weight:600;letter-spacing:.05em}
+
+/* GRID */
+.blog-section{padding:80px 0 120px;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+.blog-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
+.filter-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--ink-dim);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+.filter-chip:hover{border-color:rgba(246,190,31,.35);color:var(--ink)}
+.filter-chip.active{background:var(--amber);color:#0a1620;border-color:var(--amber);font-weight:600}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+@media (max-width:980px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.blog-grid{grid-template-columns:1fr}}
+
+.blog-card{background:var(--bg-1);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s;height:100%;}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(246,190,31,.35);box-shadow:0 12px 40px -8px rgba(246,190,31,.15)}
+.blog-card-img{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);overflow:hidden;}
+.blog-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,17,26,.6) 100%);}
+.blog-card-img .cat-overlay{position:absolute;top:14px;left:14px;background:rgba(7,17,26,.85);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;color:var(--amber);text-transform:uppercase;z-index:2;}
+.blog-card-img .icon-overlay{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.12);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:88px;letter-spacing:-.04em;z-index:1;}
+.blog-card-img.cat-capacidad{background:linear-gradient(135deg,#1f3e52 0%,#0e1c28 100%)}
+.blog-card-img.cat-permisos{background:linear-gradient(135deg,#355e72 0%,#162e42 100%)}
+.blog-card-img.cat-financiamiento{background:linear-gradient(135deg,#3d2e15 0%,#1a3548 100%)}
+.blog-card-img.cat-operacion{background:linear-gradient(135deg,#2a4055 0%,#0e1c28 100%)}
+.blog-card-img.cat-mercado{background:linear-gradient(135deg,#1f3e52 0%,#13283a 50%,#3d2e15 100%)}
+.blog-card-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1;}
+.blog-card-meta{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-mute);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+.blog-card-date{color:var(--amber)}
+.blog-card-dot{width:3px;height:3px;border-radius:50%;background:var(--ink-mute)}
+.blog-card-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin-bottom:12px;color:var(--ink);}
+.blog-card-snippet{font-size:14px;color:var(--ink-dim);line-height:1.6;margin-bottom:18px;flex:1;}
+.blog-card-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--amber);letter-spacing:.02em;transition:gap .2s;}
+.blog-card:hover .blog-card-link{gap:10px}
+
+/* LOAD MORE */
+.load-more-wrap{display:flex;justify-content:center;margin-top:60px;}
+.load-more-btn{display:none;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(246,190,31,.45);color:var(--amber);padding:14px 32px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;cursor:pointer;transition:all .2s;}
+.load-more-btn:hover{background:rgba(246,190,31,.08);border-color:var(--amber);transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(246,190,31,.25)}
+.load-more-btn.visible{display:inline-flex}
+
+/* EMPTY / END STATE */
+.end-state{text-align:center;color:var(--ink-mute);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em;margin-top:60px;display:none;}
+.end-state.visible{display:block}
+
+/* FOOTER */
+footer{background:#050c14;padding:60px 48px 28px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:.3}
+.foot-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-brand .brand-mark{width:32px;height:32px}
+.foot-brand .brand-text{font-family:'Space Grotesk',sans-serif;font-size:15px}
+.foot-col p{font-size:13.5px;color:var(--ink-mute);line-height:1.6;margin:14px 0 20px;max-width:280px;}
+footer h5{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+footer ul a{font-size:13.5px;color:var(--ink-dim);transition:color .2s;}
+footer ul a:hover{color:var(--amber)}
+.foot-bar{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute);}
+
+@media (max-width:820px){
+  .nav{padding:14px 20px}
+  .nav.scrolled{padding:10px 20px}
+  .page-hero-content{padding:0 24px}
+  .wrap{padding:0 24px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 24px}
+  .foot-bar{padding:24px 24px 0;flex-direction:column;gap:8px}
+  footer{padding:48px 0 24px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg>
+    </div>
+    <div class="brand-text">M2 <span>Energy</span></div>
+  </a>
+  <a class="nav-back" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    <span>Volver al inicio</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-cta" href="/#contacto">Contáctanos →</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="/">Inicio</a>
+      <span>/</span>
+      <span style="color:var(--ink-dim)">Blog</span>
+    </div>
+    <div class="kicker">Blog · Insights industriales</div>
+    <h1>Energía <span>&amp; Capacidad</span><br>para la industria mexicana.</h1>
+    <p>Análisis, guías y casos prácticos sobre capacidad eléctrica industrial, permisos CFE, financiamiento de infraestructura y operación de plantas en México.</p>
+    <div class="posts-counter"><strong id="postsCount">10</strong>&nbsp;artículos publicados</div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="wrap">
+
+    <div class="blog-filters" id="blogFilters">
+      <button class="filter-chip active" data-cat="all">Todos</button>
+      <button class="filter-chip" data-cat="capacidad">Capacidad eléctrica</button>
+      <button class="filter-chip" data-cat="permisos">Permisos CFE</button>
+      <button class="filter-chip" data-cat="financiamiento">Financiamiento</button>
+      <button class="filter-chip" data-cat="operacion">Operación</button>
+      <button class="filter-chip" data-cat="mercado">Mercado e industria</button>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <a class="blog-card" data-cat="capacidad" href="/blog/capacidad-electrica-nueva-planta-mexico.html">
+        <div class="blog-card-img cat-capacidad">
+          <span class="cat-overlay">Capacidad eléctrica</span>
+          <span class="icon-overlay">kVA</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>8 min lectura</span></div>
+          <h3 class="blog-card-title">Cómo evaluar la capacidad eléctrica disponible para tu nueva planta industrial en México</h3>
+          <p class="blog-card-snippet">Antes de cerrar la compra del terreno o iniciar obra, hay un dato que define si tu proyecto arranca o se atrasa dos años: los kVAs realmente disponibles en ese punto de la red CFE.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="permisos" href="/blog/factibilidad-electrica-cfe-aid-interconexion.html">
+        <div class="blog-card-img cat-permisos">
+          <span class="cat-overlay">Permisos CFE</span>
+          <span class="icon-overlay">CFE</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>10 min lectura</span></div>
+          <h3 class="blog-card-title">Trámite de factibilidad eléctrica ante CFE: guía paso a paso del AID al contrato de interconexión</h3>
+          <p class="blog-card-snippet">Del primer oficio de factibilidad hasta el contrato de interconexión firmado pueden pasar 8 a 24 meses. Te explicamos cada etapa, qué se pide y dónde se atoran los proyectos.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="financiamiento" href="/blog/ppa-cero-capex-subestacion-generacion-on-site.html">
+        <div class="blog-card-img cat-financiamiento">
+          <span class="cat-overlay">Financiamiento</span>
+          <span class="icon-overlay">PPA</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>9 min lectura</span></div>
+          <h3 class="blog-card-title">PPA cero CAPEX: cómo financiar tu subestación o generación on-site sin capital propio</h3>
+          <p class="blog-card-snippet">Cuando el CAPEX para una subestación o planta de generación sale del balance, el PPA convierte el activo eléctrico en costo operativo predecible. Cómo se estructura y qué buscar.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="permisos" href="/blog/subestacion-propia-vs-interconexion-cfe.html">
+        <div class="blog-card-img cat-permisos">
+          <span class="cat-overlay">Permisos CFE</span>
+          <span class="icon-overlay">SE</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>11 min lectura</span></div>
+          <h3 class="blog-card-title">Subestación propia vs. interconexión CFE: cuál te conviene si vas a expandir capacidad industrial</h3>
+          <p class="blog-card-snippet">La decisión entre construir tu propia subestación o esperar la ampliación de CFE depende de capacidad, tiempos y control. Comparamos las dos rutas con cifras reales del mercado mexicano.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="operacion" href="/blog/uptime-electrico-industrial-fallas-red-cfe.html">
+        <div class="blog-card-img cat-operacion">
+          <span class="cat-overlay">Operación</span>
+          <span class="icon-overlay">24/7</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>7 min lectura</span></div>
+          <h3 class="blog-card-title">Uptime eléctrico industrial: 5 fallas comunes en red CFE y cómo blindar tu planta</h3>
+          <p class="blog-card-snippet">Caídas de tensión, armónicos, frecuencia fuera de rango: las fallas que la red CFE pasa a tu planta son predecibles. Identifica las cinco más caras y cómo aislarlas.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="mercado" href="/blog/capacidad-electrica-disponible-mexico-2026.html">
+        <div class="blog-card-img cat-mercado">
+          <span class="cat-overlay">Mercado e industria</span>
+          <span class="icon-overlay">MX</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>10 min lectura</span></div>
+          <h3 class="blog-card-title">Capacidad eléctrica disponible en México 2026: Nuevo León, Coahuila, Querétaro y SLP</h3>
+          <p class="blog-card-snippet">Decidir dónde instalar la nueva planta empieza por saber dónde hay kVAs reales. Mapeamos la capacidad disponible y los cuellos de botella en los cuatro estados del nearshoring.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="mercado" href="/blog/energia-data-centers-mexico-requisitos.html">
+        <div class="blog-card-img cat-mercado">
+          <span class="cat-overlay">Mercado e industria</span>
+          <span class="icon-overlay">DC</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>9 min lectura</span></div>
+          <h3 class="blog-card-title">Energía para data centers en México: requisitos técnicos y opciones de capacidad eléctrica</h3>
+          <p class="blog-card-snippet">Un data center de hiperescala demanda capacidad y confiabilidad que la red CFE difícilmente garantiza sola. Repasamos requisitos, opciones de respaldo y dónde tienen sentido en México.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="operacion" href="/blog/construccion-epc-infraestructura-electrica-industrial.html">
+        <div class="blog-card-img cat-operacion">
+          <span class="cat-overlay">Operación</span>
+          <span class="icon-overlay">EPC</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>8 min lectura</span></div>
+          <h3 class="blog-card-title">Construcción EPC de infraestructura eléctrica industrial: qué incluye y qué no esperar</h3>
+          <p class="blog-card-snippet">El esquema EPC promete un solo contrato y un solo responsable. ¿Cuándo conviene, qué cubre realmente y qué riesgos transferes vs retienes? Un mapa práctico para tomadores de decisión.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="financiamiento" href="/blog/tarifa-gdmto-vs-gdmth-reducir-costo-luz.html">
+        <div class="blog-card-img cat-financiamiento">
+          <span class="cat-overlay">Financiamiento</span>
+          <span class="icon-overlay">$</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>9 min lectura</span></div>
+          <h3 class="blog-card-title">Tarifa industrial GDMTO vs GDMTH: cuál te aplica y cómo reducir el costo de tu recibo de luz</h3>
+          <p class="blog-card-snippet">La diferencia entre GDMTO y GDMTH puede ser 20% del costo eléctrico anual. Te enseñamos a leer tu recibo, identificar tu tarifa y las palancas reales para bajar el cargo por demanda.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+      <a class="blog-card" data-cat="mercado" href="/blog/energia-nearshoring-cuello-botella-bajio.html">
+        <div class="blog-card-img cat-mercado">
+          <span class="cat-overlay">Mercado e industria</span>
+          <span class="icon-overlay">N4S</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="blog-card-date">25 May 2026</span><span class="blog-card-dot"></span><span>10 min lectura</span></div>
+          <h3 class="blog-card-title">Energía y nearshoring: por qué la capacidad eléctrica es el cuello de botella de tu expansión en el Bajío</h3>
+          <p class="blog-card-snippet">El nearshoring trajo la inversión; lo que no trajo es la capacidad eléctrica para sostenerla. Datos de Querétaro, Guanajuato, Aguascalientes y SLP, y cómo blindar tu expansión.</p>
+          <span class="blog-card-link">Leer más →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="load-more-btn" id="loadMoreBtn">Ver más blogs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    </div>
+
+    <div class="end-state" id="endState">— No hay más artículos por ahora —</div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg>
+        </div>
+        <div class="brand-text">M2 <span>Energy</span></div>
+      </div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Sitio</h5>
+      <ul>
+        <li><a href="/#hacemos">Qué Hacemos</a></li>
+        <li><a href="/#importa">Por Qué Importa</a></li>
+        <li><a href="/#trabajamos">Cómo Trabajamos</a></li>
+        <li><a href="/#resultados">Resultados</a></li>
+        <li><a href="/#industrias">Industrias</a></li>
+        <li><a href="/casos-de-exito.html">Casos de Éxito</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Compañía</h5>
+      <ul>
+        <li><a href="/#elegirnos">Por Qué Elegirnos</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 M2E · All rights reserved</span>
+    <span>Securing energy capacity for industrial development · ⚡</span>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
+
+// Category filter
+const filters = document.querySelectorAll('.filter-chip');
+const cards = document.querySelectorAll('.blog-card');
+const postsCount = document.getElementById('postsCount');
+const TOTAL_POSTS = cards.length;
+postsCount.textContent = TOTAL_POSTS;
+
+filters.forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    filters.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const cat = chip.dataset.cat;
+    let visible = 0;
+    cards.forEach(card=>{
+      const show = cat==='all' || card.dataset.cat===cat;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    postsCount.textContent = visible;
+  });
+});
+
+// Load more (placeholder for future when posts > 12)
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+const endState = document.getElementById('endState');
+if(TOTAL_POSTS <= 12){
+  loadMoreBtn.style.display='none';
+  // sin más por ahora, no mostrar end-state al cargar (el filtro lo manejará si aplica)
+}else{
+  // Lógica de paginación de 12 en 12 cuando crezca el corpus
+  let visibleCount = 12;
+  cards.forEach((card,i)=>{if(i>=12)card.style.display='none';});
+  loadMoreBtn.classList.add('visible');
+  loadMoreBtn.addEventListener('click',()=>{
+    visibleCount += 12;
+    cards.forEach((card,i)=>{if(i<visibleCount)card.style.display='';});
+    if(visibleCount >= TOTAL_POSTS){
+      loadMoreBtn.classList.remove('visible');
+      endState.classList.add('visible');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
