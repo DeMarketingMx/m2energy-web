@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Cómo evaluar la capacidad eléctrica disponible para tu nueva planta en México — Blog M2 Energy</title>
+<meta name="description" content="Antes de cerrar la compra del terreno o iniciar obra, los kVAs realmente disponibles en ese punto de la red CFE definen si tu planta arranca o se atrasa dos años. Te explicamos cómo evaluarlos."/>
+<meta property="og:title" content="Cómo evaluar la capacidad eléctrica disponible para tu nueva planta en México"/>
+<meta property="og:description" content="Antes de cerrar la compra del terreno o iniciar obra, los kVAs realmente disponibles en ese punto de la red CFE definen si tu planta arranca o se atrasa dos años."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://m2energy-web.pages.dev/blog/capacidad-electrica-nueva-planta-mexico.html"/>
+<meta property="og:image" content="https://m2energy-web.pages.dev/blog/capacidad-electrica-nueva-planta-mexico/hero.jpg"/>
+<meta name="author" content="Carlos Pineda"/>
+<link rel="canonical" href="https://m2energy-web.pages.dev/blog/capacidad-electrica-nueva-planta-mexico.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cómo evaluar la capacidad eléctrica disponible para tu nueva planta industrial en México",
+  "description": "Antes de cerrar la compra del terreno o iniciar obra, los kVAs realmente disponibles en ese punto de la red CFE definen si tu planta arranca o se atrasa dos años. Te explicamos cómo evaluarlos.",
+  "image": "https://m2energy-web.pages.dev/blog/capacidad-electrica-nueva-planta-mexico/hero.jpg",
+  "author": {"@type": "Person", "name": "Carlos Pineda", "jobTitle": "Director Comercial", "worksFor": "M2 Energy"},
+  "publisher": {"@type": "Organization", "name": "M2 Energy", "logo": {"@type": "ImageObject", "url": "https://m2energy-web.pages.dev/favicon.png"}},
+  "datePublished": "2026-05-25T08:00:00-06:00",
+  "dateModified": "2026-05-25T08:00:00-06:00",
+  "articleSection": "Capacidad eléctrica",
+  "inLanguage": "es-MX"
+}
+</script>
+<style>
+:root{
+  --amber:#f6be1f;--amber-hot:#ffd557;--amber-soft:rgba(246,190,31,.08);
+  --blue:#355e72;--blue-hot:#5a9cb8;--blue-deep:#1f3e52;
+  --bg-0:#0e1c28;--bg-1:#13283a;--bg-2:#1a3548;--bg-panel:#162e42;
+  --ink:#fafcff;--ink-dim:#cdd8e3;--ink-mute:#8ea0b0;
+  --line:rgba(255,255,255,.10);--line-str:rgba(255,255,255,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--bg-0);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+body{overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:#0a1620}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid transparent;transition:background .3s,padding .3s,border-color .3s;}
+.nav.scrolled{background:rgba(7,17,26,.88);backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:12px 48px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--amber) 0%,#e0a417 100%);box-shadow:0 0 0 1px rgba(246,190,31,.35),0 8px 24px -8px rgba(246,190,31,.6);display:grid;place-items:center;overflow:hidden;}
+.brand-mark svg{width:18px;height:18px;z-index:1}
+.brand-text{font-family:'Space Grotesk',sans-serif;font-size:17px}
+.brand-text span{color:var(--amber)}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-dim);padding:8px 16px;border:1px solid var(--line);border-radius:999px;transition:color .2s,border-color .2s;}
+.nav-back:hover{color:var(--ink);border-color:var(--line-str)}
+.nav-back svg{width:14px;height:14px}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-cta{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-radius:999px;background:var(--amber);color:#0a1620;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 1px rgba(246,190,31,.4),0 8px 24px -6px rgba(246,190,31,.5);}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(246,190,31,.6),0 12px 32px -6px rgba(246,190,31,.7)}
+.post-hero{position:relative;padding:140px 0 60px;overflow:hidden;background:linear-gradient(180deg,rgba(7,17,26,.4) 0%,rgba(7,17,26,.95) 100%),radial-gradient(1000px 500px at 20% 30%,rgba(53,94,114,.35),transparent 60%),radial-gradient(800px 400px at 85% 70%,rgba(246,190,31,.06),transparent 60%),linear-gradient(180deg,#06101a 0%,#08141e 60%,#0a1824 100%);}
+.post-hero-content{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 48px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-mute);margin-bottom:28px;}
+.breadcrumb a{color:var(--ink-mute);transition:color .2s}
+.breadcrumb a:hover{color:var(--amber)}
+.breadcrumb span{opacity:.4}
+.post-cat-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
+.post-cat-kicker::before{content:'';width:32px;height:2px;background:var(--amber)}
+.post-hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,4.2vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:22px;color:var(--ink);}
+.post-subtitle{font-size:clamp(15px,1.2vw,18px);color:var(--ink-dim);line-height:1.6;margin-bottom:32px;max-width:680px;}
+.post-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-mute);}
+.post-meta .author{display:flex;align-items:center;gap:10px;color:var(--ink-dim)}
+.post-meta .author-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--amber),#e0a417);display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#0a1620;font-size:13px}
+.post-meta .author strong{color:var(--ink);font-weight:600}
+.post-meta .meta-dot{width:3px;height:3px;border-radius:50%;background:var(--ink-mute)}
+.post-hero-img{max-width:1080px;margin:40px auto 0;padding:0 48px;}
+.post-hero-img-inner{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:21/9;border:1px solid var(--line);background:linear-gradient(135deg,#1f3e52 0%,var(--blue) 35%,var(--blue-deep) 70%,var(--bg-1) 100%);}
+.post-hero-img-inner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,17,26,.5) 100%),radial-gradient(circle at 30% 50%, rgba(246,190,31,.08), transparent 60%);}
+.post-hero-img-label{position:absolute;bottom:24px;left:28px;z-index:2;color:rgba(255,255,255,.6);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;}
+.post-hero-img-marker{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(255,255,255,.1);font-size:140px;letter-spacing:-.04em;}
+.post-body{max-width:780px;margin:0 auto;padding:60px 48px 40px;font-size:17px;line-height:1.75;color:var(--ink-dim);}
+.post-body > * + *{margin-top:24px}
+.post-body p{font-size:17px;line-height:1.75;color:var(--ink-dim)}
+.post-body p strong{color:var(--ink);font-weight:600}
+.post-body p em{color:var(--ink);font-style:italic}
+.post-body a{color:var(--amber);border-bottom:1px solid rgba(246,190,31,.4);transition:border-color .2s,color .2s}
+.post-body a:hover{color:var(--amber-hot);border-bottom-color:var(--amber)}
+.post-body h2{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;line-height:1.2;letter-spacing:-.015em;color:var(--ink);margin-top:48px;padding-top:8px;position:relative;}
+.post-body h2::before{content:'';position:absolute;top:0;left:0;width:48px;height:3px;background:var(--amber)}
+.post-body h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;line-height:1.3;color:var(--ink);margin-top:36px;}
+.post-body h4{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:.05em;margin-top:32px;}
+.post-body ul,.post-body ol{margin-left:0;padding-left:24px;color:var(--ink-dim)}
+.post-body ul li,.post-body ol li{margin-top:10px;line-height:1.7}
+.post-body ul li::marker{color:var(--amber)}
+.post-body ol li::marker{color:var(--amber);font-weight:600}
+.post-body blockquote{margin:32px 0;padding:24px 28px;background:var(--bg-1);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;color:var(--ink);font-style:italic;font-size:18px;line-height:1.6;}
+.post-body table{width:100%;border-collapse:collapse;font-size:14px;margin:32px 0}
+.post-body table th{background:var(--bg-1);color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:600;padding:12px 16px;text-align:left;border-bottom:2px solid var(--amber);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.post-body table td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink-dim)}
+.post-body hr{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--line-str),transparent);margin:48px 0;}
+.key-takeaway{background:linear-gradient(135deg,rgba(246,190,31,.08) 0%,rgba(53,94,114,.08) 100%);border:1px solid rgba(246,190,31,.25);border-radius:14px;padding:24px 28px;margin:36px 0;}
+.key-takeaway-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--amber);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.key-takeaway-label::before{content:'';width:24px;height:2px;background:var(--amber)}
+.key-takeaway p{color:var(--ink);font-size:16px;line-height:1.6;margin:0}
+.cta-inline{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--bg-1) 100%);border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin:40px 0;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;}
+.cta-inline-text strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--ink);margin-bottom:6px;}
+.cta-inline-text span{font-size:14px;color:var(--ink-dim);line-height:1.5}
+.cta-inline-btn{background:var(--amber);color:#0a1620;padding:13px 24px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,box-shadow .2s;}
+.cta-inline-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -6px rgba(246,190,31,.5)}
+.cta-final{max-width:1080px;margin:60px auto 0;padding:0 48px;}
+.cta-final-inner{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--bg-1) 100%);border:1px solid var(--line);border-radius:20px;padding:60px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;position:relative;overflow:hidden;}
+.cta-final-inner::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(246,190,31,.12),transparent 65%);pointer-events:none}
+.cta-final h3{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;line-height:1.2;margin-bottom:12px;color:var(--ink)}
+.cta-final p{font-size:15px;color:var(--ink-dim);max-width:520px;line-height:1.6}
+.btn-cta{background:var(--amber);color:#0a1620;padding:16px 36px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 1px rgba(246,190,31,.4),0 8px 24px -6px rgba(246,190,31,.5);}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(246,190,31,.6),0 12px 32px -6px rgba(246,190,31,.7)}
+.related{max-width:1200px;margin:80px auto 60px;padding:0 48px;}
+.related-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;}
+.related-header .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;}
+.related-header h2{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--ink);}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:960px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--bg-1);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s;}
+.related-card:hover{transform:translateY(-3px);border-color:rgba(246,190,31,.3)}
+.related-card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue),var(--blue-deep));position:relative}
+.related-card-img.cat-permisos{background:linear-gradient(135deg,#355e72 0%,#162e42 100%)}
+.related-card-img.cat-mercado{background:linear-gradient(135deg,#1f3e52 0%,#13283a 50%,#3d2e15 100%)}
+.related-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,17,26,.6) 100%)}
+.related-card-img .cat-overlay{position:absolute;top:12px;left:12px;background:rgba(7,17,26,.85);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--amber);text-transform:uppercase;z-index:2;}
+.related-card-body{padding:18px 18px 22px}
+.related-card-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink);}
+footer{background:#050c14;padding:60px 48px 28px;border-top:1px solid var(--line);position:relative;overflow:hidden;margin-top:60px;}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:.3}
+.foot-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-brand .brand-mark{width:32px;height:32px}
+.foot-col p{font-size:13.5px;color:var(--ink-mute);line-height:1.6;margin:14px 0 20px;max-width:280px;}
+footer h5{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+footer ul a{font-size:13.5px;color:var(--ink-dim);transition:color .2s;}
+footer ul a:hover{color:var(--amber)}
+.foot-bar{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute);}
+@media (max-width:820px){
+  .nav{padding:14px 20px}
+  .nav.scrolled{padding:10px 20px}
+  .post-hero-content,.post-body,.post-hero-img,.related,.cta-final{padding-left:24px;padding-right:24px}
+  .cta-final-inner{padding:36px 28px;grid-template-columns:1fr}
+  .cta-inline{grid-template-columns:1fr;text-align:left}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 24px}
+  .foot-bar{padding:24px 24px 0;flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg>
+    </div>
+    <div class="brand-text">M2 <span>Energy</span></div>
+  </a>
+  <a class="nav-back" href="/blog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    <span>Volver al blog</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-cta" href="/#contacto">Contáctanos →</a>
+  </div>
+</nav>
+
+<article>
+
+  <section class="post-hero">
+    <div class="post-hero-content">
+      <div class="breadcrumb">
+        <a href="/">Inicio</a>
+        <span>/</span>
+        <a href="/blog">Blog</a>
+        <span>/</span>
+        <span style="color:var(--ink-dim)">Capacidad eléctrica</span>
+      </div>
+      <div class="post-cat-kicker">Capacidad eléctrica</div>
+      <h1>Cómo evaluar la capacidad eléctrica disponible para tu nueva planta industrial en México</h1>
+      <p class="post-subtitle">Antes de cerrar la compra del terreno o iniciar obra, hay un dato que define si tu proyecto arranca o se atrasa dos años: los kVAs realmente disponibles en ese punto de la red CFE. Te explicamos cómo evaluarlos antes de comprometer capital.</p>
+      <div class="post-meta">
+        <div class="author">
+          <div class="author-avatar">CP</div>
+          <div>Por <strong>Carlos Pineda</strong> · Director Comercial</div>
+        </div>
+        <span class="meta-dot"></span>
+        <span>25 de mayo de 2026</span>
+        <span class="meta-dot"></span>
+        <span>8 min lectura</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-hero-img">
+    <div class="post-hero-img-inner">
+      <span class="post-hero-img-marker">kVA</span>
+      <span class="post-hero-img-label">Capacidad eléctrica disponible · Red CFE · México</span>
+    </div>
+  </div>
+
+  <div class="post-body">
+
+    <p>Imagina la escena: el comité directivo aprueba la expansión. Se firma el terreno en el Bajío. Se contrata al despacho de ingeniería. Se anuncia la fecha de arranque a los clientes. Y tres meses después, llega el oficio de CFE diciendo que en ese punto de la red no hay los <strong>kVAs</strong> que la planta necesita, y que ampliar la capacidad implica obra de subestación de 18 a 24 meses.</p>
+
+    <p>Esa historia se repite todas las semanas en México. El crecimiento industrial empuja contra una red eléctrica que se planeó para otra escala, y la <strong>capacidad eléctrica disponible</strong> dejó de ser un detalle técnico para volverse el factor que define si un proyecto industrial arranca a tiempo o se vuelve una historia de pérdidas.</p>
+
+    <p>Este artículo explica, en términos directos, cómo evaluar la capacidad eléctrica disponible <strong>antes</strong> de comprometer capital — qué medir, dónde buscar el dato, qué errores comete la mayoría, y qué hacer si la respuesta de CFE no es la que esperabas.</p>
+
+    <h2>Qué significa "capacidad eléctrica disponible" en términos prácticos</h2>
+
+    <p>Cuando un director industrial pregunta "¿hay capacidad eléctrica en este terreno?", la respuesta corta de CFE puede ser engañosa. Hay tres niveles de "capacidad" que conviene distinguir:</p>
+
+    <ul>
+      <li><strong>Capacidad teórica</strong> de la subestación más cercana. Es lo que la subestación podría entregar si nada más estuviera conectado. Suele ser un dato público pero no es lo que tú vas a recibir.</li>
+      <li><strong>Capacidad reservada</strong> ya comprometida con otros usuarios. CFE asigna kVAs a proyectos previos, ampliaciones autorizadas, y reservas regulatorias. Esto reduce el número real.</li>
+      <li><strong>Capacidad realmente disponible</strong> para tu punto de conexión específico, considerando la topología de la red de media y alta tensión que llega hasta tu sitio. Es el único número que importa.</li>
+    </ul>
+
+    <p>La diferencia entre los tres puede ser de <strong>10 a 30 MW</strong>. Confundirlos es la causa más común de proyectos que tienen que repensarse a último momento.</p>
+
+    <h2>kW, kVA y demanda contratada: aclarar antes de pedir factibilidad</h2>
+
+    <p>Tres unidades aparecen en cualquier conversación con CFE y conviene tenerlas claras antes de iniciar trámites:</p>
+
+    <ul>
+      <li><strong>kW (kilowatts)</strong> mide potencia activa — la energía que efectivamente hace trabajo en motores, hornos, compresores.</li>
+      <li><strong>kVA (kilovolt-amperes)</strong> mide potencia aparente — la capacidad total que la red tiene que suministrar, incluyendo la parte reactiva que las máquinas devuelven a la red. CFE planea su infraestructura en kVAs.</li>
+      <li><strong>Demanda contratada</strong> es el límite máximo que tú acordaste pagar como "capacidad reservada". Si excedes este límite, la factura se dispara con cargos por demanda y penalizaciones.</li>
+    </ul>
+
+    <p>Cuando estimes la capacidad que necesita tu planta, calcula tanto kW como kVA. El <strong>factor de potencia</strong> típico industrial está entre 0.85 y 0.95; si tu factor de potencia es bajo, vas a necesitar más kVA contratados de los que aparentaría tu carga en kW.</p>
+
+    <h2>Cómo medir la capacidad disponible para un punto específico</h2>
+
+    <p>No hay un dashboard público que muestre los kVAs disponibles en cada nodo de la red. Pero sí hay un proceso reproducible para llegar al número antes de cerrar decisiones.</p>
+
+    <h3>Paso 1 · Solicitar el oficio de factibilidad eléctrica</h3>
+
+    <p>Este es el documento autoritativo. Se solicita en la oficina regional de CFE Distribución correspondiente al estado donde está el terreno, y la respuesta indica <strong>cuántos kVAs hay disponibles en ese punto en este momento</strong>, y bajo qué condiciones se entregarían.</p>
+
+    <p>El trámite tarda típicamente entre <strong>4 y 12 semanas</strong>, y requiere documentación del proyecto: ubicación exacta, demanda estimada en kW y kVA, perfil de carga, sector industrial. Detallamos los pasos completos del trámite en nuestro <a href="/blog/factibilidad-electrica-cfe-aid-interconexion.html">artículo sobre factibilidad ante CFE, AID y contrato de interconexión</a>.</p>
+
+    <h3>Paso 2 · Revisar la red de media y alta tensión cercana</h3>
+
+    <p>En paralelo al oficio, conviene levantar un mapa físico de la infraestructura eléctrica que rodea el terreno: dónde están las líneas de transmisión, qué subestaciones son las que servirían, qué nivel de tensión está disponible (13.8 kV, 23 kV, 34.5 kV, 69 kV, 115 kV).</p>
+
+    <p>Este levantamiento se hace con un equipo de ingeniería eléctrica en sitio. Lo que se busca es responder dos preguntas: <strong>¿se necesita una nueva línea para llegar a la planta?</strong> y <strong>¿la subestación que serviría tiene capacidad propia para crecer, o ya está saturada?</strong></p>
+
+    <h3>Paso 3 · Validar contra la subestación de respaldo</h3>
+
+    <p>En operaciones industriales críticas, la confiabilidad eléctrica depende de tener una <strong>ruta alterna</strong>: si la línea principal cae, ¿hay otra subestación que pueda tomar la carga? Este es un factor que CFE no necesariamente menciona en el oficio inicial, pero que define el uptime real de tu operación.</p>
+
+    <p>Si la subestación de respaldo está al límite, una falla en la principal significa parar la planta — y eso vuelve relevantes opciones como <a href="/blog/uptime-electrico-industrial-fallas-red-cfe.html">infraestructura de respaldo o autogeneración en sitio</a>.</p>
+
+    <h2>Errores comunes que descubren tarde los desarrolladores industriales</h2>
+
+    <p>De los proyectos en los que llegamos a evaluar capacidad después de que ya se compró el terreno, estos son los cinco errores que aparecen con más frecuencia:</p>
+
+    <ol>
+      <li><strong>Confiar en lo que dijo el broker inmobiliario</strong> sobre "energía disponible" sin documento oficial de CFE. El broker repite lo que oyó del último cliente, no lo que CFE confirmaría hoy.</li>
+      <li><strong>Asumir que la capacidad teórica de la subestación es la capacidad real disponible.</strong> En subestaciones de zonas industriales saturadas, lo disponible suele ser entre el 5% y el 30% de lo teórico.</li>
+      <li><strong>No considerar la demanda de los proyectos vecinos</strong> en proceso. Si en el mismo parque industrial otros desarrollos ya están solicitando capacidad, tu solicitud entra en cola y la disponibilidad cambia.</li>
+      <li><strong>Subestimar el factor de potencia.</strong> Calcular en kW sin convertir a kVA produce cifras que CFE no acepta y te obliga a repetir el trámite con número actualizado.</li>
+      <li><strong>No prever crecimiento.</strong> Pedir el oficio para la fase 1 sin considerar la fase 2 ya planeada. CFE no reserva capacidad para "lo que vendrá después", y cuando llegue la fase 2, puede que ya no haya espacio.</li>
+    </ol>
+
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">Insight clave</div>
+      <p>El oficio de factibilidad de CFE responde lo que se le pregunta. Si solicitas capacidad solo para la fase 1, eso es lo que reservas. La fase 2 entra a la cola general cuando llegue su momento — y en zonas saturadas, esa cola puede ser de 18 a 36 meses.</p>
+    </div>
+
+    <h2>Si CFE dice que no hay capacidad disponible: tres opciones reales</h2>
+
+    <p>Cuando el oficio de factibilidad regresa con <strong>"capacidad insuficiente"</strong> o con un plazo de ampliación de subestación que rompe el cronograma del proyecto, las opciones se reducen a tres rutas concretas:</p>
+
+    <h3>Opción A · Esperar la ampliación de CFE</h3>
+
+    <p>CFE puede comprometer una ampliación de subestación con cargo al proyecto, donde el desarrollador paga parte o todo el costo de obra (esquema de obra específica). El tiempo típico está entre <strong>18 y 30 meses</strong>, y el monto entre <strong>15 y 80 millones de pesos</strong> dependiendo de la magnitud. Es la ruta más estable a largo plazo, pero la menos compatible con cronogramas comerciales agresivos.</p>
+
+    <h3>Opción B · Construir tu propia subestación con interconexión</h3>
+
+    <p>El desarrollador construye una subestación particular conectada a una línea de alta tensión existente. Esto desbloquea capacidad sin esperar la ampliación de CFE, pero requiere CAPEX significativo y trámites adicionales. La comparativa completa entre esta ruta y la opción A está en nuestro artículo sobre <a href="/blog/subestacion-propia-vs-interconexion-cfe.html">subestación propia vs. interconexión CFE</a>.</p>
+
+    <h3>Opción C · Generación en sitio (autogeneración o PPA)</h3>
+
+    <p>En lugar de depender enteramente de la red, instalar generación local — solar fotovoltaica, cogeneración a gas, o un mix — para cubrir parte o toda la demanda. Esto reduce los kVAs requeridos a CFE y, en muchos casos, hace innecesaria la ampliación. El modelo <a href="/blog/ppa-cero-capex-subestacion-generacion-on-site.html">PPA cero CAPEX</a> permite acceder a esta opción sin inversión inicial.</p>
+
+    <div class="cta-inline">
+      <div class="cta-inline-text">
+        <strong>¿Necesitas validar la capacidad eléctrica de tu sitio antes de comprometer capital?</strong>
+        <span>Te entregamos un Energy Capacity Readiness Assessment (ECRA) con el estado real de la capacidad disponible y las opciones aplicables al proyecto, sin costo para evaluación inicial.</span>
+      </div>
+      <a class="cta-inline-btn" href="/#contacto">Solicitar ECRA →</a>
+    </div>
+
+    <h2>Cuándo necesitas un ECRA (Energy Capacity Readiness Assessment)</h2>
+
+    <p>Un ECRA es un diagnóstico integrado que combina los tres pasos anteriores en un solo entregable, y agrega la lectura comercial: qué opción de capacidad es más rápida, más barata, o más confiable para <strong>tu</strong> proyecto específico, considerando geografía, cronograma y estructura financiera.</p>
+
+    <p>Tiene sentido pedir un ECRA cuando se cumple alguno de estos escenarios:</p>
+
+    <ul>
+      <li>Estás evaluando comprar un terreno y la decisión depende de tener capacidad eléctrica viable.</li>
+      <li>Tu proyecto ya tiene terreno pero todavía no se ha solicitado el oficio de factibilidad ante CFE.</li>
+      <li>El oficio de factibilidad regresó con "capacidad insuficiente" o con plazos incompatibles, y necesitas mapear las alternativas reales.</li>
+      <li>Operas ya en sitio pero la planta crece y necesitas dimensionar la ampliación eléctrica.</li>
+    </ul>
+
+    <p>Para empresas con plantas multi-sitio o decisiones de ubicación todavía abiertas, ver también nuestro <a href="/blog/capacidad-electrica-disponible-mexico-2026.html">mapa de capacidad eléctrica disponible en los estados clave del nearshoring</a> ayuda a decidir dónde tiene sentido buscar terreno antes de invertir en estudios de factibilidad detallados.</p>
+
+    <hr/>
+
+    <p>La capacidad eléctrica disponible no es un detalle técnico que se resuelve después; es el dato que define la viabilidad del proyecto. Evaluarla bien al inicio cuesta poco; descubrirla tarde puede costar el proyecto entero.</p>
+
+  </div>
+
+  <div class="cta-final">
+    <div class="cta-final-inner">
+      <div>
+        <h3>¿Listo para resolver la capacidad eléctrica de tu próximo proyecto?</h3>
+        <p>Hablemos con un experto. Te damos un diagnóstico claro de capacidad disponible, ruta CFE y opciones de financiamiento en una sola conversación.</p>
+      </div>
+      <a class="btn-cta" href="/#contacto">Hablemos con un experto →</a>
+    </div>
+  </div>
+
+</article>
+
+<section class="related">
+  <div class="related-header">
+    <span class="kicker">Sigue leyendo</span>
+    <h2>Artículos relacionados</h2>
+  </div>
+  <div class="related-grid">
+
+    <a class="related-card" href="/blog/factibilidad-electrica-cfe-aid-interconexion.html">
+      <div class="related-card-img cat-permisos">
+        <span class="cat-overlay">Permisos CFE</span>
+      </div>
+      <div class="related-card-body">
+        <h3 class="related-card-title">Trámite de factibilidad eléctrica ante CFE: guía paso a paso del AID al contrato de interconexión</h3>
+      </div>
+    </a>
+
+    <a class="related-card" href="/blog/subestacion-propia-vs-interconexion-cfe.html">
+      <div class="related-card-img cat-permisos">
+        <span class="cat-overlay">Permisos CFE</span>
+      </div>
+      <div class="related-card-body">
+        <h3 class="related-card-title">Subestación propia vs. interconexión CFE: cuál te conviene si vas a expandir capacidad industrial</h3>
+      </div>
+    </a>
+
+    <a class="related-card" href="/blog/capacidad-electrica-disponible-mexico-2026.html">
+      <div class="related-card-img cat-mercado">
+        <span class="cat-overlay">Mercado e industria</span>
+      </div>
+      <div class="related-card-body">
+        <h3 class="related-card-title">Capacidad eléctrica disponible en México 2026: Nuevo León, Coahuila, Querétaro y SLP</h3>
+      </div>
+    </a>
+
+    <a class="related-card" href="/blog/energia-nearshoring-cuello-botella-bajio.html">
+      <div class="related-card-img cat-mercado">
+        <span class="cat-overlay">Mercado e industria</span>
+      </div>
+      <div class="related-card-body">
+        <h3 class="related-card-title">Energía y nearshoring: por qué la capacidad eléctrica es el cuello de botella de tu expansión en el Bajío</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg>
+        </div>
+        <div class="brand-text">M2 <span>Energy</span></div>
+      </div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Sitio</h5>
+      <ul>
+        <li><a href="/#hacemos">Qué Hacemos</a></li>
+        <li><a href="/#importa">Por Qué Importa</a></li>
+        <li><a href="/#trabajamos">Cómo Trabajamos</a></li>
+        <li><a href="/#resultados">Resultados</a></li>
+        <li><a href="/#industrias">Industrias</a></li>
+        <li><a href="/casos-de-exito.html">Casos de Éxito</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Compañía</h5>
+      <ul>
+        <li><a href="/#elegirnos">Por Qué Elegirnos</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 M2E · All rights reserved</span>
+    <span>Securing energy capacity for industrial development · ⚡</span>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
+</script>
+
+</body>
+</html>
