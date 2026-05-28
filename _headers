@@ -12,3 +12,12 @@
 
 /main.js
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/videos/*.mp4
+  Content-Type: video/mp4
+  Accept-Ranges: bytes
+  Cache-Control: public, max-age=2592000
+
+/assets/images/videos/*.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=2592000
