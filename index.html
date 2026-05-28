@@ -652,9 +652,10 @@
   .vs-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,32,.05) 0%,rgba(11,22,32,.78) 100%);pointer-events:none}
   .vs-card .vs-num{position:absolute;top:12px;left:12px;background:rgba(7,17,26,.78);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;z-index:2;}
   .vs-card .vs-dur{position:absolute;top:12px;right:12px;background:rgba(7,17,26,.78);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink);z-index:2;}
-  .vs-card .vs-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(246,190,31,.92);display:grid;place-items:center;z-index:3;transition:transform .25s,background .25s;}
-  .vs-card:hover .vs-play{transform:translate(-50%,-50%) scale(1.12);background:var(--amber-hot)}
-  .vs-card .vs-play svg{width:20px;height:20px;color:#0a1620;margin-left:3px}
+  .vs-card .vs-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:rgba(246,190,31,.18);border:1px solid rgba(246,190,31,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;z-index:3;transition:transform .3s,background .3s;box-shadow:0 0 0 0 rgba(246,190,31,.4);animation:vsRing 2.4s ease-out infinite;}
+  @keyframes vsRing{0%{box-shadow:0 0 0 0 rgba(246,190,31,.5)}100%{box-shadow:0 0 0 22px rgba(246,190,31,0)}}
+  .vs-card:hover .vs-play{transform:translate(-50%,-50%) scale(1.1);background:rgba(246,190,31,.28)}
+  .vs-card .vs-play svg{width:22px;height:22px;fill:var(--amber);margin-left:3px}
   .vs-card .vs-foot{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;z-index:2;}
   .vs-card .vs-foot h3{font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:600;line-height:1.25;color:var(--ink);margin:0;letter-spacing:-.005em;}
   .vs-card .vs-foot .vs-cat{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:4px;display:block;}
@@ -1018,7 +1019,7 @@
         <img src="/assets/images/videos/poster-01-unlock-kvas.jpg" alt="" loading="lazy"/>
         <span class="vs-num">01 / 04</span>
         <span class="vs-dur" data-i18n="videos.cap1Duration">2:35</span>
-        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="vs-foot">
           <span class="vs-cat" data-i18n="videos.cap1Eyebrow">Estrategia · ECRA</span>
           <h3 data-i18n-html="videos.cap1Title">Cómo Destrabar tus kVAs</h3>
@@ -1028,7 +1029,7 @@
         <img src="/assets/images/videos/poster-02-peak-demand.jpg" alt="" loading="lazy"/>
         <span class="vs-num">02 / 04</span>
         <span class="vs-dur" data-i18n="videos.cap2Duration">1:00</span>
-        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="vs-foot">
           <span class="vs-cat" data-i18n="videos.cap2Eyebrow">Inteligencia de red</span>
           <h3 data-i18n-html="videos.cap2Title">Peak Demand &amp; Traffic Insight</h3>
@@ -1038,7 +1039,7 @@
         <img src="/assets/images/videos/poster-03-kvas-solutions.jpg" alt="" loading="lazy"/>
         <span class="vs-num">03 / 04</span>
         <span class="vs-dur" data-i18n="videos.cap3Duration">2:55</span>
-        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="vs-foot">
           <span class="vs-cat" data-i18n="videos.cap3Eyebrow">Resultados · kVAs</span>
           <h3 data-i18n-html="videos.cap3Title">Casos de éxito · kVAs Solutions</h3>
@@ -1048,7 +1049,7 @@
         <img src="/assets/images/videos/poster-04-beyond-kilovolts.jpg" alt="" loading="lazy"/>
         <span class="vs-num">04 / 04</span>
         <span class="vs-dur" data-i18n="videos.cap4Duration">3:15</span>
-        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
         <div class="vs-foot">
           <span class="vs-cat" data-i18n="videos.cap4Eyebrow">Generación en sitio</span>
           <h3 data-i18n-html="videos.cap4Title">Beyond the Kilovolts · On-Site Generation</h3>
