@@ -640,6 +640,27 @@
     .foot-wrap{grid-template-columns:1fr 1fr}
     .field-row{grid-template-columns:1fr}
   }
+
+  /* ---------- Videos strip (home) ---------- */
+  .videos-strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;}
+  @media (max-width:980px){.videos-strip-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.videos-strip-grid{grid-template-columns:1fr}}
+  .vs-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg-1);aspect-ratio:16/10;cursor:pointer;display:block;transition:transform .35s,border-color .35s,box-shadow .35s;}
+  .vs-card:hover{transform:translateY(-4px);border-color:rgba(246,190,31,.45);box-shadow:0 18px 44px -14px rgba(246,190,31,.28)}
+  .vs-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .35s;filter:brightness(.78) saturate(1.05)}
+  .vs-card:hover img{transform:scale(1.05);filter:brightness(.95) saturate(1.1)}
+  .vs-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,32,.05) 0%,rgba(11,22,32,.78) 100%);pointer-events:none}
+  .vs-card .vs-num{position:absolute;top:12px;left:12px;background:rgba(7,17,26,.78);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;z-index:2;}
+  .vs-card .vs-dur{position:absolute;top:12px;right:12px;background:rgba(7,17,26,.78);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink);z-index:2;}
+  .vs-card .vs-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(246,190,31,.92);display:grid;place-items:center;z-index:3;transition:transform .25s,background .25s;}
+  .vs-card:hover .vs-play{transform:translate(-50%,-50%) scale(1.12);background:var(--amber-hot)}
+  .vs-card .vs-play svg{width:20px;height:20px;color:#0a1620;margin-left:3px}
+  .vs-card .vs-foot{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;z-index:2;}
+  .vs-card .vs-foot h3{font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:600;line-height:1.25;color:var(--ink);margin:0;letter-spacing:-.005em;}
+  .vs-card .vs-foot .vs-cat{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;margin-bottom:4px;display:block;}
+  .vs-cta-row{display:flex;justify-content:center;margin-top:48px;}
+  .vs-cta-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(246,190,31,.55);color:var(--amber);padding:14px 32px;border-radius:999px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;}
+  .vs-cta-btn:hover{background:rgba(246,190,31,.1);border-color:var(--amber);transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(246,190,31,.4);}
 </style>
 <script src="assets/js/translations.js"></script>
 </head>
@@ -673,6 +694,7 @@
     <a href="casos-de-exito.html" data-i18n="nav.cases">Casos de Éxito</a>
     <a href="#elegirnos" data-i18n="nav.whyUs">Elegirnos</a>
     <a href="/blog" data-i18n="nav.blog">Blog</a>
+    <a href="/videos.html" data-i18n="nav.videos">Videos</a>
   </div>
   <div class="nav-right">
     <a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contáctanos →</a>
@@ -984,6 +1006,64 @@
 
 <div class="e-divider"></div>
 
+<!-- =============== VIDEOS STRIP =============== -->
+<section class="panel" id="videos-strip">
+  <div class="wrap">
+    <div class="rv"><span class="kicker" data-i18n="videos.stripKicker">Videos</span></div>
+    <h2 class="section-title rv rv-1" data-i18n-html="videos.stripTitle">Cómo aseguramos capacidad <span class="amber">en cuatro capítulos.</span></h2>
+    <p class="section-lede rv rv-2" data-i18n="videos.stripLede">Mira la secuencia completa: estrategia, inteligencia de red, casos de éxito y generación en sitio.</p>
+
+    <div class="videos-strip-grid rv rv-3">
+      <a class="vs-card" href="/videos.html#cap-01" aria-label="Ver Capítulo 01 — Cómo Destrabar tus kVAs">
+        <img src="/assets/images/videos/poster-01-unlock-kvas.jpg" alt="" loading="lazy"/>
+        <span class="vs-num">01 / 04</span>
+        <span class="vs-dur" data-i18n="videos.cap1Duration">2:35</span>
+        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-foot">
+          <span class="vs-cat" data-i18n="videos.cap1Eyebrow">Estrategia · ECRA</span>
+          <h3 data-i18n-html="videos.cap1Title">Cómo Destrabar tus kVAs</h3>
+        </div>
+      </a>
+      <a class="vs-card" href="/videos.html#cap-02" aria-label="Ver Capítulo 02 — Peak Demand & Traffic Insight">
+        <img src="/assets/images/videos/poster-02-peak-demand.jpg" alt="" loading="lazy"/>
+        <span class="vs-num">02 / 04</span>
+        <span class="vs-dur" data-i18n="videos.cap2Duration">1:00</span>
+        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-foot">
+          <span class="vs-cat" data-i18n="videos.cap2Eyebrow">Inteligencia de red</span>
+          <h3 data-i18n-html="videos.cap2Title">Peak Demand &amp; Traffic Insight</h3>
+        </div>
+      </a>
+      <a class="vs-card" href="/videos.html#cap-03" aria-label="Ver Capítulo 03 — Success Cases · kVAs Solutions">
+        <img src="/assets/images/videos/poster-03-kvas-solutions.jpg" alt="" loading="lazy"/>
+        <span class="vs-num">03 / 04</span>
+        <span class="vs-dur" data-i18n="videos.cap3Duration">2:55</span>
+        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-foot">
+          <span class="vs-cat" data-i18n="videos.cap3Eyebrow">Resultados · kVAs</span>
+          <h3 data-i18n-html="videos.cap3Title">Casos de éxito · kVAs Solutions</h3>
+        </div>
+      </a>
+      <a class="vs-card" href="/videos.html#cap-04" aria-label="Ver Capítulo 04 — Beyond the Kilovolts">
+        <img src="/assets/images/videos/poster-04-beyond-kilovolts.jpg" alt="" loading="lazy"/>
+        <span class="vs-num">04 / 04</span>
+        <span class="vs-dur" data-i18n="videos.cap4Duration">3:15</span>
+        <div class="vs-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="vs-foot">
+          <span class="vs-cat" data-i18n="videos.cap4Eyebrow">Generación en sitio</span>
+          <h3 data-i18n-html="videos.cap4Title">Beyond the Kilovolts · On-Site Generation</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="vs-cta-row rv rv-4">
+      <a href="/videos.html" class="vs-cta-btn" data-i18n="videos.stripCta">Ver los 4 capítulos →</a>
+    </div>
+  </div>
+</section>
+
+<div class="e-divider"></div>
+
 <!-- =============== INDUSTRIAS =============== -->
 <section class="panel" id="industrias">
   <div class="wrap">
@@ -1271,6 +1351,7 @@
         <li><a href="#industrias" data-i18n="footer.navIndustries">Industrias</a></li>
         <li><a href="casos-de-exito.html" data-i18n="footer.navCases">Casos de Éxito</a></li>
         <li><a href="/blog" data-i18n="footer.navBlog">Blog</a></li>
+        <li><a href="/videos.html" data-i18n="footer.navVideos">Videos</a></li>
       </ul>
     </div>
     <div class="foot-col">

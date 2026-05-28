@@ -49,6 +49,27 @@
       if (v !== undefined) el.setAttribute('aria-label', v);
     });
 
+    // data-i18n-src → src attribute (video / img). For <video> also calls .load().
+    document.querySelectorAll('[data-i18n-src]').forEach(function (el) {
+      var v = getVal(t, el.getAttribute('data-i18n-src'));
+      if (v === undefined) return;
+      var current = el.getAttribute('src');
+      if (current === v) return;
+      el.setAttribute('src', v);
+      if (el.tagName === 'VIDEO' && typeof el.load === 'function') {
+        try { el.pause(); } catch(e){}
+        el.load();
+        var frame = el.closest('[data-video-frame]');
+        if (frame) frame.classList.remove('playing');
+      }
+    });
+
+    // data-i18n-poster → poster attribute (video)
+    document.querySelectorAll('[data-i18n-poster]').forEach(function (el) {
+      var v = getVal(t, el.getAttribute('data-i18n-poster'));
+      if (v !== undefined) el.setAttribute('poster', v);
+    });
+
     // Toggle button: show TARGET language
     var flag  = document.getElementById('langFlag');
     var label = document.getElementById('langLabel');
