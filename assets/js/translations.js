@@ -253,6 +253,8 @@ window.M2_TRANSLATIONS = {
 
     /* ---- videos.html ---- */
     videos: {
+      // Home page lightbox video (language-aware)
+      homeSrc: '/assets/videos/M2-ENERGY-9-02-26-ESP.mp4',
       navBack: 'Volver al inicio',
       navCta: 'Contáctanos →',
       crumbHome: 'Inicio',
@@ -914,6 +916,8 @@ window.M2_TRANSLATIONS = {
 
     /* ---- videos.html ---- */
     videos: {
+      // Home page lightbox video (language-aware)
+      homeSrc: '/assets/videos/M2-ENERGY-9-02-26-ENG.mp4',
       navBack: 'Back to home',
       navCta: 'Contact Us →',
       crumbHome: 'Home',

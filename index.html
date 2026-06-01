@@ -1886,7 +1886,6 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
 (function(){
   const card = document.getElementById('vidCard');
   if(!card) return;
-  const VIDEO_URL = '/assets/videos/M2-ENERGY-9-02-26-ESP.mp4';
   const modal = document.createElement('div');
   modal.id = 'vidModal';
   modal.setAttribute('aria-hidden','true');
@@ -1894,9 +1893,10 @@ window.addEventListener('resize', ()=>{ resizeSvg(); buildAnchors(); });
     <div class="vm-backdrop"></div>
     <div class="vm-inner" role="dialog" aria-modal="true" aria-label="Video M2 Energy">
       <button class="vm-close" aria-label="Cerrar">×</button>
-      <video class="vm-video" controls playsinline preload="metadata" poster="/assets/images/video-thumbnail-home.png">
-        <source src="${VIDEO_URL}" type="video/mp4">
-      </video>
+      <video class="vm-video" controls playsinline preload="metadata"
+             data-i18n-src="videos.homeSrc"
+             src="/assets/videos/M2-ENERGY-9-02-26-ESP.mp4"
+             poster="/assets/images/video-thumbnail-home.png"></video>
     </div>`;
   document.body.appendChild(modal);
   const style = document.createElement('style');
