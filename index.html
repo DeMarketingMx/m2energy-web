@@ -495,6 +495,9 @@
   .form-side .meta-item .ico{width:36px;height:36px;border-radius:9px;background:rgba(246,190,31,.08);border:1px solid rgba(246,190,31,.22);display:grid;place-items:center;color:var(--amber);flex:none}
   .form-side .meta-item .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase}
   .form-side .meta-item .v{font-size:15px;color:var(--ink);font-weight:500;margin-top:2px}
+  .form-side .offices-list span{display:flex;align-items:center;gap:11px;font-size:14.5px;line-height:1.4}
+  .form-side .offices-list span::before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px rgba(246,190,31,.85),0 0 18px rgba(246,190,31,.55),0 0 28px rgba(246,190,31,.25);flex-shrink:0;animation:officePulse 2.6s ease-in-out infinite}
+  @keyframes officePulse{0%,100%{box-shadow:0 0 8px rgba(246,190,31,.85),0 0 18px rgba(246,190,31,.55),0 0 28px rgba(246,190,31,.25);transform:scale(1)}50%{box-shadow:0 0 11px rgba(246,190,31,1),0 0 22px rgba(246,190,31,.75),0 0 36px rgba(246,190,31,.35);transform:scale(1.08)}}
 
   .form-card{
     background:linear-gradient(180deg, rgba(18,38,54,.5), rgba(10,22,32,.6));
@@ -1142,7 +1145,6 @@
             <div>
               <div class="k" data-i18n="contacto.contactPhone">Llámanos</div>
               <div class="v"><a href="tel:+15125046581" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+1 (512) 504-6581 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· US</span></a></div>
-              <div class="v" style="margin-top:6px"><a href="tel:+525500000000" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+52 55 0000 0000 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· MX</span></a></div>
             </div>
           </div>
           <div class="meta-item">
@@ -1151,7 +1153,7 @@
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v" data-i18n-html="contacto.contactOfficesVal" style="display:flex;flex-direction:column;gap:4px"><span>Austin, TX</span><span>CDMX, MX</span><span>Monterrey, NL</span><span>Chihuahua, Chih</span></div></div>
+            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v offices-list" data-i18n-html="contacto.contactOfficesVal" style="display:flex;flex-direction:column;gap:10px"><span>Austin, TX</span><span>CDMX, MX</span><span>Monterrey, NL</span><span>Chihuahua, Chih</span></div></div>
           </div>
         </div>
       </div>
@@ -1373,7 +1375,6 @@
         <li>Chihuahua, Chih</li>
         <li><a href="mailto:marketing@m2energy.org">marketing@m2energy.org</a></li>
         <li><a href="tel:+15125046581">+1 (512) 504-6581 · US</a></li>
-        <li><a href="tel:+525500000000">+52 55 0000 0000 · MX</a></li>
       </ul>
     </div>
   </div>
