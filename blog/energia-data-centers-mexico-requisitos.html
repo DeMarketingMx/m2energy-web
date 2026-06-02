@@ -191,6 +191,40 @@
 
   </div>
 
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Cuánta capacidad eléctrica demanda un data center en México?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Un data center mediano arranca en 5 a 15 MW y uno de hiperescala parte de 30 a 100 MW. Para dimensionarlo, una planta automotriz grande opera entre 8 y 20 MW, así que un solo data center de hiperescala equivale a entre 5 y 10 plantas automotrices en demanda eléctrica. Es una magnitud que la red mexicana no fue diseñada para absorber en geografías concentradas.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Puede un data center depender únicamente de la red CFE?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">No para gran escala. Un tier III exige 99.982% de uptime (1.6 horas de interrupción al año) y un tier IV exige 99.995% (26 minutos al año), mientras la red CFE estándar entrega entre 99.8% y 99.95%. Esa brecha obliga a una arquitectura híbrida de red más respaldo en sitio más renovable, que es prácticamente un requisito.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué peso tiene la infraestructura eléctrica en el CAPEX total del data center?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El CAPEX eléctrico puede llegar a representar entre 25% y 35% del CAPEX total del data center, así que no es una partida secundaria. Esto se explica porque un tier IV requiere redundancia equivalente a una empresa eléctrica privada: doble entrada CFE, UPS, bancos de gensets en N+1 o 2N, generación renovable con baterías y cooling redundante, que por sí solo consume entre 30% y 40% de la energía total.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto tarda CFE en ampliar capacidad para un proyecto de 30 MW o más?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El promedio es de 18 a 30 meses para obras de subestación que soporten 30 MW o más. A eso se suma que zonas como Querétaro concentran la mayor parte de los proyectos de hiperescala anunciados y ya saturan ese nodo de la red, y que el respaldo a gas depende de tener acceso a gasoducto con presión y volumen suficientes, algo que no todos los polos industriales tienen.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Dónde tiene sentido instalar un data center greenfield en México hoy?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El corredor norte de Querétaro aparece como la mejor opción greenfield en 2026 por capacidad disponible y clima templado. Querétaro centro está saturado para nuevos proyectos mayores a 10 MW y sirve mejor para retrofit; Monterrey es atractivo si se asegura capacidad, aunque su clima cálido exige más cooling; Tijuana atrae por proximidad a Estados Unidos pero su capacidad debe verificarse; y CDMX solo conviene para edge o colocation pequeño.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué es tan riesgoso cerrar el terreno antes de validar la energía?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque es el error más caro del desarrollo: recuperarse implica perder de 6 a 24 meses de cronograma o cambiar de sitio entero. La pre-validación correcta incluye solicitar el oficio de factibilidad a CFE, verificar capacidad de gasoducto, analizar la subestación de respaldo y revisar permisos ambientales; hacerlo bien toma de 6 a 12 semanas y cuesta una fracción mínima del CAPEX total.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánta capacidad eléctrica demanda un data center en México?","acceptedAnswer":{"@type":"Answer","text":"Un data center mediano arranca en 5 a 15 MW y uno de hiperescala parte de 30 a 100 MW. Para dimensionarlo, una planta automotriz grande opera entre 8 y 20 MW, así que un solo data center de hiperescala equivale a entre 5 y 10 plantas automotrices en demanda eléctrica. Es una magnitud que la red mexicana no fue diseñada para absorber en geografías concentradas."}},{"@type":"Question","name":"¿Puede un data center depender únicamente de la red CFE?","acceptedAnswer":{"@type":"Answer","text":"No para gran escala. Un tier III exige 99.982% de uptime (1.6 horas de interrupción al año) y un tier IV exige 99.995% (26 minutos al año), mientras la red CFE estándar entrega entre 99.8% y 99.95%. Esa brecha obliga a una arquitectura híbrida de red más respaldo en sitio más renovable, que es prácticamente un requisito."}},{"@type":"Question","name":"¿Qué peso tiene la infraestructura eléctrica en el CAPEX total del data center?","acceptedAnswer":{"@type":"Answer","text":"El CAPEX eléctrico puede llegar a representar entre 25% y 35% del CAPEX total del data center, así que no es una partida secundaria. Esto se explica porque un tier IV requiere redundancia equivalente a una empresa eléctrica privada: doble entrada CFE, UPS, bancos de gensets en N+1 o 2N, generación renovable con baterías y cooling redundante, que por sí solo consume entre 30% y 40% de la energía total."}},{"@type":"Question","name":"¿Cuánto tarda CFE en ampliar capacidad para un proyecto de 30 MW o más?","acceptedAnswer":{"@type":"Answer","text":"El promedio es de 18 a 30 meses para obras de subestación que soporten 30 MW o más. A eso se suma que zonas como Querétaro concentran la mayor parte de los proyectos de hiperescala anunciados y ya saturan ese nodo de la red, y que el respaldo a gas depende de tener acceso a gasoducto con presión y volumen suficientes, algo que no todos los polos industriales tienen."}},{"@type":"Question","name":"¿Dónde tiene sentido instalar un data center greenfield en México hoy?","acceptedAnswer":{"@type":"Answer","text":"El corredor norte de Querétaro aparece como la mejor opción greenfield en 2026 por capacidad disponible y clima templado. Querétaro centro está saturado para nuevos proyectos mayores a 10 MW y sirve mejor para retrofit; Monterrey es atractivo si se asegura capacidad, aunque su clima cálido exige más cooling; Tijuana atrae por proximidad a Estados Unidos pero su capacidad debe verificarse; y CDMX solo conviene para edge o colocation pequeño."}},{"@type":"Question","name":"¿Por qué es tan riesgoso cerrar el terreno antes de validar la energía?","acceptedAnswer":{"@type":"Answer","text":"Porque es el error más caro del desarrollo: recuperarse implica perder de 6 a 24 meses de cronograma o cambiar de sitio entero. La pre-validación correcta incluye solicitar el oficio de factibilidad a CFE, verificar capacidad de gasoducto, analizar la subestación de respaldo y revisar permisos ambientales; hacerlo bien toma de 6 a 12 semanas y cuesta una fracción mínima del CAPEX total."}}]}
+  </script>
+
   <div class="cta-final">
     <div class="cta-final-inner">
       <div>

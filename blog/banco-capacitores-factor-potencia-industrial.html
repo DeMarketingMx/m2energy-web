@@ -195,6 +195,40 @@
     </aside>
   </div>
 
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Cuánto me cuesta al mes tener el factor de potencia bajo?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">CFE penaliza cuando el FP del mes cae por debajo de 0.90. Un FP de 0.85 suma alrededor de 5% sobre la factura, 0.80 cerca de 10%, y 0.75 o menos hasta 25% extra. Para una planta que paga 1.5 millones de pesos al mes en electricidad con FP de 0.83, la penalización ronda los 80,000 a 110,000 pesos mensuales, más de un millón de pesos al año en castigo evitable.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿En cuánto tiempo se paga un banco de capacitores?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Es probablemente la inversión eléctrica industrial con mejor payback. Una planta que evita una penalización de 90,000 pesos al mes recupera un banco de 650,000 pesos en aproximadamente 7 a 8 meses. El payback típico es menor a un año, con una vida útil del equipo de 10 a 15 años.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto cuesta un banco de capacitores en México en 2026?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Para una planta mediana, un banco automático de 200 kVAr en baja tensión a 480V ronda los 280,000 pesos instalado; uno de 500 kVAr cerca de 650,000; y uno de 1,000 kVAr en media tensión a 13.8 kV alrededor de 1.8 millones. Un banco con filtro de armónicos de 500 kVAr sube a unos 1.4 millones por el premium de los reactores.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿A qué factor de potencia debo corregir mi planta?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El target óptimo es 0.95 a 0.97, fuera de la penalización pero sin riesgo de sobre-compensar. No conviene corregir a 1.0 exacto: como las cargas varían, un banco sobre-dimensionado lleva a FP capacitivo, que CFE también penaliza. Las plantas con capacitores bien dimensionados suelen operar entre 0.95 y 0.98.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cómo sé de cuántos kVAr necesito el banco?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Se dimensiona multiplicando los kW de la planta por un factor de corrección que sale de tablas según el FP actual y el objetivo. Por ejemplo, pasar de FP 0.80 a 0.95 usa factor 0.42, así que una planta de 1,000 kW necesita unos 420 kVAr; de 0.85 a 0.95 el factor es 0.29, unos 290 kVAr. Pero antes hay que medir el FP real, no asumir uno típico.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué necesito reactores anti-armónicos si tengo variadores de frecuencia?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">En plantas con cargas no lineales fuertes como variadores VSD, soldadoras u hornos de inducción, los capacitores comunes pueden resonar con los armónicos del sistema, sobrecalentarse y fallar en menos de 2 años. Los bancos con reactores de bloqueo evitan esa resonancia. Es indispensable en industria 4.0 moderna y uno de los errores más comunes en instalación.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto me cuesta al mes tener el factor de potencia bajo?","acceptedAnswer":{"@type":"Answer","text":"CFE penaliza cuando el FP del mes cae por debajo de 0.90. Un FP de 0.85 suma alrededor de 5% sobre la factura, 0.80 cerca de 10%, y 0.75 o menos hasta 25% extra. Para una planta que paga 1.5 millones de pesos al mes en electricidad con FP de 0.83, la penalización ronda los 80,000 a 110,000 pesos mensuales, más de un millón de pesos al año en castigo evitable."}},{"@type":"Question","name":"¿En cuánto tiempo se paga un banco de capacitores?","acceptedAnswer":{"@type":"Answer","text":"Es probablemente la inversión eléctrica industrial con mejor payback. Una planta que evita una penalización de 90,000 pesos al mes recupera un banco de 650,000 pesos en aproximadamente 7 a 8 meses. El payback típico es menor a un año, con una vida útil del equipo de 10 a 15 años."}},{"@type":"Question","name":"¿Cuánto cuesta un banco de capacitores en México en 2026?","acceptedAnswer":{"@type":"Answer","text":"Para una planta mediana, un banco automático de 200 kVAr en baja tensión a 480V ronda los 280,000 pesos instalado; uno de 500 kVAr cerca de 650,000; y uno de 1,000 kVAr en media tensión a 13.8 kV alrededor de 1.8 millones. Un banco con filtro de armónicos de 500 kVAr sube a unos 1.4 millones por el premium de los reactores."}},{"@type":"Question","name":"¿A qué factor de potencia debo corregir mi planta?","acceptedAnswer":{"@type":"Answer","text":"El target óptimo es 0.95 a 0.97, fuera de la penalización pero sin riesgo de sobre-compensar. No conviene corregir a 1.0 exacto: como las cargas varían, un banco sobre-dimensionado lleva a FP capacitivo, que CFE también penaliza. Las plantas con capacitores bien dimensionados suelen operar entre 0.95 y 0.98."}},{"@type":"Question","name":"¿Cómo sé de cuántos kVAr necesito el banco?","acceptedAnswer":{"@type":"Answer","text":"Se dimensiona multiplicando los kW de la planta por un factor de corrección que sale de tablas según el FP actual y el objetivo. Por ejemplo, pasar de FP 0.80 a 0.95 usa factor 0.42, así que una planta de 1,000 kW necesita unos 420 kVAr; de 0.85 a 0.95 el factor es 0.29, unos 290 kVAr. Pero antes hay que medir el FP real, no asumir uno típico."}},{"@type":"Question","name":"¿Por qué necesito reactores anti-armónicos si tengo variadores de frecuencia?","acceptedAnswer":{"@type":"Answer","text":"En plantas con cargas no lineales fuertes como variadores VSD, soldadoras u hornos de inducción, los capacitores comunes pueden resonar con los armónicos del sistema, sobrecalentarse y fallar en menos de 2 años. Los bancos con reactores de bloqueo evitan esa resonancia. Es indispensable en industria 4.0 moderna y uno de los errores más comunes en instalación."}}]}
+  </script>
+
   <div class="cta-final">
     <div class="cta-final-inner">
       <div>

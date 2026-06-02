@@ -200,6 +200,40 @@
 
   </div>
 
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Por qué no debo dimensionar la solicitud a CFE con datos de chapa de placa?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque sumar las potencias nominales de placa siempre arroja una demanda entre 30% y 60% mayor que la real coincidente. Influyen el factor de utilización, ya que un motor de 75 kW rara vez opera arriba del 80% del nominal; el factor de simultaneidad, porque de 100 motores quizá solo 60 a 70 funcionan a la vez; la diversidad de turnos y las pérdidas que asume el dato de placa. Por eso un estudio formal reduce el error a 15-20%.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué pasa si solicito de más a CFE para ir del lado seguro?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Solicitar de más no es ir del lado seguro. Pedir 5 MVA cuando realmente necesitas 3.2 significa una subestación más cara, una ampliación CFE más costosa, factor de potencia degradado por sobredimensionamiento desde el día uno y demanda contratada que pagas mes a mes sin usarla. El permiso además tarda lo mismo, así que no ganas tiempo y sí encareces el proyecto.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué incluye un estudio de carga eléctrica bien hecho?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Como mínimo incluye el inventario detallado de cargas con su factor de carga y utilización, las curvas de demanda por turno y por estación, el análisis de factor de coincidencia, la demanda máxima coincidente que CFE toma para dimensionar la acometida, una proyección a 5-10 años con reservas técnicas y la identificación de cargas críticas que requieren alimentación ininterrumpida. Va mucho más allá de sumar las placas de los motores.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto margen de crecimiento debo reservar en la proyección de demanda?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Una reserva de 15% a 25% sobre la proyección a 5 años es el estándar técnico defendible. La proyección combina tres horizontes: 0-2 años con datos comprobables, 2-5 años con expansiones planeadas y 5-10 años con escenarios de crecimiento. No prever ese crecimiento explícito obliga a un segundo trámite que vuelve a costar 8 a 14 meses y puede chocar con la saturación regional.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cómo se ejecuta un estudio de carga en una planta que ya opera?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Se instalan medidores trifásicos en la acometida y los tableros principales, con un registro de 4 a 6 semanas en condiciones operativas reales. Sobre esas mediciones se levanta el inventario de cargas con factor de utilización medido y no asumido, se analiza la coincidencia y diversidad, se caracteriza la calidad de energía y se modelan las cargas nuevas con factores conservadores pero defendibles ante CFE y ante el comité financiero.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué hay que considerar los arranques de motores en la acometida?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque los motores grandes que arrancan en directo pueden demandar de 5 a 7 veces su corriente nominal durante algunos segundos. Si la acometida no contempla ese transitorio, los arranques disparan las protecciones de CFE y la planta entra a la lista de cliente problemático. Es uno de los errores frecuentes al traducir el estudio de carga a la solicitud formal a CFE.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué no debo dimensionar la solicitud a CFE con datos de chapa de placa?","acceptedAnswer":{"@type":"Answer","text":"Porque sumar las potencias nominales de placa siempre arroja una demanda entre 30% y 60% mayor que la real coincidente. Influyen el factor de utilización, ya que un motor de 75 kW rara vez opera arriba del 80% del nominal; el factor de simultaneidad, porque de 100 motores quizá solo 60 a 70 funcionan a la vez; la diversidad de turnos y las pérdidas que asume el dato de placa. Por eso un estudio formal reduce el error a 15-20%."}},{"@type":"Question","name":"¿Qué pasa si solicito de más a CFE para ir del lado seguro?","acceptedAnswer":{"@type":"Answer","text":"Solicitar de más no es ir del lado seguro. Pedir 5 MVA cuando realmente necesitas 3.2 significa una subestación más cara, una ampliación CFE más costosa, factor de potencia degradado por sobredimensionamiento desde el día uno y demanda contratada que pagas mes a mes sin usarla. El permiso además tarda lo mismo, así que no ganas tiempo y sí encareces el proyecto."}},{"@type":"Question","name":"¿Qué incluye un estudio de carga eléctrica bien hecho?","acceptedAnswer":{"@type":"Answer","text":"Como mínimo incluye el inventario detallado de cargas con su factor de carga y utilización, las curvas de demanda por turno y por estación, el análisis de factor de coincidencia, la demanda máxima coincidente que CFE toma para dimensionar la acometida, una proyección a 5-10 años con reservas técnicas y la identificación de cargas críticas que requieren alimentación ininterrumpida. Va mucho más allá de sumar las placas de los motores."}},{"@type":"Question","name":"¿Cuánto margen de crecimiento debo reservar en la proyección de demanda?","acceptedAnswer":{"@type":"Answer","text":"Una reserva de 15% a 25% sobre la proyección a 5 años es el estándar técnico defendible. La proyección combina tres horizontes: 0-2 años con datos comprobables, 2-5 años con expansiones planeadas y 5-10 años con escenarios de crecimiento. No prever ese crecimiento explícito obliga a un segundo trámite que vuelve a costar 8 a 14 meses y puede chocar con la saturación regional."}},{"@type":"Question","name":"¿Cómo se ejecuta un estudio de carga en una planta que ya opera?","acceptedAnswer":{"@type":"Answer","text":"Se instalan medidores trifásicos en la acometida y los tableros principales, con un registro de 4 a 6 semanas en condiciones operativas reales. Sobre esas mediciones se levanta el inventario de cargas con factor de utilización medido y no asumido, se analiza la coincidencia y diversidad, se caracteriza la calidad de energía y se modelan las cargas nuevas con factores conservadores pero defendibles ante CFE y ante el comité financiero."}},{"@type":"Question","name":"¿Por qué hay que considerar los arranques de motores en la acometida?","acceptedAnswer":{"@type":"Answer","text":"Porque los motores grandes que arrancan en directo pueden demandar de 5 a 7 veces su corriente nominal durante algunos segundos. Si la acometida no contempla ese transitorio, los arranques disparan las protecciones de CFE y la planta entra a la lista de cliente problemático. Es uno de los errores frecuentes al traducir el estudio de carga a la solicitud formal a CFE."}}]}
+  </script>
+
   <div class="cta-final">
     <div class="cta-final-inner">
       <div>

@@ -141,6 +141,22 @@ footer ul a{font-size:13.5px;color:var(--ink-dim);transition:color .2s;}
 footer ul a:hover{color:var(--amber)}
 .foot-bar{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute);}
 
+/* FAQ · acordeón CSS-only (details/summary) */
+.post-faq{max-width:860px;margin:0 auto;padding:64px 48px 8px;}
+.post-faq__kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}
+.post-faq__kicker::before{content:'';width:32px;height:2px;background:var(--amber);}
+.post-faq h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:28px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;font-family:'Space Grotesk',sans-serif;font-size:clamp(15.5px,1.5vw,18px);font-weight:600;color:var(--ink);transition:color .2s;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:hover{color:var(--amber);}
+.faq-plus{width:30px;height:30px;flex:none;border-radius:50%;border:1px solid var(--line-str);display:grid;place-items:center;color:var(--amber);font-size:20px;line-height:1;transition:transform .3s cubic-bezier(.2,.7,.2,1),background .2s,border-color .2s;}
+.faq-item[open] .faq-plus{transform:rotate(45deg);background:var(--amber-soft);border-color:rgba(246,190,31,.5);}
+.faq-a{padding:0 2px 26px;color:var(--ink-dim);font-size:15.5px;line-height:1.7;max-width:720px;animation:faqReveal .34s ease;}
+.faq-a a{color:var(--amber);text-decoration:underline;text-underline-offset:2px;}
+.faq-a strong{color:var(--ink);font-weight:600;}
+@keyframes faqReveal{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
+
 /* RESPONSIVE */
 @media (max-width:1180px){
   .post-layout{grid-template-columns:200px 1fr 260px;gap:32px;padding:0 32px;}
@@ -159,6 +175,7 @@ footer ul a:hover{color:var(--amber)}
   .post-hero-content{padding:0 24px}
   .post-layout{padding:0 24px}
   .cta-final{padding:0 24px}
+  .post-faq{padding:48px 24px 4px}
   .cta-final-inner{padding:36px 28px;grid-template-columns:1fr}
   .cta-inline{grid-template-columns:1fr;text-align:left}
   .post-aside-right{grid-template-columns:1fr}

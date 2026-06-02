@@ -188,6 +188,40 @@
 
   </div>
 
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Cuánto cuesta realmente una caída de tensión breve en mi planta?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Una caída de tensión de apenas 200 milisegundos puede frenar líneas de producción, dañar electrónica de control, perder lotes y disparar overtime para recuperar el día. Los costos típicos por evento están entre 80,000 y 1,500,000 pesos según el giro. Es la falla más común en zonas industriales mexicanas, sobre todo en temporada de lluvias.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Un solo UPS o supresor protege contra todas las fallas de la red?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">No, y asumirlo es el error más caro. Cada tipo de falla requiere una tecnología distinta: DVR o UPS para caídas breves, filtros activos o pasivos para armónicos, generación on-site con AGC para frecuencia, grupo electrógeno con transferencia automática para interrupciones largas, y supresores TVSS en cascada para sobretensiones. Una estrategia de uptime real combina de tres a cinco capas de protección según la criticidad del proceso.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿En qué rango opera la frecuencia de la red CFE y por qué me afecta?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">La red mexicana opera a 60 Hz con una banda de tolerancia muy estrecha. Cuando hay desbalances grandes entre generación y demanda, la frecuencia puede caer a 59.5 Hz o subir a 60.5 Hz por minutos. Eso hace que los motores síncronos pierdan velocidad y que procesos de control como impresión, recubrimientos o alimentos salgan de especificación. Solo se evita con generación local capaz de regular frecuencia.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto tarda mi planta en recuperarse tras una interrupción larga?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Depende del proceso. En manufactura discreta el tiempo de recuperación va de 30 minutos a 4 horas, pero en proceso continuo como química, papel, cemento o vidrio el re-arranque tras una parada total puede tomar de 12 a 72 horas. En alimentos y cadena de frío el producto en cámara se vuelve pérdida total tras 4 a 8 horas sin suministro.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuándo conviene generar en sitio en vez de seguir blindándome contra la red?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Hay un umbral donde dejar de depender de CFE sale más barato que blindarse contra sus fallas. Aparece cuando se cumplen dos o más condiciones: costos anuales por interrupciones mayores a 1.5 millones de pesos, recibo eléctrico mensual mayor a 500,000 pesos, proceso con requerimiento crítico de calidad de potencia, o ubicación con inestabilidad conocida. En esos casos la inversión propia o el PPA con un tercero suelen tener repago de 3 a 7 años.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por dónde debo empezar para justificar la inversión en uptime?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Por medir. Registrar el número y tipo de eventos por mes es lo que vuelve la estrategia defendible y la inversión justificable, porque el uptime no se resuelve comprando un solo equipo sino con un sistema de defensa por capas. Cada capa atiende un tipo de falla distinto, y sin datos de eventos no se puede dimensionar cuál combinación corresponde a tu proceso.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta realmente una caída de tensión breve en mi planta?","acceptedAnswer":{"@type":"Answer","text":"Una caída de tensión de apenas 200 milisegundos puede frenar líneas de producción, dañar electrónica de control, perder lotes y disparar overtime para recuperar el día. Los costos típicos por evento están entre 80,000 y 1,500,000 pesos según el giro. Es la falla más común en zonas industriales mexicanas, sobre todo en temporada de lluvias."}},{"@type":"Question","name":"¿Un solo UPS o supresor protege contra todas las fallas de la red?","acceptedAnswer":{"@type":"Answer","text":"No, y asumirlo es el error más caro. Cada tipo de falla requiere una tecnología distinta: DVR o UPS para caídas breves, filtros activos o pasivos para armónicos, generación on-site con AGC para frecuencia, grupo electrógeno con transferencia automática para interrupciones largas, y supresores TVSS en cascada para sobretensiones. Una estrategia de uptime real combina de tres a cinco capas de protección según la criticidad del proceso."}},{"@type":"Question","name":"¿En qué rango opera la frecuencia de la red CFE y por qué me afecta?","acceptedAnswer":{"@type":"Answer","text":"La red mexicana opera a 60 Hz con una banda de tolerancia muy estrecha. Cuando hay desbalances grandes entre generación y demanda, la frecuencia puede caer a 59.5 Hz o subir a 60.5 Hz por minutos. Eso hace que los motores síncronos pierdan velocidad y que procesos de control como impresión, recubrimientos o alimentos salgan de especificación. Solo se evita con generación local capaz de regular frecuencia."}},{"@type":"Question","name":"¿Cuánto tarda mi planta en recuperarse tras una interrupción larga?","acceptedAnswer":{"@type":"Answer","text":"Depende del proceso. En manufactura discreta el tiempo de recuperación va de 30 minutos a 4 horas, pero en proceso continuo como química, papel, cemento o vidrio el re-arranque tras una parada total puede tomar de 12 a 72 horas. En alimentos y cadena de frío el producto en cámara se vuelve pérdida total tras 4 a 8 horas sin suministro."}},{"@type":"Question","name":"¿Cuándo conviene generar en sitio en vez de seguir blindándome contra la red?","acceptedAnswer":{"@type":"Answer","text":"Hay un umbral donde dejar de depender de CFE sale más barato que blindarse contra sus fallas. Aparece cuando se cumplen dos o más condiciones: costos anuales por interrupciones mayores a 1.5 millones de pesos, recibo eléctrico mensual mayor a 500,000 pesos, proceso con requerimiento crítico de calidad de potencia, o ubicación con inestabilidad conocida. En esos casos la inversión propia o el PPA con un tercero suelen tener repago de 3 a 7 años."}},{"@type":"Question","name":"¿Por dónde debo empezar para justificar la inversión en uptime?","acceptedAnswer":{"@type":"Answer","text":"Por medir. Registrar el número y tipo de eventos por mes es lo que vuelve la estrategia defendible y la inversión justificable, porque el uptime no se resuelve comprando un solo equipo sino con un sistema de defensa por capas. Cada capa atiende un tipo de falla distinto, y sin datos de eventos no se puede dimensionar cuál combinación corresponde a tu proceso."}}]}
+  </script>
+
   <div class="cta-final">
     <div class="cta-final-inner">
       <div>

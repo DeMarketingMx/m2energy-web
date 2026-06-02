@@ -189,6 +189,40 @@
     </aside>
   </div>
 
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2>Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Cómo se calcula correctamente el ROI de un PPA solar a 15 años?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Se calculan dos valores presentes netos (VPN) a 15 años con tu costo de capital: el escenario A, seguir con CFE, y el escenario B, firmar el PPA. El ROI real es la diferencia de VPN entre ambos, como porcentaje sobre el VPN del escenario CFE; no es el “ahorro acumulado” nominal que suele mostrar el proveedor.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué el “ahorro acumulado a 15 años” del proveedor sobreestima el beneficio?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque son pesos nominales sin descontar. Con un WACC de 11%, un peso en el año 15 vale apenas 0.21 pesos en valor presente. Comparar montos nominales en lugar de VPN sobreestima el ahorro real entre 60% y 100%.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué variables necesito para modelar el cálculo con números reales?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">La tarifa PPA frente a la tarifa CFE proyectada con su escalación, tu costo de capital o WACC (entre 10% y 14% para industria mediana mexicana en 2026), la producción estimada del sistema solar, y las cláusulas de salida con sus penalizaciones (típicamente 30% a 50% del valor presente de los pagos remanentes).</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué es la cláusula take-or-pay y por qué representa un riesgo?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Es el compromiso de pagar una cantidad mínima de energía aunque no la consumas. Si tu operación baja, por ejemplo 20% por cambios operativos, puedes terminar pagando kWh que no usas. Por eso conviene modelar un escenario de caída de consumo antes de firmar.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué debo verificar de la producción que promete el proveedor solar?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Que el factor de planta estimado, alrededor de 18% a 22% en México, sea realista para tu sitio; que considere la degradación de paneles de 0.5% a 0.8% al año; que incluya una garantía de performance mínima contractual; y que contemple pérdidas por suciedad, sombras y eficiencia del inversor.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto puede ahorrar una planta industrial típica con un PPA solar bien estructurado?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">En un caso de planta mediana en el Bajío, con tarifa CFE de 2.80 pesos por kWh, consumo de 5,000 MWh al año y PPA al 60% de cobertura a 1.10 pesos por kWh, el ahorro de VPN a 15 años ronda los 20 millones de pesos, cerca del 25%. El número final depende de cada caso: hay que correr sensibilidades de tarifa, consumo y costo de capital.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo se calcula correctamente el ROI de un PPA solar a 15 años?","acceptedAnswer":{"@type":"Answer","text":"Se calculan dos valores presentes netos (VPN) a 15 años con tu costo de capital: el escenario A, seguir con CFE, y el escenario B, firmar el PPA. El ROI real es la diferencia de VPN entre ambos, como porcentaje sobre el VPN del escenario CFE; no es el “ahorro acumulado” nominal que suele mostrar el proveedor."}},{"@type":"Question","name":"¿Por qué el “ahorro acumulado a 15 años” del proveedor sobreestima el beneficio?","acceptedAnswer":{"@type":"Answer","text":"Porque son pesos nominales sin descontar. Con un WACC de 11%, un peso en el año 15 vale apenas 0.21 pesos en valor presente. Comparar montos nominales en lugar de VPN sobreestima el ahorro real entre 60% y 100%."}},{"@type":"Question","name":"¿Qué variables necesito para modelar el cálculo con números reales?","acceptedAnswer":{"@type":"Answer","text":"La tarifa PPA frente a la tarifa CFE proyectada con su escalación, tu costo de capital o WACC (entre 10% y 14% para industria mediana mexicana en 2026), la producción estimada del sistema solar, y las cláusulas de salida con sus penalizaciones (típicamente 30% a 50% del valor presente de los pagos remanentes)."}},{"@type":"Question","name":"¿Qué es la cláusula take-or-pay y por qué representa un riesgo?","acceptedAnswer":{"@type":"Answer","text":"Es el compromiso de pagar una cantidad mínima de energía aunque no la consumas. Si tu operación baja, por ejemplo 20% por cambios operativos, puedes terminar pagando kWh que no usas. Por eso conviene modelar un escenario de caída de consumo antes de firmar."}},{"@type":"Question","name":"¿Qué debo verificar de la producción que promete el proveedor solar?","acceptedAnswer":{"@type":"Answer","text":"Que el factor de planta estimado, alrededor de 18% a 22% en México, sea realista para tu sitio; que considere la degradación de paneles de 0.5% a 0.8% al año; que incluya una garantía de performance mínima contractual; y que contemple pérdidas por suciedad, sombras y eficiencia del inversor."}},{"@type":"Question","name":"¿Cuánto puede ahorrar una planta industrial típica con un PPA solar bien estructurado?","acceptedAnswer":{"@type":"Answer","text":"En un caso de planta mediana en el Bajío, con tarifa CFE de 2.80 pesos por kWh, consumo de 5,000 MWh al año y PPA al 60% de cobertura a 1.10 pesos por kWh, el ahorro de VPN a 15 años ronda los 20 millones de pesos, cerca del 25%. El número final depende de cada caso: hay que correr sensibilidades de tarifa, consumo y costo de capital."}}]}
+  </script>
+
   <div class="cta-final">
     <div class="cta-final-inner">
       <div>
