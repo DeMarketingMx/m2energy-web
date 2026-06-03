@@ -157,6 +157,15 @@ footer ul a:hover{color:var(--amber)}
 .faq-a strong{color:var(--ink);font-weight:600;}
 @keyframes faqReveal{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}
 
+/* ÍNDICE (TOC) · sticky + scroll-spy */
+.post-toc{margin-bottom:28px;}
+.post-toc__title{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--ink-mute);text-transform:uppercase;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line);}
+.post-toc ul{list-style:none;display:flex;flex-direction:column;border-left:1px solid var(--line);}
+.post-toc a{display:block;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:13px;line-height:1.45;color:var(--ink-mute);transition:color .2s,border-color .2s;}
+.post-toc a:hover{color:var(--ink-dim);}
+.post-toc a.is-active{color:var(--amber);border-left-color:var(--amber);font-weight:600;}
+article h2[id]{scroll-margin-top:96px;}
+
 /* RESPONSIVE */
 @media (max-width:1180px){
   .post-layout{grid-template-columns:200px 1fr 260px;gap:32px;padding:0 32px;}
@@ -166,6 +175,7 @@ footer ul a:hover{color:var(--amber)}
   .post-layout{grid-template-columns:1fr;max-width:780px;padding:0 32px;gap:48px;}
   .post-aside{position:relative;top:auto;}
   .post-aside-right{order:-1;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .post-toc{display:none;}
   .aside-author-card{margin-bottom:0}
   .post-hero-watermark{display:none}
 }
