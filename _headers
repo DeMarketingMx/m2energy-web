@@ -16,6 +16,9 @@
 /blog/blog.css
   Cache-Control: public, max-age=0, must-revalidate
 
+/blog/blog.js
+  Cache-Control: public, max-age=0, must-revalidate
+
 /assets/videos/*.mp4
   Content-Type: video/mp4
   Accept-Ranges: bytes
