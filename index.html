@@ -1862,10 +1862,52 @@ function renderResults(){
 }
 
 // Submit
-document.getElementById('submitBtn').addEventListener('click', ()=>{
-  document.getElementById('resultPanel').style.display='none';
-  document.getElementById('nav4').style.display='none';
-  document.getElementById('successPanel').style.display='block';
+function collectLead(){
+  const f = {};
+  document.querySelectorAll('[data-f]').forEach(el=>{ f[el.dataset.f] = el.value.trim(); });
+  const ptype = [...document.querySelectorAll('[data-multi="ptype"] .chip.selected')].map(c=>c.textContent.trim());
+  const lprofile = document.querySelector('[data-single="lprofile"] .chip.selected')?.textContent.trim() || '';
+  const cfe = document.querySelector('[data-single="cfe"] .chip.selected')?.textContent.trim() || '';
+  const risk = k => document.querySelector(`[data-risk="${k}"] .risk-chip.sel`)?.dataset.v || '';
+  return {
+    company:f.company, name:f.name, role:f.role, email:f.email, phone:f.phone, lang:f.lang,
+    stage:f.stage, loc:f.loc, golive:f.golive, msg:f.msg,
+    ptype, lprofile, cfe,
+    kva: +document.getElementById('kvaRange').value,
+    growth: +document.getElementById('growRange').value,
+    riskTimeline: risk('timeline'), riskCapacity: risk('capacity'),
+    riskInfra: risk('infra'), riskCost: risk('cost'),
+    score: parseInt(document.getElementById('rScore').textContent,10) || null,
+    riskLevel: document.getElementById('rBadge').textContent.trim(),
+    page: location.href,
+  };
+}
+
+const submitBtn = document.getElementById('submitBtn');
+submitBtn.addEventListener('click', async ()=>{
+  const lead = collectLead();
+  if(!lead.company || !lead.name || !lead.email){
+    alert('Por favor completa Empresa, Nombre y Email en el primer paso.');
+    return;
+  }
+  const original = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Enviando…</span>';
+  try{
+    const r = await fetch('/api/contact', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(lead),
+    });
+    if(!r.ok) throw new Error('bad status '+r.status);
+    document.getElementById('resultPanel').style.display='none';
+    document.getElementById('nav4').style.display='none';
+    document.getElementById('successPanel').style.display='block';
+  }catch(err){
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = original;
+    alert('No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a marketing@m2energy.org');
+  }
 });
 
 /* =========================================================
