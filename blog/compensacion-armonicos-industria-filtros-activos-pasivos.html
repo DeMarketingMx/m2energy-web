@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Compensación de armónicos en industria 4.0: filtros activos vs pasivos — Blog M2 Energy</title>
+<meta name="description" content="Compensación de armónicos industrial: qué son, cómo medirlos contra IEEE 519 y cuándo conviene un filtro activo AHF o uno pasivo. CAPEX en MXN y errores comunes."/>
+<meta property="og:title" content="Compensación de armónicos en industria 4.0: filtros activos vs pasivos"/>
+<meta property="og:description" content="Filtros pasivos vs filtros activos AHF: cómo medir la distorsión armónica, qué tecnología elige cada planta y cuánto cuesta corregirla en México."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://m2energy.org/blog/compensacion-armonicos-industria-filtros-activos-pasivos.html"/>
+<meta property="og:image" content="https://m2energy.org/blog/compensacion-armonicos-industria-filtros-activos-pasivos/hero.jpg"/>
+<meta name="author" content="Carlos Pineda"/>
+<link rel="canonical" href="https://m2energy.org/blog/compensacion-armonicos-industria-filtros-activos-pasivos.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20260603"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Compensación de armónicos en industria 4.0: filtros activos vs pasivos","description":"Filtros pasivos vs filtros activos AHF: cómo medir la distorsión armónica, qué tecnología elige cada planta y cuánto cuesta corregirla en México.","image":"https://m2energy.org/blog/compensacion-armonicos-industria-filtros-activos-pasivos/hero.jpg","author":{"@type":"Person","name":"Carlos Pineda","jobTitle":"Director Comercial","worksFor":"M2 Energy"},"publisher":{"@type":"Organization","name":"M2 Energy","logo":{"@type":"ImageObject","url":"https://m2energy.org/favicon.png"}},"datePublished":"2026-06-08T08:00:00-06:00","dateModified":"2026-06-08T08:00:00-06:00","articleSection":"Operación","inLanguage":"es-MX"}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></a>
+  <a class="nav-back" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>Volver al blog</span></a>
+  <div class="nav-right"><a class="nav-cta" href="/#contacto">Contáctanos →</a></div>
+</nav>
+
+<article>
+  <section class="post-hero">
+    <div class="post-hero-bg" style="background-image:url('/blog/compensacion-armonicos-industria-filtros-activos-pasivos/hero.jpg')"></div><div class="post-hero-grad"></div>
+    <div class="post-hero-content">
+      <div class="post-hero-inner">
+        <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/blog">Blog</a><span>/</span><span style="color:var(--ink-dim)">Operación</span></div>
+        <div class="post-cat-kicker">Operación</div>
+        <h1>Compensación de armónicos en industria 4.0: filtros activos vs pasivos</h1>
+        <p class="post-subtitle">Tu planta llenó el piso de variadores, fuentes conmutadas y servomotores, y ahora los transformadores se calientan, las protecciones disparan en falso y los capacitores fallan antes de tiempo. No es operación: es distorsión armónica. Aquí está cómo medirla y qué filtro elige cada caso.</p>
+        <div class="post-meta">
+          <div class="author"><div class="author-avatar">CP</div><div>Por <strong>Carlos Pineda</strong> · Director Comercial</div></div>
+          <span class="meta-dot"></span><span>8 de junio de 2026</span><span class="meta-dot"></span><span>10 min lectura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-layout">
+
+    <aside class="post-aside post-aside-left">
+      <div class="aside-section-title">Artículos relacionados</div>
+      <a class="aside-related-card" href="/blog/calidad-energia-industrial-armonicos-factor-potencia.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/calidad-energia-industrial-armonicos-factor-potencia/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Calidad de energía en planta industrial: armónicos y factor de potencia</h3></a>
+      <a class="aside-related-card" href="/blog/variadores-frecuencia-vfd-industria-beneficios-problemas.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/variadores-frecuencia-vfd-industria-beneficios-problemas/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Variadores de frecuencia (VFD) en industria: beneficios y problemas</h3></a>
+      <a class="aside-related-card" href="/blog/banco-capacitores-factor-potencia-industrial.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/banco-capacitores-factor-potencia-industrial/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Banco de capacitores y corrección del factor de potencia industrial</h3></a>
+    </aside>
+
+    <div class="post-body">
+      <p>La industria 4.0 trajo eficiencia a través de electrónica de potencia: variadores de frecuencia en cada motor, fuentes conmutadas en cada tablero de control, servomotores en cada celda automatizada. El problema es que toda esa electrónica no consume corriente de forma limpia. Recorta la onda senoidal de 60 Hz en pedazos y devuelve a la red una corriente deformada, llena de componentes a frecuencias múltiplos. Esos componentes son los armónicos, y en una planta moderna ya no son un detalle de ingeniería: son la causa raíz de transformadores que se calientan, capacitores que fallan en meses y protecciones que disparan sin que nadie entienda por qué.</p>
+
+      <p>Si eres director de operaciones o de proyecto de una planta y estás viendo estos síntomas, la solución pasa por compensar los armónicos. Y ahí aparece la primera decisión técnica seria: filtro pasivo o filtro activo. La diferencia entre los dos no es solo de precio; es de cómo se comportan frente a tus cargas reales, de cuánto riesgo de resonancia asumes y de si la inversión sigue sirviendo cuando la planta crece. Este artículo explica qué son los armónicos, cómo se miden contra el límite recomendado de la norma IEEE 519, y cómo elegir entre las dos tecnologías sin equivocarte.</p>
+
+      <h2 id="que-son-los-armonicos-y-la-distorsion-armonica-total">Qué son los armónicos y la distorsión armónica total</h2>
+
+      <p>La red eléctrica entrega una onda senoidal pura a 60 Hz, lo que se llama la frecuencia fundamental. Cuando una carga consume corriente de forma proporcional al voltaje, la corriente que toma también es una senoidal limpia. Eso es una carga lineal: un motor conectado directo, una resistencia de calentamiento, una luminaria incandescente.</p>
+
+      <p>Los armónicos aparecen cuando la carga consume corriente en pulsos en lugar de una onda continua. La corriente deformada que resulta es, matemáticamente, la suma de la fundamental de 60 Hz más una serie de ondas a frecuencias múltiplos: el quinto armónico a 300 Hz, el séptimo a 420 Hz, el onceavo a 660 Hz, y así sucesivamente. Estas frecuencias superiores no hacen trabajo útil, pero sí circulan por los conductores, los transformadores y los devanados de tu planta, calentándolos.</p>
+
+      <p>Para cuantificar qué tan deformada está la onda se usa la <strong>distorsión armónica total (THD, por sus siglas en inglés)</strong>, expresada como porcentaje de la fundamental. Se mide por separado en dos variables:</p>
+
+      <ul>
+        <li><strong>THD-I</strong>: distorsión de la corriente. Es alta cerca de las cargas no lineales y describe cuánto ensucia tu planta su propio consumo.</li>
+        <li><strong>THD-V</strong>: distorsión del voltaje. Es la consecuencia: cuando la corriente distorsionada circula por la impedancia de la instalación, deforma también el voltaje que ven el resto de los equipos.</li>
+      </ul>
+
+      <p>Una planta puede tener THD-I muy alto y todavía un THD-V tolerable si la red que la alimenta es robusta. Pero cuando la instalación es débil o las cargas no lineales dominan, el THD-V sube y empieza a afectar a equipos que ni siquiera generaban el problema.</p>
+
+      <h2 id="de-donde-vienen-los-armonicos-en-una-planta">De dónde vienen los armónicos en una planta</h2>
+
+      <p>Todos los generadores de armónicos comparten una característica: tienen una etapa de electrónica de potencia que rectifica o conmuta la corriente. Los principales en industria son:</p>
+
+      <ul>
+        <li><strong>Variadores de frecuencia (VFD)</strong>: la fuente número uno en plantas modernas. Su rectificador de entrada consume corriente en pulsos y es el responsable del grueso del quinto y séptimo armónico. Si quieres entender por qué cada motor con VFD aporta distorsión, lo desarrollamos en <a href="/blog/variadores-frecuencia-vfd-industria-beneficios-problemas.html">variadores de frecuencia (VFD) en industria: beneficios y problemas</a>.</li>
+        <li><strong>Rectificadores y cargadores industriales</strong>: procesos de electrólisis, galvanoplastia, cargadores de montacargas eléctricos.</li>
+        <li><strong>Fuentes conmutadas</strong>: cada computadora, PLC y fuente de equipo de control. Individualmente pequeñas, sumadas por cientos son significativas.</li>
+        <li><strong>Sistemas de respaldo (UPS)</strong>: especialmente los de doble conversión, presentes en centros de datos y procesos críticos.</li>
+        <li><strong>Hornos de inducción y de arco</strong>: cargas grandes y muy distorsionantes, típicas en fundición y tratamiento térmico.</li>
+        <li><strong>Equipos de soldadura</strong>: cargas pulsantes y desbalanceadas.</li>
+        <li><strong>Iluminación LED a gran escala</strong>: cada driver es una fuente conmutada; en una nave con cientos de luminarias el aporte deja de ser despreciable.</li>
+      </ul>
+
+      <p>El patrón es claro: cuanto más automatizada y eficiente es la planta, más electrónica de potencia tiene y más armónicos genera. La distorsión es, en buena medida, el precio no contabilizado de la modernización.</p>
+
+      <h2 id="por-que-importan-los-armonicos">Por qué importan los armónicos</h2>
+
+      <p>Los armónicos no se ven en un multímetro común y por eso muchos los descubren tarde, cuando ya están pagando las consecuencias. Las principales:</p>
+
+      <ul>
+        <li><strong>Sobrecalentamiento de transformadores</strong>: las corrientes de alta frecuencia generan pérdidas adicionales por corrientes parásitas en el núcleo y los devanados. Un transformador alimentando cargas con THD-I elevado debe operar derateado, es decir, por debajo de su capacidad nominal, para no fallar térmicamente.</li>
+        <li><strong>Sobrecarga del conductor de neutro</strong>: el tercer armónico y sus múltiplos no se cancelan entre fases, sino que se suman en el neutro. En instalaciones con muchas cargas monofásicas no lineales, el neutro puede llevar más corriente que las fases, aun estando dimensionado para menos.</li>
+        <li><strong>Disparos en falso de protecciones</strong>: interruptores termomagnéticos y diferenciales que actúan sin una falla real, porque interpretan el contenido armónico como corriente de carga o de fuga.</li>
+        <li><strong>Falla prematura de capacitores por resonancia</strong>: este es el más peligroso. Un banco de capacitores forma, junto con la inductancia de la red, un circuito que puede entrar en resonancia a la frecuencia de algún armónico presente. Cuando eso ocurre, la corriente armónica se amplifica, los capacitores se sobrecalientan y fallan en meses. Por eso nunca se instala un banco sin reactor en una planta con VFD; lo tratamos a fondo en <a href="/blog/banco-capacitores-factor-potencia-industrial.html">banco de capacitores y corrección del factor de potencia industrial</a>.</li>
+        <li><strong>Pérdidas energéticas</strong>: toda esa corriente que no hace trabajo útil circula igual por cables y devanados, calentándolos. Es energía pagada que se disipa como calor.</li>
+        <li><strong>Incumplimiento normativo</strong>: el límite recomendado por la norma IEEE 519 es de THD-V menor a 5% en el punto de acoplamiento común, es decir, el punto donde tu instalación se conecta con la red. CFE puede exigir su cumplimiento como condición técnica de interconexión, sobre todo en cargas grandes o de nueva conexión.</li>
+      </ul>
+
+      <h2 id="como-se-miden-los-armonicos">Cómo se miden los armónicos</h2>
+
+      <p>No se estiman: se miden. La distorsión armónica varía con la mezcla de cargas que esté operando en cada momento, así que un solo vistazo no sirve. La medición seria se hace con un <strong>analizador de calidad de energía</strong> conectado en la acometida y en los tableros principales, registrando de forma continua bajo condiciones de operación reales.</p>
+
+      <p>Lo que el equipo debe capturar:</p>
+
+      <ul>
+        <li>El espectro armónico completo, idealmente hasta el armónico número 50, identificando cuáles órdenes dominan (quinto, séptimo, onceavo).</li>
+        <li>THD-V y THD-I registrados a lo largo del tiempo, no en un instante.</li>
+        <li>El comportamiento durante al menos varios días, para capturar todos los turnos y la variación real de la carga.</li>
+      </ul>
+
+      <p>El analizador debe cumplir el método de medición de calidad de energía de la norma IEC 61000-4-30, que define cómo se promedian y registran las variables para que el resultado sea comparable y defendible. Sin esta medición previa, cualquier propuesta de filtro es una adivinanza, y una adivinanza cara.</p>
+
+      <div class="key-takeaway">
+        <div class="key-takeaway-label">Insight clave</div>
+        <p>La compensación de armónicos siempre empieza por medir, nunca por comprar. El equipo correcto depende de qué armónicos dominan, de qué tan variable es la carga y de cuánto THD necesitas eliminar. Dimensionar un filtro sin el espectro medido bajo carga real es el camino directo a comprar la tecnología equivocada o a provocar una resonancia nueva.</p>
+      </div>
+
+      <h2 id="filtros-pasivos-vs-filtros-activos">Filtros pasivos vs filtros activos</h2>
+
+      <p>Hay dos familias de tecnología para compensar armónicos, y resuelven el problema con filosofías opuestas.</p>
+
+      <h3>Filtros pasivos: el reactor sintonizado</h3>
+
+      <p>Un filtro pasivo es, en esencia, una trampa para una frecuencia específica. Se construye con un reactor (inductor) en serie con un capacitor, formando un circuito LC sintonizado a la frecuencia del armónico que más molesta, típicamente el quinto. A esa frecuencia el filtro presenta una impedancia muy baja y desvía la corriente armónica hacia sí mismo en lugar de dejarla circular por el transformador.</p>
+
+      <p>Sus ventajas son el costo y la simplicidad: no tiene electrónica de control, es robusto y suele aportar también corrección del factor de potencia. Pero sus limitaciones son serias:</p>
+
+      <ul>
+        <li>Está sintonizado a una frecuencia fija. Atenúa bien el armónico para el que se diseñó, pero hace poco por los demás.</li>
+        <li>Tiene riesgo de resonancia con la inductancia de la red si no se diseña con una simulación correcta del sistema.</li>
+        <li>Es un componente fijo: no se adapta cuando las cargas cambian. Si la planta agrega o retira equipos, el filtro puede quedar mal sintonizado.</li>
+        <li>Puede absorber armónicos provenientes de otras plantas a través de la red común, sobrecargándose con un problema que no es suyo, algo frecuente en parques industriales.</li>
+      </ul>
+
+      <h3>Filtros activos: el AHF</h3>
+
+      <p>Un filtro activo de armónicos (AHF, por sus siglas en inglés) funciona al revés. En lugar de ser una trampa pasiva, es un equipo de electrónica de potencia que mide en tiempo real la corriente armónica que demandan las cargas e <strong>inyecta una corriente igual y de sentido opuesto</strong>. El resultado es que las dos corrientes se cancelan y al transformador solo le llega corriente limpia.</p>
+
+      <p>Sus ventajas son justo las debilidades del pasivo:</p>
+
+      <ul>
+        <li>Es multi-armónico: corrige simultáneamente un rango amplio de órdenes, no una sola frecuencia.</li>
+        <li>Es autoadaptable: mide y responde a la distorsión real instante a instante, así que sigue funcionando aunque las cargas cambien.</li>
+        <li>Es escalable: se dimensiona en amperes de compensación y se pueden sumar módulos conforme la planta crece.</li>
+        <li>No entra en resonancia con la red ni absorbe armónicos ajenos, porque solo responde a lo que mide en las cargas que vigila.</li>
+      </ul>
+
+      <p>El costo es la contraparte: el CAPEX de un filtro activo es mayor que el de un pasivo equivalente, y al ser un equipo electrónico requiere su propia atención de mantenimiento.</p>
+
+      <h2 id="tabla-comparativa-pasivo-vs-activo">Tabla comparativa: pasivo vs activo</h2>
+
+      <table>
+        <thead><tr><th>Criterio</th><th>Filtro pasivo (reactor sintonizado / LC)</th><th>Filtro activo (AHF)</th></tr></thead>
+        <tbody>
+          <tr><td>Costo (CAPEX)</td><td>Bajo</td><td>Alto</td></tr>
+          <tr><td>Rango de armónicos</td><td>Una frecuencia sintonizada (típico el quinto)</td><td>Multi-armónico, rango amplio simultáneo</td></tr>
+          <tr><td>Flexibilidad</td><td>Fijo; no se adapta a cambios de carga</td><td>Autoadaptable y escalable por módulos</td></tr>
+          <tr><td>Riesgo de resonancia</td><td>Presente si el diseño no se simula</td><td>Nulo: solo inyecta lo que mide</td></tr>
+          <tr><td>Armónicos de la red vecina</td><td>Puede absorberlos y sobrecargarse</td><td>Indiferente; solo compensa sus cargas</td></tr>
+          <tr><td>Mantenimiento</td><td>Bajo, sin electrónica de control</td><td>Mayor, equipo electrónico activo</td></tr>
+          <tr><td>Aporte de factor de potencia</td><td>Sí, de forma inherente</td><td>Sí, en modelos con esa función</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cta-inline">
+        <div class="cta-inline-text">
+          <strong>¿No sabes cuánta distorsión armónica tiene tu planta?</strong>
+          <span>Hacemos diagnóstico de calidad de energía con analizador clase A, medimos el espectro bajo carga real y entregamos la propuesta de filtro con su retorno cuantificado.</span>
+        </div>
+        <a class="cta-inline-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+
+      <h2 id="criterios-de-seleccion">Criterios de selección</h2>
+
+      <p>La elección entre pasivo y activo no es ideológica: se decide con tres variables que salen de la medición y del contexto del proyecto.</p>
+
+      <h3>1. THD objetivo</h3>
+
+      <p>Si solo necesitas bajar un THD-I moderado y la distorsión la domina un único armónico (el quinto, casi siempre), un filtro pasivo bien sintonizado puede ser suficiente y mucho más económico. Si necesitas cumplir el límite de THD-V menor a 5% de la norma IEEE 519 frente a un espectro con varios órdenes presentes, el filtro activo es prácticamente obligado, porque el pasivo no atiende todo el espectro.</p>
+
+      <h3>2. Tipo y variabilidad de las cargas</h3>
+
+      <p>Una planta con cargas estables y un perfil de armónicos predecible tolera bien la rigidez de un filtro pasivo. Una planta con cargas muy variables, donde los VFD arrancan y paran y el perfil cambia turno a turno, se beneficia del filtro activo, que se ajusta solo. Cuanto más dinámica es la operación, más se inclina la balanza hacia el activo.</p>
+
+      <h3>3. Presupuesto y horizonte de crecimiento</h3>
+
+      <p>El pasivo gana en CAPEX hoy. El activo gana cuando la planta va a crecer, porque escala por módulos y no queda obsoleto cuando cambian las cargas. Si el proyecto contempla expansión a corto plazo, pagar el activo de entrada suele ser más barato que instalar un pasivo, verlo quedar corto y reemplazarlo.</p>
+
+      <h2 id="capex-aproximado-en-mexico">CAPEX aproximado en México</h2>
+
+      <p>Las cifras dependen del nivel de corriente a compensar, la tensión y las condiciones del sitio, pero para una industria mediana sirven como orden de magnitud para presupuestar:</p>
+
+      <ul>
+        <li><strong>Filtro pasivo sintonizado en baja tensión</strong>: desde alrededor de <strong>$350,000 a $900,000 MXN</strong> instalado, según los kVAr y el orden al que se sintonice.</li>
+        <li><strong>Filtro activo AHF de 60 a 100 A en baja tensión</strong>: del orden de <strong>$700,000 a $1.3M MXN</strong> instalado.</li>
+        <li><strong>Filtro activo AHF de 150 a 300 A para cargas mayores</strong>: entre <strong>$1.5M y $3M MXN</strong>, dependiendo de la modularidad y la tensión.</li>
+        <li><strong>Solución mixta</strong> (banco con reactores anti-resonancia para el factor de potencia más un AHF para los armónicos residuales): suele ubicarse en el rango de <strong>$2M a $4M MXN</strong> para una planta mediana con VFD significativos.</li>
+      </ul>
+
+      <p>El punto de comparación correcto no es el precio del equipo, sino el costo de no corregir: penalizaciones tarifarias, transformadores derateados, reposición acelerada de capacitores y electrónica, y paros por disparos en falso. Contra esos rubros, la mayoría de las correcciones bien dimensionadas se pagan dentro de los primeros dos años.</p>
+
+      <h2 id="errores-comunes-en-la-compensacion-de-armonicos">Errores comunes en la compensación de armónicos</h2>
+
+      <ol>
+        <li><strong>Instalar capacitores sin reactor en una planta con VFD.</strong> Es el error más caro y el más frecuente. El banco entra en resonancia con los armónicos de los variadores, se sobrecalienta y falla en meses, amplificando la distorsión mientras dura. En cualquier planta con electrónica de potencia, el banco va con reactores anti-resonancia o no va.</li>
+        <li><strong>No medir antes de comprar.</strong> Dimensionar un filtro sin el espectro medido bajo carga real lleva a comprar la tecnología equivocada o a sub o sobre dimensionar. La medición de varios días es barata comparada con un filtro mal elegido.</li>
+        <li><strong>Sintonizar un pasivo sin simular la red.</strong> Un filtro pasivo mal calculado puede crear una resonancia nueva en lugar de eliminar la existente. El diseño exige modelar la impedancia del sistema.</li>
+        <li><strong>Medir en un solo instante.</strong> Como los armónicos varían con la mezcla de cargas, una sola lectura en hora pico no representa la operación. Hay que registrar de forma continua y a través de los turnos.</li>
+        <li><strong>Ignorar la red vecina en un parque industrial.</strong> Los armónicos de una planta colindante entran por la acometida común. Un filtro pasivo puede terminar absorbiéndolos; el diseño debe contemplar ese aporte externo.</li>
+      </ol>
+
+      <hr/>
+
+      <p>La compensación de armónicos dejó de ser un tema de plantas exóticas: en la industria 4.0, donde cada motor lleva variador y cada tablero lleva electrónica, es un requisito de operación. La buena noticia es que es un problema con solución medible y un retorno demostrable en el recibo y en la vida útil del equipo. La diferencia entre acertar y tirar dinero está en el orden correcto: medir primero el espectro bajo carga real, después elegir entre pasivo y activo según el THD objetivo, las cargas y el horizonte de la planta, y solo entonces invertir. Hacerlo al revés es como recetar sin diagnóstico.</p>
+    </div>
+
+    <aside class="post-aside post-aside-right">
+      <nav class="post-toc" aria-label="Contenido del artículo">
+        <div class="post-toc__title">En este artículo</div>
+        <ul>
+          <li><a href="#que-son-los-armonicos-y-la-distorsion-armonica-total">Qué son los armónicos y la distorsión armónica total</a></li>
+          <li><a href="#de-donde-vienen-los-armonicos-en-una-planta">De dónde vienen los armónicos en una planta</a></li>
+          <li><a href="#por-que-importan-los-armonicos">Por qué importan los armónicos</a></li>
+          <li><a href="#como-se-miden-los-armonicos">Cómo se miden los armónicos</a></li>
+          <li><a href="#filtros-pasivos-vs-filtros-activos">Filtros pasivos vs filtros activos</a></li>
+          <li><a href="#tabla-comparativa-pasivo-vs-activo">Tabla comparativa: pasivo vs activo</a></li>
+          <li><a href="#criterios-de-seleccion">Criterios de selección</a></li>
+          <li><a href="#capex-aproximado-en-mexico">CAPEX aproximado en México</a></li>
+          <li><a href="#errores-comunes-en-la-compensacion-de-armonicos">Errores comunes en la compensación de armónicos</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div class="aside-author-card">
+        <div class="aside-author-avatar-large">CP</div>
+        <h4>Carlos Pineda</h4>
+        <div class="author-role">Director Comercial · M2 Energy</div>
+        <p>60 años de experiencia acumulada diseñando, construyendo y operando infraestructura eléctrica industrial en México. Soluciones EPC llave en mano de hasta 20 MW en sitio.</p>
+        <a class="author-link" href="/#hacemos">Conocer más →</a>
+      </div>
+      <div class="aside-cta-card">
+        <h4>Aseguramos tu capacidad energética para el desarrollo industrial</h4>
+        <p>Te acompañamos a medir calidad de energía, definir la corrección óptima y eliminar la distorsión armónica de tu planta. Hablemos sin compromiso.</p>
+        <a class="aside-cta-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Qué es la compensación de armónicos en una planta industrial?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Es el conjunto de técnicas para reducir la distorsión que la electrónica de potencia (variadores, fuentes conmutadas, rectificadores) introduce en la corriente eléctrica. Esas cargas no consumen una onda senoidal limpia, sino que la deforman e inyectan a la red corrientes a frecuencias múltiplos de los 60 Hz. Compensar significa atrapar o cancelar esas corrientes para que al transformador y al resto de la instalación les llegue energía limpia, con un objetivo de THD de voltaje por debajo del 5% que recomienda la norma IEEE 519.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuál es la diferencia entre un filtro pasivo y uno activo?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Un filtro pasivo es un reactor en serie con un capacitor sintonizado a una sola frecuencia, casi siempre el quinto armónico; es económico y robusto, pero fijo, con riesgo de resonancia y solo atiende la frecuencia para la que se diseñó. Un filtro activo o AHF es un equipo electrónico que mide la corriente armónica en tiempo real e inyecta una corriente opuesta que la cancela; corrige varios armónicos a la vez, se adapta solo cuando cambian las cargas y es escalable, a cambio de un CAPEX mayor y más mantenimiento.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuándo conviene un filtro activo en lugar de uno pasivo?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Conviene el filtro activo cuando hay varios armónicos presentes y no solo uno, cuando las cargas son muy variables porque los variadores arrancan y paran a lo largo del turno, cuando se necesita cumplir el límite de THD de voltaje del 5% de forma confiable, o cuando la planta va a crecer y se busca una solución escalable. El pasivo se reserva para casos de distorsión moderada dominada por un único armónico y cargas estables, donde su menor costo lo hace la opción correcta.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto cuesta corregir armónicos en una planta mediana en México?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Como orden de magnitud para presupuestar: un filtro pasivo sintonizado en baja tensión va desde unos 350,000 hasta 900,000 pesos instalado; un filtro activo AHF de 60 a 100 amperes ronda los 700,000 a 1.3 millones; uno de 150 a 300 amperes para cargas mayores se ubica entre 1.5 y 3 millones; y una solución mixta de banco con reactores más AHF suele caer entre 2 y 4 millones. La cifra final depende del espectro medido, la tensión y las condiciones del sitio.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué no debo instalar capacitores sin reactor si tengo variadores?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque es la receta de la resonancia. Un banco de capacitores forma junto con la inductancia de la red un circuito que puede resonar a la frecuencia de algún armónico de los variadores. Cuando eso ocurre, la corriente armónica se amplifica, los capacitores se sobrecalientan y fallan en meses, mientras de paso empeoran la distorsión de toda la planta. En cualquier instalación con electrónica de potencia, el banco se instala con reactores anti-resonancia o no se instala.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cómo se mide la distorsión armónica antes de elegir el filtro?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Se conecta un analizador de calidad de energía en la acometida y en los tableros principales, registrando de forma continua bajo carga real durante varios días para capturar todos los turnos. El equipo debe medir el espectro armónico completo, idealmente hasta el orden 50, junto con el THD de voltaje y de corriente a lo largo del tiempo, y cumplir el método de medición de la norma IEC 61000-4-30. Sin esa medición previa, dimensionar el filtro es una adivinanza cara.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es la compensación de armónicos en una planta industrial?","acceptedAnswer":{"@type":"Answer","text":"Es el conjunto de técnicas para reducir la distorsión que la electrónica de potencia (variadores, fuentes conmutadas, rectificadores) introduce en la corriente eléctrica. Esas cargas no consumen una onda senoidal limpia, sino que la deforman e inyectan a la red corrientes a frecuencias múltiplos de los 60 Hz. Compensar significa atrapar o cancelar esas corrientes para que al transformador y al resto de la instalación les llegue energía limpia, con un objetivo de THD de voltaje por debajo del 5% que recomienda la norma IEEE 519."}},{"@type":"Question","name":"¿Cuál es la diferencia entre un filtro pasivo y uno activo?","acceptedAnswer":{"@type":"Answer","text":"Un filtro pasivo es un reactor en serie con un capacitor sintonizado a una sola frecuencia, casi siempre el quinto armónico; es económico y robusto, pero fijo, con riesgo de resonancia y solo atiende la frecuencia para la que se diseñó. Un filtro activo o AHF es un equipo electrónico que mide la corriente armónica en tiempo real e inyecta una corriente opuesta que la cancela; corrige varios armónicos a la vez, se adapta solo cuando cambian las cargas y es escalable, a cambio de un CAPEX mayor y más mantenimiento."}},{"@type":"Question","name":"¿Cuándo conviene un filtro activo en lugar de uno pasivo?","acceptedAnswer":{"@type":"Answer","text":"Conviene el filtro activo cuando hay varios armónicos presentes y no solo uno, cuando las cargas son muy variables porque los variadores arrancan y paran a lo largo del turno, cuando se necesita cumplir el límite de THD de voltaje del 5% de forma confiable, o cuando la planta va a crecer y se busca una solución escalable. El pasivo se reserva para casos de distorsión moderada dominada por un único armónico y cargas estables, donde su menor costo lo hace la opción correcta."}},{"@type":"Question","name":"¿Cuánto cuesta corregir armónicos en una planta mediana en México?","acceptedAnswer":{"@type":"Answer","text":"Como orden de magnitud para presupuestar: un filtro pasivo sintonizado en baja tensión va desde unos 350,000 hasta 900,000 pesos instalado; un filtro activo AHF de 60 a 100 amperes ronda los 700,000 a 1.3 millones; uno de 150 a 300 amperes para cargas mayores se ubica entre 1.5 y 3 millones; y una solución mixta de banco con reactores más AHF suele caer entre 2 y 4 millones. La cifra final depende del espectro medido, la tensión y las condiciones del sitio."}},{"@type":"Question","name":"¿Por qué no debo instalar capacitores sin reactor si tengo variadores?","acceptedAnswer":{"@type":"Answer","text":"Porque es la receta de la resonancia. Un banco de capacitores forma junto con la inductancia de la red un circuito que puede resonar a la frecuencia de algún armónico de los variadores. Cuando eso ocurre, la corriente armónica se amplifica, los capacitores se sobrecalientan y fallan en meses, mientras de paso empeoran la distorsión de toda la planta. En cualquier instalación con electrónica de potencia, el banco se instala con reactores anti-resonancia o no se instala."}},{"@type":"Question","name":"¿Cómo se mide la distorsión armónica antes de elegir el filtro?","acceptedAnswer":{"@type":"Answer","text":"Se conecta un analizador de calidad de energía en la acometida y en los tableros principales, registrando de forma continua bajo carga real durante varios días para capturar todos los turnos. El equipo debe medir el espectro armónico completo, idealmente hasta el orden 50, junto con el THD de voltaje y de corriente a lo largo del tiempo, y cumplir el método de medición de la norma IEC 61000-4-30. Sin esa medición previa, dimensionar el filtro es una adivinanza cara."}}]}
+  </script>
+
+  <div class="cta-final">
+    <div class="cta-final-inner">
+      <div>
+        <h3>¿Listo para eliminar la distorsión armónica de tu planta?</h3>
+        <p>Hablemos con un experto. Te damos un diagnóstico claro de tu calidad eléctrica actual, plan de corrección y retorno cuantificado en una sola conversación.</p>
+      </div>
+      <a class="btn-cta" href="/#contacto">Hablemos con un experto →</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col"><h5>Sitio</h5><ul><li><a href="/#hacemos">Qué Hacemos</a></li><li><a href="/#importa">Por Qué Importa</a></li><li><a href="/#trabajamos">Cómo Trabajamos</a></li><li><a href="/#resultados">Resultados</a></li><li><a href="/#industrias">Industrias</a></li><li><a href="/casos-de-exito.html">Casos de Éxito</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div class="foot-col"><h5>Compañía</h5><ul><li><a href="/#elegirnos">Por Qué Elegirnos</a></li><li><a href="/#contacto">Contacto</a></li></ul></div>
+    <div class="foot-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li></ul></div>
+  </div>
+  <div class="foot-bar"><span>© 2026 M2E · All rights reserved</span><span>Securing energy capacity for industrial development · ⚡</span></div>
+</footer>
+
+<script src="/blog/blog.js?v=20260603" defer></script>
+</body>
+</html>

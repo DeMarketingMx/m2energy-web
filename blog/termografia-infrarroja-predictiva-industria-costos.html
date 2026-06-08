@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Termografía infrarroja predictiva: programa y costos para industria — Blog M2 Energy</title>
+<meta name="description" content="Las fallas eléctricas avisan con calor antes de quemar un tablero. Qué detecta la termografía infrarroja industrial, cómo armar el programa y qué cuesta."/>
+<meta property="og:title" content="Termografía infrarroja predictiva: programa y costos para industria"/>
+<meta property="og:description" content="Qué detecta la termografía infrarroja, cómo estructurar un programa por criticidad, criterios de severidad por ΔT y costos aproximados en MXN."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://m2energy.org/blog/termografia-infrarroja-predictiva-industria-costos.html"/>
+<meta property="og:image" content="https://m2energy.org/blog/termografia-infrarroja-predictiva-industria-costos/hero.jpg"/>
+<meta name="author" content="Carlos Pineda"/>
+<link rel="canonical" href="https://m2energy.org/blog/termografia-infrarroja-predictiva-industria-costos.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20260603"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Termografía infrarroja predictiva: programa y costos para industria","description":"Qué detecta la termografía infrarroja, cómo estructurar un programa por criticidad, criterios de severidad por ΔT y costos aproximados en MXN.","image":"https://m2energy.org/blog/termografia-infrarroja-predictiva-industria-costos/hero.jpg","author":{"@type":"Person","name":"Carlos Pineda","jobTitle":"Director Comercial","worksFor":"M2 Energy"},"publisher":{"@type":"Organization","name":"M2 Energy","logo":{"@type":"ImageObject","url":"https://m2energy.org/favicon.png"}},"datePublished":"2026-06-08T08:00:00-06:00","dateModified":"2026-06-08T08:00:00-06:00","articleSection":"Operación","inLanguage":"es-MX"}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></a>
+  <a class="nav-back" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>Volver al blog</span></a>
+  <div class="nav-right"><a class="nav-cta" href="/#contacto">Contáctanos →</a></div>
+</nav>
+
+<article>
+  <section class="post-hero">
+    <div class="post-hero-bg" style="background-image:url('/blog/termografia-infrarroja-predictiva-industria-costos/hero.jpg')"></div><div class="post-hero-grad"></div>
+    <div class="post-hero-content">
+      <div class="post-hero-inner">
+        <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/blog">Blog</a><span>/</span><span style="color:var(--ink-dim)">Operación</span></div>
+        <div class="post-cat-kicker">Operación</div>
+        <h1>Termografía infrarroja predictiva: programa y costos para industria</h1>
+        <p class="post-subtitle">La mayoría de las fallas eléctricas por conexión avisan con calor durante semanas antes de quemar un tablero. La termografía infrarroja industrial las encuentra cuando todavía son una orden de trabajo de 20 minutos. Te explicamos qué detecta, cómo armar el programa por criticidad y qué cuesta en México.</p>
+        <div class="post-meta">
+          <div class="author"><div class="author-avatar">CP</div><div>Por <strong>Carlos Pineda</strong> · Director Comercial</div></div>
+          <span class="meta-dot"></span><span>8 de junio de 2026</span><span class="meta-dot"></span><span>9 min lectura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-layout">
+
+    <aside class="post-aside post-aside-left">
+      <div class="aside-section-title">Artículos relacionados</div>
+      <a class="aside-related-card" href="/blog/mantenimiento-preventivo-subestacion-particular-checklist.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/mantenimiento-preventivo-subestacion-particular-checklist/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Mantenimiento preventivo de subestación particular: checklist y frecuencias</h3></a>
+      <a class="aside-related-card" href="/blog/tableros-control-nema-vs-iec-ip-industrial.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/tableros-control-nema-vs-iec-ip-industrial/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Tableros de control NEMA vs IEC IP: cuál te aplica</h3></a>
+      <a class="aside-related-card" href="/blog/uptime-electrico-industrial-fallas-red-cfe.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/uptime-electrico-industrial-fallas-red-cfe/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Uptime eléctrico industrial: 5 fallas comunes en red CFE y cómo blindarte</h3></a>
+    </aside>
+
+    <div class="post-body">
+      <p>Casi todas las fallas eléctricas que paran una planta no aparecen de golpe. Una conexión que se afloja con la vibración, un cable que se oxida en la zapata, una fase que carga más que las otras: todas generan calor mucho antes de fallar, y ese calor crece de forma lenta y predecible durante semanas o meses. El problema es que ese calor está adentro de un tablero cerrado y energizado, donde nadie lo ve hasta que dispara una protección, funde un fusible o, en el peor caso, inicia un incendio en la subestación.</p>
+
+      <p>La termografía infrarroja es la herramienta que abre esa caja sin abrirla. Una cámara que lee temperatura permite ver, con la planta operando y bajo carga, cuál conexión está 30°C más caliente que su gemela en la fase de al lado. Para un director de operaciones, esa diferencia entre encontrar el punto caliente en una inspección de rutina o descubrirlo cuando ya quemó el tablero es la diferencia entre una orden de trabajo de 20 minutos y un paro no programado de varios turnos. Este artículo explica qué detecta la termografía, por qué funciona, cómo se estructura un programa serio por criticidad, los criterios de severidad por diferencia de temperatura, y qué cuesta en México en 2026.</p>
+
+      <h2 id="que-es-la-termografia-infrarroja-industrial">Qué es la termografía infrarroja industrial</h2>
+
+      <p>La termografía infrarroja es la inspección de equipo eléctrico energizado y bajo carga con una cámara termográfica, un instrumento que captura la radiación infrarroja que emite cada superficie y la traduce en una imagen de temperatura llamada termograma. En la pantalla, las zonas más calientes aparecen en colores brillantes y las más frías en tonos oscuros, de modo que un punto caliente anómalo salta a la vista de inmediato.</p>
+
+      <p>La clave operativa está en dos condiciones: <strong>energizado</strong> y <strong>bajo carga</strong>. Una conexión floja solo se calienta cuando la corriente pasa por ella; si la planta está apagada o trabajando al 10% de su demanda, el defecto no genera suficiente calor para detectarse y la inspección no sirve de nada. Por eso la termografía no reemplaza al mantenimiento con el equipo desconectado: lo complementa con una visión que solo existe cuando el equipo está trabajando como lo hace todos los días.</p>
+
+      <h2 id="que-detecta-la-termografia">Qué detecta la termografía</h2>
+
+      <p>La mayoría de los hallazgos en una planta industrial caen en cuatro categorías, todas eléctricas y todas evitables si se atienden a tiempo:</p>
+
+      <ul>
+        <li><strong>Conexiones flojas u oxidadas.</strong> Es el hallazgo más común. Un tornillo que perdió torque con la vibración o una zapata oxidada aumenta la resistencia de contacto; esa resistencia disipa potencia en forma de calor justo en el punto de unión. Es la causa número uno de los puntos calientes en tableros, interruptores y barras.</li>
+        <li><strong>Desbalance entre fases.</strong> Cuando una de las tres fases carga más corriente que las otras, su conductor y sus conexiones operan más calientes. El termograma muestra una fase claramente más brillante que sus dos vecinas, lo que delata un problema de distribución de cargas o un defecto en esa línea.</li>
+        <li><strong>Conductores o equipos sobrecargados.</strong> Un cable que mueve más corriente de la que su calibre permite, o un transformador trabajando por encima de su capacidad, se ve uniformemente caliente en toda su longitud o cuerpo. Aquí el problema no es un punto, es todo el componente.</li>
+        <li><strong>Fusibles y elementos degradados.</strong> Un fusible que envejece, un contacto de interruptor desgastado o una cuchilla de seccionador con mal cierre presentan firmas térmicas características antes de fallar por completo.</li>
+      </ul>
+
+      <p>El valor de detectar esto es que ninguno de estos defectos se queda quieto. Una conexión floja que hoy está 15°C arriba de lo normal, en unas semanas estará 40°C arriba, y luego fundirá la zapata o el barraje. La termografía la encuentra en la primera etapa, cuando corregirla es reapretar un tornillo en una ventana de mantenimiento.</p>
+
+      <h2 id="por-que-funciona-la-firma-termica-creciente">Por qué funciona: la firma térmica creciente</h2>
+
+      <p>La razón física por la que la termografía es tan efectiva en mantenimiento predictivo eléctrico es que la gran mayoría de las fallas eléctricas por conexión tienen una firma térmica que crece de forma gradual semanas o meses antes de la falla definitiva.</p>
+
+      <p>El mecanismo es un círculo vicioso: una conexión con resistencia alta se calienta, el calor oxida y degrada aún más el contacto, lo que sube la resistencia, lo que genera más calor. La progresión es lenta al principio y se acelera al final. Eso deja una ventana de detección amplia: hay tiempo de sobra para ver el problema en una inspección de rutina y programar la corrección sin urgencias, en lugar de reaccionar a un paro.</p>
+
+      <div class="key-takeaway">
+        <div class="key-takeaway-label">Insight clave</div>
+        <p>La termografía no predice fallas aleatorias; detecta defectos que ya existen y que avisan con calor antes de fallar. Por eso su valor depende por completo de la frecuencia: una sola inspección al año encuentra lo que esté caliente ese día, pero deja sin vigilar los once meses restantes en los que una conexión puede pasar de <strong>aceptable a crítica</strong>. El programa importa más que la cámara.</p>
+      </div>
+
+      <h2 id="como-se-estructura-un-programa-de-termografia">Cómo se estructura un programa de termografía</h2>
+
+      <p>Una inspección suelta sirve para apagar un incendio puntual. Lo que protege a la planta es un programa recurrente, documentado y con criterios claros. Estos son sus elementos.</p>
+
+      <h3>Frecuencia según criticidad</h3>
+
+      <p>No todo el equipo de la planta merece la misma atención. La frecuencia de inspección se define según qué tan caro es que ese equipo falle:</p>
+
+      <ul>
+        <li><strong>Semestral</strong> para el equipo eléctrico general de la planta: tableros de distribución secundarios, alumbrado, cargas no críticas.</li>
+        <li><strong>Trimestral</strong> para equipo importante cuya falla afecta una línea o un área de producción.</li>
+        <li><strong>Mensual</strong> para el equipo crítico cuya falla para toda la planta: acometida, subestación principal, transformadores, centros de control de motores (MCC) de procesos clave.</li>
+      </ul>
+
+      <h3>Condición de carga durante la inspección</h3>
+
+      <p>La planta debe estar operando a <strong>más del 40% de su carga nominal</strong> durante la inspección. Por debajo de ese umbral, la corriente que circula es insuficiente para calentar los defectos incipientes y la termografía pierde sensibilidad. Si el equipo crítico solo trabaja a plena carga en ciertos horarios o turnos, la ruta de inspección se programa para coincidir con esa condición.</p>
+
+      <h3>Competencia del termógrafo</h3>
+
+      <p>La cámara no interpreta sola: la lectura correcta depende de un termógrafo con <strong>certificación nivel I o II</strong> en termografía. La diferencia es real. Un nivel I captura termogramas correctos y aplica criterios establecidos; un nivel II ajusta variables como emisividad, temperatura reflejada y carga, distingue un punto caliente real de un reflejo, y emite el diagnóstico de severidad. Una cámara en manos sin certificación produce falsos positivos que cuestan paros innecesarios, y falsos negativos que dejan pasar lo que importa.</p>
+
+      <h3>Ruta de inspección documentada</h3>
+
+      <p>El programa se ejecuta sobre una ruta fija y repetible que recorre, en el mismo orden cada vez, los activos eléctricos de la planta: acometida y medición, subestación, transformadores, tableros generales y de distribución, y centros de control de motores. Documentar la ruta permite comparar el mismo punto contra su propia historia y detectar tendencias, no solo el estado de un día.</p>
+
+      <div class="cta-inline">
+        <div class="cta-inline-text">
+          <strong>¿Tu planta tiene un programa de termografía o solo inspecciones cuando algo ya falló?</strong>
+          <span>Diseñamos el programa de termografía para tu planta: ruta por criticidad, frecuencias, ejecución con termógrafo certificado y reporte con prioridad de corrección.</span>
+        </div>
+        <a class="cta-inline-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+
+      <h2 id="criterios-de-severidad-por-delta-t">Criterios de severidad por diferencia de temperatura</h2>
+
+      <p>Un punto caliente por sí solo no dice nada: 60°C en una barra puede ser normal si toda la planta está caliente ese día. Lo que importa es la <strong>diferencia de temperatura (ΔT)</strong> del componente respecto a una referencia. Hay dos formas de medir esa diferencia:</p>
+
+      <ul>
+        <li><strong>ΔT contra un componente similar:</strong> se compara una fase contra las otras dos, o una conexión contra su gemela en condiciones de carga equivalentes. Es el criterio más confiable porque aísla el defecto del resto de las variables.</li>
+        <li><strong>ΔT contra la temperatura ambiente:</strong> útil cuando no hay un componente gemelo para comparar, como en un equipo único.</li>
+      </ul>
+
+      <p>Sobre esa diferencia se asigna la severidad y la prioridad de corrección. Como orden de magnitud para mantenimiento eléctrico industrial:</p>
+
+      <ol>
+        <li><strong>ΔT del orden de 10 a 20°C:</strong> anomalía a vigilar. Se documenta y se reinspecciona en la siguiente ruta para ver si la tendencia crece. No requiere acción inmediata.</li>
+        <li><strong>ΔT intermedia, por encima de 20°C:</strong> se programa la corrección dentro de una ventana de mantenimiento próxima, sin esperar al siguiente ciclo completo.</li>
+        <li><strong>ΔT mayor a unos 40°C:</strong> acción inmediata. El defecto está avanzado y el riesgo de falla o de inicio de fuego es alto; se interviene en cuanto la operación lo permita.</li>
+      </ol>
+
+      <p>Estos umbrales son una guía de campo, no un valor único: el termógrafo certificado ajusta el criterio según el tipo de componente, la carga al momento de la medición y la criticidad del equipo.</p>
+
+      <h2 id="que-se-inspecciona-en-la-planta">Qué se inspecciona en la planta</h2>
+
+      <p>La ruta termográfica de una planta industrial cubre toda la cadena eléctrica, desde donde entra la energía de CFE hasta los centros que alimentan los motores de proceso:</p>
+
+      <ul>
+        <li><strong>Acometida y equipo de medición:</strong> el punto de entrada de la energía y las primeras conexiones aguas adentro.</li>
+        <li><strong>Subestación:</strong> seccionadores, cuchillas, apartarrayos, conexiones de media tensión y el bus principal.</li>
+        <li><strong>Transformadores:</strong> boquillas, conexiones primarias y secundarias, y el cuerpo, para detectar sobrecarga o problemas de refrigeración.</li>
+        <li><strong>Tableros generales y de distribución:</strong> interruptores principales, barras, zapatas y la totalidad de las conexiones atornilladas, que es donde aparece la mayoría de los hallazgos.</li>
+        <li><strong>Centros de control de motores (MCC):</strong> arrancadores, contactores, protecciones térmicas y conexiones de los motores críticos del proceso.</li>
+      </ul>
+
+      <p>Esta inspección se integra de forma natural con el mantenimiento con el equipo desconectado. La termografía marca dónde hay un problema con la planta operando; el reapriete, la limpieza y el cambio de componente se ejecutan después en una ventana de paro. Si tu planta opera con subestación particular, conviene que la termografía forme parte del mismo plan de mantenimiento preventivo: lo cubrimos en el <a href="/blog/mantenimiento-preventivo-subestacion-particular-checklist.html">checklist y frecuencias de mantenimiento preventivo de subestación</a>.</p>
+
+      <h2 id="costos-aproximados-en-mexico">Costos aproximados en México</h2>
+
+      <p>Hay dos rutas: contratar el estudio como servicio o invertir en el equipo para hacerlo internamente. Como referencia para 2026 en México:</p>
+
+      <ul>
+        <li><strong>Estudio termográfico por planta (servicio):</strong> del orden de <strong>$12,000 a $40,000 MXN</strong> por jornada según el tamaño de la planta y la cantidad de tableros, con termógrafo certificado y reporte incluido.</li>
+        <li><strong>Costo por punto inspeccionado:</strong> en esquemas por volumen, del orden de <strong>$80 a $250 MXN por punto</strong> documentado, lo que conviene para plantas grandes con cientos de conexiones.</li>
+        <li><strong>Cámara termográfica de uso industrial:</strong> un equipo de gama de entrada apto para inspección eléctrica ronda los <strong>$40,000 a $120,000 MXN</strong>; equipos de mayor resolución y rango térmico para subestación y media tensión van de <strong>$150,000 a más de $400,000 MXN</strong>.</li>
+      </ul>
+
+      <p>El cálculo de conveniencia es directo. Comprar la cámara solo paga si la planta tiene personal con la certificación y el volumen de inspección que justifique un programa interno; de lo contrario, contratar el servicio recurrente sale más barato y garantiza la interpretación correcta. Frente al costo de un solo paro no programado de la línea principal, cualquiera de las dos rutas se paga con un hallazgo evitado al año.</p>
+
+      <h2 id="el-entregable-del-estudio">El entregable del estudio</h2>
+
+      <p>Un estudio serio no termina en "encontramos un punto caliente". El entregable es un reporte por cada hallazgo que permita a operaciones priorizar y actuar. Para cada anomalía debe incluir:</p>
+
+      <ul>
+        <li><strong>El termograma:</strong> la imagen térmica con la escala de temperatura y el punto de medición señalado.</li>
+        <li><strong>La fotografía visible:</strong> la imagen normal del mismo equipo para ubicar físicamente el componente sin ambigüedad.</li>
+        <li><strong>La severidad:</strong> la ΔT medida y su clasificación según los criterios de prioridad.</li>
+        <li><strong>La prioridad de corrección:</strong> la recomendación concreta —vigilar, programar o intervenir de inmediato— y la acción sugerida.</li>
+      </ul>
+
+      <p>Ese reporte se convierte en la lista de órdenes de trabajo del siguiente ciclo de mantenimiento, y la comparación contra los reportes anteriores de la misma ruta es lo que transforma la termografía de una foto puntual en un verdadero programa predictivo.</p>
+
+      <hr/>
+
+      <p>La termografía infrarroja es de las pocas herramientas de mantenimiento eléctrico donde la inversión se justifica con un solo paro evitado. Su efectividad no está en la cámara sino en el programa: frecuencia por criticidad, planta bajo carga, termógrafo certificado, ruta documentada y un reporte que prioriza la acción. Para una planta que vive recambiando barrajes quemados y reaccionando a disparos sin causa aparente, la diferencia está en empezar a ver el calor antes de que se convierta en falla.</p>
+    </div>
+
+    <aside class="post-aside post-aside-right">
+      <nav class="post-toc" aria-label="Contenido del artículo">
+        <div class="post-toc__title">En este artículo</div>
+        <ul>
+          <li><a href="#que-es-la-termografia-infrarroja-industrial">Qué es la termografía infrarroja industrial</a></li>
+          <li><a href="#que-detecta-la-termografia">Qué detecta la termografía</a></li>
+          <li><a href="#por-que-funciona-la-firma-termica-creciente">Por qué funciona: la firma térmica creciente</a></li>
+          <li><a href="#como-se-estructura-un-programa-de-termografia">Cómo se estructura un programa de termografía</a></li>
+          <li><a href="#criterios-de-severidad-por-delta-t">Criterios de severidad por diferencia de temperatura</a></li>
+          <li><a href="#que-se-inspecciona-en-la-planta">Qué se inspecciona en la planta</a></li>
+          <li><a href="#costos-aproximados-en-mexico">Costos aproximados en México</a></li>
+          <li><a href="#el-entregable-del-estudio">El entregable del estudio</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div class="aside-author-card">
+        <div class="aside-author-avatar-large">CP</div>
+        <h4>Carlos Pineda</h4>
+        <div class="author-role">Director Comercial · M2 Energy</div>
+        <p>60 años de experiencia acumulada diseñando, construyendo y operando infraestructura eléctrica industrial en México. Soluciones EPC llave en mano de hasta 20 MW en sitio.</p>
+        <a class="author-link" href="/#hacemos">Conocer más →</a>
+      </div>
+      <div class="aside-cta-card">
+        <h4>Aseguramos tu capacidad energética para el desarrollo industrial</h4>
+        <p>Te acompañamos a diseñar el programa de termografía, ejecutar la inspección con termógrafo certificado y priorizar la corrección de tu planta. Hablemos sin compromiso.</p>
+        <a class="aside-cta-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Qué es la termografía infrarroja industrial?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Es la inspección de equipo eléctrico energizado y bajo carga con una cámara termográfica que lee la temperatura de cada superficie y la convierte en una imagen llamada termograma. Permite ver puntos calientes anómalos dentro de tableros y subestaciones sin abrirlos ni desconectar la planta. Solo funciona con el equipo trabajando, porque los defectos como una conexión floja solo se calientan cuando la corriente pasa por ellos.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué fallas detecta una inspección termográfica?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Detecta sobre todo cuatro tipos de defecto eléctrico antes de que se conviertan en falla o incendio: conexiones flojas u oxidadas, que son el hallazgo más común; desbalance entre fases, cuando una fase carga más corriente y opera más caliente; conductores o equipos sobrecargados, que se ven calientes en toda su extensión; y fusibles, contactos o cuchillas degradados. Todos avisan con calor creciente semanas antes de fallar.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cada cuándo se debe hacer termografía en una planta?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">La frecuencia se define por criticidad. Lo habitual es una inspección semestral del equipo eléctrico general, trimestral del equipo importante que afecta una línea o área, y mensual del equipo crítico cuya falla para toda la planta, como acometida, subestación, transformadores y centros de control de motores. La inspección debe hacerse con la planta operando a más del 40% de su carga para que los defectos generen calor detectable.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto cuesta un estudio de termografía industrial en México?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Como referencia para 2026, un estudio por jornada con termógrafo certificado y reporte ronda los 12,000 a 40,000 pesos según el tamaño de la planta; en esquemas por volumen, el costo es del orden de 80 a 250 pesos por punto documentado. Si se prefiere comprar el equipo, una cámara termográfica industrial de entrada va de 40,000 a 120,000 pesos, y los equipos de mayor resolución para media tensión superan los 150,000 y llegan a más de 400,000 pesos.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué significa el ΔT y por qué importa para la severidad?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El ΔT es la diferencia de temperatura del componente respecto a una referencia, ya sea otro componente similar como una fase contra otra, o la temperatura ambiente. Importa porque un punto caliente solo es problema si está más caliente que lo que debería. Como guía de campo, un ΔT del orden de 10 a 20°C es una anomalía a vigilar, por encima de 20°C se programa corrección, y mayor a unos 40°C exige acción inmediata por riesgo de falla o de fuego.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué necesito un termógrafo certificado y no solo la cámara?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque la cámara no interpreta sola. Un termógrafo con certificación nivel I o II ajusta variables como emisividad, temperatura reflejada y carga, distingue un punto caliente real de un simple reflejo y emite el diagnóstico de severidad. Sin esa competencia se generan falsos positivos que cuestan paros innecesarios y falsos negativos que dejan pasar el defecto que sí importaba. El entregable serio incluye termograma, foto visible, ΔT, severidad y prioridad de corrección.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es la termografía infrarroja industrial?","acceptedAnswer":{"@type":"Answer","text":"Es la inspección de equipo eléctrico energizado y bajo carga con una cámara termográfica que lee la temperatura de cada superficie y la convierte en una imagen llamada termograma. Permite ver puntos calientes anómalos dentro de tableros y subestaciones sin abrirlos ni desconectar la planta. Solo funciona con el equipo trabajando, porque los defectos como una conexión floja solo se calientan cuando la corriente pasa por ellos."}},{"@type":"Question","name":"¿Qué fallas detecta una inspección termográfica?","acceptedAnswer":{"@type":"Answer","text":"Detecta sobre todo cuatro tipos de defecto eléctrico antes de que se conviertan en falla o incendio: conexiones flojas u oxidadas, que son el hallazgo más común; desbalance entre fases, cuando una fase carga más corriente y opera más caliente; conductores o equipos sobrecargados, que se ven calientes en toda su extensión; y fusibles, contactos o cuchillas degradados. Todos avisan con calor creciente semanas antes de fallar."}},{"@type":"Question","name":"¿Cada cuándo se debe hacer termografía en una planta?","acceptedAnswer":{"@type":"Answer","text":"La frecuencia se define por criticidad. Lo habitual es una inspección semestral del equipo eléctrico general, trimestral del equipo importante que afecta una línea o área, y mensual del equipo crítico cuya falla para toda la planta, como acometida, subestación, transformadores y centros de control de motores. La inspección debe hacerse con la planta operando a más del 40% de su carga para que los defectos generen calor detectable."}},{"@type":"Question","name":"¿Cuánto cuesta un estudio de termografía industrial en México?","acceptedAnswer":{"@type":"Answer","text":"Como referencia para 2026, un estudio por jornada con termógrafo certificado y reporte ronda los 12,000 a 40,000 pesos según el tamaño de la planta; en esquemas por volumen, el costo es del orden de 80 a 250 pesos por punto documentado. Si se prefiere comprar el equipo, una cámara termográfica industrial de entrada va de 40,000 a 120,000 pesos, y los equipos de mayor resolución para media tensión superan los 150,000 y llegan a más de 400,000 pesos."}},{"@type":"Question","name":"¿Qué significa el ΔT y por qué importa para la severidad?","acceptedAnswer":{"@type":"Answer","text":"El ΔT es la diferencia de temperatura del componente respecto a una referencia, ya sea otro componente similar como una fase contra otra, o la temperatura ambiente. Importa porque un punto caliente solo es problema si está más caliente que lo que debería. Como guía de campo, un ΔT del orden de 10 a 20°C es una anomalía a vigilar, por encima de 20°C se programa corrección, y mayor a unos 40°C exige acción inmediata por riesgo de falla o de fuego."}},{"@type":"Question","name":"¿Por qué necesito un termógrafo certificado y no solo la cámara?","acceptedAnswer":{"@type":"Answer","text":"Porque la cámara no interpreta sola. Un termógrafo con certificación nivel I o II ajusta variables como emisividad, temperatura reflejada y carga, distingue un punto caliente real de un simple reflejo y emite el diagnóstico de severidad. Sin esa competencia se generan falsos positivos que cuestan paros innecesarios y falsos negativos que dejan pasar el defecto que sí importaba. El entregable serio incluye termograma, foto visible, ΔT, severidad y prioridad de corrección."}}]}
+  </script>
+
+  <div class="cta-final">
+    <div class="cta-final-inner">
+      <div>
+        <h3>¿Listo para ver el calor antes de que se convierta en paro?</h3>
+        <p>Hablemos con un experto. Te damos un diagnóstico claro del estado eléctrico de tu planta, el programa de termografía recomendado y la prioridad de corrección en una sola conversación.</p>
+      </div>
+      <a class="btn-cta" href="/#contacto">Hablemos con un experto →</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col"><h5>Sitio</h5><ul><li><a href="/#hacemos">Qué Hacemos</a></li><li><a href="/#importa">Por Qué Importa</a></li><li><a href="/#trabajamos">Cómo Trabajamos</a></li><li><a href="/#resultados">Resultados</a></li><li><a href="/#industrias">Industrias</a></li><li><a href="/casos-de-exito.html">Casos de Éxito</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div class="foot-col"><h5>Compañía</h5><ul><li><a href="/#elegirnos">Por Qué Elegirnos</a></li><li><a href="/#contacto">Contacto</a></li></ul></div>
+    <div class="foot-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li></ul></div>
+  </div>
+  <div class="foot-bar"><span>© 2026 M2E · All rights reserved</span><span>Securing energy capacity for industrial development · ⚡</span></div>
+</footer>
+
+<script src="/blog/blog.js?v=20260603" defer></script>
+</body>
+</html>

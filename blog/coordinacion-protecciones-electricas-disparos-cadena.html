@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Coordinación de protecciones eléctricas: cómo evitar disparos en cadena — Blog M2 Energy</title>
+<meta name="description" content="Una falla en un solo ramal no debería apagar toda tu planta. Te explicamos qué es la coordinación de protecciones eléctricas, cómo se verifica con curvas TCC y cuándo conviene el estudio."/>
+<meta property="og:title" content="Coordinación de protecciones eléctricas: cómo evitar disparos en cadena"/>
+<meta property="og:description" content="Qué es la coordinación de protecciones, cómo se grafican las curvas tiempo-corriente y cómo se corrige un disparo en cascada en planta industrial."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://m2energy.org/blog/coordinacion-protecciones-electricas-disparos-cadena.html"/>
+<meta property="og:image" content="https://m2energy.org/blog/coordinacion-protecciones-electricas-disparos-cadena/hero.jpg"/>
+<meta name="author" content="Carlos Pineda"/>
+<link rel="canonical" href="https://m2energy.org/blog/coordinacion-protecciones-electricas-disparos-cadena.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20260603"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Coordinación de protecciones eléctricas: cómo evitar disparos en cadena","description":"Qué es la coordinación de protecciones, cómo se grafican las curvas tiempo-corriente y cómo se corrige un disparo en cascada en planta industrial.","image":"https://m2energy.org/blog/coordinacion-protecciones-electricas-disparos-cadena/hero.jpg","author":{"@type":"Person","name":"Carlos Pineda","jobTitle":"Director Comercial","worksFor":"M2 Energy"},"publisher":{"@type":"Organization","name":"M2 Energy","logo":{"@type":"ImageObject","url":"https://m2energy.org/favicon.png"}},"datePublished":"2026-06-08T08:00:00-06:00","dateModified":"2026-06-08T08:00:00-06:00","articleSection":"Operación","inLanguage":"es-MX"}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></a>
+  <a class="nav-back" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>Volver al blog</span></a>
+  <div class="nav-right"><a class="nav-cta" href="/#contacto">Contáctanos →</a></div>
+</nav>
+
+<article>
+  <section class="post-hero">
+    <div class="post-hero-bg" style="background-image:url('/blog/coordinacion-protecciones-electricas-disparos-cadena/hero.jpg')"></div><div class="post-hero-grad"></div>
+    <div class="post-hero-content">
+      <div class="post-hero-inner">
+        <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/blog">Blog</a><span>/</span><span style="color:var(--ink-dim)">Operación</span></div>
+        <div class="post-cat-kicker">Operación</div>
+        <h1>Coordinación de protecciones eléctricas: cómo evitar disparos en cadena</h1>
+        <p class="post-subtitle">Una falla en un solo motor no debería apagar toda la planta. Cuando un cortocircuito en un ramal tira el interruptor principal, el problema no es la falla — es la coordinación de protecciones. Te explicamos cómo se verifica con curvas tiempo-corriente y cómo se corrige antes del siguiente paro.</p>
+        <div class="post-meta">
+          <div class="author"><div class="author-avatar">CP</div><div>Por <strong>Carlos Pineda</strong> · Director Comercial</div></div>
+          <span class="meta-dot"></span><span>8 de junio de 2026</span><span class="meta-dot"></span><span>10 min lectura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-layout">
+
+    <aside class="post-aside post-aside-left">
+      <div class="aside-section-title">Artículos relacionados</div>
+      <a class="aside-related-card" href="/blog/estudio-cortocircuito-industrial-para-que-sirve.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/estudio-cortocircuito-industrial-para-que-sirve/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Estudio de cortocircuito industrial: para qué sirve y cuándo actualizarlo</h3></a>
+      <a class="aside-related-card" href="/blog/sistema-tierras-industrial-medicion-normativa-mantenimiento.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/sistema-tierras-industrial-medicion-normativa-mantenimiento/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Sistema de tierras industrial: medición, normativa y mantenimiento</h3></a>
+      <a class="aside-related-card" href="/blog/uptime-electrico-industrial-fallas-red-cfe.html"><div class="aside-related-card-img cat-operacion" style="background-image:url('/blog/uptime-electrico-industrial-fallas-red-cfe/hero.jpg')"></div><span class="aside-related-card-cat">Operación</span><h3 class="aside-related-card-title">Uptime eléctrico industrial: 5 fallas comunes en red CFE y cómo blindarte</h3></a>
+    </aside>
+
+    <div class="post-body">
+      <p>Son las 3 de la madrugada y un cortocircuito en el variador de un solo transportador acaba de dejar a oscuras a toda la planta. Nadie entiende por qué un problema en una carga de 30 HP apagó las dos líneas de producción, el cuarto de cómputo y la iluminación de oficinas. La respuesta no está en la falla — esa es inevitable mientras la planta opere — sino en cómo respondió el sistema de protecciones: en lugar de aislar el ramal del transportador, disparó el interruptor general de la subestación. Esto es un disparo en cadena, y casi siempre significa que las protecciones nunca se coordinaron entre sí.</p>
+
+      <p>La coordinación de protecciones es la diferencia entre perder un circuito de 30 HP por veinte minutos y perder toda la operación por cuatro horas mientras alguien rastrea por qué disparó el principal y restablece. Para un director de operaciones o de proyecto, esa diferencia se cuenta en producción no entregada, materia prima en proceso echada a perder y arranques en frío que estresan al propio equipo. Este artículo explica qué es la selectividad, cómo se verifica con curvas tiempo-corriente, qué insumos requiere el estudio y cómo se corrige un sistema mal coordinado antes del siguiente paro.</p>
+
+      <h2 id="que-es-la-coordinacion-de-protecciones">Qué es la coordinación de protecciones (selectividad)</h2>
+
+      <p>Una instalación eléctrica industrial está organizada en capas, como un árbol. En la raíz está la acometida y el interruptor principal de la subestación; de ahí cuelgan los tableros principales, luego los de distribución, y al final las protecciones de cada carga. A cada dispositivo que queda entre una carga y la fuente se le llama <strong>aguas arriba</strong>; a lo que queda hacia la carga, <strong>aguas abajo</strong>.</p>
+
+      <p>La <strong>coordinación de protecciones</strong> — también llamada selectividad — es el ajuste deliberado de esos dispositivos para que, ante una falla en cualquier punto, dispare <strong>únicamente la protección inmediatamente aguas arriba del punto de falla</strong>. Ni una más. Así se aísla sólo el ramal afectado y el resto de la planta sigue operando.</p>
+
+      <p>Ante un cortocircuito en un motor, un sistema selectivo:</p>
+
+      <ul>
+        <li>Dispara el interruptor o fusible de <strong>ese motor</strong>, no el del tablero que lo alimenta.</li>
+        <li>Deja el tablero de distribución energizado y el resto de sus cargas operando.</li>
+        <li>No involucra al tablero principal ni al interruptor general de la subestación.</li>
+        <li>Pierde un equipo; no pierde la operación.</li>
+      </ul>
+
+      <p>Cuando el sistema NO está coordinado ocurre lo contrario: la falla del motor dispara el tablero principal —o peor, el interruptor general— y apaga decenas de cargas ajenas al problema. Eso es un disparo en cadena o disparo en cascada.</p>
+
+      <div class="key-takeaway">
+        <div class="key-takeaway-label">Insight clave</div>
+        <p>Coordinar protecciones no busca evitar que haya fallas — las fallas son inevitables en cualquier instalación que opere años. Lo que busca es que cuando ocurran, el sistema <strong>aísle el problema en el dispositivo más cercano a la falla</strong> y deje el resto de la planta operando. Selectividad no es robustez; es contención.</p>
+      </div>
+
+      <h2 id="por-que-importa-en-dinero">Por qué un disparo en cadena cuesta tanto</h2>
+
+      <p>La penalización económica de una mala coordinación no está en la falla; está en su alcance. Compara dos escenarios de la misma falla en una carga pequeña:</p>
+
+      <ul>
+        <li><strong>Sistema coordinado:</strong> se cae un circuito de 30 HP. El operador identifica el interruptor disparado en treinta segundos, revisa la carga, restablece. Pérdida: un equipo, unos minutos, cero impacto en producción.</li>
+        <li><strong>Sistema sin coordinar:</strong> disparó el interruptor general y toda la planta queda muerta. Hay que recorrer tableros para hallar la falla real, restablecer en orden desde el principal hacia abajo y rearrancar cada proceso. Pérdida: varias horas, dos líneas detenidas, producto en proceso comprometido.</li>
+      </ul>
+
+      <p>Para una planta cuyo costo de paro ronda los 150,000 pesos por hora —entre producción no entregada, mano de obra ociosa y mermas— un disparo en cadena de cuatro horas representa cerca de <strong>600,000 pesos MXN</strong> por un evento que, bien coordinado, habría costado prácticamente nada. Y rara vez es un solo evento al año. Cuánto vale cada hora de planta detenida y las demás fuentes de paro lo vemos en nuestro artículo sobre <a href="/blog/uptime-electrico-industrial-fallas-red-cfe.html">uptime eléctrico industrial y las fallas más comunes en red CFE</a>.</p>
+
+      <h2 id="las-curvas-tiempo-corriente-tcc">Las curvas tiempo-corriente (TCC): el lenguaje de la coordinación</h2>
+
+      <p>Toda protección de sobrecorriente —fusibles, interruptores termomagnéticos, relevadores— tiene una característica fundamental: <strong>mientras más alta es la corriente de falla, más rápido dispara</strong>. Esa relación se describe con una curva tiempo-corriente, conocida como <strong>curva TCC</strong> por sus siglas en inglés (Time-Current Characteristic).</p>
+
+      <p>La curva TCC se grafica en un plano log-log: el eje horizontal es la corriente (en amperes) y el vertical el tiempo de disparo (en segundos). Cada dispositivo queda representado por su propia curva. Cuando se grafican <strong>todas las curvas de los dispositivos en serie sobre el mismo plano</strong>, la coordinación se vuelve visible de un vistazo.</p>
+
+      <h3>Cómo se lee una gráfica de coordinación</h3>
+
+      <p>La regla es simple: para que el sistema sea selectivo, la curva de cada dispositivo aguas abajo debe quedar <strong>por debajo y a la izquierda</strong> de la del dispositivo inmediatamente aguas arriba, sin cruzarse en el rango de corrientes de falla esperadas. Así, ante cualquier nivel de falla, el de abajo siempre dispara primero.</p>
+
+      <ul>
+        <li><strong>Curvas separadas y sin cruzarse:</strong> sistema coordinado. El de abajo siempre actúa antes que el de arriba.</li>
+        <li><strong>Curvas que se tocan o se cruzan:</strong> existe un rango de corriente donde el de arriba puede disparar primero, o ambos a la vez. Ahí vive el disparo en cadena.</li>
+        <li><strong>Separación vertical entre curvas:</strong> es el margen de coordinación, el tiempo que garantiza que el de abajo despeje la falla antes de que el de arriba reaccione.</li>
+      </ul>
+
+      <p>Software especializado dibuja las curvas reales de cada dispositivo según su marca, modelo y ajuste, y permite verificar márgenes y proponer nuevos ajustes sin tocar físicamente la instalación.</p>
+
+      <h2 id="elementos-y-funciones-de-proteccion">Elementos y funciones de protección involucrados</h2>
+
+      <p>Un estudio de coordinación trabaja con todo el inventario de protecciones de la planta. Los dispositivos más comunes en industria, con su número de función ANSI:</p>
+
+      <ul>
+        <li><strong>Fusibles.</strong> La protección más simple. Económicos y rápidos, pero no ajustables: una vez seleccionados, su curva es fija.</li>
+        <li><strong>Interruptores termomagnéticos.</strong> Disparo térmico para sobrecargas y magnético para cortocircuitos. Los de mayor capacidad traen unidades de disparo electrónicas ajustables.</li>
+        <li><strong>Relevador de sobrecorriente (50/51).</strong> El caballo de batalla de la coordinación en media tensión. La función <strong>51</strong> es de tiempo inverso (más rápido a mayor corriente) y la <strong>50</strong> es instantánea (dispara sobre cierto umbral). Ajustando ambas se moldea la curva.</li>
+        <li><strong>Protección diferencial (87).</strong> Compara la corriente que entra con la que sale de una zona —transformador, bus, motor grande— y dispara si no coinciden, señal de falla interna. Es selectiva por naturaleza: sólo ve su propia zona.</li>
+        <li><strong>Bajo y sobre voltaje (27/59).</strong> La <strong>27</strong> protege contra caídas de tensión y la <strong>59</strong> contra sobretensiones, ambas dañinas para motores y electrónica de proceso.</li>
+      </ul>
+
+      <p>La coordinación se centra en los dispositivos de sobrecorriente (fusibles, termomagnéticos, 50/51), porque son los que ven la misma corriente de falla en serie y, por lo tanto, los que pueden disparar de más. La diferencial (87) y las de voltaje (27/59) complementan el esquema bajo otra lógica.</p>
+
+      <h2 id="margenes-de-coordinacion-tipicos">Los márgenes de coordinación típicos</h2>
+
+      <p>Para que el dispositivo aguas abajo gane siempre la carrera, debe haber un colchón de tiempo entre su curva y la del dispositivo aguas arriba. Ese colchón es el <strong>margen de coordinación</strong>, y existe por razones físicas concretas:</p>
+
+      <ul>
+        <li>El tiempo de operación del interruptor aguas abajo (apertura de contactos y extinción del arco).</li>
+        <li>El tiempo de reposición del relevador aguas arriba una vez que la falla se despeja.</li>
+        <li>Las tolerancias de fabricación de cada dispositivo y los errores de los transformadores de corriente.</li>
+        <li>Un factor de seguridad para absorber incertidumbre.</li>
+      </ul>
+
+      <p>En la práctica, el margen típico entre dos dispositivos en serie es del orden de <strong>0.2 a 0.4 segundos</strong>. Con relevadores electrónicos modernos y buena instrumentación se trabaja cerca del extremo inferior; con relevadores electromecánicos antiguos conviene dejarlo más holgado. Cuando hay varios niveles en serie, esos márgenes se acumulan hacia arriba y tensan el tiempo total que el interruptor principal tolera antes de disparar.</p>
+
+      <div class="cta-inline">
+        <div class="cta-inline-text">
+          <strong>¿Una falla menor ya tiró toda tu planta alguna vez?</strong>
+          <span>Hacemos el estudio de coordinación de protecciones de tu instalación: graficamos las curvas reales, encontramos dónde se cruzan y entregamos los ajustes corregidos dispositivo por dispositivo.</span>
+        </div>
+        <a class="cta-inline-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+
+      <h2 id="primero-el-estudio-de-cortocircuito">Por qué primero va el estudio de cortocircuito</h2>
+
+      <p>La coordinación no se puede hacer en el aire: necesita saber <strong>cuánta corriente de falla circula realmente en cada punto de la instalación</strong>. Sin ese dato, las curvas TCC se grafican sobre un rango de corrientes inventado y los márgenes no significan nada.</p>
+
+      <p>Ese dato lo provee el <strong>estudio de cortocircuito</strong>, que calcula la corriente de falla máxima disponible en cada barra y tablero a partir de la aportación de la red CFE, los transformadores, los motores y la impedancia de cables. Por eso el orden es inflexible: <strong>primero el estudio de cortocircuito, luego el de coordinación</strong>. El primero define el eje de corriente sobre el que se dibujan las curvas del segundo; sin él, coordinar es adivinar. Qué calcula y cuándo se actualiza lo cubrimos en el <a href="/blog/estudio-cortocircuito-industrial-para-que-sirve.html">artículo sobre el estudio de cortocircuito industrial</a>.</p>
+
+      <p>Hay además una razón de seguridad: el estudio de cortocircuito verifica que cada interruptor tenga <strong>capacidad interruptiva suficiente</strong> para abrir la corriente de falla de su punto. Un interruptor que intenta abrir una corriente que supera su capacidad puede explotar. Coordinar dispositivos que ni siquiera aguantan la falla disponible es trabajar sobre cimientos falsos.</p>
+
+      <h2 id="ejemplo-de-disparo-en-cascada-y-correccion">Un ejemplo de disparo en cascada y cómo se corrige</h2>
+
+      <p>Una planta metalmecánica reportaba que, al arrancar en frío su prensa hidráulica de 150 HP, ocasionalmente disparaba el interruptor general y dejaba muerta toda la nave. Mantenimiento sospechaba de la prensa y ya la había revisado dos veces sin encontrar nada.</p>
+
+      <p>Al graficar las curvas TCC quedó claro el problema: el relevador de sobrecorriente del interruptor principal tenía la función instantánea (50) ajustada demasiado baja. Su curva se <strong>cruzaba</strong> con la del interruptor del tablero que alimentaba la prensa justo en el rango de la corriente de arranque del motor. En ese cruce, ante el pico de arranque, el principal a veces disparaba antes que el interruptor del ramal. No era una falla: era un arranque normal interpretado como falla por una protección mal ajustada.</p>
+
+      <p>La corrección no requirió comprar equipo nuevo:</p>
+
+      <ol>
+        <li>Se subió el umbral de la función instantánea (50) del relevador principal por encima de la corriente de arranque del motor más grande, para que dejara de reaccionar a los picos de arranque normales.</li>
+        <li>Se ajustó el dial de tiempo de la función 51 del principal para abrir un margen de <strong>0.3 segundos</strong> sobre la curva del interruptor del tablero aguas abajo.</li>
+        <li>Se volvieron a graficar todas las curvas para confirmar que ninguna se cruzara en todo el rango, desde corriente de arranque hasta cortocircuito máximo.</li>
+      </ol>
+
+      <p>Después del ajuste, un cortocircuito en la prensa dispara el interruptor de su propio ramal y nada más; el general dejó de involucrarse en problemas ajenos. Cero CAPEX en equipo: el costo fue el del estudio y unas horas de ajuste en sitio.</p>
+
+      <h2 id="relacion-con-arc-flash">Coordinación y energía de arco (arc flash)</h2>
+
+      <p>La coordinación tiene un efecto directo sobre la seguridad del personal. La <strong>energía de arco eléctrico</strong> —el arc flash— que se libera en una falla es proporcional al tiempo que la protección tarda en despejarla: mientras más permanece el arco, más energía se descarga sobre quien esté cerca y más severo es el equipo de protección personal requerido.</p>
+
+      <p>Aquí aparece una tensión de diseño real: para coordinar bien a veces conviene <strong>retardar</strong> deliberadamente las protecciones aguas arriba, pero ese retardo aumenta la energía de arco en esos puntos. Un buen estudio resuelve el balance, frecuentemente con funciones de disparo de mantenimiento que reducen el tiempo de despeje cuando hay personal trabajando en el tablero. Coordinación y arc flash deben verse juntas.</p>
+
+      <h2 id="normativa-aplicable">Normativa aplicable</h2>
+
+      <p>El estudio de coordinación se enmarca en normativa nacional e internacional reconocida:</p>
+
+      <ul>
+        <li><strong>NOM-001-SEDE-2012</strong> (Instalaciones Eléctricas) — establece en México los requisitos de protección contra sobrecorriente y la obligación de contar con protecciones bien dimensionadas y selectivas.</li>
+        <li><strong>IEEE 242</strong> (Buff Book) — guía de referencia para protección y coordinación de sistemas industriales y comerciales; el estándar técnico sobre cómo construir y verificar curvas de coordinación.</li>
+        <li><strong>IEEE 1584</strong> — metodología para el cálculo de energía de arco eléctrico, que liga la coordinación con la seguridad del personal.</li>
+        <li><strong>IEC 60909</strong> — método de cálculo de corrientes de cortocircuito, base del estudio que alimenta la coordinación.</li>
+      </ul>
+
+      <p>Más allá del cumplimiento, estos estudios son cada vez más una condición de las aseguradoras industriales y un requisito en auditorías de seguridad. Un esquema de protecciones documentado y coordinado es un activo, no un trámite.</p>
+
+      <hr/>
+
+      <p>La coordinación de protecciones es de los pocos trabajos eléctricos donde, sin comprar un solo equipo nuevo, se transforma la respuesta de toda una planta ante una falla: de apagar la operación completa a aislar un solo ramal. Requiere primero un estudio de cortocircuito que defina las corrientes reales, luego graficar las curvas tiempo-corriente de cada dispositivo en serie, verificar que mantengan su margen sin cruzarse, y ajustar relevadores donde haga falta. Si tu planta ya vivió un disparo en cadena por una falla menor, no fue mala suerte: fue una coordinación que nunca se hizo o que quedó obsoleta. Y se corrige.</p>
+    </div>
+
+    <aside class="post-aside post-aside-right">
+      <nav class="post-toc" aria-label="Contenido del artículo">
+        <div class="post-toc__title">En este artículo</div>
+        <ul>
+          <li><a href="#que-es-la-coordinacion-de-protecciones">Qué es la coordinación de protecciones (selectividad)</a></li>
+          <li><a href="#por-que-importa-en-dinero">Por qué un disparo en cadena cuesta tanto</a></li>
+          <li><a href="#las-curvas-tiempo-corriente-tcc">Las curvas tiempo-corriente (TCC)</a></li>
+          <li><a href="#elementos-y-funciones-de-proteccion">Elementos y funciones de protección</a></li>
+          <li><a href="#margenes-de-coordinacion-tipicos">Los márgenes de coordinación típicos</a></li>
+          <li><a href="#primero-el-estudio-de-cortocircuito">Por qué primero va el estudio de cortocircuito</a></li>
+          <li><a href="#ejemplo-de-disparo-en-cascada-y-correccion">Ejemplo de disparo en cascada y corrección</a></li>
+          <li><a href="#relacion-con-arc-flash">Coordinación y energía de arco</a></li>
+          <li><a href="#normativa-aplicable">Normativa aplicable</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div class="aside-author-card">
+        <div class="aside-author-avatar-large">CP</div>
+        <h4>Carlos Pineda</h4>
+        <div class="author-role">Director Comercial · M2 Energy</div>
+        <p>60 años de experiencia acumulada diseñando, construyendo y operando infraestructura eléctrica industrial en México. Soluciones EPC llave en mano de hasta 20 MW en sitio.</p>
+        <a class="author-link" href="/#hacemos">Conocer más →</a>
+      </div>
+      <div class="aside-cta-card">
+        <h4>Aseguramos tu capacidad energética para el desarrollo industrial</h4>
+        <p>Te acompañamos a estudiar tu cortocircuito, coordinar las protecciones y blindar tu planta contra disparos en cadena. Hablemos sin compromiso.</p>
+        <a class="aside-cta-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Qué es la coordinación de protecciones eléctricas?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Es el ajuste deliberado de todos los dispositivos de protección de una instalación para que, ante una falla en cualquier punto, dispare únicamente la protección inmediatamente aguas arriba del punto de falla. Así se aísla solo el ramal afectado y el resto de la planta sigue operando. A esto también se le llama selectividad. Un sistema coordinado pierde un equipo ante un cortocircuito; uno mal coordinado pierde toda la operación.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Por qué una falla en un solo equipo apaga toda mi planta?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque las protecciones no están coordinadas entre si. Cuando las curvas tiempo-corriente de un dispositivo aguas abajo y otro aguas arriba se cruzan en el rango de la corriente de falla, el dispositivo de arriba puede disparar antes o al mismo tiempo que el de abajo. En lugar de aislar el ramal, dispara el tablero principal o el interruptor general y apaga decenas de cargas que no tenian relacion con la falla. Eso es un disparo en cadena y se corrige reajustando las protecciones.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto cuesta un disparo en cadena?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El costo no esta en la falla sino en su alcance. La misma falla en una carga pequeña, con sistema coordinado, cuesta unos minutos y un solo equipo. Sin coordinar, dispara el interruptor general y detiene toda la planta varias horas. Para una operacion cuyo paro ronda los 150,000 pesos por hora entre produccion no entregada, mano de obra ociosa y mermas, un evento de cuatro horas se acerca a 600,000 pesos, por algo que bien coordinado no habria costado casi nada.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Necesito un estudio de cortocircuito antes del de coordinación?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Si, es obligatorio en ese orden. La coordinacion necesita saber cuanta corriente de falla circula realmente en cada punto de la instalacion, y ese dato lo entrega el estudio de cortocircuito. Sin el, las curvas tiempo-corriente se grafican sobre corrientes inventadas y los margenes no significan nada. Ademas, el estudio de cortocircuito verifica que cada interruptor tenga capacidad interruptiva suficiente para abrir la falla de su punto, algo critico de seguridad.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuál es el margen de coordinación recomendado entre dispositivos?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El margen tipico entre dos dispositivos en serie es del orden de 0.2 a 0.4 segundos. Ese colchon de tiempo cubre la apertura del interruptor aguas abajo, la reposicion del relevador aguas arriba, las tolerancias de fabricacion y los errores de los transformadores de corriente, mas un factor de seguridad. Con relevadores electronicos modernos y buena instrumentacion se trabaja cerca de 0.2 segundos; con equipo electromecanico antiguo conviene dejar el margen mas holgado.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cada cuándo debo actualizar el estudio de coordinación?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Conviene revisarlo cada vez que cambia algo relevante en la instalacion: ampliacion de la planta, cambio de transformador, agregar cargas grandes como motores o variadores, o una modificacion en la acometida CFE que altere la corriente de falla disponible. Como buena practica se revalida junto con el estudio de cortocircuito cada tres a cinco anos, o de inmediato si la planta ya sufrio un disparo en cadena sin causa clara.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es la coordinación de protecciones eléctricas?","acceptedAnswer":{"@type":"Answer","text":"Es el ajuste deliberado de todos los dispositivos de protección de una instalación para que, ante una falla en cualquier punto, dispare únicamente la protección inmediatamente aguas arriba del punto de falla. Así se aísla solo el ramal afectado y el resto de la planta sigue operando. A esto también se le llama selectividad. Un sistema coordinado pierde un equipo ante un cortocircuito; uno mal coordinado pierde toda la operación."}},{"@type":"Question","name":"¿Por qué una falla en un solo equipo apaga toda mi planta?","acceptedAnswer":{"@type":"Answer","text":"Porque las protecciones no están coordinadas entre si. Cuando las curvas tiempo-corriente de un dispositivo aguas abajo y otro aguas arriba se cruzan en el rango de la corriente de falla, el dispositivo de arriba puede disparar antes o al mismo tiempo que el de abajo. En lugar de aislar el ramal, dispara el tablero principal o el interruptor general y apaga decenas de cargas que no tenian relacion con la falla. Eso es un disparo en cadena y se corrige reajustando las protecciones."}},{"@type":"Question","name":"¿Cuánto cuesta un disparo en cadena?","acceptedAnswer":{"@type":"Answer","text":"El costo no esta en la falla sino en su alcance. La misma falla en una carga pequeña, con sistema coordinado, cuesta unos minutos y un solo equipo. Sin coordinar, dispara el interruptor general y detiene toda la planta varias horas. Para una operacion cuyo paro ronda los 150,000 pesos por hora entre produccion no entregada, mano de obra ociosa y mermas, un evento de cuatro horas se acerca a 600,000 pesos, por algo que bien coordinado no habria costado casi nada."}},{"@type":"Question","name":"¿Necesito un estudio de cortocircuito antes del de coordinación?","acceptedAnswer":{"@type":"Answer","text":"Si, es obligatorio en ese orden. La coordinacion necesita saber cuanta corriente de falla circula realmente en cada punto de la instalacion, y ese dato lo entrega el estudio de cortocircuito. Sin el, las curvas tiempo-corriente se grafican sobre corrientes inventadas y los margenes no significan nada. Ademas, el estudio de cortocircuito verifica que cada interruptor tenga capacidad interruptiva suficiente para abrir la falla de su punto, algo critico de seguridad."}},{"@type":"Question","name":"¿Cuál es el margen de coordinación recomendado entre dispositivos?","acceptedAnswer":{"@type":"Answer","text":"El margen tipico entre dos dispositivos en serie es del orden de 0.2 a 0.4 segundos. Ese colchon de tiempo cubre la apertura del interruptor aguas abajo, la reposicion del relevador aguas arriba, las tolerancias de fabricacion y los errores de los transformadores de corriente, mas un factor de seguridad. Con relevadores electronicos modernos y buena instrumentacion se trabaja cerca de 0.2 segundos; con equipo electromecanico antiguo conviene dejar el margen mas holgado."}},{"@type":"Question","name":"¿Cada cuándo debo actualizar el estudio de coordinación?","acceptedAnswer":{"@type":"Answer","text":"Conviene revisarlo cada vez que cambia algo relevante en la instalacion: ampliacion de la planta, cambio de transformador, agregar cargas grandes como motores o variadores, o una modificacion en la acometida CFE que altere la corriente de falla disponible. Como buena practica se revalida junto con el estudio de cortocircuito cada tres a cinco anos, o de inmediato si la planta ya sufrio un disparo en cadena sin causa clara."}}]}
+  </script>
+
+  <div class="cta-final">
+    <div class="cta-final-inner">
+      <div>
+        <h3>¿Listo para blindar tu planta contra disparos en cadena?</h3>
+        <p>Hablemos con un experto. Te damos un diagnóstico claro de cómo responde tu sistema de protecciones, el estudio de coordinación y los ajustes corregidos en una sola conversación.</p>
+      </div>
+      <a class="btn-cta" href="/#contacto">Hablemos con un experto →</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col"><h5>Sitio</h5><ul><li><a href="/#hacemos">Qué Hacemos</a></li><li><a href="/#importa">Por Qué Importa</a></li><li><a href="/#trabajamos">Cómo Trabajamos</a></li><li><a href="/#resultados">Resultados</a></li><li><a href="/#industrias">Industrias</a></li><li><a href="/casos-de-exito.html">Casos de Éxito</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div class="foot-col"><h5>Compañía</h5><ul><li><a href="/#elegirnos">Por Qué Elegirnos</a></li><li><a href="/#contacto">Contacto</a></li></ul></div>
+    <div class="foot-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li></ul></div>
+  </div>
+  <div class="foot-bar"><span>© 2026 M2E · All rights reserved</span><span>Securing energy capacity for industrial development · ⚡</span></div>
+</footer>
+
+<script src="/blog/blog.js?v=20260603" defer></script>
+</body>
+</html>
