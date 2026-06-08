@@ -4,8 +4,8 @@
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
-// Destinatario(s) del aviso de lead. Ajustable vía env LEAD_TO.
-const DEFAULT_TO = 'marketing@m2energy.org';
+// Destinatario(s) del aviso de lead. Ajustable vía env LEAD_TO (CSV).
+const DEFAULT_TO = 'miguel.cantu@profitops.com, juan.pablorenterias@profitops.com, monte@m2energy.org';
 // Remitente: dominio verificado en Resend (demarketing.mx). Ajustable vía env LEAD_FROM.
 const DEFAULT_FROM = 'M2 Energy <noreply@demarketing.mx>';
 
