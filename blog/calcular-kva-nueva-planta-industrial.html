@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<title>Cómo calcular los kVA que realmente necesita tu nueva planta — Blog M2 Energy</title>
+<meta name="description" content="Carga conectada, factor de demanda, coincidencia, kW a kVA y margen de reserva: la receta paso a paso para dimensionar los kVA reales de tu planta industrial."/>
+<meta property="og:title" content="Cómo calcular los kVA que realmente necesita tu nueva planta"/>
+<meta property="og:description" content="La receta de cálculo para dimensionar los kVA reales de tu planta: carga conectada, factor de demanda, coincidencia, conversión a kVA y margen de reserva."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://m2energy.org/blog/calcular-kva-nueva-planta-industrial.html"/>
+<meta property="og:image" content="https://m2energy.org/blog/calcular-kva-nueva-planta-industrial/hero.jpg"/>
+<meta name="author" content="Carlos Pineda"/>
+<link rel="canonical" href="https://m2energy.org/blog/calcular-kva-nueva-planta-industrial.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20260603"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cómo calcular los kVA que realmente necesita tu nueva planta","description":"La receta de cálculo para dimensionar los kVA reales de tu planta: carga conectada, factor de demanda, coincidencia, conversión a kVA y margen de reserva.","image":"https://m2energy.org/blog/calcular-kva-nueva-planta-industrial/hero.jpg","author":{"@type":"Person","name":"Carlos Pineda","jobTitle":"Director Comercial","worksFor":"M2 Energy"},"publisher":{"@type":"Organization","name":"M2 Energy","logo":{"@type":"ImageObject","url":"https://m2energy.org/favicon.png"}},"datePublished":"2026-06-15T08:00:00-06:00","dateModified":"2026-06-15T08:00:00-06:00","articleSection":"Capacidad eléctrica","inLanguage":"es-MX"}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="/"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></a>
+  <a class="nav-back" href="/blog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg><span>Volver al blog</span></a>
+  <div class="nav-right"><a class="nav-cta" href="/#contacto">Contáctanos →</a></div>
+</nav>
+
+<article>
+  <section class="post-hero">
+    <div class="post-hero-bg" style="background-image:url('/blog/calcular-kva-nueva-planta-industrial/hero.jpg')"></div><div class="post-hero-grad"></div>
+    <div class="post-hero-content">
+      <div class="post-hero-inner">
+        <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/blog">Blog</a><span>/</span><span style="color:var(--ink-dim)">Capacidad eléctrica</span></div>
+        <div class="post-cat-kicker">Capacidad eléctrica</div>
+        <h1>Cómo calcular los kVA que realmente necesita tu nueva planta</h1>
+        <p class="post-subtitle">Sumar las placas de todos tus equipos te da un número enorme — y casi siempre equivocado. La planta nunca opera todo al mismo tiempo. Te mostramos la receta de cálculo paso a paso para llegar al número que de verdad debes contratar con CFE y dimensionar en tu transformador.</p>
+        <div class="post-meta">
+          <div class="author"><div class="author-avatar">CP</div><div>Por <strong>Carlos Pineda</strong> · Director Comercial</div></div>
+          <span class="meta-dot"></span><span>15 de junio de 2026</span><span class="meta-dot"></span><span>13 min lectura</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-layout">
+
+    <aside class="post-aside post-aside-left">
+      <div class="aside-section-title">Artículos relacionados</div>
+      <a class="aside-related-card" href="/blog/capacidad-electrica-nueva-planta-mexico.html"><div class="aside-related-card-img cat-capacidad" style="background-image:url('/blog/capacidad-electrica-nueva-planta-mexico/hero.jpg')"></div><span class="aside-related-card-cat">Capacidad eléctrica</span><h3 class="aside-related-card-title">Cómo evaluar la capacidad eléctrica disponible para tu nueva planta en México</h3></a>
+      <a class="aside-related-card" href="/blog/estudio-carga-electrica-proyeccion-demanda-industrial.html"><div class="aside-related-card-img cat-capacidad" style="background-image:url('/blog/estudio-carga-electrica-proyeccion-demanda-industrial/hero.jpg')"></div><span class="aside-related-card-cat">Capacidad eléctrica</span><h3 class="aside-related-card-title">Estudio de carga eléctrica industrial: cómo proyectar la demanda real</h3></a>
+      <a class="aside-related-card" href="/blog/demanda-contratada-vs-maxima-cfe.html"><div class="aside-related-card-img cat-capacidad" style="background-image:url('/blog/demanda-contratada-vs-maxima-cfe/hero.jpg')"></div><span class="aside-related-card-cat">Capacidad eléctrica</span><h3 class="aside-related-card-title">Demanda contratada vs demanda máxima: cómo no pagar de más a CFE</h3></a>
+    </aside>
+
+    <div class="post-body">
+      <p>El proyecto de la nueva nave ya tiene layout, y el integrador mecánico te pasó una lista de equipos con sus placas. Alguien en la junta suma todos los kW de esas placas, lo divide por el factor de potencia para sacar kVA y anuncia: «necesitamos un transformador de 2,500 kVA y contratar esa demanda con CFE». El número suena contundente y nadie lo cuestiona. El problema es que casi siempre está inflado entre un 40 y un 60 por ciento respecto a lo que la planta realmente jalará. Esa sobreestimación se convierte en un transformador más caro de lo necesario y, sobre todo, en una <strong>demanda contratada</strong> que pagarás mes a mes durante toda la vida del contrato, opere o no la planta a ese nivel.</p>
+
+      <p>El error opuesto es igual de caro pero más doloroso: dimensionar de menos. Cuando el transformador o la acometida se quedan cortos, los equipos no arrancan, las protecciones disparan al primer pico, y terminas pagando penalizaciones por exceder la demanda contratada o, peor, replanteando la infraestructura con la planta ya construida. Entre esos dos extremos hay un número correcto, y se llega a él con una secuencia de cálculo que no es complicada, pero que tiene que respetar el orden y entender qué representa cada factor. Esta es esa receta, paso a paso, pensada para un director de operaciones, de proyecto o un CFO que necesita validar el número antes de firmar.</p>
+
+      <h2 id="carga-conectada-vs-real">Carga conectada: el punto de partida (y por qué no es la respuesta)</h2>
+
+      <p>La <strong>carga conectada</strong> es la suma de la potencia nominal de todos los equipos eléctricos que existirán en la planta, tal como aparece en sus placas de datos. Es el inventario crudo: motores, compresores, hornos, iluminación, aire acondicionado, equipo de oficina, cargadores, todo. Es el cimiento del cálculo, pero por sí sola no dice cuánta potencia necesitas, porque <strong>ningún equipo opera de forma aislada y casi nada opera al 100 % de su placa todo el tiempo</strong>.</p>
+
+      <h3>Primero: lleva todo a la misma unidad (kW)</h3>
+
+      <p>Las placas vienen en unidades distintas y hay que homologarlas antes de sumar. Los motores suelen rotularse en <strong>HP (caballos de fuerza)</strong>, mientras que el resto del equipo viene en <strong>kW</strong> o en <strong>kVA</strong>. La conversión básica:</p>
+
+      <ul>
+        <li><strong>De HP a kW:</strong> 1 HP equivale aproximadamente a <strong>0.746 kW</strong>. Un motor de 100 HP es del orden de 74.6 kW de potencia mecánica en la flecha.</li>
+        <li><strong>Ojo con el rendimiento del motor:</strong> la placa de HP es potencia mecánica de salida. La potencia eléctrica que el motor toma de la red es mayor, porque ningún motor es 100 % eficiente. Para estimar la potencia eléctrica de entrada se divide entre la eficiencia del motor (típicamente del orden de 0.90 a 0.95 en motores industriales modernos).</li>
+      </ul>
+
+      <p>Sumando todo en kW obtienes la carga conectada total. En una planta mediana este número fácilmente llega a cifras que asustan — y ahí está justo la trampa de dimensionar con él directamente.</p>
+
+      <div class="key-takeaway">
+        <div class="key-takeaway-label">Insight clave</div>
+        <p>La carga conectada no es la demanda. Es la suma de placas suponiendo que todo opera simultáneamente y a plena carga, un escenario que <strong>no ocurre en la práctica</strong>. Dimensionar con la carga conectada cruda es la causa número uno de transformadores sobredimensionados y de demanda contratada pagada de más. El trabajo de cálculo consiste precisamente en aterrizar ese número a la realidad operativa.</p>
+      </div>
+
+      <h2 id="factor-de-demanda">Factor de demanda: no todo opera a plena carga</h2>
+
+      <p>El <strong>factor de demanda</strong> reconoce que un grupo de cargas rara vez opera, todo a la vez, al 100 % de su capacidad. Es la relación entre la demanda máxima real de un conjunto de cargas y su carga conectada total:</p>
+
+      <p><strong>Factor de demanda = demanda máxima ÷ carga conectada.</strong> Siempre es un número entre 0 y 1 (o expresado como porcentaje).</p>
+
+      <p>El factor depende del tipo de carga y de cómo se use. Algunos comportamientos típicos, a modo de orientación:</p>
+
+      <ul>
+        <li><strong>Iluminación:</strong> suele tener factor de demanda alto, cercano a la unidad, porque cuando se enciende un turno se enciende casi toda.</li>
+        <li><strong>Motores de proceso:</strong> el factor depende del ciclo de trabajo. Un motor que arranca y para según la producción tiene un factor menor que uno que gira continuo.</li>
+        <li><strong>Cargas intermitentes</strong> (montacargas eléctricos, equipo de soldadura, ciertas prensas): factores bajos, porque su operación es por ráfagas.</li>
+        <li><strong>Tomacorrientes y cargas misceláneas:</strong> factores bajos; nunca están todos en uso a la vez.</li>
+      </ul>
+
+      <p>Aplicando un factor de demanda razonable a cada grupo de cargas y sumando, obtienes una primera estimación de la demanda de cada área. Estos factores no se inventan: salen de tablas normativas de referencia (por ejemplo las que recoge la NOM-001-SEDE para ciertos tipos de carga), de la experiencia del proyectista con plantas similares y, cuando existe, de la medición real de una operación equivalente.</p>
+
+      <h2 id="factor-de-coincidencia">Factor de coincidencia: las áreas no llegan a su pico al mismo tiempo</h2>
+
+      <p>Aquí entra el segundo gran ajuste, y el que más se olvida. Aun cuando cada área de la planta tenga su propia demanda máxima, <strong>esos picos no ocurren todos en el mismo instante</strong>. El área de producción puede picar a media mañana, la de servicios (aire acondicionado) a media tarde, el comedor a la hora de la comida. Sumar los picos individuales asume que todos coinciden — lo cual exagera el total de la planta.</p>
+
+      <p>El <strong>factor de coincidencia</strong> corrige eso. Es la relación entre la demanda máxima del conjunto y la suma de las demandas máximas individuales de cada área:</p>
+
+      <p><strong>Factor de coincidencia = demanda máxima coincidente ÷ suma de demandas máximas individuales.</strong></p>
+
+      <p>Su inverso es el <strong>factor de diversidad</strong> (suma de máximas individuales ÷ máxima coincidente), que siempre es mayor o igual a 1. Ambos describen lo mismo desde dos ángulos: mientras más diversas y desfasadas sean las cargas, menor es el factor de coincidencia y mayor el de diversidad, y más se reduce el total respecto a la simple suma de picos.</p>
+
+      <h3>Cómo se aplica en la práctica</h3>
+
+      <p>El cálculo se hace por niveles, de abajo hacia arriba, igual que el árbol eléctrico:</p>
+
+      <ol>
+        <li>Se calcula la demanda de cada área aplicando el factor de demanda a sus cargas.</li>
+        <li>Se suman las demandas de las áreas que cuelgan de un mismo tablero y se les aplica el factor de coincidencia entre ellas.</li>
+        <li>Se repite el ejercicio subiendo de nivel, hasta llegar a la acometida.</li>
+      </ol>
+
+      <p>El resultado en la cabeza del sistema es la <strong>demanda máxima coincidente</strong> de toda la planta: la potencia activa más alta que se espera que el sitio jale en cualquier instante. Este es el número técnicamente honesto, y suele ser muy inferior a la carga conectada cruda con la que arrancó el ejercicio.</p>
+
+      <div class="cta-inline">
+        <div class="cta-inline-text">
+          <strong>¿Tienes la lista de equipos pero no el número que debes contratar?</strong>
+          <span>Tomamos las placas de tu proyecto, aplicamos factores de demanda y coincidencia con criterio de ingeniería y te entregamos los kVA a contratar y los del transformador, con su memoria de cálculo.</span>
+        </div>
+        <a class="cta-inline-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+
+      <h2 id="kw-a-kva-factor-de-potencia">De kW a kVA: por qué CFE y el transformador no hablan en kW</h2>
+
+      <p>Hasta aquí todo el cálculo está en <strong>kW</strong> — potencia activa, la que efectivamente hace trabajo. Pero el transformador, la acometida y el contrato con CFE se dimensionan en <strong>kVA</strong> (potencia aparente). La diferencia entre una y otra es el <strong>factor de potencia (FP)</strong>, y entenderla evita el último gran error de dimensionamiento.</p>
+
+      <p>Las cargas industriales, sobre todo los motores y transformadores, además de potencia activa (kW) consumen <strong>potencia reactiva</strong> (kVAR) para crear sus campos magnéticos. La suma vectorial de ambas es la <strong>potencia aparente</strong> (kVA), que es la que físicamente tiene que entregar el transformador y transportar la acometida. La relación:</p>
+
+      <ul>
+        <li><strong>kVA = kW ÷ factor de potencia.</strong></li>
+        <li>El <strong>factor de potencia</strong> es un número entre 0 y 1: la fracción de la potencia aparente que se convierte en trabajo útil.</li>
+        <li>Con un FP de 1.0, kVA y kW serían iguales. En una planta industrial real, sin corregir, el FP suele estar del orden de 0.80 a 0.90.</li>
+      </ul>
+
+      <p>Esto importa en dinero por dos vías. Primero, el equipo se dimensiona en kVA: una demanda de 800 kW con un FP de 0.85 exige del orden de 940 kVA de transformador, no 800. Segundo, <strong>CFE penaliza el bajo factor de potencia</strong>: en tarifas industriales, un FP por debajo del 90 % genera un recargo en la factura, y por encima de ese umbral puede haber bonificación. Por eso muchas plantas instalan bancos de capacitores para corregir el FP: suben el factor, reducen los kVA requeridos y eliminan el recargo. Conviene decidir si vas a corregir el FP <strong>antes</strong> de dimensionar, porque cambia el número de kVA.</p>
+
+      <h2 id="margen-de-reserva">Margen de reserva: dimensionar para mañana, no solo para hoy</h2>
+
+      <p>Una vez que tienes la demanda máxima coincidente en kVA, falta una decisión de criterio: ¿cuánto margen dejar por encima? Dimensionar exactamente a la demanda calculada deja el sistema al límite el día uno, sin espacio para crecimiento, para el error inherente al cálculo ni para los arranques.</p>
+
+      <p>El <strong>margen de reserva</strong> cubre tres cosas distintas que conviene no confundir:</p>
+
+      <ul>
+        <li><strong>Crecimiento futuro.</strong> Si el plan de negocio contempla una segunda línea, más turnos o equipo adicional en los próximos años, ese consumo proyectado debe entrar en el dimensionamiento del transformador, que es un activo de larga vida y caro de reemplazar. Proyectar esa demanda a futuro es un ejercicio propio; lo desarrollamos en el <a href="/blog/estudio-carga-electrica-proyeccion-demanda-industrial.html">estudio de carga eléctrica y proyección de demanda industrial</a>.</li>
+        <li><strong>Margen de seguridad sobre el cálculo.</strong> El cálculo de demanda trabaja con factores estimados; un colchón razonable absorbe la incertidumbre.</li>
+        <li><strong>Capacidad para picos de arranque.</strong> Los motores grandes demandan al arrancar varias veces su corriente nominal. El transformador debe tolerar esos transitorios sin caídas de tensión que afecten al resto de la planta.</li>
+      </ul>
+
+      <p>Como orientación general de la industria, sobre la demanda máxima proyectada se suele dejar un margen del orden del <strong>20 al 25 por ciento</strong> para el dimensionamiento del transformador, ajustable según qué tan agresivo sea el plan de crecimiento y el peso de las cargas con arranque pesado. No es una regla universal: es un criterio de ingeniería que se calibra caso por caso.</p>
+
+      <h2 id="kva-contratar-vs-transformador">kVA a contratar y kVA del transformador no son lo mismo</h2>
+
+      <p>Este es uno de los puntos que más confusión genera en una junta de proyecto. Al final del ejercicio salen <strong>dos números distintos</strong>, y mezclarlos cuesta dinero:</p>
+
+      <ul>
+        <li>La <strong>demanda a contratar con CFE</strong> se basa en la demanda máxima coincidente que esperas jalar de la red, según la tarifa aplicable. Pagas por ella cada mes como demanda contratada, así que sobreestimarla es un costo fijo recurrente — distinto de la demanda que de verdad picas.</li>
+        <li>El <strong>tamaño del transformador</strong> se elige por capacidad nominal estándar (los fabricantes manejan valores discretos: 500, 750, 1000, 1500 kVA, etc.) e incorpora el margen de reserva y crecimiento futuro. Por eso suele ser <strong>mayor</strong> que la demanda contratada: tiene que aguantar picos de arranque y el crecimiento que aún no contratas.</li>
+      </ul>
+
+      <p>La tabla resume cómo se diferencian los conceptos que se van encadenando en el cálculo:</p>
+
+      <table>
+        <thead>
+          <tr><th>Concepto</th><th>Qué representa</th><th>Para qué se usa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Carga conectada</strong></td><td>Suma de placas de todos los equipos (kW)</td><td>Inventario base del cálculo</td></tr>
+          <tr><td><strong>Demanda máxima coincidente</strong></td><td>Potencia activa real más alta del conjunto (kW)</td><td>Punto de partida honesto del dimensionamiento</td></tr>
+          <tr><td><strong>Potencia aparente</strong></td><td>La anterior convertida vía factor de potencia (kVA)</td><td>Lenguaje de CFE y del transformador</td></tr>
+          <tr><td><strong>Demanda a contratar</strong></td><td>Demanda coincidente prevista de la red</td><td>Contrato CFE — costo fijo mensual</td></tr>
+          <tr><td><strong>Transformador</strong></td><td>Capacidad nominal con margen de reserva</td><td>Activo físico — incluye crecimiento y picos</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="ejemplo-numerico">Un ejemplo numérico de principio a fin</h2>
+
+      <p>Veamos la receta completa con cifras ilustrativas — no son de un cliente específico, sirven solo para mostrar cómo se encadena el cálculo. Imagina una planta con tres áreas:</p>
+
+      <ul>
+        <li><strong>Producción:</strong> carga conectada de 900 kW (motores y proceso), con un factor de demanda de 0.70 → demanda de área ≈ 630 kW.</li>
+        <li><strong>Servicios</strong> (aire acondicionado, aire comprimido): carga conectada de 300 kW, factor de demanda 0.80 → ≈ 240 kW.</li>
+        <li><strong>Iluminación, oficinas y misceláneos:</strong> carga conectada de 150 kW, factor de demanda 0.60 → ≈ 90 kW.</li>
+      </ul>
+
+      <p>La <strong>carga conectada total</strong> es 1,350 kW. La suma de las demandas máximas de las tres áreas es 630 + 240 + 90 = <strong>960 kW</strong>. Pero esas tres áreas no llegan a su pico al mismo tiempo; aplicando un factor de coincidencia de, digamos, 0.85 entre ellas, la <strong>demanda máxima coincidente</strong> de la planta queda en ≈ <strong>816 kW</strong>.</p>
+
+      <p>Ahora a kVA. Con un factor de potencia de 0.85 (planta sin corregir): 816 kW ÷ 0.85 ≈ <strong>960 kVA</strong> de potencia aparente. Si la planta instala bancos de capacitores y lleva el FP a 0.95, ese mismo consumo activo exige solo ≈ 859 kVA — la corrección del FP reduce el tamaño requerido en cerca de un 10 por ciento.</p>
+
+      <p>Finalmente, los dos números de salida. La <strong>demanda a contratar</strong> con CFE rondaría los 816 kW de demanda coincidente prevista (ajustada a la tarifa aplicable). Para el <strong>transformador</strong>, sobre los ~960 kVA aplicamos un margen de reserva del orden del 20 % → ~1,150 kVA, que se redondea hacia arriba a la capacidad estándar inmediata: un <strong>transformador de 1,250 kVA</strong>. Compáralo con el reflejo inicial de la junta: dividir la carga conectada cruda de 1,350 kW entre 0.85 habría arrojado ~1,590 kVA y empujado a un transformador de 2,000 kVA, casi el doble del costo y una demanda contratada muy por encima de la real.</p>
+
+      <h2 id="errores-comunes">Los dos errores que cuestan dinero</h2>
+
+      <p>Todo el ejercicio existe para esquivar dos fallas opuestas, ambas caras:</p>
+
+      <h3>Sobredimensionar</h3>
+
+      <p>Es el error más común porque parece prudente. Sus costos:</p>
+
+      <ul>
+        <li><strong>Transformador más caro</strong> de lo necesario, con mayores pérdidas en vacío al operar muy por debajo de su capacidad.</li>
+        <li><strong>Demanda contratada inflada:</strong> si se contrata de más, se paga ese cargo fijo mes a mes durante toda la vida del contrato, sin usarlo.</li>
+        <li><strong>CAPEX inmovilizado</strong> en infraestructura que no aporta producción.</li>
+      </ul>
+
+      <h3>Subdimensionar</h3>
+
+      <p>Menos frecuente pero más visible porque la planta no funciona:</p>
+
+      <ul>
+        <li><strong>Los equipos no arrancan</strong> o lo hacen con caídas de tensión que estresan motores y electrónica.</li>
+        <li><strong>Disparos por sobrecarga</strong> al acercarse a la capacidad, con paros de producción.</li>
+        <li><strong>Penalizaciones de CFE</strong> por exceder la demanda contratada.</li>
+        <li><strong>Reingeniería costosa</strong> si hay que cambiar transformador o acometida con la planta ya operando.</li>
+      </ul>
+
+      <p>Conviene además aclarar un punto frecuente de confusión: dimensionar bien tus kVA es necesario, pero no garantiza que la red de CFE en tu predio tenga esa capacidad disponible para entregártela. Son dos preguntas distintas. Cuánta capacidad hay realmente del lado de la red, y cómo verificarla antes de comprometer el proyecto, lo cubrimos en <a href="/blog/capacidad-electrica-nueva-planta-mexico.html">cómo evaluar la capacidad eléctrica disponible para tu nueva planta en México</a>.</p>
+
+      <hr/>
+
+      <p>Calcular los kVA de una planta no es dividir una suma de placas entre el factor de potencia: es aterrizar la carga conectada a la realidad operativa con factores de demanda, descontar la no-coincidencia entre áreas, convertir a potencia aparente vía el factor de potencia y, por último, sumar un margen de reserva con criterio. Hecho así, el número resultante suele ser muy inferior al reflejo inicial — lo que se traduce en un transformador más barato y una demanda contratada que no pagas de más, sin sacrificar capacidad para arrancar ni para crecer. Si estás por firmar un contrato con CFE o por comprar transformador con base en una suma de placas, vale la pena correr el cálculo completo antes: es de las decisiones de proyecto donde el orden y el criterio se pagan solos.</p>
+    </div>
+
+    <aside class="post-aside post-aside-right">
+      <nav class="post-toc" aria-label="Contenido del artículo">
+        <div class="post-toc__title">En este artículo</div>
+        <ul>
+          <li><a href="#carga-conectada-vs-real">Carga conectada: el punto de partida</a></li>
+          <li><a href="#factor-de-demanda">Factor de demanda</a></li>
+          <li><a href="#factor-de-coincidencia">Factor de coincidencia</a></li>
+          <li><a href="#kw-a-kva-factor-de-potencia">De kW a kVA: factor de potencia</a></li>
+          <li><a href="#margen-de-reserva">Margen de reserva</a></li>
+          <li><a href="#kva-contratar-vs-transformador">Contratar vs transformador</a></li>
+          <li><a href="#ejemplo-numerico">Un ejemplo numérico</a></li>
+          <li><a href="#errores-comunes">Los dos errores que cuestan dinero</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div class="aside-author-card">
+        <div class="aside-author-avatar-large">CP</div>
+        <h4>Carlos Pineda</h4>
+        <div class="author-role">Director Comercial · M2 Energy</div>
+        <p>60 años de experiencia acumulada diseñando, construyendo y operando infraestructura eléctrica industrial en México. Soluciones EPC llave en mano de hasta 20 MW en sitio.</p>
+        <a class="author-link" href="/#hacemos">Conocer más →</a>
+      </div>
+      <div class="aside-cta-card">
+        <h4>¿Cuántos kVA debes contratar para tu nueva planta?</h4>
+        <p>Tomamos la lista de equipos de tu proyecto y te entregamos los kVA a contratar y los del transformador, con memoria de cálculo. Hablemos sin compromiso.</p>
+        <a class="aside-cta-btn" href="/#contacto">Contáctanos →</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- =============== PREGUNTAS FRECUENTES =============== -->
+  <section class="post-faq">
+    <div class="post-faq__kicker">FAQ</div>
+    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+    <details class="faq-item">
+      <summary><span>¿Por qué no basta con sumar las placas de todos mis equipos?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Porque esa suma, la carga conectada, supone que todos los equipos operan a la vez y al 100 por ciento de su placa, un escenario que no ocurre en una planta real. Ningun motor jala siempre su potencia nominal y las distintas areas no llegan a su pico en el mismo instante. Dimensionar con la carga conectada cruda infla el resultado del orden de 40 a 60 por ciento y lleva a transformadores caros de mas y demanda contratada pagada de mas todos los meses.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuál es la diferencia entre kW y kVA y por qué CFE usa kVA?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Los kW son potencia activa, la que hace trabajo util. Los kVA son potencia aparente, la suma vectorial de la potencia activa mas la reactiva que las cargas inductivas como motores consumen para crear sus campos magneticos. El transformador y la acometida tienen que entregar y transportar la potencia aparente completa, por eso se dimensionan en kVA. La relacion es kVA igual a kW dividido entre el factor de potencia. Como el factor de potencia de una planta sin corregir suele estar entre 0.80 y 0.90, los kVA siempre son mayores que los kW.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Qué es el factor de demanda y de dónde se sacan sus valores?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">El factor de demanda es la relacion entre la demanda maxima real de un grupo de cargas y su carga conectada total, siempre un numero entre 0 y 1. Reconoce que las cargas no operan todas a plena potencia al mismo tiempo. Sus valores no se inventan: salen de tablas normativas de referencia para ciertos tipos de carga, de la experiencia del proyectista con plantas similares y, cuando existe, de la medicion real de una operacion equivalente. La iluminacion suele tener factor alto, mientras que las cargas intermitentes como soldadura o montacargas tienen factores bajos.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Cuánto margen de reserva debo dejar sobre la demanda calculada?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">Como orientacion general de la industria, sobre la demanda maxima proyectada se suele dejar un margen del orden del 20 al 25 por ciento para dimensionar el transformador. Ese margen cubre tres cosas distintas: el crecimiento futuro previsto en el plan de negocio, un colchon de seguridad sobre la incertidumbre del calculo, y la capacidad para absorber los picos de arranque de los motores grandes. No es una regla universal sino un criterio de ingenieria que se calibra segun lo agresivo del crecimiento y el peso de las cargas con arranque pesado.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿El transformador y la demanda a contratar con CFE son el mismo número?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">No, son dos numeros distintos y mezclarlos cuesta dinero. La demanda a contratar con CFE se basa en la demanda maxima coincidente que esperas jalar de la red y se paga como cargo fijo mensual, asi que sobreestimarla es un costo recurrente. El transformador se elige por capacidad nominal estandar de fabricante e incorpora el margen de reserva y el crecimiento futuro, por lo que suele ser mayor que la demanda contratada: tiene que aguantar picos de arranque y consumo que aun no contratas.</div>
+    </details>
+    <details class="faq-item">
+      <summary><span>¿Calcular bien mis kVA garantiza que CFE me los pueda entregar?</span><span class="faq-plus">+</span></summary>
+      <div class="faq-a">No. Son dos preguntas separadas. El calculo de kVA define cuanta potencia necesita tu planta, pero no dice si la red de CFE en tu predio tiene esa capacidad disponible para entregartela. Puede haber capacidad sobrada, justa o nula, y eso se verifica aparte consultando la disponibilidad de la red antes de comprometer el proyecto. Dimensionar bien tu demanda es necesario pero insuficiente: hay que confirmar tambien que la infraestructura de la red local pueda soportarla.</div>
+    </details>
+  </section>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué no basta con sumar las placas de todos mis equipos?","acceptedAnswer":{"@type":"Answer","text":"Porque esa suma, la carga conectada, supone que todos los equipos operan a la vez y al 100 por ciento de su placa, un escenario que no ocurre en una planta real. Ningun motor jala siempre su potencia nominal y las distintas areas no llegan a su pico en el mismo instante. Dimensionar con la carga conectada cruda infla el resultado del orden de 40 a 60 por ciento y lleva a transformadores caros de mas y demanda contratada pagada de mas todos los meses."}},{"@type":"Question","name":"¿Cuál es la diferencia entre kW y kVA y por qué CFE usa kVA?","acceptedAnswer":{"@type":"Answer","text":"Los kW son potencia activa, la que hace trabajo util. Los kVA son potencia aparente, la suma vectorial de la potencia activa mas la reactiva que las cargas inductivas como motores consumen para crear sus campos magneticos. El transformador y la acometida tienen que entregar y transportar la potencia aparente completa, por eso se dimensionan en kVA. La relacion es kVA igual a kW dividido entre el factor de potencia. Como el factor de potencia de una planta sin corregir suele estar entre 0.80 y 0.90, los kVA siempre son mayores que los kW."}},{"@type":"Question","name":"¿Qué es el factor de demanda y de dónde se sacan sus valores?","acceptedAnswer":{"@type":"Answer","text":"El factor de demanda es la relacion entre la demanda maxima real de un grupo de cargas y su carga conectada total, siempre un numero entre 0 y 1. Reconoce que las cargas no operan todas a plena potencia al mismo tiempo. Sus valores no se inventan: salen de tablas normativas de referencia para ciertos tipos de carga, de la experiencia del proyectista con plantas similares y, cuando existe, de la medicion real de una operacion equivalente. La iluminacion suele tener factor alto, mientras que las cargas intermitentes como soldadura o montacargas tienen factores bajos."}},{"@type":"Question","name":"¿Cuánto margen de reserva debo dejar sobre la demanda calculada?","acceptedAnswer":{"@type":"Answer","text":"Como orientacion general de la industria, sobre la demanda maxima proyectada se suele dejar un margen del orden del 20 al 25 por ciento para dimensionar el transformador. Ese margen cubre tres cosas distintas: el crecimiento futuro previsto en el plan de negocio, un colchon de seguridad sobre la incertidumbre del calculo, y la capacidad para absorber los picos de arranque de los motores grandes. No es una regla universal sino un criterio de ingenieria que se calibra segun lo agresivo del crecimiento y el peso de las cargas con arranque pesado."}},{"@type":"Question","name":"¿El transformador y la demanda a contratar con CFE son el mismo número?","acceptedAnswer":{"@type":"Answer","text":"No, son dos numeros distintos y mezclarlos cuesta dinero. La demanda a contratar con CFE se basa en la demanda maxima coincidente que esperas jalar de la red y se paga como cargo fijo mensual, asi que sobreestimarla es un costo recurrente. El transformador se elige por capacidad nominal estandar de fabricante e incorpora el margen de reserva y el crecimiento futuro, por lo que suele ser mayor que la demanda contratada: tiene que aguantar picos de arranque y consumo que aun no contratas."}},{"@type":"Question","name":"¿Calcular bien mis kVA garantiza que CFE me los pueda entregar?","acceptedAnswer":{"@type":"Answer","text":"No. Son dos preguntas separadas. El calculo de kVA define cuanta potencia necesita tu planta, pero no dice si la red de CFE en tu predio tiene esa capacidad disponible para entregartela. Puede haber capacidad sobrada, justa o nula, y eso se verifica aparte consultando la disponibilidad de la red antes de comprometer el proyecto. Dimensionar bien tu demanda es necesario pero insuficiente: hay que confirmar tambien que la infraestructura de la red local pueda soportarla."}}]}
+  </script>
+
+  <div class="cta-final">
+    <div class="cta-final-inner">
+      <div>
+        <h3>¿Listo para calcular los kVA reales de tu próximo proyecto?</h3>
+        <p>Hablemos con un experto. Tomamos la lista de equipos de tu planta y te entregamos los kVA a contratar, el tamaño de transformador y la memoria de cálculo en una sola conversación.</p>
+      </div>
+      <a class="btn-cta" href="/#contacto">Hablemos con un experto →</a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z" fill="#0a1620"/></svg></div><div class="brand-text">M2 <span>Energy</span></div></div>
+      <p>M2 Energy libera el crecimiento industrial en México mediante soluciones de infraestructura y generación en sitio que eliminan las limitaciones de la red.</p>
+    </div>
+    <div class="foot-col"><h5>Sitio</h5><ul><li><a href="/#hacemos">Qué Hacemos</a></li><li><a href="/#importa">Por Qué Importa</a></li><li><a href="/#trabajamos">Cómo Trabajamos</a></li><li><a href="/#resultados">Resultados</a></li><li><a href="/#industrias">Industrias</a></li><li><a href="/casos-de-exito.html">Casos de Éxito</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div class="foot-col"><h5>Compañía</h5><ul><li><a href="/#elegirnos">Por Qué Elegirnos</a></li><li><a href="/#contacto">Contacto</a></li></ul></div>
+    <div class="foot-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@m2energy.org">contacto@m2energy.org</a></li></ul></div>
+  </div>
+  <div class="foot-bar"><span>© 2026 M2E · All rights reserved</span><span>Securing energy capacity for industrial development · ⚡</span></div>
+</footer>
+
+<script src="/blog/blog.js?v=20260603" defer></script>
+</body>
+</html>
