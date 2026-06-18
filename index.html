@@ -1806,8 +1806,19 @@ let curStep = 1;
 function dl(o){ (window.dataLayer=window.dataLayer||[]).push(o); }
 let _ecraLeadFired=false, _ecraDoneFired=false;
 const ECRA_STEP_NAMES={1:'A_contacto',2:'B_proyecto',3:'C_ecra',4:'D_resultados'};
+// Validación inline del email en Sección A
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function showEmailError(el,msg){ if(!el)return; el.style.borderColor='#ef4444'; var e=el.parentNode.querySelector('.field-err'); if(!e){e=document.createElement('div');e.className='field-err';e.style.cssText='color:#ef4444;font-size:12px;margin-top:6px';el.parentNode.appendChild(e);} e.textContent=msg; el.focus(); }
+function clearEmailError(el){ if(!el)return; el.style.borderColor=''; var e=el.parentNode.querySelector('.field-err'); if(e)e.remove(); }
+(function(){ var em=document.querySelector('[data-f="email"]'); if(em) em.addEventListener('input',function(){clearEmailError(em);}); })();
 function goStep(n){
   const prev = curStep;
+  // Bloquea avanzar de Seccion A si el email tiene formato invalido
+  if(prev===1 && n>prev){
+    var emEl=document.querySelector('[data-f="email"]'); var em=emEl?emEl.value.trim():'';
+    if(em && !EMAIL_RE.test(em)){ showEmailError(emEl,'Revisa tu correo: el formato no es válido (ej. correo@empresa.com).'); return; }
+    clearEmailError(emEl);
+  }
   curStep = Math.max(1, Math.min(4, n));
   steps.forEach(s=>s.classList.toggle('active', +s.dataset.step===curStep));
   pips.forEach(p=>{
@@ -1960,7 +1971,7 @@ submitBtn.addEventListener('click', async ()=>{
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(lead),
     });
-    if(!r.ok) throw new Error('bad status '+r.status);
+    if(!r.ok){ let _resp=null; try{ _resp=await r.json(); }catch(e){} const _e=new Error('http '+r.status); _e.serverMsg=(_resp&&_resp.error)||''; throw _e; }
     document.getElementById('resultPanel').style.display='none';
     document.getElementById('nav4').style.display='none';
     document.getElementById('successPanel').style.display='block';
@@ -1970,7 +1981,7 @@ submitBtn.addEventListener('click', async ()=>{
   }catch(err){
     submitBtn.disabled = false;
     submitBtn.innerHTML = original;
-    alert('No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a marketing@m2energy.org');
+    alert(err && err.serverMsg ? err.serverMsg : 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos a marketing@m2energy.org');
   }
 });
 
