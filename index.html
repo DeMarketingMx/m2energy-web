@@ -1802,15 +1802,38 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 const steps = document.querySelectorAll('.step');
 const pips = document.querySelectorAll('.step-pip');
 let curStep = 1;
+// --- Medición ECRA (dataLayer → GTM/GA4) ---
+function dl(o){ (window.dataLayer=window.dataLayer||[]).push(o); }
+let _ecraLeadFired=false, _ecraDoneFired=false;
+const ECRA_STEP_NAMES={1:'A_contacto',2:'B_proyecto',3:'C_ecra',4:'D_resultados'};
 function goStep(n){
+  const prev = curStep;
   curStep = Math.max(1, Math.min(4, n));
   steps.forEach(s=>s.classList.toggle('active', +s.dataset.step===curStep));
   pips.forEach(p=>{
-    const n=+p.dataset.pip;
-    p.classList.toggle('active', n===curStep);
-    p.classList.toggle('done', n<curStep);
+    const k=+p.dataset.pip;
+    p.classList.toggle('active', k===curStep);
+    p.classList.toggle('done', k<curStep);
   });
   if(curStep===4) renderResults();
+  // Eventos de embudo (solo al avanzar)
+  try{
+    if(curStep>prev){
+      dl({event:'ecra_step', step_number:curStep, step_name:ECRA_STEP_NAMES[curStep]});
+      if(prev===1 && curStep===2 && !_ecraLeadFired){
+        const c=document.querySelector('[data-f="company"]')?.value.trim();
+        const nm=document.querySelector('[data-f="name"]')?.value.trim();
+        const em=document.querySelector('[data-f="email"]')?.value.trim();
+        if(c && nm && em){ _ecraLeadFired=true; dl({event:'generate_lead', form_name:'ecra', form_step:'A_contacto'}); }
+      }
+      if(curStep===4 && !_ecraDoneFired){
+        _ecraDoneFired=true;
+        dl({event:'ecra_complete',
+            ecra_score: parseInt(document.getElementById('rScore').textContent,10)||null,
+            ecra_risk_level: document.getElementById('rBadge').textContent.trim()});
+      }
+    }
+  }catch(e){}
 }
 document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click', ()=>goStep(curStep+1)));
 document.querySelectorAll('[data-prev]').forEach(b=>b.addEventListener('click', ()=>{
@@ -1941,6 +1964,9 @@ submitBtn.addEventListener('click', async ()=>{
     document.getElementById('resultPanel').style.display='none';
     document.getElementById('nav4').style.display='none';
     document.getElementById('successPanel').style.display='block';
+    // Conversión dura: lead + diagnóstico enviados al equipo
+    try{ dl({event:'ecra_submit', ecra_score:lead.score, ecra_risk_level:lead.riskLevel,
+             project_type: Array.isArray(lead.ptype)?lead.ptype.join(', '):lead.ptype}); }catch(e){}
   }catch(err){
     submitBtn.disabled = false;
     submitBtn.innerHTML = original;
