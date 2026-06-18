@@ -1,0 +1,7 @@
+# M2 Energy — robots.txt
+# Permitimos el rastreo completo del sitio (buscadores y motores de IA/GEO).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://m2energy.org/sitemap.xml
