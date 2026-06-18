@@ -1990,6 +1990,25 @@ submitBtn.addEventListener('click', async ()=>{
    ========================================================= */
 resizeSvg();
 buildAnchors();
+
+/* --- Micro-conversiones (dataLayer → GTM/GA4) --- */
+// view_contact: vio la sección del formulario ECRA (una sola vez)
+(function(){
+  var sec = document.getElementById('contacto');
+  if(sec && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ dl({event:'view_contact'}); io.disconnect(); }
+      });
+    }, {threshold:0});
+    io.observe(sec);
+  }
+})();
+// cta_click: clic en cualquier enlace que lleva al formulario (#contacto)
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest && e.target.closest('a[href="#contacto"]');
+  if(a){ try{ dl({event:'cta_click', cta:(a.textContent||'').trim().replace(/\s+/g,' ').slice(0,60)}); }catch(_){} }
+});
 seedAmbient();
 applyCfg();
 scheduleArcs();
