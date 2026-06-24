@@ -118,7 +118,10 @@ window.M2_TRANSLATIONS = {
       card2Desc: 'Carga crítica y cero fallas. Garantizamos carga constante y cero margen de error 24/7.',
       card3Num: 'Sector 03',
       card3Title: 'Parques Industriales',
-      card3Desc: 'Infraestructura llave en mano para parques industriales y centros de distribución de alta escala.'
+      card3Desc: 'Infraestructura llave en mano para parques industriales y centros de distribución de alta escala.',
+      card4Num: 'Sector 04',
+      card4Title: 'Centros de Carga en Media Tensión',
+      card4Desc: 'Centros comerciales, tiendas departamentales, cadenas de autoservicio y desarrollos de vivienda que demandan suministro confiable en media tensión.'
     },
 
     elegirnos: {
@@ -144,7 +147,7 @@ window.M2_TRANSLATIONS = {
       contactPhone: 'Llámanos',
       contactEmail: 'Email',
       contactOffices: 'Oficinas',
-      contactOfficesVal: '<span>Austin, TX</span><span>CDMX, MX</span><span>Monterrey, NL</span><span>Chihuahua, Chih</span>',
+      contactOfficesVal: '<span>Monterrey, NL</span><span>CDMX, MX</span><span>Chihuahua, Chih</span><span>Austin, TX</span>',
       stepALabel: 'Sección A · Contacto',
       stepAH4: 'Información de contacto',
       labelCompany: 'Empresa',
@@ -340,7 +343,7 @@ window.M2_TRANSLATIONS = {
       breadcrumbHome: 'Inicio',
       breadcrumbCurrent: 'Casos de Éxito',
       heroKicker: 'Casos de Éxito',
-      heroH1: 'Proyectos que <span>destrabaron la industria.</span>',
+      heroH1: 'Proyectos que <span>destrabaron el desarrollo industrial.</span>',
       heroP: 'Una década de experiencia ejecutando proyectos críticos de infraestructura eléctrica, generación en sitio, cogeneración y solar a lo largo de México — siempre llave en mano.',
       intro: 'A continuación se listan proyectos representativos de distintas soluciones y servicios que nuestro equipo ha llevado a cabo: cogeneración y trigeneración, expansión y construcción de subestaciones, sistemas de respaldo, paneles solares e infraestructura llave en mano. Cada caso resolvió un reto real de capacidad eléctrica, continuidad operativa o reducción de costos energéticos.',
       metaService: 'Servicio',
@@ -440,7 +443,7 @@ window.M2_TRANSLATIONS = {
     /* (legacy) inline casos block on home — kept for compatibility */
     casos: {
       kicker: 'Casos de Éxito',
-      title: 'Proyectos que destrabaron <span class="amber">la industria.</span>',
+      title: 'Proyectos que destrabaron <span class="amber">el desarrollo industrial.</span>',
       intro: 'A continuación se listan proyectos representativos de distintas soluciones y servicios que nuestro equipo ha llevado a cabo: cogeneración y trigeneración, expansión y construcción de subestaciones, sistemas de respaldo, paneles solares e infraestructura llave en mano. Cada caso resolvió un reto real de capacidad eléctrica, continuidad operativa o reducción de costos energéticos.',
       statusDelivered: 'Proyecto terminado',
       statusOperating: 'En operación',
@@ -781,7 +784,10 @@ window.M2_TRANSLATIONS = {
       card2Desc: 'Critical load and zero failures. We guarantee constant load and zero margin of error 24/7.',
       card3Num: 'Sector 03',
       card3Title: 'Industrial Parks',
-      card3Desc: 'Turnkey infrastructure for industrial parks and large-scale distribution centers.'
+      card3Desc: 'Turnkey infrastructure for industrial parks and large-scale distribution centers.',
+      card4Num: 'Sector 04',
+      card4Title: 'Medium-Voltage Load Centers',
+      card4Desc: 'Shopping malls, department stores, retail chains and housing developments that require reliable medium-voltage supply.'
     },
 
     elegirnos: {
@@ -807,7 +813,7 @@ window.M2_TRANSLATIONS = {
       contactPhone: 'Call Us',
       contactEmail: 'Email',
       contactOffices: 'Offices',
-      contactOfficesVal: '<span>Austin, TX</span><span>CDMX, MX</span><span>Monterrey, NL</span><span>Chihuahua, Chih</span>',
+      contactOfficesVal: '<span>Monterrey, NL</span><span>CDMX, MX</span><span>Chihuahua, Chih</span><span>Austin, TX</span>',
       stepALabel: 'Section A · Contact',
       stepAH4: 'Contact information',
       labelCompany: 'Company',
@@ -1003,7 +1009,7 @@ window.M2_TRANSLATIONS = {
       breadcrumbHome: 'Home',
       breadcrumbCurrent: 'Success Stories',
       heroKicker: 'Success Stories',
-      heroH1: 'Projects that <span>unlocked industry.</span>',
+      heroH1: 'Projects that <span>unlocked industrial development.</span>',
       heroP: 'A decade of experience executing critical projects in electrical infrastructure, on-site generation, cogeneration and solar across México — always turnkey.',
       intro: 'Below are representative projects across the different solutions and services our team has delivered: cogeneration and trigeneration, substation expansion and construction, backup systems, solar PV and turnkey infrastructure. Each case solved a real challenge of grid capacity, operational continuity or energy cost reduction.',
       metaService: 'Service',
@@ -1103,7 +1109,7 @@ window.M2_TRANSLATIONS = {
     /* (legacy) inline casos block on home — kept for compatibility */
     casos: {
       kicker: 'Success Stories',
-      title: 'Projects that unlocked <span class="amber">industry.</span>',
+      title: 'Projects that unlocked <span class="amber">industrial development.</span>',
       intro: 'Below are representative projects across the different solutions and services our team has delivered: cogeneration and trigeneration, substation expansion and construction, backup systems, solar PV and turnkey infrastructure. Each case solved a real challenge of grid capacity, operational continuity or energy cost reduction.',
       statusDelivered: 'Project completed',
       statusOperating: 'In operation',

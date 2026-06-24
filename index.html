@@ -317,7 +317,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .svc-card:hover .svc-bg{transform:scale(1.15)}
   .svc-card-1 .svc-bg{background-image:url('assets/images/photos/foto-intercambiadores-calor.jpg');background-position:center center}
   .svc-card-2 .svc-bg{background-image:url('assets/images/photos/foto-generacion-minero-dia.jpg');background-position:center center}
-  .svc-card-3 .svc-bg{background-image:url('assets/images/photos/foto-solar-tiendas.jpg');background-position:center}
+  .svc-card-3 .svc-bg{background-image:url('assets/images/photos/foto-solar-bess.jpg');background-position:center}
   .svc-card .svc-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 35%,rgba(6,14,22,.88) 78%)}
   .svc-card .svc-body{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
   .svc-card::before{
@@ -431,7 +431,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .res-desc{font-size:13.5px;color:var(--ink-dim);line-height:1.55}
 
   /* ---------- Industries ---------- */
-  .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+  .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
   .ind-card{
     position:relative;padding:0;border-radius:18px;overflow:hidden;
     aspect-ratio:4/5;cursor:pointer;
@@ -452,6 +452,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ind-pattern-1{background-image:url('assets/images/photos/foto-motor-cat-instalacion.jpg');background-size:cover;background-position:center}
   .ind-pattern-2{background-image:url('assets/images/photos/foto-switchgear-mt.jpg');background-size:cover;background-position:center}
   .ind-pattern-3{background-image:url('assets/images/photos/foto-subestacion-230kv.jpg');background-size:cover;background-position:center}
+  .ind-pattern-4{background-image:url('assets/images/photos/foto-centros-comerciales.jpg');background-size:cover;background-position:center}
 
   /* ---------- Casos de éxito ---------- */
   .casos-intro{margin-top:18px;font-size:16px;line-height:1.7;color:var(--ink-dim);max-width:820px;text-wrap:pretty}
@@ -1141,6 +1142,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p data-i18n="industrias.card3Desc">Infraestructura llave en mano para parques industriales y centros de distribución de alta escala.</p>
         </div>
       </article>
+      <article class="ind-card rv rv-4">
+        <div class="ind-bg ind-pattern-4"></div>
+        <div class="ind-overlay"></div>
+        <div class="ind-body">
+          <span class="ind-num" data-i18n="industrias.card4Num">Sector 04</span>
+          <h3 data-i18n="industrias.card4Title">Centros de Carga en Media Tensión</h3>
+          <p data-i18n="industrias.card4Desc">Centros comerciales, tiendas departamentales, cadenas de autoservicio y desarrollos de vivienda que demandan suministro confiable en media tensión.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1182,7 +1192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.11 1 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 013.19 4.11 1 1 0 014.18 3h4.09a1 1 0 011 .75 12.84 12.84 0 00.7 2.81 1 1 0 01-.22 1.05L8.09 9.29a16 16 0 006 6l1.68-1.68a1 1 0 011-.22 12.84 12.84 0 002.82.7 1 1 0 01.75 1z"/></svg></div>
             <div>
               <div class="k" data-i18n="contacto.contactPhone">Llámanos</div>
-              <div class="v"><a href="tel:+15125046581" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+1 (512) 504-6581 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· US</span></a></div>
+              <div class="v"><a href="tel:+527772287856" style="color:inherit;text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='inherit'">+52 777 228 7856 <span style="font-size:11px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;letter-spacing:.1em">· MX</span></a></div>
             </div>
           </div>
           <div class="meta-item">
@@ -1191,7 +1201,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="meta-item">
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v offices-list" data-i18n-html="contacto.contactOfficesVal" style="display:flex;flex-direction:column;gap:10px"><span>Austin, TX</span><span>CDMX, MX</span><span>Monterrey, NL</span><span>Chihuahua, Chih</span></div></div>
+            <div><div class="k" data-i18n="contacto.contactOffices">Oficinas</div><div class="v offices-list" data-i18n-html="contacto.contactOfficesVal" style="display:flex;flex-direction:column;gap:10px"><span>Monterrey, NL</span><span>CDMX, MX</span><span>Chihuahua, Chih</span><span>Austin, TX</span></div></div>
           </div>
         </div>
       </div>
@@ -1407,12 +1417,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot-col">
       <h5 data-i18n="footer.contactHeader">Contacto</h5>
       <ul>
-        <li>Austin, TX</li>
-        <li>CDMX, MX</li>
         <li>Monterrey, NL</li>
+        <li>CDMX, MX</li>
         <li>Chihuahua, Chih</li>
+        <li>Austin, TX</li>
         <li><a href="mailto:marketing@m2energy.org">marketing@m2energy.org</a></li>
-        <li><a href="tel:+15125046581">+1 (512) 504-6581 · US</a></li>
+        <li><a href="tel:+527772287856">+52 777 228 7856 · MX</a></li>
       </ul>
     </div>
   </div>
