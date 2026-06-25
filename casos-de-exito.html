@@ -144,6 +144,20 @@ footer ul a:hover{color:var(--amber)}
   .foot-grid{grid-template-columns:1fr 1fr}
   .case-meta-row{grid-template-columns:1fr;gap:4px}
 }
+.case-lead{margin-top:24px;padding:20px 22px;border:1px solid var(--line-str);border-radius:14px;background:rgba(246,190,31,.05);}
+.case-lead-text{display:flex;flex-direction:column;gap:3px;margin-bottom:14px}
+.case-lead-text strong{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink)}
+.case-lead-text span{font-size:13px;color:var(--ink-dim)}
+.case-lead-fields{display:grid;grid-template-columns:1fr 1fr auto;gap:10px}
+.case-lead input{background:rgba(7,17,26,.6);border:1px solid var(--line-str);border-radius:9px;padding:11px 14px;color:var(--ink);font-size:14px;font-family:inherit;min-width:0}
+.case-lead input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 2px rgba(246,190,31,.25)}
+.case-lead input::placeholder{color:var(--ink-mute)}
+.case-lead button{background:var(--amber);color:#0a1620;border:none;border-radius:9px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.case-lead button:hover{transform:translateY(-1px);box-shadow:0 8px 20px -6px rgba(246,190,31,.6)}
+.case-lead button:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none}
+.case-lead-feedback{margin:12px 0 0;font-size:13.5px}
+.case-lead-feedback.ok{color:#7be39e}.case-lead-feedback.err{color:#ff9a9a}
+@media(max-width:768px){.case-lead-fields{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -216,6 +230,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c1Result">28 MW asegurados · ahorro &gt;$20 MDP MXN en obras de conexión</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-01" data-caso-titulo="Construcción de subestación 230/13.8 kV para parque industrial">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -243,6 +269,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c2Result">+15 MW de demanda incremental aprobada por CENACE</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-02" data-caso-titulo="Ampliación de subestación 115/13.8 kV en planta industrial">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -270,6 +308,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c3Result">80 MW asegurados · ahorro &gt;$20 MDP MXN en conexión</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-03" data-caso-titulo="Subestación 230/13.8 kV en parque industrial fronterizo">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -297,6 +347,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c4Result">108 MW capturados · ahorro &gt;$449 MDP MXN</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusDelivered">Proyecto terminado</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-04" data-caso-titulo="Subestación 230/13.8 kV con ahorros millonarios en obras de conexión">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -324,6 +386,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c5Result">Energía continua para alumbrado público a 2 municipios</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-05" data-caso-titulo="Cogeneración continua con biogás de relleno sanitario">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -351,6 +425,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c6Result">Energía + frío industrial integrados · ahorro operativo en refrigeración</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-06" data-caso-titulo="Trigeneración con frío subzero para empresa de alimentos">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -378,6 +464,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c7Result">Operación 24/7 aislada de la red, sin interrupciones</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-07" data-caso-titulo="Generación eléctrica 24/7 a diésel para sitio remoto">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -405,6 +503,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c8Result">Respaldo robusto en MV con tiempos de entrega reducidos</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-08" data-caso-titulo="Respaldo en media tensión para fábrica industrial">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -432,6 +542,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c9Result">40 tiendas operando con generación solar interconectada</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-09" data-caso-titulo="Solar fotovoltaico en 40 tiendas de conveniencia">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -459,6 +581,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaResult">Resultado</span><span class="v" data-i18n="ce.c10Result">Respaldo de cargas críticas en estación de compresión</span></div>
           <div class="case-meta-row"><span class="k" data-i18n="ce.metaStatus">Estatus</span><span class="v"><span class="case-status" data-i18n="ce.statusOperating">En operación</span></span></div>
         </div>
+        <form class="case-lead" data-caso="caso-10" data-caso-titulo="Respaldo eléctrico para estación de compresión de gas natural">
+          <div class="case-lead-text">
+            <strong data-i18n="ce.leadTitle">¿Tu proyecto se parece a este?</strong>
+            <span data-i18n="ce.leadSub">Cuéntanos tu reto y en 5 minutos te decimos cómo lo resolvemos.</span>
+          </div>
+          <div class="case-lead-fields">
+            <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+            <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+            <button type="submit" data-i18n="ce.leadBtn">Quiero un diagnóstico →</button>
+          </div>
+          <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -536,6 +670,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+</script>
+<script>
+(function(){
+  document.querySelectorAll('form.case-lead').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nm=f.querySelector('[name="name"]').value.trim();
+      var em=f.querySelector('[name="email"]').value.trim();
+      var fb=f.querySelector('.case-lead-feedback');
+      var btn=f.querySelector('button[type="submit"]');
+      var lang=(window.M2i18n&&M2i18n.lang)||document.documentElement.lang||'es';
+      var t=function(es,en){return lang==='en'?en:es;};
+      fb.hidden=false; fb.className='case-lead-feedback';
+      if(!nm||!em){fb.classList.add('err');fb.textContent=t('Completa nombre y correo.','Please enter name and email.');return;}
+      var caso=f.getAttribute('data-caso'), titulo=f.getAttribute('data-caso-titulo');
+      var orig=btn.textContent; btn.disabled=true; btn.textContent=t('Enviando…','Sending…');
+      fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:nm,email:em,source:'Casos de Éxito',ptype:titulo,
+          msg:'Lead desde el caso: '+titulo+' ('+caso+')'})})
+      .then(function(r){return r.json().catch(function(){return {ok:r.ok};});})
+      .then(function(d){
+        if(d&&d.ok){
+          window.dataLayer=window.dataLayer||[];
+          window.dataLayer.push({event:'generate_lead',lead_source:'caso_exito',case_id:caso,case_title:titulo,form_location:'casos-de-exito'});
+          f.querySelectorAll('input,button').forEach(function(el){el.disabled=true;});
+          fb.classList.add('ok');fb.textContent=t('¡Gracias! Te contactamos en breve.','Thank you! We will reach out shortly.');
+        } else {
+          btn.disabled=false;btn.textContent=orig;fb.classList.add('err');
+          fb.textContent=t('No se pudo enviar. Escríbenos a contacto@m2energy.org.','Could not send. Email us at contacto@m2energy.org.');
+        }
+      })
+      .catch(function(){btn.disabled=false;btn.textContent=orig;fb.classList.add('err');
+        fb.textContent=t('Error de conexión. Intenta de nuevo.','Connection error. Please try again.');});
+    });
+  });
+})();
 </script>
 </body>
 </html>

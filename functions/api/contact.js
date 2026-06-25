@@ -40,8 +40,8 @@ export async function onRequestPost({ request, env }) {
   const name = (data.name || '').trim();
   const email = (data.email || '').trim();
   const company = (data.company || '').trim();
-  if (!name || !email || !company) {
-    return new Response(JSON.stringify({ ok: false, error: 'Faltan campos obligatorios (empresa, nombre, email).' }), { status: 422, headers: JSON_HEADERS });
+  if (!name || !email) {
+    return new Response(JSON.stringify({ ok: false, error: 'Faltan campos obligatorios (nombre, email).' }), { status: 422, headers: JSON_HEADERS });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return new Response(JSON.stringify({ ok: false, error: 'Email inválido.' }), { status: 422, headers: JSON_HEADERS });
@@ -52,7 +52,7 @@ export async function onRequestPost({ request, env }) {
   const html = `<div style="max-width:640px;margin:0 auto;background:#fff;border:1px solid #e4e9ee;border-radius:12px;overflow:hidden">
     <div style="background:#0d1a23;padding:20px 24px">
       <div style="color:#f6be1f;font:700 13px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase">Nuevo lead · M2 Energy</div>
-      <div style="color:#fff;font:600 20px/1.3 system-ui,sans-serif;margin-top:6px">${esc(company)} — Score ECRA ${esc(data.score ?? '—')}</div>
+      <div style="color:#fff;font:600 20px/1.3 system-ui,sans-serif;margin-top:6px">${esc(company || data.source || 'Nuevo lead')}${(data.score !== undefined && data.score !== null && data.score !== '') ? ' — Score ECRA ' + esc(data.score) : ''}</div>
     </div>
     <div style="padding:20px 24px">
       <table style="border-collapse:collapse;width:100%">
@@ -85,7 +85,7 @@ export async function onRequestPost({ request, env }) {
     from: env.LEAD_FROM || DEFAULT_FROM,
     to: (env.LEAD_TO || DEFAULT_TO).split(',').map(s => s.trim()),
     reply_to: email,
-    subject: `Lead M2E · ${company} (${name})`,
+    subject: `Lead M2E · ${company || data.source || 'Web'} (${name})`,
     html,
   };
 
