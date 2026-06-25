@@ -158,6 +158,9 @@ footer ul a:hover{color:var(--amber)}
 .case-lead-feedback{margin:12px 0 0;font-size:13.5px}
 .case-lead-feedback.ok{color:#7be39e}.case-lead-feedback.err{color:#ff9a9a}
 @media(max-width:768px){.case-lead-fields{grid-template-columns:1fr}}
+.cta-banner .cta-lead{margin-top:0;padding:0;border:none;background:transparent;min-width:280px}
+.cta-banner .cta-lead .case-lead-fields{grid-template-columns:1fr}
+@media(max-width:768px){.cta-banner .cta-lead{min-width:0;width:100%}}
 </style>
 </head>
 <body>
@@ -607,7 +610,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p data-i18n="ce.ctaP">En 5 minutos diagnosticamos tu reto energético y te decimos cómo lo resolvemos — con la misma metodología EPC llave en mano.</p>
         <a href="/" class="btn-secondary-outline" style="margin-top:0" data-i18n="ce.ctaBack">← Volver al inicio</a>
       </div>
-      <a href="/#contacto" class="btn-cta" data-i18n="ce.ctaBtn">Agendar diagnóstico →</a>
+      <form class="case-lead cta-lead" data-caso="cta-final" data-caso-titulo="Casos de Éxito — diagnóstico general">
+        <div class="case-lead-fields">
+          <input type="text" name="name" required autocomplete="name" placeholder="Nombre" data-i18n-placeholder="ce.leadName" aria-label="Nombre"/>
+          <input type="email" name="email" required autocomplete="email" placeholder="Correo" data-i18n-placeholder="ce.leadEmail" aria-label="Correo"/>
+          <button type="submit" data-i18n="ce.ctaBtn">Agendar diagnóstico →</button>
+        </div>
+        <p class="case-lead-feedback" role="status" aria-live="polite" hidden></p>
+      </form>
     </div>
   </div>
 </section>
