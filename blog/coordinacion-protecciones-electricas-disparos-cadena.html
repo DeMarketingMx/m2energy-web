@@ -129,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Separación vertical entre curvas:</strong> es el margen de coordinación, el tiempo que garantiza que el de abajo despeje la falla antes de que el de arriba reaccione.</li>
       </ul>
 
-      <p>Software especializado dibuja las curvas reales de cada dispositivo según su marca, modelo y ajuste, y permite verificar márgenes y proponer nuevos ajustes sin tocar físicamente la instalación.</p>
+      <p>Software especializado dibuja las curvas reales de cada dispositivo según su marca, modelo y ajuste, y permite verificar márgenes y proponer nuevos ajustes sin tocar físicamente la instalación. Una vez en operación, un sistema de <a href="/blog/scada-monitoreo-electrico-tiempo-real-industria">SCADA y monitoreo eléctrico en tiempo real</a> registra cada disparo y deja ver si las protecciones actúan como las dejó coordinadas el estudio.</p>
 
       <h2 id="elementos-y-funciones-de-proteccion">Elementos y funciones de protección involucrados</h2>
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Interruptores termomagnéticos.</strong> Disparo térmico para sobrecargas y magnético para cortocircuitos. Los de mayor capacidad traen unidades de disparo electrónicas ajustables.</li>
         <li><strong>Relevador de sobrecorriente (50/51).</strong> El caballo de batalla de la coordinación en media tensión. La función <strong>51</strong> es de tiempo inverso (más rápido a mayor corriente) y la <strong>50</strong> es instantánea (dispara sobre cierto umbral). Ajustando ambas se moldea la curva.</li>
         <li><strong>Protección diferencial (87).</strong> Compara la corriente que entra con la que sale de una zona —transformador, bus, motor grande— y dispara si no coinciden, señal de falla interna. Es selectiva por naturaleza: sólo ve su propia zona.</li>
-        <li><strong>Bajo y sobre voltaje (27/59).</strong> La <strong>27</strong> protege contra caídas de tensión y la <strong>59</strong> contra sobretensiones, ambas dañinas para motores y electrónica de proceso.</li>
+        <li><strong>Bajo y sobre voltaje (27/59).</strong> La <strong>27</strong> protege contra caídas de tensión y la <strong>59</strong> contra sobretensiones, ambas dañinas para motores y electrónica de proceso; las sobretensiones de origen externo se atajan además con <a href="/blog/proteccion-descargas-atmosfericas-pararrayos-planta">protección contra descargas atmosféricas (pararrayos)</a> en la entrada de la planta.</li>
       </ul>
 
       <p>La coordinación se centra en los dispositivos de sobrecorriente (fusibles, termomagnéticos, 50/51), porque son los que ven la misma corriente de falla en serie y, por lo tanto, los que pueden disparar de más. La diferencial (87) y las de voltaje (27/59) complementan el esquema bajo otra lógica.</p>

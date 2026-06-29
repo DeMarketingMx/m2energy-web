@@ -113,7 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Transformadores</strong> — Una unidad adicional en N+1; un juego espejado completo en 2N.</li>
         <li><strong>Tableros y barras de distribución</strong> — Tableros principales y rutas de distribución duplicadas para que ninguna barra sea punto único de falla.</li>
         <li><strong>UPS</strong> — Respaldo instantáneo para la transición y para cargas que no toleran ni un parpadeo. En N+1, un módulo extra; en 2N, dos sistemas de UPS independientes.</li>
-        <li><strong>Generadores</strong> — Respaldo de mediano y largo plazo ante la pérdida de la red. Uno adicional en N+1; bancos espejados en 2N.</li>
+        <li><strong>Generadores</strong> — Respaldo de mediano y largo plazo ante la pérdida de la red. Uno adicional en N+1; bancos espejados en 2N. En ambos casos, el paso previo es <a href="/blog/dimensionar-planta-emergencia-generador-industria">cómo dimensionar una planta de emergencia / generador</a> a la carga crítica que debe sostener.</li>
         <li><strong>Rutas de distribución completas</strong> — En 2N, dos caminos eléctricos paralelos de principio a fin, sin compartir canalizaciones ni tableros críticos.</li>
       </ul>
 
@@ -132,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p>El primero es la tolerancia a una falla simple: si un transformador o un UPS sale de operación, el componente extra absorbe la carga sin interrupción. El segundo, igual de valioso en el día a día, es el <strong>mantenimiento concurrente</strong>: el equipo de operación puede sacar de servicio cualquier unidad para inspección, prueba o reemplazo mientras el resto del conjunto sostiene la carga, sin programar un paro de planta. Eso convierte el mantenimiento preventivo de una pesadilla logística en una tarea de rutina.</p>
 
-      <p>El límite de N+1 hay que tenerlo claro: cubre una falla a la vez. Si falla el componente extra y luego falla otro antes de repararlo, o si una sola contingencia afecta a varios elementos a la vez (un incendio en un cuarto eléctrico, una inundación de la canalización común), la protección se acaba. Para entender por qué la red pública es justamente esa fuente de fallas que N+1 busca amortiguar, vale la pena revisar las <a href="/blog/uptime-electrico-industrial-fallas-red-cfe">5 fallas comunes en la red CFE y cómo blindar tu planta</a>.</p>
+      <p>El límite de N+1 hay que tenerlo claro: cubre una falla a la vez. Si falla el componente extra y luego falla otro antes de repararlo, o si una sola contingencia afecta a varios elementos a la vez (un incendio en un cuarto eléctrico, una inundación de la canalización común, o un rayo que entra por la acometida y golpea varias ramas, donde lo que protege es un buen esquema de <a href="/blog/proteccion-descargas-atmosfericas-pararrayos-planta">protección contra descargas atmosféricas (pararrayos)</a>), la protección se acaba. Para entender por qué la red pública es justamente esa fuente de fallas que N+1 busca amortiguar, vale la pena revisar las <a href="/blog/uptime-electrico-industrial-fallas-red-cfe">5 fallas comunes en la red CFE y cómo blindar tu planta</a>.</p>
 
       <div class="key-takeaway">
         <div class="key-takeaway-label">Insight clave</div>
@@ -164,7 +164,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ol>
         <li><strong>2N (o 2N+1)</strong> — Data centers, farmacéutica, cadena de frío y procesos continuos (química, vidrio, fundición, papel). Aquí una interrupción arruina lotes completos, rompe la cadena de frío, dispara sanciones regulatorias o daña el equipo de proceso. El costo por hora justifica la duplicación total.</li>
         <li><strong>N+1</strong> — Manufactura crítica: automotriz, electrónica, alimentos procesados, líneas con alto costo de arranque. El paro duele, pero una falla simple bien cubierta y el mantenimiento concurrente resuelven el 95% de los escenarios sin pagar la prima de 2N.</li>
-        <li><strong>N con respaldo básico</strong> — Operaciones donde una interrupción corta es absorbible: un generador y un ATS para sostener lo esencial bastan. Pagar redundancia plena aquí es capital inmovilizado sin retorno.</li>
+        <li><strong>N con respaldo básico</strong> — Operaciones donde una interrupción corta es absorbible: un <a href="/blog/plan-respaldo-electrico-ups-generador-ats">plan de respaldo eléctrico (UPS, generador y ATS)</a> para sostener lo esencial basta. Pagar redundancia plena aquí es capital inmovilizado sin retorno.</li>
       </ol>
 
       <p>Conviene también escalonar la arquitectura por criticidad <em>dentro</em> de la misma planta: no toda la carga merece 2N. Lo común y lo eficiente es proteger en 2N únicamente el corazón del proceso y las cargas que no toleran ni un parpadeo, dejar el resto de la operación en N+1, y los servicios no esenciales en N. Diseñar todo al nivel del componente más crítico es el error que infla el presupuesto sin mover la disponibilidad real del negocio.</p>
