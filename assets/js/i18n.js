@@ -80,7 +80,14 @@
   }
 
   window.M2i18n = {
-    init: function () { applyLang(getLang()); },
+    init: function () {
+      // ?lang=en|es en la URL manda (links directos localizados); si no, lo guardado.
+      try {
+        var q = (location.search.match(/[?&]lang=(en|es)/) || [])[1];
+        if (q) setLang(q);
+      } catch (e) {}
+      applyLang(getLang());
+    },
     toggle: function () {
       var next = getLang() === 'es' ? 'en' : 'es';
       setLang(next);

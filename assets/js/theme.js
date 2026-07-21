@@ -19,17 +19,33 @@
     syncButton();
   }
 
+  // Etiquetas por idioma. El botón siempre ofrece cambiar a la OTRA versión.
+  var STR = {
+    es: { light: 'Clara', dark: 'Oscura', aria: 'Cambiar versión de color del sitio',
+          toLight: 'Cambiar a versión clara', toDark: 'Cambiar a versión oscura' },
+    en: { light: 'Light', dark: 'Dark', aria: 'Toggle site color version',
+          toLight: 'Switch to light version', toDark: 'Switch to dark version' }
+  };
+  function lang() {
+    try {
+      if (window.M2i18n && M2i18n.getLang) return M2i18n.getLang();
+    } catch (e) {}
+    var l = document.documentElement.lang || 'es';
+    return l.indexOf('en') === 0 ? 'en' : 'es';
+  }
+
   function syncButton() {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
     var isLight = current() === 'light';
-    // El botón ofrece cambiar a la OTRA versión.
+    var s = STR[lang()] || STR.es;
     var icon = btn.querySelector('.theme-ico');
     var label = btn.querySelector('.theme-lbl');
     if (icon) icon.textContent = isLight ? '\u{1F319}' : '☀️'; // 🌙 / ☀️
-    if (label) label.textContent = isLight ? 'Oscura' : 'Clara';
+    if (label) label.textContent = isLight ? s.dark : s.light;
+    btn.setAttribute('aria-label', s.aria);
     btn.setAttribute('aria-pressed', String(isLight));
-    btn.setAttribute('title', isLight ? 'Cambiar a versión oscura' : 'Cambiar a versión clara');
+    btn.setAttribute('title', isLight ? s.toDark : s.toLight);
   }
 
   function injectStyles() {
@@ -86,6 +102,12 @@
       }
     }
     syncButton();
+    // Re-localiza la etiqueta cuando i18n cambia el idioma (fija html[lang]/data-lang)
+    try {
+      new MutationObserver(syncButton).observe(document.documentElement, {
+        attributes: true, attributeFilter: ['lang', 'data-lang']
+      });
+    } catch (e) {}
   }
 
   // Estado inicial: ?theme= en la URL manda (para links directos al comparativo),
