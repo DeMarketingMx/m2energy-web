@@ -52,17 +52,23 @@
     if (document.getElementById('m2-theme-css')) return;
     var css = document.createElement('style');
     css.id = 'm2-theme-css';
+    // Mismas características que el toggle de idioma (.lang-toggle):
+    // relleno ámbar, texto oscuro, glow pulsante, misma forma/tamaño.
     css.textContent =
-      '.theme-toggle{display:inline-flex;align-items:center;gap:7px;cursor:pointer;' +
-      'font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;' +
-      'padding:8px 14px;border-radius:999px;border:1px solid var(--line-str,rgba(255,255,255,.18));' +
-      'background:var(--amber-soft,rgba(246,190,31,.10));color:var(--ink,#fafcff);' +
-      'transition:transform .2s,border-color .2s,background .2s;line-height:1;white-space:nowrap;}' +
-      '.theme-toggle:hover{transform:translateY(-1px);border-color:var(--amber);' +
-      'background:var(--amber-soft,rgba(246,190,31,.18));}' +
+      '.theme-toggle{display:inline-flex;align-items:center;gap:8px;cursor:pointer;' +
+      "font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12.5px;" +
+      'letter-spacing:.08em;text-transform:uppercase;line-height:1;white-space:nowrap;' +
+      'padding:10px 18px;border:none;border-radius:999px;' +
+      'background:var(--amber,#f6be1f);color:#0a1620;' +
+      'animation:m2ThemePulse 2.8s ease-in-out infinite;' +
+      'transition:transform .2s, box-shadow .2s;}' +
+      '.theme-toggle:hover{transform:translateY(-1px);animation:none;' +
+      'box-shadow:0 0 0 2px rgba(246,190,31,.55),0 0 32px 8px rgba(246,190,31,.55),0 10px 28px -4px rgba(246,190,31,.8);}' +
       '.theme-toggle .theme-ico{font-size:14px;line-height:1;}' +
-      '.theme-toggle.is-float{position:fixed;right:18px;bottom:18px;z-index:9999;' +
-      'box-shadow:0 8px 28px -8px rgba(0,0,0,.5);backdrop-filter:blur(8px);}';
+      '.theme-toggle.is-float{position:fixed;right:18px;bottom:18px;z-index:9999;}' +
+      '@keyframes m2ThemePulse{' +
+      '0%,100%{box-shadow:0 0 0 2px rgba(246,190,31,.30),0 0 16px 3px rgba(246,190,31,.32),0 6px 18px -4px rgba(246,190,31,.5);}' +
+      '50%{box-shadow:0 0 0 3px rgba(246,190,31,.50),0 0 28px 7px rgba(246,190,31,.55),0 6px 22px -4px rgba(246,190,31,.75);}}';
     document.head.appendChild(css);
   }
 
@@ -91,11 +97,11 @@
     var btn = makeButton();
     var lang = document.getElementById('langToggle');
     if (lang && lang.parentNode) {
-      lang.parentNode.insertBefore(btn, lang); // a la izquierda del toggle de idioma
+      lang.parentNode.insertBefore(btn, lang.nextSibling); // a la DERECHA del idioma (esquina)
     } else {
       var right = document.querySelector('.nav-right');
       if (right) {
-        right.insertBefore(btn, right.firstChild);
+        right.appendChild(btn); // esquina derecha
       } else {
         btn.classList.add('is-float'); // fallback: pill flotante
         document.body.appendChild(btn);
