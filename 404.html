@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
+<script>try{if(localStorage.getItem('m2-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 <meta charset="utf-8"/>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -35,8 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--amber) 0%,#e0a417 100%);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(246,190,31,.6)}
   .brand-mark svg{width:18px;height:18px}
   .brand-text{font-family:'Space Grotesk',sans-serif;font-size:18px}
-  .brand-text span{color:var(--amber)}
-  .code{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.28em;color:var(--amber);text-transform:uppercase}
+  .brand-text span{color:var(--amber-ink)}
+  .code{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.28em;color:var(--amber-ink);text-transform:uppercase}
   h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:18px 0 14px}
   p{color:var(--ink-dim);font-size:16px;line-height:1.65;margin-bottom:32px}
   .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -46,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-ghost{color:var(--ink-dim);border:1px solid var(--line)}
   .btn-ghost:hover{color:var(--ink);border-color:rgba(255,255,255,.28)}
 </style>
+<link rel="stylesheet" href="/assets/css/theme-light.css"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -65,5 +67,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="btn btn-ghost" href="/blog/">Ver el blog</a>
     </div>
   </div>
+<script src="/assets/js/theme.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+/* ============================================================
+   M2 Energy — LIGHT THEME (versión clara)
+   Contraste validado WCAG AA: texto >=4.5:1, texto grande / bordes >=3:1.
+   Se carga en todas las páginas DESPUÉS del CSS base; los overrides
+   ganan por especificidad (html[data-theme="light"] .x).
+   El default sigue siendo la versión oscura; "clara" es opt-in.
+   ============================================================ */
+
+/* --amber-ink: ámbar cuando se usa como TEXTO. En oscuro = ámbar vivo;
+   en claro = bronce legible. Los rellenos siguen usando --amber vivo. */
+:root { --amber-ink: var(--amber); }
+
+html[data-theme="light"] {
+  --amber-ink: #7a5a00;
+  --blue: #2b5064;  --blue-hot: #24586f;  --blue-deep: #dbe6ee;
+  --bg-0: #ece8e0;  --bg-1: #f5f2ec;  --bg-2: #ffffff;  --bg-panel: #ffffff;
+  --ink: #14252f;   --ink-dim: #3d505f;  --ink-mute: #506576;
+  --line: rgba(20,37,47,.12);  --line-str: rgba(20,37,47,.22);
+  --amber-soft: rgba(246,190,31,.16);
+}
+
+/* ---- Nav ---- */
+html[data-theme="light"] .nav.scrolled {
+  background: rgba(252,250,246,.90); border-bottom-color: var(--line);
+}
+html[data-theme="light"] .nav-dropdown {
+  background: #ffffff; border-color: var(--line); box-shadow: 0 12px 40px -12px rgba(20,37,47,.25);
+}
+/* borde discernible en el CTA ámbar (WCAG 1.4.11 no-text >=3:1) */
+html[data-theme="light"] .nav-cta { border: 1px solid var(--amber-ink); }
+
+/* En blogs el nav transparente flota sobre una foto oscura: mientras no
+   esté "scrolled", su texto va claro. Al hacer scroll el nav toma fondo
+   claro y hereda el texto oscuro normal. */
+html[data-theme="light"] body:has(.post-hero) .nav:not(.scrolled) {
+  --ink: #fafcff; --ink-dim: #cdd8e3; --ink-mute: #8ea0b0;
+}
+
+/* ---- Hero: capa de fondo oscura hardcodeada -> papel claro con glows suaves ---- */
+html[data-theme="light"] .hero {
+  background:
+    radial-gradient(1200px 600px at 15% 30%, rgba(53,94,114,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 70%, rgba(246,190,31,.12), transparent 60%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
+}
+html[data-theme="light"] .hero::before { background: none; }
+html[data-theme="light"] .hero::after  { opacity: .18; }
+/* titular con gradiente ámbar -> bronce sólido legible */
+html[data-theme="light"] .hero-title .hl {
+  background: none; -webkit-background-clip: border-box; background-clip: border-box;
+  color: var(--amber-ink);
+}
+
+/* ---- Islas oscuras deliberadas: footer y panel SCADA del hero conservan su
+   fondo oscuro, por lo que reactivamos la paleta oscura SOLO dentro de ellos. ---- */
+html[data-theme="light"] footer,
+html[data-theme="light"] .hero-visual,
+html[data-theme="light"] .post-hero {   /* hero de blog = foto oscura a sangre */
+  --bg-0: #0e1c28; --bg-1: #13283a; --bg-2: #1a3548; --bg-panel: #162e42;
+  --ink: #fafcff;  --ink-dim: #cdd8e3;  --ink-mute: #8ea0b0;
+  --blue: #355e72; --blue-hot: #5a9cb8; --blue-deep: #1f3e52;
+  --amber-ink: var(--amber);
+  --line: rgba(255,255,255,.10); --line-str: rgba(255,255,255,.18);
+}
+/* panel SCADA del hero: opaco y nítido flotando sobre el papel claro */
+html[data-theme="light"] .hero-visual { background: linear-gradient(160deg,#0f1f2b 0%,#0a1824 100%); }
+/* el "rayo" animado del canvas resalta demasiado sobre claro: se atenúa */
+html[data-theme="light"] .hero canvas.fx { opacity: .5; }
+
+/* ---- Bandas / secciones con fondo oscuro hardcodeado ---- */
+html[data-theme="light"] .marquee { background: var(--bg-1); border-color: var(--line); }
+html[data-theme="light"] .form-section {
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+}
+
+/* ---- Tarjetas, tiles, chips: superficie clara con borde ---- */
+html[data-theme="light"] .res-card,
+html[data-theme="light"] .result-grid .tile,
+html[data-theme="light"] .caso-mw,
+html[data-theme="light"] .chip,
+html[data-theme="light"] .vs-card .vs-num,
+html[data-theme="light"] .vs-card .vs-dur,
+html[data-theme="light"] .form-card,
+html[data-theme="light"] .tweaks {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+}
+
+/* ---- Formularios: inputs claros ---- */
+html[data-theme="light"] .field input,
+html[data-theme="light"] .field select,
+html[data-theme="light"] .field textarea {
+  background: #ffffff; color: var(--ink); border-color: var(--line-str);
+}
+html[data-theme="light"] .field input:focus,
+html[data-theme="light"] .field select:focus,
+html[data-theme="light"] .field textarea:focus {
+  background: #ffffff; border-color: var(--amber-ink);
+}
+
+/* ---- Overlays de gradiente sobre FOTOS (para legibilidad de texto blanco):
+   se dejan oscuros a propósito, no se tocan. (.svc-overlay, .ind-overlay,
+   .epc-visual-overlay, #vidModal) ---- */
