@@ -44,7 +44,8 @@ html[data-theme="light"] .btn-ghost:hover {
 /* En blogs el nav transparente flota sobre una foto oscura: mientras no
    esté "scrolled", su texto va claro. Al hacer scroll el nav toma fondo
    claro y hereda el texto oscuro normal. */
-html[data-theme="light"] body:has(.post-hero) .nav:not(.scrolled) {
+html[data-theme="light"] body:has(.post-hero) .nav:not(.scrolled),
+html[data-theme="light"] body:has(.page-hero) .nav:not(.scrolled) {
   --ink: #fafcff; --ink-dim: #cdd8e3; --ink-mute: #8ea0b0;
 }
 
@@ -70,12 +71,15 @@ html[data-theme="light"] h2 .amber { color: var(--amber-title) !important; }
    fondo oscuro, por lo que reactivamos la paleta oscura SOLO dentro de ellos. ---- */
 html[data-theme="light"] footer,
 html[data-theme="light"] .hero-visual,
-html[data-theme="light"] .post-hero {   /* hero de blog = foto oscura a sangre */
+html[data-theme="light"] .post-hero,      /* hero de blog = foto oscura */
+html[data-theme="light"] .page-hero {      /* hero de casos = foto oscura */
   --bg-0: #0e1c28; --bg-1: #13283a; --bg-2: #1a3548; --bg-panel: #162e42;
-  --ink: #fafcff;  --ink-dim: #cdd8e3;  --ink-mute: #8ea0b0;
+  --ink: #ffffff;  --ink-dim: #dbe6ef;  --ink-mute: #a7b8c6;
   --blue: #355e72; --blue-hot: #5a9cb8; --blue-deep: #1f3e52;
-  --amber-ink: var(--amber);
+  --amber-ink: var(--amber); --amber-title: var(--amber);
   --line: rgba(255,255,255,.10); --line-str: rgba(255,255,255,.18);
+  color: #ffffff;   /* algunos títulos (p.ej. .page-hero h1) no declaran color y
+                       heredan el navy ya computado del body; forzamos blanco aquí */
 }
 /* panel SCADA del hero: opaco y nítido flotando sobre el papel claro */
 html[data-theme="light"] .hero-visual { background: linear-gradient(160deg,#0f1f2b 0%,#0a1824 100%); }
@@ -88,18 +92,31 @@ html[data-theme="light"] .form-section {
   background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
 }
 
-/* ---- Tarjetas, tiles, chips: superficie clara con borde ---- */
+/* ---- Cajas de contenido: AZUL OSCURO + texto BLANCO PURO (en vez de recuadros
+   grises). Se reactiva la paleta oscura dentro para que todo el texto sea blanco
+   y los acentos ámbar sigan vivos. ---- */
 html[data-theme="light"] .res-card,
 html[data-theme="light"] .result-grid .tile,
-html[data-theme="light"] .caso-mw,
-html[data-theme="light"] .chip,
-html[data-theme="light"] .vs-card .vs-num,
-html[data-theme="light"] .vs-card .vs-dur,
+html[data-theme="light"] .result-actions,
+html[data-theme="light"] .why-list li,
+html[data-theme="light"] .vs-card,
 html[data-theme="light"] .form-card,
-html[data-theme="light"] .tweaks {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
+html[data-theme="light"] .chip,
+html[data-theme="light"] .intro-strip,
+html[data-theme="light"] .case-meta,
+html[data-theme="light"] .case-lead {
+  --bg-0:#0e1c28; --bg-1:#13283a; --bg-2:#1a3548; --bg-panel:#162e42;
+  --ink:#ffffff; --ink-dim:#dbe6ef; --ink-mute:#a7b8c6;
+  --blue:#5a9cb8; --blue-hot:#8fc4dc;
+  --amber-ink:var(--amber); --amber-title:var(--amber);
+  --line:rgba(255,255,255,.14); --line-str:rgba(255,255,255,.24);
+  background:#173a5a; color:#ffffff; border:1px solid rgba(255,255,255,.14);
 }
+/* inputs dentro de la caja azul (mini-form de casos): campos legibles */
+html[data-theme="light"] .case-lead input {
+  background:rgba(255,255,255,.10); color:#ffffff; border-color:rgba(255,255,255,.28);
+}
+html[data-theme="light"] .case-lead input::placeholder { color:rgba(255,255,255,.6); }
 
 /* ---- Formularios: inputs claros ---- */
 html[data-theme="light"] .field input,
